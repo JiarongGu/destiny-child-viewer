@@ -17,7 +17,12 @@
     "jsx-alignment": true,
     "jsx-equals-spacing": [true, "never"],
     "jsx-no-string-ref": true,
-    "jsx-self-close": true
+    "jsx-self-close": true,
+    "jsx-no-lambda": false,
+    "prefer-array-literal": false,
+    "no-parameter-reassignment": false,
+    "no-increment-decrement": false,
+    "array-type": [true, "generic"]
   },
   "rulesDirectory": []
 }

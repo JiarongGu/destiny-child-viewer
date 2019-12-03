@@ -2,20 +2,33 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const path = require('path');
 
 const baseConfig = require('./webpack.base.config');
+
 const appPublic = path.resolve(__dirname, './public');
+const appSrc =  path.resolve(__dirname, './src/renderer');
 const outDir = path.resolve(__dirname, './dist');
 
-const sassRegex = /\.(scss)$/;
-const sassModuleRegex = /\.module\.(scss)$/;
+const lessRegex = /\.(less)$/;
+const lessModuleRegex = /\.module\.(less)$/;
 
 module.exports = merge.smart(baseConfig, {
   target: 'electron-renderer',
+  context: appSrc,
   entry: {
-    app: ['./src/renderer/app.tsx']
+    app: ['@babel/polyfill', './index.tsx']
+  },
+  resolve: {
+    alias: {
+      '@containers': './containers',
+      '@components': './components',
+      '@services': './services',
+      '@models': './models',
+      '@utils': './utils',
+    }
   },
   module: {
     rules: [
@@ -25,12 +38,24 @@ module.exports = merge.smart(baseConfig, {
         exclude: /node_modules/
       },
       {
-        test: sassRegex,
-        loaders: ['css-hot-loader', 'style-loader', 'css-loader', 'sass-loader'],
-        exclude: sassModuleRegex
+        test: lessRegex,
+        loaders: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          'css-hot-loader',
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ],
+        exclude: lessModuleRegex
       },
       {
-        test: sassModuleRegex,
+        test: lessModuleRegex,
         loaders: [
           'css-hot-loader',
           'style-loader',
@@ -46,12 +71,22 @@ module.exports = merge.smart(baseConfig, {
               importLoaders: 1
             }
           },
-          'sass-loader'
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
         ]
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        loaders: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          'css-loader'
+        ]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/,
@@ -74,10 +109,14 @@ module.exports = merge.smart(baseConfig, {
     ]
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      reportFiles: ['src/renderer/**/*']
-    }),
     new webpack.NamedModulesPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false // Enable to remove warnings about conflicting order
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(appPublic, 'index.html'),
       minify: false
