@@ -4,6 +4,7 @@ declare module 'global' {
 
     export class Live2D {
       public static init(): void;
+      public static dispose(): void;
       public static setGL(context: WebGLRenderer): void;
     }
 

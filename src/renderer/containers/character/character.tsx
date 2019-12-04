@@ -4,7 +4,7 @@ import { CharacterSink } from './character-sink';
 
 import * as styles from './character.module.less';
 import { useSink } from 'redux-sink';
-import { Live2DViewer2 } from '@components/live2d-viewer/live2d-viewer2';
+import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
 
 export const Character: React.FunctionComponent = () => {
   const sink = useSink(CharacterSink);
@@ -20,11 +20,11 @@ export const Character: React.FunctionComponent = () => {
   return (
     <div className={styles.container}>
       {ready && (
-        <Live2DViewer2
+        <Live2DCanvas
           model={sink.character!}
           textures={components.textures}
-          motionIdle={components.motions.idle!}
-          motionAttack={components.motions.attack!}
+          motionDefault={components.motions.idle!}
+          motionActive={components.motions.attack!}
         />
       )}
       <canvas ref={canvasRef} width={800} height={800} />
