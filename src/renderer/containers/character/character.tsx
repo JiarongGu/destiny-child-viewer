@@ -19,20 +19,21 @@ export const Character: React.FunctionComponent = () => {
   const ready = components && sink.texturesLoaded;
 
   return (
-    <div>
+    <div className={styles.container}>
       <Select defaultValue={'c420_89'} style={{ width: 120 }} onChange={(value: string) => sink.loadCharacter(value)}>
         <Select.Option value={'c420_89'}>c420_89</Select.Option>
         <Select.Option value={'c429_88'}>c429_88</Select.Option>
       </Select>
-
-      {ready && (
-        <Live2DCanvas
-          model={sink.modelData!}
-          textures={components.textures}
-          motionDefault={components.motions.idle![0]}
-          motionActive={components.motions.attack![0]}
-        />
-      )}
+      <div>
+        {ready && (
+          <Live2DCanvas
+            model={sink.modelData!}
+            textures={components.textures}
+            motionDefault={components.motions.idle![0]}
+            motionActive={components.motions.attack![0]}
+          />
+        )}
+      </div>
     </div>
   );
 };
