@@ -30,6 +30,7 @@ module.exports = merge.smart(baseConfig, {
       '@services': `${appSrc}/services`,
       '@models': `${appSrc}/models`,
       '@utils': `${appSrc}/utils`,
+      '@sinks': `${appSrc}/sinks`,
     }
   },
   module: {

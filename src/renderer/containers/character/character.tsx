@@ -1,36 +1,37 @@
+import { Select } from 'antd';
 import * as React from 'react';
+import { useSink } from 'redux-sink';
 
 import { CharacterSink } from './character-sink';
+import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
+import { GameDataSink } from '@sinks/game-data/game-data-sink';
 
 import * as styles from './character.module.less';
-import { useSink } from 'redux-sink';
-import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
-import { Select } from 'antd';
 
 export const Character: React.FunctionComponent = () => {
-  const sink = useSink(CharacterSink);
-  const canvasRef = React.useRef(null);
+  const character = useSink(CharacterSink);
+  const gameData = useSink(GameDataSink);
 
-  React.useEffect(() => {
-    sink.loadCharacter('c420_89');
-  }, []);
-
-  const components = sink.live2DComponents!;
-  const ready = components && sink.texturesLoaded;
+  const components = character.live2DComponents!;
+  const ready = components && character.texturesLoaded;
 
   return (
     <div className={styles.container}>
-      <Select defaultValue={'c420_89'} style={{ width: 120 }} onChange={(value: string) => sink.loadCharacter(value)}>
-        <Select.Option value={'c420_89'}>c420_89</Select.Option>
-        <Select.Option value={'c429_88'}>c429_88</Select.Option>
+      <Select style={{ width: 120 }} onChange={(value: string) => character.loadCharacter(value)}>
+        {gameData.characterIndexes.map(key => (
+          <Select.Option key={key} value={key}>
+            {key}
+          </Select.Option>
+        ))}
       </Select>
       <div>
         {ready && (
           <Live2DCanvas
-            model={sink.modelData!}
+            model={character.modelData!}
             textures={components.textures}
             motionDefault={components.motions.idle![0]}
-            motionActive={components.motions.attack![0]}
+            motionActive={components.motions.attack && components.motions.attack[0]}
+            position={character.position!}
           />
         )}
       </div>

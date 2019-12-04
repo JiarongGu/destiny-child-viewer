@@ -7,7 +7,7 @@ import { Router } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { App } from './app';
-import { createNavigationHistory } from '@services/navigation/navigation-sink';
+import { createNavigationHistory } from '@sinks/navigation/navigation-sink';
 import { Character } from '@containers';
 
 import 'antd/dist/antd.css';

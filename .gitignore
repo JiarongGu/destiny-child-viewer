@@ -10,6 +10,7 @@
 /build
 /release
 /dist
+/resources/asset/character
 
 # misc
 .DS_Store
