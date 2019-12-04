@@ -53,7 +53,7 @@
     }
   },
   "build": {
-    "productName": "Destiny Child-Viewer",
+    "productName": "Destiny Child Viewer",
     "appId": "jiaronggu.destiny-child-viewer",
     "mac": {
       "category": "jiaronggu.destiny-child-viewer"
