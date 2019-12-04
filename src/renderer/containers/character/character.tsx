@@ -11,7 +11,7 @@ export const Character: React.FunctionComponent = () => {
   const canvasRef = React.useRef(null);
 
   React.useEffect(() => {
-    sink.loadCharacter('c429_88');
+    sink.loadCharacter('c420_89');
   }, []);
 
   const components = sink.live2DComponents!;
@@ -21,10 +21,10 @@ export const Character: React.FunctionComponent = () => {
     <div className={styles.container}>
       {ready && (
         <Live2DCanvas
-          model={sink.character!}
+          model={sink.modelData!}
           textures={components.textures}
-          motionDefault={components.motions.idle!}
-          motionActive={components.motions.attack!}
+          motionDefault={components.motions.idle![0]}
+          motionActive={components.motions.attack![0]}
         />
       )}
       <canvas ref={canvasRef} width={800} height={800} />
