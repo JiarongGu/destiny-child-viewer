@@ -10,6 +10,8 @@ const baseConfig = require('./webpack.base.config');
 
 const appPublic = path.resolve(__dirname, './public');
 const appSrc =  path.resolve(__dirname, './src/renderer');
+const appResources = path.resolve(__dirname, './resources');
+
 const outDir = path.resolve(__dirname, './dist');
 
 const lessRegex = /\.(less)$/;
@@ -23,11 +25,11 @@ module.exports = merge.smart(baseConfig, {
   },
   resolve: {
     alias: {
-      '@containers': './containers',
-      '@components': './components',
-      '@services': './services',
-      '@models': './models',
-      '@utils': './utils',
+      '@containers': `${appSrc}/containers`,
+      '@components': `${appSrc}/components`,
+      '@services': `${appSrc}/services`,
+      '@models': `${appSrc}/models`,
+      '@utils': `${appSrc}/utils`,
     }
   },
   module: {
@@ -123,7 +125,8 @@ module.exports = merge.smart(baseConfig, {
     }),
     new CopyWebpackPlugin([{ from: appPublic, to: outDir }], { ignore: ['index.html'] }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.APP_RESOURCES': JSON.stringify(appResources)
     })
   ]
 });

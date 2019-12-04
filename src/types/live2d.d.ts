@@ -26,7 +26,7 @@ declare module 'global' {
     }
 
     export class Live2DModel {
-      public static loadModel(model: any);
+      public static loadModel(model: ArrayBuffer);
       public isPremultipliedAlpha(): boolean;
       public setTexture(times: number, texture: WebGLTexture);
       public setGL(context: RenderingContext);
@@ -38,7 +38,7 @@ declare module 'global' {
     }
 
     export class Live2DMotion {
-      public static loadMotion(motion: any): Live2DMotion;
+      public static loadMotion(motion: DataView): Live2DMotion;
       public _$eo: number;
       public _$dP: number;
     }

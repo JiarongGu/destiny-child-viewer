@@ -1,0 +1,73 @@
+import * as fs from 'fs-extra';
+import * as path from 'path';
+
+import { EnvironmentService } from './../environment/environment-service';
+
+export enum FileReadType {
+  ByteArray = 'bytearray',
+  Json = 'json',
+  Base64 = 'base64'
+}
+
+export class FileService {
+  public environmentService: EnvironmentService;
+
+  constructor() {
+    this.environmentService = new EnvironmentService();
+  }
+
+  public async get<T>(filePath: string, type: FileReadType.Json): Promise<T>;
+  public async get(filePath: string, type: FileReadType.ByteArray): Promise<ArrayBuffer>;
+  public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
+  public async get(filePath: string, type: FileReadType) {
+    const resourcePath = this.getResourcePath(filePath);
+
+    if (type === FileReadType.Json) {
+      return await fs.readJSON(resourcePath);
+    }
+    const file = await fs.readFile(resourcePath);
+    const byteArray = Uint8Array.from(file);
+    const blob = new Blob([byteArray]);
+
+    if (type === FileReadType.ByteArray) {
+      return this.toArrayBuffer(blob);
+    }
+
+    if (type === FileReadType.Base64) {
+      return this.toBase64(blob);
+    }
+  }
+
+  public toArrayBuffer(file: Blob): Promise<ArrayBuffer> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(file);
+      reader.onload = () => resolve(reader.result as ArrayBuffer);
+      reader.onerror = error => reject(error);
+    });
+  }
+
+  public toBase64(file: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+    });
+  }
+
+  public getResourcePath(filePath: string) {
+    return path.join(this.environmentService.resourcesPath, filePath);
+  }
+
+  public getAbsolutePath(relativePath: string): string {
+    return `${this.environmentService.appPath}/${relativePath}`;
+  }
+
+  public getRelativePath(absolutePath: string): string {
+    if (absolutePath.indexOf(this.environmentService.appPath) > -1) {
+      return absolutePath.substring(this.environmentService.appPath.length + 1);
+    }
+    return absolutePath;
+  }
+}
