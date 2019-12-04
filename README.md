@@ -1,4 +1,4 @@
-# destiny-child-viewer
+# Destiny Child Viewer
 
 ### A Boilerplate for an Easy Start with TypeScript, React, and Electron.
 
