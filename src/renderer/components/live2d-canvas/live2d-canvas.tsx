@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { drawCanvas, getTexture, getRendererContext } from './live2d-canvas-renderer';
+import { Position } from '@models/position';
 
 export interface Live2DViewer2Props {
   model: ArrayBuffer;
@@ -8,7 +9,7 @@ export interface Live2DViewer2Props {
   motion: Live2DMotion;
   motionManager: L2DMotionManager;
   className?: string;
-  position: { scale: number; x: number; y: number };
+  position: Position;
   onClick?: () => void;
 }
 

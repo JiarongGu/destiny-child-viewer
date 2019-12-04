@@ -1,19 +1,10 @@
 import { SelectRect } from './select-rect';
-import { Position } from './position';
+import { BasePosition, PositionType } from '@models/position';
 
 export enum CharacterModelType {
   Live2D = 'live2d',
   MMD = 'mmd',
   PNG = 'png'
-}
-
-export enum CharacterPositionType {
-  Home = 'home',
-  Talk = 'talk',
-  Ally = 'ally',
-  Enemy = 'enemy',
-  TalkZoom = 'talk_zoom',
-  Drive = 'drive'
 }
 
 export enum CharacterContentType {
@@ -23,7 +14,7 @@ export enum CharacterContentType {
 }
 
 export interface CharacterPositionModel {
-  position: Position;
+  position: BasePosition;
   scale: number;
   flip: boolean;
   not_fov_scale?: boolean;
@@ -33,7 +24,7 @@ export interface CharacterModelInfoCollection {
   [key: string]: CharacterLive2DInfo | CharacterPNGInfo;
 }
 
-export type CharacterPositionInfo = { [key in CharacterPositionType]: CharacterPositionModel };
+export type CharacterPositionInfo = { [key in PositionType]: CharacterPositionModel };
 
 export type CharacterContentInfo = { [key in CharacterContentType]?: CharacterPositionModel };
 

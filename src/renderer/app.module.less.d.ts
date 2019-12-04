@@ -3,7 +3,9 @@
 interface CssExports {
   layout: string;
   'layout-content': string;
+  'layout-route-content': string;
   layoutContent: string;
+  layoutRouteContent: string;
 }
 
 declare var cssExports: CssExports;

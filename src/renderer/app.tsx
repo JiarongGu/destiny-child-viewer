@@ -4,11 +4,12 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import { Link } from 'react-router-dom';
 
+import * as styles from './app.module.less';
+
 import { NavigationSink } from '@sinks/navigation/navigation-sink';
 import { GameDataSink } from '@sinks/game-data/game-data-sink';
 import { RouteContent } from '@components/route-content';
-
-import * as styles from './app.module.less';
+import { SideMenu } from '@containers/side-menu';
 
 export const App: React.FunctionComponent = () => {
   const navigation = useSink(NavigationSink);
@@ -42,7 +43,10 @@ export const App: React.FunctionComponent = () => {
       </Layout.Sider>
 
       <Layout.Content className={styles.layoutContent}>
-        <RouteContent routes={navigation.routes} />
+        <div className={styles.layoutRouteContent}>
+          <RouteContent routes={navigation.routes} />
+        </div>
+        <SideMenu />
       </Layout.Content>
     </Layout>
   );

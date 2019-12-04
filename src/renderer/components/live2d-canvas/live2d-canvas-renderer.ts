@@ -1,11 +1,11 @@
-import { Position } from '@models/character/position';
+import { Position } from '@models/position';
 
 export function drawCanvas(
   context: WebGLRenderer,
   model: Live2DModel,
   motionManager: L2DMotionManager,
   motionDefault: Live2DMotion,
-  position: { scale: number; x: number; y: number }
+  position: Position
 ) {
   // clear canvas
   context.clearColor(0.0, 0.0, 0.0, 0.0);
