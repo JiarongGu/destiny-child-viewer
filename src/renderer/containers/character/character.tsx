@@ -5,6 +5,7 @@ import { CharacterSink } from './character-sink';
 import * as styles from './character.module.less';
 import { useSink } from 'redux-sink';
 import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
+import { Select } from 'antd';
 
 export const Character: React.FunctionComponent = () => {
   const sink = useSink(CharacterSink);
@@ -18,7 +19,12 @@ export const Character: React.FunctionComponent = () => {
   const ready = components && sink.texturesLoaded;
 
   return (
-    <div className={styles.container}>
+    <div>
+      <Select defaultValue={'c420_89'} style={{ width: 120 }} onChange={(value: string) => sink.loadCharacter(value)}>
+        <Select.Option value={'c420_89'}>c420_89</Select.Option>
+        <Select.Option value={'c429_88'}>c429_88</Select.Option>
+      </Select>
+
       {ready && (
         <Live2DCanvas
           model={sink.modelData!}
@@ -27,7 +33,6 @@ export const Character: React.FunctionComponent = () => {
           motionActive={components.motions.attack![0]}
         />
       )}
-      <canvas ref={canvasRef} width={800} height={800} />
     </div>
   );
 };
