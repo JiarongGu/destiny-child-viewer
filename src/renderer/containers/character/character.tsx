@@ -9,15 +9,17 @@ import { GameDataSink } from '@sinks/game-data/game-data-sink';
 import * as styles from './character.module.less';
 
 export const Character: React.FunctionComponent = () => {
-  const character = useSink(CharacterSink);
+  const characterSink = useSink(CharacterSink);
   const gameData = useSink(GameDataSink);
 
-  const components = character.live2DComponents!;
-  const ready = components && character.texturesLoaded;
+  const components = characterSink.live2DComponents!;
+  const ready = components && characterSink.texturesLoaded;
+
+  const motionManager = new L2DMotionManager();
 
   return (
     <div className={styles.container}>
-      <Select style={{ width: 120 }} onChange={(value: string) => character.loadCharacter(value)}>
+      <Select style={{ width: 120 }} onChange={(value: string) => characterSink.loadCharacter(value)}>
         {gameData.characterIndexes.map(key => (
           <Select.Option key={key} value={key}>
             {key}
@@ -27,11 +29,16 @@ export const Character: React.FunctionComponent = () => {
       <div>
         {ready && (
           <Live2DCanvas
-            model={character.modelData!}
+            model={characterSink.modelData!}
             textures={components.textures}
-            motionDefault={components.motions.idle![0]}
-            motionActive={components.motions.attack && components.motions.attack[0]}
-            position={character.position!}
+            motion={components.motions.idle![0]}
+            motionManager={motionManager}
+            position={characterSink.position!}
+            onClick={() => {
+              if (components.motions.attack) {
+                motionManager.startMotion(components.motions.attack[0]);
+              }
+            }}
           />
         )}
       </div>

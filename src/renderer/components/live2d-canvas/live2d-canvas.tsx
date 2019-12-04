@@ -1,20 +1,19 @@
 import * as React from 'react';
 
 import { drawCanvas, getTexture, getRendererContext } from './live2d-canvas-renderer';
-import { Position } from '@models/character/position';
 
 export interface Live2DViewer2Props {
   model: ArrayBuffer;
   textures: Array<HTMLImageElement>;
-  motionDefault: Live2DMotion;
-  motionActive?: Live2DMotion;
+  motion: Live2DMotion;
+  motionManager: L2DMotionManager;
   className?: string;
   position: { scale: number; x: number; y: number };
+  onClick?: () => void;
 }
 
 export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
   private canvasRef = React.createRef<HTMLCanvasElement>();
-  private motionManager = new L2DMotionManager();
   private requireId?: number;
   private close: boolean = false;
 
@@ -26,9 +25,7 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
     Live2D.setGL(context);
 
     const model = Live2DModelWebGL.loadModel(this.props.model);
-    const motionDefault = this.props.motionDefault;
-    const motionManager = this.motionManager;
-    const { position } = this.props;
+    const { motion, motionManager, position } = this.props;
 
     // initialize texture
     this.props.textures.forEach((texture, index) => {
@@ -41,7 +38,7 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
 
     const tick = () => {
       if (!this.close) {
-        drawCanvas(context, model, motionManager, motionDefault, position);
+        drawCanvas(context, model, motionManager, motion, position);
         this.requireId = requestAnimationFrame(tick);
       }
     };
@@ -52,19 +49,12 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
     Live2D.dispose();
     this.close = true;
   }
-
-  private playActiveMotion = () => {
-    if (this.props.motionActive && this.motionManager) {
-      this.motionManager.startMotion(this.props.motionActive);
-    }
-  };
-
   public render() {
     return (
       <canvas
         className={this.props.className}
         ref={this.canvasRef}
-        onClick={this.playActiveMotion}
+        onClick={this.props.onClick}
         width={800}
         height={800}
       />

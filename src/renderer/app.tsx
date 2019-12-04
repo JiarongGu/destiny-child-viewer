@@ -19,21 +19,29 @@ export const App: React.FunctionComponent = () => {
   }, []);
 
   const routeKeys = navigation.activeRoute && navigation.activeRoute.keys;
-  const [collapsed, setCollapsed] = React.useState(false);
+  const [collapsed, setCollapsed] = React.useState(true);
 
   return (
     <Layout className={styles.layout}>
       <Layout.Sider collapsible={true} collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
         <Menu theme={'dark'} mode={'inline'} selectedKeys={routeKeys}>
-          {navigation.routes.map(route => (
-            <Menu.Item key={route.key} title={route.name}>
-              <Link to={'/character'}>Character</Link>
-            </Menu.Item>
-          ))}
+          {navigation.routes.map(route => {
+            const name = route.name || route.key;
+            return (
+              <Menu.Item key={route.key} title={name}>
+                {route.link && (
+                  <Link to={route.link}>
+                    {route.icon && <Icon type={route.icon} />}
+                    {!collapsed && name}
+                  </Link>
+                )}
+              </Menu.Item>
+            );
+          })}
         </Menu>
       </Layout.Sider>
 
-      <Layout.Content>
+      <Layout.Content className={styles.layoutContent}>
         <RouteContent routes={navigation.routes} />
       </Layout.Content>
     </Layout>

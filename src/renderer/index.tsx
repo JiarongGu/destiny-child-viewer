@@ -20,6 +20,8 @@ const store = SinkFactory.createStore({
 const history = createNavigationHistory([
   {
     key: 'character',
+    icon: 'user',
+    link: '/character',
     props: {
       path: '/character',
       component: Character

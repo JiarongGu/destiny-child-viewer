@@ -2,6 +2,8 @@
 
 interface CssExports {
   layout: string;
+  'layout-content': string;
+  layoutContent: string;
 }
 
 declare var cssExports: CssExports;
