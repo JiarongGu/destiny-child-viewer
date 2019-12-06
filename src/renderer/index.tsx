@@ -11,6 +11,7 @@ import { createNavigationHistory } from '@sinks/navigation/navigation-sink';
 import { Character } from '@containers';
 
 import 'antd/dist/antd.css';
+import { PathService } from '@services/file/path-service';
 
 const store = SinkFactory.createStore({
   useTrigger: true,
@@ -28,6 +29,11 @@ const history = createNavigationHistory([
     }
   }
 ]);
+
+const pathService = new PathService();
+const resourcePath = pathService.resourcesPath();
+
+console.log(resourcePath);
 
 ReactDOM.render(
   <AppContainer>

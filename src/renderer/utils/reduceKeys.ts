@@ -1,6 +1,5 @@
-export function reduceKeys<T = any>(keys: Array<string>, formatter: (key: string, index: number) => T) {
-  return keys.reduce(
-    (accumulate, key, index) => ((accumulate[key] = formatter(key, index)), accumulate),
-    {} as { [key: string]: T }
-  );
+import { reduceMap } from './reduceMap';
+
+export function reduceKeys<T>(keys: Array<string | number>, formatter: (key: string | number, index: number) => T) {
+  return reduceMap(keys, key => key, formatter);
 }

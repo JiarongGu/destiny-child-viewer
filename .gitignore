@@ -10,8 +10,7 @@
 /build
 /release
 /dist
-/resources/asset/character
-
+/resources/asset
 # misc
 .DS_Store
 .env.local

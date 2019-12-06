@@ -9,7 +9,7 @@ const path = require('path');
 const baseConfig = require('./webpack.base.config');
 
 const appPublic = path.resolve(__dirname, './public');
-const appSrc =  path.resolve(__dirname, './src/renderer');
+const appSrc = path.resolve(__dirname, './src/renderer');
 const appResources = path.resolve(__dirname, './resources');
 
 const outDir = path.resolve(__dirname, './dist');
@@ -31,6 +31,7 @@ module.exports = merge.smart(baseConfig, {
       '@models': `${appSrc}/models`,
       '@utils': `${appSrc}/utils`,
       '@sinks': `${appSrc}/sinks`,
+      '@decorators': `${appSrc}/decorators`
     }
   },
   module: {
