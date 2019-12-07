@@ -30,6 +30,6 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "resources/": true,
+    "resources/asset": true,
   }
 }

@@ -1,7 +1,7 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 
-import { EnvironmentService } from './../environment/environment-service';
+import { PathService } from '@services/file/path-service';
 
 export enum FileReadType {
   ByteArray = 'bytearray',
@@ -10,10 +10,10 @@ export enum FileReadType {
 }
 
 export class FileService {
-  public environmentService: EnvironmentService;
+  public _pathService: PathService;
 
   constructor() {
-    this.environmentService = new EnvironmentService();
+    this._pathService = new PathService();
   }
 
   public async get<T>(filePath: string, type: FileReadType.Json): Promise<T>;
@@ -57,16 +57,16 @@ export class FileService {
   }
 
   public getResourcePath(filePath: string) {
-    return path.join(this.environmentService.resourcesPath, filePath);
+    return path.join(this._pathService.resourcesPath, filePath);
   }
 
   public getAbsolutePath(relativePath: string): string {
-    return `${this.environmentService.appPath}/${relativePath}`;
+    return `${this._pathService.appPath}/${relativePath}`;
   }
 
   public getRelativePath(absolutePath: string): string {
-    if (absolutePath.indexOf(this.environmentService.appPath) > -1) {
-      return absolutePath.substring(this.environmentService.appPath.length + 1);
+    if (absolutePath.indexOf(this._pathService.appPath) > -1) {
+      return absolutePath.substring(this._pathService.appPath.length + 1);
     }
     return absolutePath;
   }

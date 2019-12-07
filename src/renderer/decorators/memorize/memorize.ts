@@ -5,15 +5,28 @@ const targetMap = new Map<Object, string>();
 const cacheMap = new Map<Object, Map<Object, any>>();
 
 export const memorize = (target: Object, key: String, descriptor: TypedPropertyDescriptor<any>) => {
+  const getter = descriptor.get;
   const method = descriptor.value;
-  if (!method) {
+  const valid = getter || method;
+
+  if (!valid) {
     return descriptor;
   }
+
   const targetId = tryGet(targetMap, target, () => generateId());
   const methodId = `${targetId}:${key.toString()}`;
 
-  descriptor.value = function() {
-    return tryArrayGet(cacheMap, methodId, Array.from(arguments), () => method.apply(this, arguments as any));
-  };
+  if (method) {
+    descriptor.value = function() {
+      return tryArrayGet(cacheMap, methodId, Array.from(arguments), () => method.apply(this, arguments as any));
+    };
+  }
+
+  if (getter) {
+    descriptor.get = function() {
+      return tryGet(cacheMap, method, () => getter.apply(this));
+    };
+  }
+
   return descriptor;
 };
