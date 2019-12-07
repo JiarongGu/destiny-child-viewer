@@ -2,6 +2,7 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 
 import { PathService } from '@services/file/path-service';
+import { memorizeAsync } from '@decorators/memorize/memorizeAsync';
 
 export enum FileReadType {
   ByteArray = 'bytearray',
@@ -19,6 +20,8 @@ export class FileService {
   public async get<T>(filePath: string, type: FileReadType.Json): Promise<T>;
   public async get(filePath: string, type: FileReadType.ByteArray): Promise<ArrayBuffer>;
   public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
+
+  @memorizeAsync
   public async get(filePath: string, type: FileReadType) {
     const resourcePath = this.getResourcePath(filePath);
 

@@ -30,7 +30,7 @@ export function tryArrayGetAsync(
   const currentKey = keys[0];
   const nextKeys = keys.slice(1);
   const currentMap = tryGet(map, currentKey, () => new Map<any, any>());
-  const currentPromiseMap = tryGet(map, currentKey, () => new Map<any, any>());
+  const currentPromiseMap = tryGet(promiseMap, currentKey, () => new Map<any, any>());
 
   return tryArrayGetAsync(currentMap, currentPromiseMap, currentKey, nextKeys, get);
 }
@@ -47,7 +47,13 @@ export function tryGetAsync(
     if (!promise) {
       promise = get();
       promiseMap.set(key, promise);
-      promise.then(value => map.set(key, value)).finally(() => promiseMap.delete(key));
+      promise
+        .then(value => {
+          map.set(key, value);
+        })
+        .finally(() => {
+          promiseMap.delete(key);
+        });
     }
     return promise;
   }
