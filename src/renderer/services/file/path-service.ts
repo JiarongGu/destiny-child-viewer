@@ -13,8 +13,8 @@ export class PathService {
   }
 
   @memorize
-  public resourcesPath() {
-    console.log('called:: ');
+  public resourcesPath(...args: Array<any>) {
+    console.log('called:: ', args);
 
     if (this._environmentService.isDevelopment) {
       return process.env.APP_RESOURCES as string;
