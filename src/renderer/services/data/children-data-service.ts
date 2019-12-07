@@ -1,17 +1,19 @@
 import * as FileSync from 'lowdb/adapters/FileSync';
 import * as lowdb from 'lowdb';
+import * as path from 'path';
 
+import { PathService } from '@services/file/path-service';
 import { FileService } from './../file/file-service';
 import { ChildInfo } from '@models/data/children-data';
 
 export class ChildrenDataService {
-  public filePath: string;
+  public _dataPath: string;
   public adapter: lowdb.AdapterSync;
   public db: lowdb.LowdbSync<any>;
 
   constructor() {
-    this.filePath = new FileService().getResourcePath('data/children.json');
-    this.adapter = new FileSync(this.filePath);
+    this._dataPath = path.join(new PathService().assetPath, 'data/children.json');
+    this.adapter = new FileSync(this._dataPath);
     this.db = lowdb(this.adapter);
   }
 

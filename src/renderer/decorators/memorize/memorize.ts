@@ -24,7 +24,7 @@ export const memorize = (target: Object, key: String, descriptor: TypedPropertyD
 
   if (getter) {
     descriptor.get = function() {
-      return tryGet(cacheMap, method, () => getter.apply(this));
+      return tryGet(cacheMap, methodId, () => getter.apply(this));
     };
   }
 

@@ -12,6 +12,5 @@ export class CharacterModifySink {
   public loadCharacter(id: string) {
     this.id = id;
     const data = this.childrenDataService.get(id);
-    console.log(data);
   }
 }
