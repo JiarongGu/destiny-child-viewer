@@ -7,7 +7,8 @@ import { memorizeAsync } from '@decorators/memorize/memorizeAsync';
 export enum FileReadType {
   ByteArray = 'bytearray',
   Json = 'json',
-  Base64 = 'base64'
+  Base64 = 'base64',
+  Text = 'text'
 }
 
 export class FileService {
@@ -20,15 +21,18 @@ export class FileService {
   public async get<T>(filePath: string, type: FileReadType.Json): Promise<T>;
   public async get(filePath: string, type: FileReadType.ByteArray): Promise<ArrayBuffer>;
   public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
-
-  @memorizeAsync
+  public async get(filePath: string, type: FileReadType.Text): Promise<string>;
   public async get(filePath: string, type: FileReadType) {
     const resourcePath = this.getResourcePath(filePath);
-
     if (type === FileReadType.Json) {
       return await fs.readJSON(resourcePath);
     }
     const file = await fs.readFile(resourcePath);
+
+    if (type === FileReadType.Text) {
+      return file.toString('utf-8');
+    }
+
     const byteArray = Uint8Array.from(file);
     const blob = new Blob([byteArray]);
 

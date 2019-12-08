@@ -24,5 +24,7 @@ declare module 'global' {
     interface URLSearchParams {
       keys: () => IterableIterator<string>;
     }
+
+    function parseInt(s: number, radix?: number): number;
   }
 }

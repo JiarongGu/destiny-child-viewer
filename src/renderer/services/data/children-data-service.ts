@@ -12,7 +12,7 @@ export class ChildrenDataService {
   public db: lowdb.LowdbSync<any>;
 
   constructor() {
-    this._dataPath = path.join(new PathService().assetPath, 'data/children.json');
+    this._dataPath = path.join(new PathService().dataPath, 'children.json');
     this.adapter = new FileSync(this._dataPath);
     this.db = lowdb(this.adapter);
   }
