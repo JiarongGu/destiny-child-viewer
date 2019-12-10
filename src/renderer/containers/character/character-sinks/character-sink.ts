@@ -11,6 +11,7 @@ import { Live2DService } from '@services/live2d/live2d-service';
 import { CharacterModifySink } from './character-modify-sink';
 import { reduceKeys } from '@utils/reduceKeys';
 import { CharacterModelType } from '@models/character/character-model-info';
+import { ChildrenDataService } from '@services/data/children-data-service';
 
 @sink('character', new FileService(), new Live2DService(), GameDataSink, CharacterModifySink)
 export class CharacterSink {
@@ -79,6 +80,8 @@ export class CharacterSink {
           y: this.convertPosition(info.home.position.y, -200)
         };
       }
+
+      return this.characterModifySink.data;
     } catch (ex) {
       this.reset();
     }

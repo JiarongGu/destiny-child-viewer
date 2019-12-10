@@ -26,7 +26,7 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
     Live2D.setGL(context);
 
     const model = Live2DModelWebGL.loadModel(this.props.model);
-    const { motion, motionManager, position } = this.props;
+    const { motion, motionManager } = this.props;
 
     // initialize texture
     this.props.textures.forEach((texture, index) => {
@@ -39,7 +39,7 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
 
     const tick = () => {
       if (!this.close) {
-        drawCanvas(context, model, motionManager, motion, position);
+        drawCanvas(context, model, motionManager, motion, this.props.position);
         this.requireId = requestAnimationFrame(tick);
       }
     };
@@ -50,6 +50,7 @@ export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
     Live2D.dispose();
     this.close = true;
   }
+
   public render() {
     return (
       <canvas
