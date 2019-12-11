@@ -20,21 +20,6 @@
     "dist": "npm run build && electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "{src,test,mocks}/**/*.{js,ts,tsx,json,css,scss,md}": [
-      "prettier --config ./.prettierrc --write",
-      "git add"
-    ],
-    "{src,test,mocks}/**/*.{js,ts,tsx}": [
-      "tslint --project ./tsconfig.json --fix",
-      "git add"
-    ]
-  },
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

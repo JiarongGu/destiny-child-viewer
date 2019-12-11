@@ -55,21 +55,21 @@ export class CharacterSink {
 
     try {
       // get character metadata
-      const metadata = await this.fileService.get<CharacterModel>(`${assetPath}/${metaFileName}`, FileReadType.Json);
+      const animation = await this.fileService.get<CharacterModel>(`${assetPath}/${metaFileName}`, FileReadType.Json);
 
       // get motion files
-      const motionKeys = Object.keys(metadata.motions);
-      const motions = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, metadata.motions[key])));
+      const motionKeys = Object.keys(animation.motions);
+      const motions = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, animation.motions[key])));
       this.motions = reduceKeys(motionKeys, (key, index) => motions[index]);
-
+      
       // get model file
-      this.modelData = await this.fileService.get(`${assetPath}/${metadata.model}`, FileReadType.ByteArray);
+      this.modelData = await this.fileService.get(`${assetPath}/${animation.model}`, FileReadType.ByteArray);
 
       // get textures files
       const textures = await Promise.all(
-        metadata.textures.map(texture => this.fileService.get(`${assetPath}/${texture}`, FileReadType.Base64))
+        animation.textures.map(texture => this.fileService.get(`${assetPath}/${texture}`, FileReadType.Base64))
       );
-      this.textures = metadata.textures.map((name, index) => ({ name, url: textures[index] }));
+      this.textures = animation.textures.map((name, index) => ({ name, url: textures[index] }));
 
       this.live2DService.loadTextureImages(this.textures, images => {
         const motionManager = this.live2DService.createMotionManager();
@@ -83,19 +83,28 @@ export class CharacterSink {
         };
       });
 
-      const info = this.metadataSink.characters[id];
+      const metadata = this.metadataSink.characters[id];
 
-      if (info.modeltype === CharacterModelType.Live2D) {
-        this.position = {
-          scale: info.home.scale * 1.25,
-          x: this.convertPosition(info.home.position.x, 100),
-          y: this.convertPosition(info.home.position.y, -200)
-        };
+      if (metadata.modeltype === CharacterModelType.Live2D) {
+        if (metadata.home) {
+          this.position = {
+            scale: metadata.home.scale * 1.25,
+            x: this.convertPosition(metadata.home.position.x, 100),
+            y: this.convertPosition(metadata.home.position.y, -200)
+          };
+        } else {
+          this.position = {
+            scale: metadata.scale! * 1.25,
+            x: this.convertPosition(metadata.position!.x, 100),
+            y: this.convertPosition(metadata.position!.y, -300)
+          };
+        }
       }
 
       return this.characterModifySink.data;
     } catch (ex) {
       this.reset();
+      console.warn(ex);
     }
   }
 

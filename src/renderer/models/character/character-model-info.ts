@@ -32,6 +32,10 @@ export interface CharacterLive2DInfo extends CharacterPositionInfo {
   modeltype: CharacterModelType.Live2D | CharacterModelType.MMD;
   selectRect: Array<SelectRect>;
   contents?: CharacterContentInfo;
+  position?: BasePosition;
+  wavePosition?: BasePosition;
+  scale?: number;
+  waveScale?: number;
 }
 
 export interface CharacterPNGInfo {

@@ -55,7 +55,9 @@ export const Character: React.FunctionComponent = () => {
   return (
     (ready && (
       <div className={styles.container}>
-        <Button onClick={() => (character.animation = !character.animation)}>Play</Button>
+        <Button onClick={() => (character.animation = !character.animation)}>
+          { character.animation ? 'Pause': 'Resume' }
+        </Button>
         <div className={styles.canvas}>
           <Live2DCanvas
             modelData={components.data!}

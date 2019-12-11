@@ -15,63 +15,58 @@ export interface Live2DViewer2Props {
   onDraw?: (model: Live2DModel) => void;
 }
 
-export class Live2DCanvas extends React.PureComponent<Live2DViewer2Props> {
-  private canvasRef = React.createRef<HTMLCanvasElement>();
-  private requireId?: number;
+export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
+  className, modelData, updaters, textures, position, size, play, onClick, onDraw
+}) => {
+  const canvas = React.useRef<HTMLCanvasElement>(null);
+  const tick = React.useRef<() => void>();
+  const requireId = React.useRef<number>();
+  const status = React.useRef<{ position: Position, size: number }>();
 
-  private tick?: () => void;
+  const startAnimation = React.useCallback(() => {
+    if (tick.current) {
+      tick.current();
+      requireId.current = requestAnimationFrame(startAnimation);
+    }
+  }, [])
 
-  public componentDidMount() {
-    const canvas = this.canvasRef.current!;
-    const { updaters, modelData, textures, onDraw } = this.props;
-    const draw = createDraw(canvas, modelData, textures, updaters, onDraw);
+  const stopAnimation = React.useCallback(() => {
+    if (requireId.current) {
+      cancelAnimationFrame(requireId.current);
+      requireId.current = undefined;
+    }
+  }, []);
 
-    this.tick = () => {
-      draw(this.props.size, this.props.position);
+  React.useEffect(() => {
+    status.current = { size, position };
+  }, [size, position])
+
+  React.useEffect(() => {
+    const draw = createDraw(canvas.current!, modelData, textures, updaters, onDraw);
+    tick.current = () => {
+      if (status.current) {
+        draw(status.current.size, status.current.position);
+      }
     };
-
-    if (this.props.play) {
-      this.startAnimation();
+    if (play) {
+      startAnimation();
     }
-  }
-
-  public componentWillUnmount() {
-    this.stopAnimation();
-    Live2D.dispose();
-  }
-
-  public componentDidUpdate() {
-    if (!this.props.play) {
-      this.stopAnimation();
+    return () => {
+      stopAnimation();
+      Live2D.dispose();
     }
-    if (this.props.play && !this.requireId) {
-      this.startAnimation();
-    }
-  }
+  }, []);
 
-  startAnimation = () => {
-    if (this.tick) {
-      this.tick();
-      this.requireId = requestAnimationFrame(this.startAnimation);
+  React.useEffect(() => {
+    if (!play) {
+      stopAnimation();
     }
-  };
-
-  stopAnimation = () => {
-    if (this.requireId) {
-      cancelAnimationFrame(this.requireId);
-      this.requireId = undefined;
+    if (play && !requireId.current) {
+      startAnimation();
     }
-  };
+  },[ play ])
 
-  public render() {
-    return (
-      <canvas
-        className={this.props.className}
-        ref={this.canvasRef}
-        onClick={this.props.onClick}
-        width={this.props.size}
-        height={this.props.size}
-      />
-    );
-  }
+  return (
+    <canvas className={className} ref={canvas} onClick={onClick} width={size} height={size} />
+  );
 }
