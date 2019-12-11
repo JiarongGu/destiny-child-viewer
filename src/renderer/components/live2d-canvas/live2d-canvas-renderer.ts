@@ -1,4 +1,4 @@
-import { Position } from '@models/position';
+import { BasePosition } from '@models/position';
 
 export function createDraw(
   canvas: HTMLCanvasElement,
@@ -23,18 +23,20 @@ export function createDraw(
   });
   model.setGL(context);
 
-  return (position: Position) => {
+  return (viewPortSize: number, position: BasePosition, scale: number) => {
+    context.viewport(0, 0, viewPortSize, viewPortSize);
     if (onDraw) {
       onDraw(model);
     }
-    drawCanvas(context, model, position, updaters);
+    drawCanvas(context, model, position, scale, updaters);
   };
 }
 
 export function drawCanvas(
   context: WebGLRenderer,
   model: Live2DModel,
-  position: Position,
+  position: BasePosition,
+  scale: number,
   updaters: Array<L2DUpdateParam>
 ) {
   // clear canvas
@@ -45,7 +47,7 @@ export function drawCanvas(
   const width = model.getCanvasWidth();
   const modelMatrix = new L2DModelMatrix(width, height);
 
-  modelMatrix.setWidth(position.scale);
+  modelMatrix.setWidth(scale);
   modelMatrix.setCenterPosition(position.x, position.y);
   model.setMatrix(modelMatrix.getArray());
 

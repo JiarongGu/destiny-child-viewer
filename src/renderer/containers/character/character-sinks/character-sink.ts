@@ -1,4 +1,4 @@
-import { sink, effect, state } from 'redux-sink';
+import { sink, effect, state, trigger } from 'redux-sink';
 
 import { CharacterModel } from '@models/character/character-model';
 import { Position } from '@models/position';
@@ -22,6 +22,7 @@ export class CharacterSink {
     data: ArrayBuffer;
   };
   @state public position?: Position;
+  @state public animation: boolean = true;
 
   modelData?: ArrayBuffer;
   motions: MotionDataCollection = {};
@@ -42,6 +43,7 @@ export class CharacterSink {
 
     this.live2DComponents = undefined;
     this.position = undefined;
+    this.animation = true;
   }
 
   @effect
