@@ -1,8 +1,4 @@
-export enum MotionType {
-  Attack = 'attack',
-  Hit = 'hit',
-  Idle = 'idle'
-}
+import { MotionType } from './motion-type.enum';
 
 export interface MotionModel {
   file: string;

@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 import * as styles from './app.module.less';
 
 import { NavigationSink } from '@sinks/navigation/navigation-sink';
-import { GameDataSink } from '@sinks/game-data/game-data-sink';
+import { MetadataSink } from '@sinks/metadata/metadata-sink';
 import { RouteContent } from '@components/route-content';
 import { SideMenu } from '@containers/side-menu';
 
 export const App: React.FunctionComponent = () => {
   const navigation = useSink(NavigationSink);
-  const gameData = useSink(GameDataSink);
+  const metadata = useSink(MetadataSink);
 
   React.useEffect(() => {
-    gameData.load();
+    metadata.load();
   }, []);
 
   const routeKeys = navigation.activeRoute && navigation.activeRoute.keys;

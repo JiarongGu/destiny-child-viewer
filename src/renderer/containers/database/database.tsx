@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export const GameData = () => {
+export const Database = () => {
   return <div>Game Data</div>;
 };

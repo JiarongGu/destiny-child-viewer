@@ -1,64 +1,51 @@
 import * as React from 'react';
 
-import { drawCanvas, getTexture, getRendererContext } from './live2d-canvas-renderer';
+import { createDraw } from './live2d-canvas-renderer';
 import { Position } from '@models/position';
 
 export interface Live2DViewer2Props {
-  model: ArrayBuffer;
-  textures: Array<HTMLImageElement>;
-  motion: Live2DMotion;
-  motionManager: L2DMotionManager;
   className?: string;
+  modelData: ArrayBuffer;
+  updaters?: Array<L2DUpdateParam>;
+  textures: Array<HTMLImageElement>;
   position: Position;
+  height: number;
+  width: number;
   onClick?: () => void;
+  onDraw?: (model: Live2DModel) => void;
 }
 
 export class Live2DCanvas extends React.Component<Live2DViewer2Props> {
   private canvasRef = React.createRef<HTMLCanvasElement>();
   private requireId?: number;
-  private close: boolean = false;
 
   public componentDidMount() {
     const canvas = this.canvasRef.current!;
-    const context = getRendererContext(canvas)!;
-
-    Live2D.init();
-    Live2D.setGL(context);
-
-    const model = Live2DModelWebGL.loadModel(this.props.model);
-    const { motion, motionManager } = this.props;
-
-    // initialize texture
-    this.props.textures.forEach((texture, index) => {
-      const webTexture = getTexture(context, texture, model);
-      if (webTexture) {
-        model.setTexture(index, webTexture);
-      }
-    });
-    model.setGL(context);
-
+    const { updaters, modelData, textures, onDraw } = this.props;
+    const draw = createDraw(canvas, modelData, textures, updaters, onDraw);
     const tick = () => {
-      if (!this.close) {
-        drawCanvas(context, model, motionManager, motion, this.props.position);
-        this.requireId = requestAnimationFrame(tick);
-      }
+      draw(this.props.position);
+      this.requireId = requestAnimationFrame(tick);
     };
     tick();
   }
 
   public componentWillUnmount() {
     Live2D.dispose();
-    this.close = true;
+    if (this.requireId) {
+      cancelAnimationFrame(this.requireId);
+    }
   }
 
   public render() {
+    const { height, width } = this.props;
     return (
       <canvas
         className={this.props.className}
         ref={this.canvasRef}
         onClick={this.props.onClick}
-        width={800}
-        height={800}
+        width={width}
+        height={height}
       />
     );
   }

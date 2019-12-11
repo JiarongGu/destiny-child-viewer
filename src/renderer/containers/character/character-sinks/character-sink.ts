@@ -1,44 +1,47 @@
-import { sink, effect, state, trigger } from 'redux-sink';
+import { sink, effect, state } from 'redux-sink';
 
 import { CharacterModel } from '@models/character/character-model';
 import { Position } from '@models/position';
 import { MotionData, Live2DMotionCollection, MotionModel, MotionDataCollection } from '@models/live2d/motion-model';
 import { TextureModel } from '@models/live2d/texture-model';
 
-import { GameDataSink } from '@sinks/game-data/game-data-sink';
+import { MetadataSink } from '@sinks/metadata/metadata-sink';
 import { FileService, FileReadType } from '@services/file/file-service';
 import { Live2DService } from '@services/live2d/live2d-service';
 import { CharacterModifySink } from './character-modify-sink';
 import { reduceKeys } from '@utils/reduceKeys';
 import { CharacterModelType } from '@models/character/character-model-info';
-import { ChildrenDataService } from '@services/data/children-data-service';
 
-@sink('character', new FileService(), new Live2DService(), GameDataSink, CharacterModifySink)
+@sink('character', new FileService(), new Live2DService(), MetadataSink, CharacterModifySink)
 export class CharacterSink {
-  @state public modelData?: ArrayBuffer;
-  @state public motions: MotionDataCollection = {};
-  @state public textures: Array<TextureModel> = [];
   @state public live2DComponents?: {
+    motionManager: L2DMotionManager;
     motions: Live2DMotionCollection;
     textures: Array<HTMLImageElement>;
+    updaters: Array<L2DUpdateParam>;
+    data: ArrayBuffer;
   };
-  @state public texturesLoaded: boolean = false;
   @state public position?: Position;
+
+  modelData?: ArrayBuffer;
+  motions: MotionDataCollection = {};
+  textures: Array<TextureModel> = [];
 
   constructor(
     private fileService: FileService,
     private live2DService: Live2DService,
-    private gameDataSink: GameDataSink,
+    private metadataSink: MetadataSink,
     private characterModifySink: CharacterModifySink
   ) {}
 
   @effect
   public reset() {
     this.modelData = undefined;
-    this.live2DComponents = undefined;
     this.motions = {};
     this.textures = [];
-    this.texturesLoaded = false;
+
+    this.live2DComponents = undefined;
+    this.position = undefined;
   }
 
   @effect
@@ -66,12 +69,19 @@ export class CharacterSink {
       );
       this.textures = metadata.textures.map((name, index) => ({ name, url: textures[index] }));
 
-      this.live2DComponents = {
-        textures: this.live2DService.loadTextureImages(this.textures, () => (this.texturesLoaded = true)),
-        motions: this.live2DService.loadLive2DMotions(this.motions)
-      };
+      this.live2DService.loadTextureImages(this.textures, images => {
+        const motionManager = this.live2DService.createMotionManager();
 
-      const info = this.gameDataSink.characters[id];
+        this.live2DComponents = {
+          motionManager,
+          textures: images,
+          motions: this.live2DService.loadLive2DMotions(this.motions),
+          data: this.modelData!,
+          updaters: [motionManager]
+        };
+      });
+
+      const info = this.metadataSink.characters[id];
 
       if (info.modeltype === CharacterModelType.Live2D) {
         this.position = {

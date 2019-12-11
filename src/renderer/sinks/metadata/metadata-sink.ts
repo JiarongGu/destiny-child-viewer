@@ -1,14 +1,15 @@
+import { PathService } from './../../services/file/path-service';
 import { sink, effect, state } from 'redux-sink';
 
 import { FileService, FileReadType } from '@services/file/file-service';
 import { CharacterModelInfoCollection } from '@models/character/character-model-info';
 
-@sink('gameData', new FileService())
-export class GameDataSink {
+@sink('metadata', new FileService(), new PathService())
+export class MetadataSink {
   @state public characters: CharacterModelInfoCollection = {};
   @state public characterIndexes: Array<string> = [];
 
-  constructor(private fileService: FileService) {}
+  constructor(private fileService: FileService, private pathService: PathService) {}
 
   @effect
   public async load() {

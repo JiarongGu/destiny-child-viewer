@@ -7,18 +7,18 @@ import { ChildData } from '@models/data/child-data';
 import { ChildDataModel } from '@models/data/child-data-model';
 import { ChildDataAdditional } from '@models/data/child-data-additional';
 
-export class ChildrenDataService {
-  public _childrenDataPath: string;
-  public _childrenAdditionalDataPath: string;
-  public _childrenData: lowdb.LowdbSync<string>;
-  public _childrenAdditionalData: lowdb.LowdbSync<any>;
+export class ChildDataService {
+  public _childDataPath: string;
+  public _childAdditionalDataPath: string;
+  public _childData: lowdb.LowdbSync<string>;
+  public _childAdditionalData: lowdb.LowdbSync<any>;
 
   constructor() {
     const dataPath = new PathService().dataPath;
-    this._childrenDataPath = path.resolve(dataPath, 'children.json');
-    this._childrenAdditionalDataPath = path.resolve(dataPath, 'children-additional.json');
-    this._childrenData = lowdb(new FileSync(this._childrenDataPath));
-    this._childrenAdditionalData = lowdb(new FileSync(this._childrenAdditionalDataPath));
+    this._childDataPath = path.resolve(dataPath, 'child.json');
+    this._childAdditionalDataPath = path.resolve(dataPath, 'child-additional.json');
+    this._childData = lowdb(new FileSync(this._childDataPath));
+    this._childAdditionalData = lowdb(new FileSync(this._childAdditionalDataPath));
   }
 
   public get(id: string): ChildDataModel {
@@ -26,8 +26,8 @@ export class ChildrenDataService {
     const c_id = ids[0];
     const v_id = ids[1];
 
-    const originalData = this._childrenData.get(c_id).value() as ChildData;
-    const additional = this._childrenAdditionalData.get(c_id).value() as ChildDataAdditional;
+    const originalData = this._childData.get(c_id).value() as ChildData;
+    const additional = this._childAdditionalData.get(c_id).value() as ChildDataAdditional;
     const data = Object.assign({}, originalData, additional);
     const variant = data.variants[v_id];
 

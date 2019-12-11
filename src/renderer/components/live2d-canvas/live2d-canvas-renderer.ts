@@ -1,11 +1,41 @@
 import { Position } from '@models/position';
 
+export function createDraw(
+  canvas: HTMLCanvasElement,
+  modelData: ArrayBuffer,
+  textures: Array<HTMLImageElement>,
+  updaters: Array<L2DUpdateParam> = [],
+  onDraw?: (model: Live2DModel) => void
+) {
+  const context = getRendererContext(canvas)!;
+
+  Live2D.init();
+  Live2D.setGL(context);
+
+  const model = Live2DModelWebGL.loadModel(modelData);
+
+  // initialize texture
+  textures.forEach((texture, index) => {
+    const webTexture = getTexture(context, texture, model);
+    if (webTexture) {
+      model.setTexture(index, webTexture);
+    }
+  });
+  model.setGL(context);
+
+  return (position: Position) => {
+    if (onDraw) {
+      onDraw(model);
+    }
+    drawCanvas(context, model, position, updaters);
+  };
+}
+
 export function drawCanvas(
   context: WebGLRenderer,
   model: Live2DModel,
-  motionManager: L2DMotionManager,
-  motionDefault: Live2DMotion,
-  position: Position
+  position: Position,
+  updaters: Array<L2DUpdateParam>
 ) {
   // clear canvas
   context.clearColor(0.0, 0.0, 0.0, 0.0);
@@ -19,11 +49,7 @@ export function drawCanvas(
   modelMatrix.setCenterPosition(position.x, position.y);
   model.setMatrix(modelMatrix.getArray());
 
-  // start idle animation
-  if (motionManager.isFinished()) {
-    motionManager.startMotion(motionDefault);
-  }
-  motionManager.updateParam(model);
+  updaters.forEach(updater => updater.updateParam(model));
 
   // update and draw model
   model.update();

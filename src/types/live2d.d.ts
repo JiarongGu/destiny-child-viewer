@@ -20,12 +20,6 @@ declare module 'global' {
       public static loadModel(model: any): Live2DModel;
     }
 
-    export class L2DMotionManager {
-      public updateParam(live2DModel: Live2DModel): void;
-      public isFinished(): boolean;
-      public startMotion(motion: Live2DMotion): void;
-    }
-
     export class Live2DModel {
       public static loadModel(model: ArrayBuffer);
       public isPremultipliedAlpha(): boolean;
@@ -36,6 +30,22 @@ declare module 'global' {
       public setMatrix(matrix: Array<number>);
       public update(): void;
       public draw(): void;
+    }
+
+    export class L2DMotionManager implements L2DUpdateParam {
+      public isFinished(): boolean;
+      public startMotion(motion: Live2DMotion): void;
+      public updateParam(live2DModel: Live2DModel): void;
+    }
+
+    export class L2DPhysics implements L2DUpdateParam {
+      public static load(buf: ArrayBuffer): L2DPhysics;
+      public static loadJson(json: any): L2DPhysics;
+      public updateParam(model: Live2DModel): void;
+    }
+
+    export interface L2DUpdateParam {
+      updateParam(model: Live2DModel): void;
     }
 
     export class Live2DMotion {

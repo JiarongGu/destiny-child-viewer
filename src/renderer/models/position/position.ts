@@ -16,4 +16,5 @@ export interface Position extends BasePosition {
   x: number;
   y: number;
   scale: number;
+  refined?: boolean;
 }

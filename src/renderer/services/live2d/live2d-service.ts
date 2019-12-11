@@ -2,7 +2,10 @@ import { reduceKeys } from '@utils/reduceKeys';
 import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d/motion-model';
 
 export class Live2DService {
-  public loadTextureImages(textures: Array<{ name: string; url: string }>, callback: () => void) {
+  public loadTextureImages(
+    textures: Array<{ name: string; url: string }>,
+    callback: (images: Array<HTMLImageElement>) => void
+  ) {
     let loadedCount = 0;
     const images = textures.map(texture => {
       const image = new Image();
@@ -11,7 +14,7 @@ export class Live2DService {
         loadedCount++;
         if (loadedCount === textures.length) {
           // completed
-          callback();
+          callback(images);
         }
       };
       image.onerror = function() {
@@ -27,6 +30,10 @@ export class Live2DService {
     motion._$eo = fadeIn;
     motion._$dP = fadeOut;
     return motion;
+  }
+
+  public createMotionManager() {
+    return new L2DMotionManager();
   }
 
   public loadLive2DMotions(motions: MotionDataCollection): Live2DMotionCollection {
