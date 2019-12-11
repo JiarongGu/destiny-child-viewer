@@ -61,7 +61,6 @@ export const Character: React.FunctionComponent = () => {
             modelData={components.data!}
             textures={components.textures}
             position={position}
-            scale={(position.scale * canvasSize) / 480}
             updaters={components.updaters}
             onClick={onCanvasClick}
             onDraw={onCanvasDraw}

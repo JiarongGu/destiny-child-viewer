@@ -1,15 +1,14 @@
 import * as React from 'react';
 
 import { createDraw } from './live2d-canvas-renderer';
-import { BasePosition } from '@models/position';
+import { Position } from '@models/position';
 
 export interface Live2DViewer2Props {
   className?: string;
   modelData: ArrayBuffer;
   updaters?: Array<L2DUpdateParam>;
   textures: Array<HTMLImageElement>;
-  position: BasePosition;
-  scale: number;
+  position: Position;
   size: number;
   play: boolean;
   onClick?: () => void;
@@ -19,8 +18,7 @@ export interface Live2DViewer2Props {
 export class Live2DCanvas extends React.PureComponent<Live2DViewer2Props> {
   private canvasRef = React.createRef<HTMLCanvasElement>();
   private requireId?: number;
-  private position!: BasePosition;
-  private scale!: number;
+  private position!: Position;
   private size!: number;
 
   private tick?: () => void;
@@ -32,7 +30,7 @@ export class Live2DCanvas extends React.PureComponent<Live2DViewer2Props> {
 
     this.updateStatus();
     this.tick = () => {
-      draw(this.size, this.position, this.scale);
+      draw(this.size, this.position);
     };
 
     if (this.props.play) {
@@ -58,7 +56,6 @@ export class Live2DCanvas extends React.PureComponent<Live2DViewer2Props> {
 
   updateStatus = () => {
     this.position = this.props.position;
-    this.scale = this.props.scale;
     this.size = this.props.size;
   };
 

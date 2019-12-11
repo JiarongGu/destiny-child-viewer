@@ -87,7 +87,7 @@ export class CharacterSink {
 
       if (info.modeltype === CharacterModelType.Live2D) {
         this.position = {
-          scale: info.home.scale,
+          scale: info.home.scale * 1.25,
           x: this.convertPosition(info.home.position.x, 100),
           y: this.convertPosition(info.home.position.y, -200)
         };
