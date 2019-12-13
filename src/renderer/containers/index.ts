@@ -1,2 +1,2 @@
-export { characterRoute } from './character/character-route';
-export { databaseRoute } from './database/database-route';
+export { characterRoute } from './character/character.route';
+export { databaseRoute } from './database/database.route';

@@ -1,12 +1,14 @@
-import { RouteModel } from '@models/navigation/route-model';
+import { RouteModel } from '@models/route';
 import { Character } from './character';
 
 export const characterRoute: RouteModel = {
   key: 'character',
-  name: 'Character',
-  icon: 'user',
-  link: '/character',
-  props: {
+  link: {
+    name: 'Character',
+    icon: 'user',
+    url: '/character',
+  },
+  config: {
     path: '/character',
     component: Character
   }

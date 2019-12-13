@@ -6,7 +6,7 @@ import { SinkFactory } from 'redux-sink';
 import { Router } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { App } from './app';
+import { App } from './containers/app/app';
 import { createNavigationHistory } from '@sinks/navigation/navigation-sink';
 import { loadWindowSink } from '@sinks/window/window-sink';
 import { characterRoute, databaseRoute } from '@containers';

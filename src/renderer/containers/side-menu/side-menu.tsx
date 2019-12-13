@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Layout } from 'antd';
 import { useSink } from 'redux-sink';
 
-import * as styles from './side-menu.module.less';
+import * as styles from './side-menu.module.scss';
 import { SideMenuSink } from '@sinks/side-menu/side-menu-sink';
 
 export const SideMenu: React.FunctionComponent = () => {

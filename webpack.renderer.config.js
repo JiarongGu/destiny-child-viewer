@@ -14,8 +14,8 @@ const appResources = path.resolve(__dirname, './resources');
 
 const outDir = path.resolve(__dirname, './dist');
 
-const lessRegex = /\.(less)$/;
-const lessModuleRegex = /\.module\.(less)$/;
+const sassRegex = /\.s[ac]ss$/i;
+const sassModuleRegex = /\.module\.s[ac]ss$/i;
 
 module.exports = merge.smart(baseConfig, {
   target: 'electron-renderer',
@@ -42,7 +42,7 @@ module.exports = merge.smart(baseConfig, {
         exclude: /node_modules/
       },
       {
-        test: lessRegex,
+        test: sassRegex,
         loaders: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -50,16 +50,19 @@ module.exports = merge.smart(baseConfig, {
           'css-hot-loader',
           'css-loader',
           {
-            loader: 'less-loader',
+            loader: 'sass-loader',
             options: {
-              javascriptEnabled: true
+              implementation: require('sass'),
+              sassOptions: {
+                includePaths: ['./src/styles'],
+              },
             }
           }
         ],
-        exclude: lessModuleRegex
+        exclude: sassModuleRegex
       },
       {
-        test: lessModuleRegex,
+        test: sassModuleRegex,
         loaders: [
           'css-hot-loader',
           'style-loader',
@@ -76,9 +79,12 @@ module.exports = merge.smart(baseConfig, {
             }
           },
           {
-            loader: 'less-loader',
+            loader: 'sass-loader',
             options: {
-              javascriptEnabled: true
+              implementation: require('sass'),
+              sassOptions: {
+                includePaths: ['./src/styles'],
+              },
             }
           }
         ]

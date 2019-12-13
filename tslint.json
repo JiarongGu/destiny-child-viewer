@@ -22,7 +22,8 @@
     "prefer-array-literal": false,
     "no-parameter-reassignment": false,
     "no-increment-decrement": false,
-    "array-type": [true, "generic"]
+    "array-type": [true, "generic"],
+    "function-name": false
   },
   "rulesDirectory": []
 }

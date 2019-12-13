@@ -1,10 +1,10 @@
 import { RouteProps } from 'react-router';
 
+import { RouteLinkModel } from './route-link-model';
+
 export interface RouteModel {
-  name?: string;
   key: string;
-  props: RouteProps;
-  link?: string;
-  icon?: string;
+  link?: RouteLinkModel;
+  config: RouteProps;
   routes?: Array<RouteModel>;
 }

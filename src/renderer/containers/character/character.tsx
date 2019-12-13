@@ -8,7 +8,7 @@ import { WindowSink } from '@sinks/window/window-sink';
 
 import { CharacterSink } from './character-sinks/character-sink';
 import { CharacterSideMenu } from './character-side-menu';
-import * as styles from './character.module.less';
+import * as styles from './character.module.scss';
 
 export const Character: React.FunctionComponent = () => {
   const character = useSink(CharacterSink);

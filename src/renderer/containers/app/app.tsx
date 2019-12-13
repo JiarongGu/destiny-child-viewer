@@ -1,10 +1,9 @@
 import { Icon, Layout, Menu, PageHeader } from 'antd';
-import * as classNames from 'classnames';
 import * as React from 'react';
 import { useSink } from 'redux-sink';
 import { Link } from 'react-router-dom';
 
-import * as styles from './app.module.less';
+import * as styles from './app.module.scss';
 
 import { NavigationSink } from '@sinks/navigation/navigation-sink';
 import { MetadataSink } from '@sinks/metadata/metadata-sink';
@@ -26,19 +25,20 @@ export const App: React.FunctionComponent = () => {
     <Layout className={styles.layout}>
       <Layout.Sider collapsible={true} collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
         <Menu theme={'dark'} mode={'inline'} selectedKeys={routeKeys}>
-          {navigation.routes.map(route => {
-            const name = route.name || route.key;
-            return (
-              <Menu.Item key={route.key} title={name}>
-                {route.link && (
-                  <Link to={route.link}>
-                    {route.icon && <Icon type={route.icon} />}
+          {navigation.routes
+            .filter(route => route.link)
+            .map(route => {
+              const link = route.link!;
+              const name = link.name || route.key;
+              return (
+                <Menu.Item key={route.key} title={name}>
+                  <Link to={link.url}>
+                    {link.icon && <Icon type={link.icon} />}
                     {!collapsed && name}
                   </Link>
-                )}
-              </Menu.Item>
-            );
-          })}
+                </Menu.Item>
+              );
+            })}
         </Menu>
       </Layout.Sider>
 

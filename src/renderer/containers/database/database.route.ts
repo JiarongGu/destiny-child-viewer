@@ -1,12 +1,14 @@
-import { RouteModel } from '@models/navigation/route-model';
+import { RouteModel } from '@models/route';
 import { Database } from './database';
 
 export const databaseRoute: RouteModel = {
   key: 'database',
-  name: 'Database',
-  icon: 'database',
-  link: '/database',
-  props: {
+  link: {
+    name: 'Database',
+    icon: 'database',
+    url: '/database',
+  },
+  config: {
     path: '/database',
     component: Database
   }
