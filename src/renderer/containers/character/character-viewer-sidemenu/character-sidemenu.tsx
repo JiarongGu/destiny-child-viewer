@@ -3,11 +3,11 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 
 import { MetadataSink } from '@sinks/metadata/metadata-sink';
-import { CharacterSink } from './character-sinks/character-sink';
-import { CharacterModifySink } from './character-sinks/character-modify-sink';
+import { CharacterSink } from '../character-sinks/character-sink';
+import { CharacterModifySink } from '../character-sinks/character-modify-sink';
 
 export const CharacterSideMenu = () => {
-  const metadata = useSink(MetadataSink, false);
+  const metadata = useSink(MetadataSink);
   const characterSink = useSink(CharacterSink, false);
   const characterModifySink = useSink(CharacterModifySink, false);
 

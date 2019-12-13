@@ -154,6 +154,6 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
-    "redux-sink": "^0.13.6"
+    "redux-sink": "^0.14.3"
   }
 }

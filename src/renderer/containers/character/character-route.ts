@@ -1,5 +1,5 @@
 import { RouteModel } from '@models/route';
-import { Character } from './character';
+import { CharacterViewer } from './character-viewer/character-viewer';
 
 export const characterRoute: RouteModel = {
   key: 'character',
@@ -10,6 +10,6 @@ export const characterRoute: RouteModel = {
   },
   config: {
     path: '/character',
-    component: Character
+    component: CharacterViewer
   }
 };

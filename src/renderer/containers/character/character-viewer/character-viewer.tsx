@@ -6,11 +6,11 @@ import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
 import { SideMenuSink } from '@sinks/side-menu/side-menu-sink';
 import { WindowSink } from '@sinks/window/window-sink';
 
-import { CharacterSink } from './character-sinks/character-sink';
-import { CharacterSideMenu } from './character-side-menu';
-import * as styles from './character.module.scss';
+import { CharacterSink } from '../character-sinks/character-sink';
+import { CharacterSideMenu } from '../character-viewer-sidemenu/character-sidemenu';
+import * as styles from './character-viewer.module.scss';
 
-export const Character: React.FunctionComponent = () => {
+export const CharacterViewer: React.FunctionComponent = () => {
   const character = useSink(CharacterSink);
   const window = useSink(WindowSink);
 
@@ -56,7 +56,7 @@ export const Character: React.FunctionComponent = () => {
     (ready && (
       <div className={styles.container}>
         <Button onClick={() => (character.animation = !character.animation)}>
-          { character.animation ? 'Pause': 'Resume' }
+          {character.animation ? 'Pause' : 'Resume'}
         </Button>
         <div className={styles.canvas}>
           <Live2DCanvas

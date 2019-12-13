@@ -11,7 +11,7 @@ export class NavigationSink {
   @state public activeRoute!: ActiveRoute;
 
   @state public routes: Array<RouteModel> = [];
-
+  
   @effect
   public addRoute(route: RouteModel) {
     this.routes.push(route);
@@ -74,19 +74,19 @@ export class NavigationSink {
       }
     }
   }
+
+  static createHistory = (routes?: Array<RouteModel>) => {
+    const history = createBrowserHistory();
+    const navigation = SinkFactory.getSink(NavigationSink);
+  
+    if (routes) {
+      navigation.addRoutes(routes);
+    }
+  
+    history.listen(location => (navigation.location = location));
+    navigation.history = history;
+    navigation.location = history.location;
+  
+    return history;
+  };
 }
-
-export const createNavigationHistory = (routes?: Array<RouteModel>) => {
-  const history = createBrowserHistory();
-  const navigation = SinkFactory.getSink(NavigationSink);
-
-  if (routes) {
-    navigation.addRoutes(routes);
-  }
-
-  history.listen(location => (navigation.location = location));
-  navigation.history = history;
-  navigation.location = history.location;
-
-  return history;
-};

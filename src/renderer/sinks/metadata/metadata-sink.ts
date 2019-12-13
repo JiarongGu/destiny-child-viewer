@@ -1,5 +1,5 @@
 import { PathService } from './../../services/file/path-service';
-import { sink, effect, state } from 'redux-sink';
+import { sink, effect, state, SinkFactory } from 'redux-sink';
 
 import { FileService, FileReadType } from '@services/file/file-service';
 import { CharacterModelInfoCollection } from '@models/character/character-model-info';
@@ -11,9 +11,9 @@ export class MetadataSink {
 
   constructor(private fileService: FileService, private pathService: PathService) {}
 
-  @effect
-  public async load() {
-    await this.loadCharacterInfo();
+  public static async load() {
+    const sink = SinkFactory.getSink(MetadataSink);
+    await sink.loadCharacterInfo();
   }
 
   private async loadCharacterInfo() {

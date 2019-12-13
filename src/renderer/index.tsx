@@ -6,10 +6,8 @@ import { SinkFactory } from 'redux-sink';
 import { Router } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { App } from './containers/app/app';
-import { createNavigationHistory } from '@sinks/navigation/navigation-sink';
-import { loadWindowSink } from '@sinks/window/window-sink';
-import { characterRoute, databaseRoute } from '@containers';
+import { App, characterRoute, databaseRoute, settingRoute } from '@containers';
+import { WindowSink, NavigationSink, MetadataSink } from '@sinks';
 
 import 'antd/dist/antd.css';
 
@@ -18,10 +16,15 @@ const store = SinkFactory.createStore({
   devToolOptions: { devToolCompose: composeWithDevTools }
 });
 
-const history = createNavigationHistory([characterRoute, databaseRoute]);
+// initialize sinks
+WindowSink.load(window);
+MetadataSink.load();
 
-// load sinks
-loadWindowSink(window);
+const history = NavigationSink.createHistory([
+  characterRoute, 
+  databaseRoute,
+  settingRoute
+]);
 
 ReactDOM.render(
   <AppContainer>
