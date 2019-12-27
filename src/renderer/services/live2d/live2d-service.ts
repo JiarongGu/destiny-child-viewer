@@ -1,28 +1,62 @@
+
 import { reduceKeys } from '@utils/reduceKeys';
+
+import { Live2DDataService } from '@services/data/live2d-data-service';
 import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d';
 
+export interface Live2DRenderComponents {
+  model: ArrayBuffer;
+  textures: Array<HTMLImageElement>;
+  updaters: Array<L2DUpdateParam>;
+  motions: Live2DMotionCollection;
+  motionManager: L2DMotionManager;
+}
+
 export class Live2DService {
-  public loadTextureImages(
-    textures: Array<{ name: string; url: string }>,
-    callback: (images: Array<HTMLImageElement>) => void
-  ) {
-    let loadedCount = 0;
-    const images = textures.map(texture => {
-      const image = new Image();
-      image.src = texture.url;
-      image.onload = function() {
-        loadedCount++;
-        if (loadedCount === textures.length) {
-          // completed
-          callback(images);
-        }
-      };
-      image.onerror = function() {
-        console.error(`Failed to load texture: ${texture.name}`);
-      };
-      return image;
-    });
-    return images;
+  private _live2DDataService: Live2DDataService;
+
+  constructor() {
+    this._live2DDataService = new Live2DDataService();
+  }
+
+  public async loadComponents(id: string) {
+    const data = await this._live2DDataService.getCharacterData(id);
+
+    if (data) {
+      const textures = await this.loadTextureImages(data.textures);
+      const motions = this.loadLive2DMotions(data.motions);
+      const motionManager = new L2DMotionManager();
+
+      return {
+        motionManager,
+        motions,
+        textures,
+        model: data.model,
+        updaters: [motionManager]
+      }
+    }
+  }
+
+  public loadTextureImages(textures: Array<{ name: string; url: string }>): Promise<Array<HTMLImageElement>> {
+    return new Promise((resolve, reject) => {
+      let loadedCount = 0;
+      const images = textures.map(texture => {
+        const image = new Image();
+        image.src = texture.url;
+        image.onload = function () {
+          loadedCount++;
+          if (loadedCount === textures.length) {
+            // completed
+            resolve(images);
+          }
+        };
+        image.onerror = function () {
+          reject(`Failed to load texture: ${texture.name}`);
+        };
+        return image;
+      });
+
+    })
   }
 
   public loadLive2DMotion(data: ArrayBuffer, fadeIn: number, fadeOut: number): Live2DMotion {
@@ -30,10 +64,6 @@ export class Live2DService {
     motion._$eo = fadeIn;
     motion._$dP = fadeOut;
     return motion;
-  }
-
-  public createMotionManager() {
-    return new L2DMotionManager();
   }
 
   public loadLive2DMotions(motions: MotionDataCollection): Live2DMotionCollection {

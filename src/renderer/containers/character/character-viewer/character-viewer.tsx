@@ -49,8 +49,8 @@ export const CharacterViewer: React.FunctionComponent = () => {
   return (
     (ready && (
       <div className={styles.container}>
-        <Button onClick={() => (character.animation = !character.animation)}>
-          {character.animation ? 'Pause' : 'Resume'}
+        <Button onClick={() => (character.play = !character.play)}>
+          {character.play ? 'Pause' : 'Resume'}
         </Button>
         <div className={styles.canvas}>
           <Live2DCanvas
@@ -60,7 +60,7 @@ export const CharacterViewer: React.FunctionComponent = () => {
             updaters={components.updaters}
             onClick={onCanvasClick}
             onDraw={onCanvasDraw}
-            play={character.animation}
+            play={character.play}
             size={canvasSize}
           />
         </div>
