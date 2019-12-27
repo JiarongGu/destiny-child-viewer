@@ -1,3 +1,4 @@
+import { PathService } from '@services/file/path-service';
 import { sink, effect, state, trigger } from 'redux-sink';
 
 import { CharacterModel } from '@models/character/character-model';
@@ -12,7 +13,13 @@ import { CharacterModifySink } from './character-modify-sink';
 import { reduceKeys } from '@utils/reduceKeys';
 import { CharacterModelType } from '@models/character/character-model-info';
 
-@sink('character-component', new FileService(), new Live2DService(), MetadataSink, CharacterModifySink)
+@sink('character-component',
+  new FileService(), 
+  new PathService(), 
+  new Live2DService(), 
+  MetadataSink, 
+  CharacterModifySink
+)
 export class CharacterSink {
   @state public live2DComponents?: {
     motionManager: L2DMotionManager;
@@ -30,6 +37,7 @@ export class CharacterSink {
 
   constructor(
     private fileService: FileService,
+    private pathService: PathService,
     private live2DService: Live2DService,
     private metadataSink: MetadataSink,
     private characterModifySink: CharacterModifySink
@@ -126,7 +134,7 @@ export class CharacterSink {
   }
 
   private getCharacterAssetPath(id: string) {
-    return `asset/character/${id}`;
+    return this.pathService.getAssetPath(`/character/${id}`);
   }
 
   private getCharacterMetaFileName(id: string) {

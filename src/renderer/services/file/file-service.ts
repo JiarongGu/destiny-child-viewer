@@ -1,5 +1,4 @@
 import * as fs from 'fs-extra';
-import * as path from 'path';
 
 import { PathService } from '@services/file/path-service';
 import { memorizeAsync } from '@decorators/memorize/memorizeAsync';
@@ -24,11 +23,10 @@ export class FileService {
   public async get(filePath: string, type: FileReadType.Text): Promise<string>;
   @memorizeAsync
   public async get(filePath: string, type: FileReadType) {
-    const resourcePath = this.getResourcePath(filePath);
     if (type === FileReadType.Json) {
-      return await fs.readJSON(resourcePath);
+      return await fs.readJSON(filePath);
     }
-    const file = await fs.readFile(resourcePath);
+    const file = await fs.readFile(filePath);
 
     if (type === FileReadType.Text) {
       return file.toString('utf-8');
@@ -62,20 +60,5 @@ export class FileService {
       reader.onload = () => resolve(reader.result as string);
       reader.onerror = error => reject(error);
     });
-  }
-
-  public getResourcePath(filePath: string) {
-    return path.join(this._pathService.resourcesPath, filePath);
-  }
-
-  public getAbsolutePath(relativePath: string): string {
-    return `${this._pathService.appPath}/${relativePath}`;
-  }
-
-  public getRelativePath(absolutePath: string): string {
-    if (absolutePath.indexOf(this._pathService.appPath) > -1) {
-      return absolutePath.substring(this._pathService.appPath.length + 1);
-    }
-    return absolutePath;
   }
 }

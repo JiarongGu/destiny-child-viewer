@@ -33,4 +33,23 @@ export class PathService {
   public get appPath() {
     return electron.remote.app.getAppPath();
   }
+
+  public getAssetPath(filePath: string) {
+    return path.join(this.assetPath, filePath);
+  }
+
+  public getResourcePath(filePath: string) {
+    return path.join(this.resourcesPath, filePath);
+  }
+
+  public getAbsolutePath(relativePath: string): string {
+    return `${this.appPath}/${relativePath}`;
+  }
+
+  public getRelativePath(absolutePath: string): string {
+    if (absolutePath.indexOf(this.appPath) > -1) {
+      return absolutePath.substring(this.appPath.length + 1);
+    }
+    return absolutePath;
+  }
 }

@@ -1,15 +1,14 @@
-import { PathService } from './../../services/file/path-service';
-import { sink, effect, state, SinkFactory } from 'redux-sink';
+import { sink, state, SinkFactory } from 'redux-sink';
 
-import { FileService, FileReadType } from '@services/file/file-service';
+import { MetadataService } from '@services/data/metadata-service';
 import { CharacterModelInfoCollection } from '@models/character/character-model-info';
 
-@sink('metadata', new FileService(), new PathService())
+@sink('metadata', new MetadataService())
 export class MetadataSink {
   @state public characters: CharacterModelInfoCollection = {};
   @state public characterIndexes: Array<string> = [];
 
-  constructor(private fileService: FileService, private pathService: PathService) {}
+  constructor(private _metadataService: MetadataService) { }
 
   public static async load() {
     const sink = SinkFactory.getSink(MetadataSink);
@@ -17,8 +16,7 @@ export class MetadataSink {
   }
 
   private async loadCharacterInfo() {
-    const path = `asset/character/model_info.json`;
-    this.characters = await this.fileService.get<CharacterModelInfoCollection>(path, FileReadType.Json);
+    this.characters = await this._metadataService.getCharacterMetadata();
     this.characterIndexes = Object.keys(this.characters).filter(key => key.startsWith('c'));
   }
 }
