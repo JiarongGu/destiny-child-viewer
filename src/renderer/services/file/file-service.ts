@@ -22,6 +22,7 @@ export class FileService {
   public async get(filePath: string, type: FileReadType.ByteArray): Promise<ArrayBuffer>;
   public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
   public async get(filePath: string, type: FileReadType.Text): Promise<string>;
+  @memorizeAsync
   public async get(filePath: string, type: FileReadType) {
     const resourcePath = this.getResourcePath(filePath);
     if (type === FileReadType.Json) {

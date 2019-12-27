@@ -1,0 +1,1 @@
+export * from './live2d-canvas/live2d-canvas';

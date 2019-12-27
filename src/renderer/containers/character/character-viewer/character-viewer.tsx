@@ -3,12 +3,12 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 
 import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
-import { SideMenuSink } from '@sinks/side-menu/side-menu-sink';
 import { WindowSink } from '@sinks/window/window-sink';
+import { useSideMenu } from '@sinks/sidemenu';
 
 import { CharacterSink } from '../character-sinks/character-sink';
 import { CharacterSideMenu } from '../character-viewer-sidemenu/character-sidemenu';
-import * as styles from './character-viewer.module.scss';
+import * as styles from './character-viewer.scss';
 
 export const CharacterViewer: React.FunctionComponent = () => {
   const character = useSink(CharacterSink);
@@ -18,13 +18,7 @@ export const CharacterViewer: React.FunctionComponent = () => {
   const position = character.position!;
   const ready = components && position;
 
-  React.useEffect(() => {
-    const sideMenu = useSink(SideMenuSink, false);
-    sideMenu.component = CharacterSideMenu;
-    return () => {
-      sideMenu.component = null;
-    };
-  }, []);
+  useSideMenu(CharacterSideMenu);
 
   const onCanvasDraw = React.useCallback(() => {
     const idleMotion = components && components.motions.idle![0];
@@ -39,9 +33,9 @@ export const CharacterViewer: React.FunctionComponent = () => {
     }
   }, [components]);
 
-  const onSliderChange = React.useCallback(value => (character.position = { ...position, scale: value / 100 }), [
-    character
-  ]);
+  const onSliderChange = React.useCallback(value => {
+    character.position = { ...position, scale: value / 100 };
+  },[character]);
 
   let canvasSize = 720;
   if (window.size) {
@@ -70,7 +64,7 @@ export const CharacterViewer: React.FunctionComponent = () => {
             size={canvasSize}
           />
         </div>
-        <Slider min={0} max={200} defaultValue={position!.scale * 100} onAfterChange={onSliderChange} />
+        <Slider min={0} max={200} defaultValue={position!.scale * 100} onChange={onSliderChange} />
       </div>
     )) ||
     null

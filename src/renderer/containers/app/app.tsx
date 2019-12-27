@@ -2,11 +2,11 @@ import { Layout, PageHeader } from 'antd';
 import * as React from 'react';
 import { useSink } from 'redux-sink';
 
-import * as styles from './app.module.scss';
+import * as styles from './app.scss';
 
 import { NavigationSink } from '@sinks';
 import { RouteContent } from '@components/route-content';
-import { SideMenu } from '@containers/side-menu';
+import { SideMenu } from '@containers/sidemenu';
 import { AppMenu } from './app-menu/app-menu';
 
 export const App: React.FunctionComponent = () => {

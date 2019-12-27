@@ -44,26 +44,6 @@ module.exports = merge.smart(baseConfig, {
       {
         test: sassRegex,
         loaders: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          'css-hot-loader',
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-              sassOptions: {
-                includePaths: ['./src/styles'],
-              },
-            }
-          }
-        ],
-        exclude: sassModuleRegex
-      },
-      {
-        test: sassModuleRegex,
-        loaders: [
           'css-hot-loader',
           'style-loader',
           'css-type-loader',

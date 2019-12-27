@@ -1,5 +1,7 @@
 import { RouteModel } from '@models/route';
-import { Database } from './database';
+import { DatabaseContainer } from './database-container/database-container';
+
+import { DatabaseCharacter } from './database-character/database-character';
 
 export const databaseRoute: RouteModel = {
   key: 'database',
@@ -10,6 +12,17 @@ export const databaseRoute: RouteModel = {
   },
   config: {
     path: '/database',
-    component: Database
-  }
+    component: DatabaseContainer
+  },
+  routes: [{
+    key: 'database.character',
+    link: {
+      name: 'Character',
+      url: '/database/character',
+    },
+    config: {
+      path: '/database/character',
+      component: DatabaseCharacter
+    }
+  }]
 };

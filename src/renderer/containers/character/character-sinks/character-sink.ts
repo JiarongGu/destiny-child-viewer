@@ -12,7 +12,7 @@ import { CharacterModifySink } from './character-modify-sink';
 import { reduceKeys } from '@utils/reduceKeys';
 import { CharacterModelType } from '@models/character/character-model-info';
 
-@sink('character', new FileService(), new Live2DService(), MetadataSink, CharacterModifySink)
+@sink('character-component', new FileService(), new Live2DService(), MetadataSink, CharacterModifySink)
 export class CharacterSink {
   @state public live2DComponents?: {
     motionManager: L2DMotionManager;
@@ -33,7 +33,7 @@ export class CharacterSink {
     private live2DService: Live2DService,
     private metadataSink: MetadataSink,
     private characterModifySink: CharacterModifySink
-  ) {}
+  ) { }
 
   @effect
   public reset() {
@@ -61,7 +61,7 @@ export class CharacterSink {
       const motionKeys = Object.keys(animation.motions);
       const motions = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, animation.motions[key])));
       this.motions = reduceKeys(motionKeys, (key, index) => motions[index]);
-      
+
       // get model file
       this.modelData = await this.fileService.get(`${assetPath}/${animation.model}`, FileReadType.ByteArray);
 
