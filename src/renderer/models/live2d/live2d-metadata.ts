@@ -1,6 +1,6 @@
 import { MotionModelCollection } from '@models/live2d/motion-model';
 
-export interface CharacterModel {
+export interface Live2DMetadata {
   version: string;
   model: string;
   textures: Array<string>;

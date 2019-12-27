@@ -1,5 +1,5 @@
 import { reduceKeys } from '@utils/reduceKeys';
-import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d/motion-model';
+import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d';
 
 export class Live2DService {
   public loadTextureImages(

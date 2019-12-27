@@ -54,7 +54,7 @@ export const CharacterViewer: React.FunctionComponent = () => {
         </Button>
         <div className={styles.canvas}>
           <Live2DCanvas
-            modelData={components.data!}
+            model={components.model!}
             textures={components.textures}
             position={position}
             updaters={components.updaters}

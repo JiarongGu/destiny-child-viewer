@@ -5,7 +5,7 @@ import { Position } from '@models/position';
 
 export interface Live2DViewer2Props {
   className?: string;
-  modelData: ArrayBuffer;
+  model: ArrayBuffer;
   updaters?: Array<L2DUpdateParam>;
   textures: Array<HTMLImageElement>;
   position: Position;
@@ -16,7 +16,7 @@ export interface Live2DViewer2Props {
 }
 
 export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
-  className, modelData, updaters, textures, position, size, play, onClick, onDraw
+  className, model, updaters, textures, position, size, play, onClick, onDraw
 }) => {
   const canvas = React.useRef<HTMLCanvasElement>(null);
   const tick = React.useRef<() => void>();
@@ -42,7 +42,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
   }, [size, position])
 
   React.useEffect(() => {
-    const draw = createDraw(canvas.current!, modelData, textures, updaters, onDraw);
+    const draw = createDraw(canvas.current!, model, textures, updaters, onDraw);
     tick.current = () => {
       if (status.current) {
         draw(status.current.size, status.current.position);
