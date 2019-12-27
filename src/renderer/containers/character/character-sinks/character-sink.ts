@@ -1,9 +1,9 @@
+
 import { sink, effect, state } from 'redux-sink';
 
 import { Position } from '@models/position';
-import { CharacterModelType } from '@models/character/character-model-info';
+import { CharacterModelType, CharacterLive2DInfo } from '@models/character/character-model-info';
 
-import { Live2DDataService } from '@services/data/live2d-data-service';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
 import { MetadataSink } from '@sinks/metadata/metadata-sink';
 import { CharacterModifySink } from './character-modify-sink';
@@ -33,24 +33,11 @@ export class CharacterSink {
     this.characterModifySink.loadCharacter(id);
 
     try {
-      this.live2DComponents = await this.live2DService.loadComponents(id);
-
       const metadata = this.metadataSink.characters[id];
 
       if (metadata.modeltype === CharacterModelType.Live2D) {
-        if (metadata.home) {
-          this.position = {
-            scale: metadata.home.scale * 1.25,
-            x: this.convertPosition(metadata.home.position.x, 100),
-            y: this.convertPosition(metadata.home.position.y, -200)
-          };
-        } else {
-          this.position = {
-            scale: metadata.scale! * 1.25,
-            x: this.convertPosition(metadata.position!.x, 100),
-            y: this.convertPosition(metadata.position!.y, -300)
-          };
-        }
+        this.live2DComponents = await this.live2DService.loadComponents(id);
+        this.position = this.getPosition(metadata);
       }
 
       return this.characterModifySink.data;
@@ -58,6 +45,22 @@ export class CharacterSink {
       this.reset();
       console.warn(ex);
     }
+  }
+
+  private getPosition(metadata: CharacterLive2DInfo): Position {
+    if (metadata.home) {
+      return {
+        scale: metadata.home.scale * 1.25,
+        x: this.convertPosition(metadata.home.position.x, 100),
+        y: this.convertPosition(metadata.home.position.y, -200)
+      };
+    }
+
+    return {
+      scale: metadata.scale! * 1.25,
+      x: this.convertPosition(metadata.position!.x, 100),
+      y: this.convertPosition(metadata.position!.y, -300)
+    };
   }
 
   private convertPosition(value: number, base: number) {
