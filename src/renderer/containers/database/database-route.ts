@@ -3,12 +3,14 @@ import { DatabaseContainer } from './database-container/database-container';
 
 import { DatabaseCharacter } from './database-character/database-character';
 
+const characterUrl = '/database/character';
+
 export const databaseRoute: RouteModel = {
   key: 'database',
   link: {
     name: 'Database',
     icon: 'database',
-    url: '/database',
+    url: characterUrl,
   },
   config: {
     path: '/database',
@@ -18,10 +20,10 @@ export const databaseRoute: RouteModel = {
     key: 'database.character',
     link: {
       name: 'Character',
-      url: '/database/character',
+      url: characterUrl,
     },
     config: {
-      path: '/database/character',
+      path: characterUrl,
       component: DatabaseCharacter
     }
   }]

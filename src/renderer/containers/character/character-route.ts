@@ -1,4 +1,6 @@
 import { RouteModel } from '@models/route';
+
+import { CharacterContainer } from './character-container/character-container';
 import { CharacterViewer } from './character-viewer/character-viewer';
 
 export const characterRoute: RouteModel = {
@@ -10,6 +12,13 @@ export const characterRoute: RouteModel = {
   },
   config: {
     path: '/character',
-    component: CharacterViewer
-  }
+    component: CharacterContainer
+  },
+  routes: [{
+    key: 'character.view',
+    config: {
+      path: '/character/{id}/view',
+      component: CharacterViewer
+    }
+  }]
 };
