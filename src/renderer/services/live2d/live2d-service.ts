@@ -1,7 +1,7 @@
 
-import { reduceKeys } from '@utils/reduceKeys';
+import { reduceKeys } from '@utils';
 
-import { Live2DDataService } from '@services/data/live2d-data-service';
+import { Live2DDataService } from '@services/data';
 import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d';
 
 export interface Live2DRenderComponents {

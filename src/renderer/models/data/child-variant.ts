@@ -1,6 +1,6 @@
 import { PositionType, Position } from '@models/position';
 
-export interface ChildDataVariant {
+export interface ChildVariant {
   title: string;
   positions: { [key in PositionType]: Position };
 }

@@ -1,15 +1,12 @@
-import { PositionType, Position } from '@models/position';
-
 import { ChildType } from './child-type.enum';
+import { ChildVariantAdditional } from './child-data-additional';
 
-export interface ChildDataModel {
+export interface ChildVariantModel extends ChildVariantAdditional {
   id: string;
   variant?: string;
   name: string;
-  title: string;
   stars?: boolean;
   type?: ChildType;
-  positions: { [key in PositionType]: Position };
 
   numMods?: number;
   numModsNSFW?: number;

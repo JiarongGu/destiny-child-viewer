@@ -7,7 +7,7 @@ import {
   MotionDataCollection,
   Live2DData
 } from '@models/live2d';
-import { reduceKeys } from '@utils/reduceKeys';
+import { reduceKeys } from '@utils';
 
 export class Live2DDataService {
   private _fileService: FileService;

@@ -1,5 +1,5 @@
 import { ChildType } from './child-type.enum';
-import { ChildDataVariant } from './child-data-variant';
+import { ChildVariant } from './child-variant';
 
 export interface ChildData {
   id: string;
@@ -7,7 +7,7 @@ export interface ChildData {
   numMods: number;
   numModsNSFW: number;
   stars?: boolean;
-  variants: { [key: string]: ChildDataVariant };
+  variants: { [key: string]: ChildVariant };
 
   tierBoss?: number;
   tierPVE?: number;

@@ -38,6 +38,10 @@ export class PathService {
     return path.join(this.assetPath, filePath);
   }
 
+  public getDataPath(filePath: string) {
+    return path.join(this.dataPath, filePath);
+  }
+
   public getResourcePath(filePath: string) {
     return path.join(this.resourcesPath, filePath);
   }

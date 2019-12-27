@@ -1,11 +1,13 @@
 import * as FileSync from 'lowdb/adapters/FileSync';
 import * as lowdb from 'lowdb';
 import * as path from 'path';
+import * as _ from 'lodash';
 
 import { PathService } from '@services/file/path-service';
 import { ChildData } from '@models/data/child-data';
-import { ChildDataModel } from '@models/data/child-data-model';
+import { ChildVariantModel } from '@models/data/child-variant-model';
 import { ChildDataAdditional } from '@models/data/child-data-additional';
+import { getCharacterId } from '@utils';
 
 export class ChildDataService {
   public _childDataPath: string;
@@ -21,28 +23,27 @@ export class ChildDataService {
     this._childAdditionalData = lowdb(new FileSync(this._childAdditionalDataPath));
   }
 
-  public get(id: string): ChildDataModel {
-    const ids = id.split('_');
-    const c_id = ids[0];
-    const v_id = ids[1];
+  public get(id: string): ChildVariantModel {
+    const ids = getCharacterId(id);
+    const data = this._childData.get(ids.character).value() as ChildData;
+    const additional = this._childAdditionalData.get(ids.character).value() as ChildDataAdditional;
+    const result = _.merge({}, data, additional);
 
-    const originalData = this._childData.get(c_id).value() as ChildData;
-    const additional = this._childAdditionalData.get(c_id).value() as ChildDataAdditional;
-    const data = Object.assign({}, originalData, additional);
-    const variant = data.variants[v_id];
+    const variant = result.variants[ids.variant];
 
-    const model: ChildDataModel = {
-      id: c_id,
-      variant: v_id,
-      name: data.name,
+    const model: ChildVariantModel = {
+      id: ids.character,
+      variant: ids.variant,
+      name: result.name,
       title: variant.title,
-      type: data.type,
-      stars: data.stars,
-      positions: variant.positions
+      type: result.type,
+      stars: result.stars,
+      positions: variant.positions,
+      icon: variant.icon,
     };
 
     return model;
   }
 
-  public set(model: ChildDataModel) {}
+  public set(model: ChildVariantModel) { }
 }

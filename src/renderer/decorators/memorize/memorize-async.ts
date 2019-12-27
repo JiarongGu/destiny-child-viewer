@@ -1,4 +1,4 @@
-import { generateId } from '@utils/generateId';
+import { generateId } from '@utils/generate-id';
 import { tryGet, tryArrayGetAsync } from './method-cache';
 
 const targetMap = new Map<Object, string>();

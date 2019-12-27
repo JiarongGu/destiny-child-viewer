@@ -1,5 +1,13 @@
 import { ChildType } from './child-type.enum';
-import { ChildDataVariant } from './child-data-variant';
+import { ChildVariant } from './child-variant';
+
+export interface ChildVariantAdditional extends ChildVariant {
+  icon?: {
+    regular: string;
+    battle: string;
+    spa: string;
+  }
+}
 
 export interface ChildDataAdditional {
   id: string;
@@ -7,7 +15,7 @@ export interface ChildDataAdditional {
   numMods?: number;
   numModsNSFW?: number;
   stars?: boolean;
-  variants: { [key: string]: ChildDataVariant };
+  variants?: { [key: string]: ChildVariantAdditional };
 
   tierBoss?: number;
   tierPVE?: number;

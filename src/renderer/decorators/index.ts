@@ -1,2 +1,3 @@
 export * from './memorize/memorize';
-export * from './memorize/memorizeAsync';
+export * from './memorize/memorize-async';
+export * from './memorize/method-cache';

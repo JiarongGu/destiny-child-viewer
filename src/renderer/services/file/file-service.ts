@@ -1,7 +1,7 @@
 import * as fs from 'fs-extra';
 
 import { PathService } from '@services/file/path-service';
-import { memorizeAsync } from '@decorators/memorize/memorizeAsync';
+import { memorizeAsync } from '@decorators';
 
 export enum FileReadType {
   ByteArray = 'bytearray',
