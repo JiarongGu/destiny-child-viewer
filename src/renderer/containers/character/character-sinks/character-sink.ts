@@ -43,7 +43,7 @@ export class CharacterSink {
       if (metadata.modeltype === CharacterModelType.Live2D) {
         this.live2DComponents = await this.live2DService.loadComponents(id);
         this.position = this.getPosition(metadata);
-        this.icon = await this.fileService.get(icon, FileReadType.Base64);
+        this.icon = await this.fileService.get(icon, FileReadType.URL);
       }
 
       return this.characterModifySink.data;

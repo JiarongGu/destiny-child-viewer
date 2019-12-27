@@ -7,7 +7,8 @@ export enum FileReadType {
   ByteArray = 'bytearray',
   Json = 'json',
   Base64 = 'base64',
-  Text = 'text'
+  Text = 'text',
+  URL= 'url',
 }
 
 export class FileService {
@@ -21,6 +22,7 @@ export class FileService {
   public async get(filePath: string, type: FileReadType.ByteArray): Promise<ArrayBuffer>;
   public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
   public async get(filePath: string, type: FileReadType.Text): Promise<string>;
+  public async get(filePath: string, type: FileReadType.URL): Promise<string>;
   @memorizeAsync
   public async get(filePath: string, type: FileReadType) {
     if (type === FileReadType.Json) {
@@ -34,6 +36,10 @@ export class FileService {
 
     const byteArray = Uint8Array.from(file);
     const blob = new Blob([byteArray]);
+
+    if (type === FileReadType.URL) {
+      return URL.createObjectURL(blob);
+    }
 
     if (type === FileReadType.ByteArray) {
       return this.toArrayBuffer(blob);

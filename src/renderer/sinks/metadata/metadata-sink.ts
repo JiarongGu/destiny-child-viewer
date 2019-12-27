@@ -23,6 +23,7 @@ export class MetadataSink {
   private async loadCharacterInfo() {
     this.characters = await this._metadataService.getCharacterMetadata();
     this.characterIndexes = Object.keys(this.characters).filter(key => key.startsWith('c'));
+
     this.iconPortrait = await this._iconDataService.getPortraits();
     this.iconPortraitBattle = await this._iconDataService.getPortraitsBattle();
   }

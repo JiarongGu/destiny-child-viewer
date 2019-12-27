@@ -3,7 +3,6 @@ import { tryGet, tryArrayGetAsync } from './method-cache';
 
 const targetMap = new Map<Object, string>();
 const cacheMap = new Map<Object, Map<Object, any>>();
-
 const promiseMap = new Map<Object, any>();
 
 export const memorizeAsync = (target: Object, key: String, descriptor: TypedPropertyDescriptor<any>) => {
