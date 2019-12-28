@@ -4,6 +4,8 @@ interface CssExports {
   'container': string;
   'display': string;
   'selection': string;
+  'selection-button': string;
+  'selectionButton': string;
 }
 
 declare var cssExports: CssExports;

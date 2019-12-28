@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import { Link } from 'react-router-dom';
 import { GridChildComponentProps } from 'react-window';
+import { Tooltip } from 'antd';
 
 import { CharacterIconSink } from './character-icon-sink';
 

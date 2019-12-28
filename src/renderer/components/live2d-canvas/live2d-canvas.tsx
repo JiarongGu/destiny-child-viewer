@@ -11,12 +11,11 @@ export interface Live2DViewer2Props {
   position: Position;
   size: number;
   play: boolean;
-  onClick?: () => void;
   onDraw?: (model: Live2DModel) => void;
 }
 
 export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
-  className, model, updaters, textures, position, size, play, onClick, onDraw
+  className, model, updaters, textures, position, size, play, onDraw
 }) => {
   const canvas = React.useRef<HTMLCanvasElement>(null);
   const tick = React.useRef<() => void>();
@@ -67,6 +66,6 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
   },[ play ])
 
   return (
-    <canvas className={className} ref={canvas} onClick={onClick} width={size} height={size} />
+    <canvas className={className} ref={canvas} width={size} height={size} />
   );
 }
