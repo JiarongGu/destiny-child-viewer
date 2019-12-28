@@ -20,7 +20,7 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
   return (
     <div style={style}>
       <Link to={{ pathname: `/character/view/${character.id}`, state: { character } }}>
-        <img key={character.id} src={character.icon} />
+        <img key={character.id} src={character.live2dDefault.icon} />
       </Link>
     </div>
   );

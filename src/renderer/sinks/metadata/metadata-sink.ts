@@ -57,14 +57,17 @@ export class MetadataSink {
 
     return reduceKeys<CharacterGroup>(keys, id => {
       const data = this._childDataService.getCharacter(id as string);
-      const icon = detailsGroup[id][0].icon;
-
+      const defaultDetail = detailsGroup[id].find(x => x.variant === '01');
+      const live2dDefault = {
+        icon: defaultDetail?.icon || detailsGroup[id][0].icon,
+        variant: defaultDetail?.variant || detailsGroup[id][0].variant
+      }
       const live2ds = detailsGroup[id].map(detail => {
         const variant = detail.variant;
         const icon = detail.icon;
         return { variant, icon };
       });
-      return { id, data, icon, live2ds } as CharacterGroup;
+      return { id, data, live2dDefault, live2ds } as CharacterGroup;
     });
   }
 }

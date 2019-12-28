@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
