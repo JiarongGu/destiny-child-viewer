@@ -7,10 +7,10 @@ import { CharacterModelType, CharacterLive2DInfo } from '@models/character/chara
 
 import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
 import { MetadataSink } from '@sinks/metadata/metadata-sink';
-import { CharacterModifySink } from './character-modify-sink';
+import { CharacterModifySink } from '../character-sinks/character-modify-sink';
 
-@sink('character-component', new Live2DService(), new FileService(),  MetadataSink,  CharacterModifySink)
-export class CharacterSink {
+@sink('character-viewer', new Live2DService(), new FileService(),  MetadataSink,  CharacterModifySink)
+export class CharacterViewerSink {
   @state public live2DComponents?: Live2DRenderComponents;
   @state public position?: Position;
   @state public play: boolean = true;
@@ -38,12 +38,11 @@ export class CharacterSink {
 
     try {
       const metadata = this.metadataSink.characters[id];
-      const icon = this.metadataSink.iconPortrait[id];
 
       if (metadata.modeltype === CharacterModelType.Live2D) {
         this.live2DComponents = await this.live2DService.loadComponents(id);
         this.position = this.getPosition(metadata);
-        this.icon = await this.fileService.get(icon, FileReadType.URL);
+        this.icon = this.metadataSink.iconPortrait[id];
       }
 
       return this.characterModifySink.data;

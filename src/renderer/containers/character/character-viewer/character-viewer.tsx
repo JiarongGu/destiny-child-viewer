@@ -7,19 +7,19 @@ import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
 import { WindowSink } from '@sinks/window/window-sink';
 import { useSideMenu } from '@sinks/sidemenu';
 
-import { CharacterSink } from '../character-sinks/character-sink';
-import { CharacterSideMenu } from '../character-viewer-sidemenu/character-sidemenu';
+import { CharacterViewerSink } from './character-viewer-sink';
+import { CharacterViewerSideMenu } from './character-viewer-sidemenu';
 import * as styles from './character-viewer.scss';
 
 export const CharacterViewer: React.FunctionComponent = () => {
-  const character = useSink(CharacterSink);
+  const character = useSink(CharacterViewerSink);
   const window = useSink(WindowSink);
 
   const components = character.live2DComponents!;
   const position = character.position!;
   const ready = components && position;
 
-  useSideMenu(CharacterSideMenu);
+  useSideMenu(CharacterViewerSideMenu);
 
   const onCanvasDraw = React.useCallback(() => {
     const idleMotion = components && components.motions.idle![0];
@@ -44,7 +44,7 @@ export const CharacterViewer: React.FunctionComponent = () => {
   let canvasSize = 720;
   if (window.size) {
     if (window.size.minSide > 100) {
-      canvasSize = window.size.minSide - 100;
+      canvasSize = window.size.minSide - 120;
     } else {
       canvasSize = 0;
     }

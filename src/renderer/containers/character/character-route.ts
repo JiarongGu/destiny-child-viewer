@@ -1,3 +1,4 @@
+import { CharacterIcon } from './character-icon/character-icon';
 import { RouteModel } from '@models/route';
 
 import { CharacterContainer } from './character-container/character-container';
@@ -8,17 +9,33 @@ export const characterRoute: RouteModel = {
   link: {
     name: 'Character',
     icon: 'user',
-    url: '/character',
+    url: '/character/icon',
   },
   config: {
     path: '/character',
     component: CharacterContainer
   },
-  routes: [{
-    key: 'character.view',
-    config: {
-      path: '/character/{id}/view',
-      component: CharacterViewer
-    }
-  }]
+  routes: [
+    {
+      link: {
+        name: 'Overview',
+        url: '/character/icon'
+      },
+      key: 'character.overview',
+      config: {
+        path: '/character/icon',
+        component: CharacterIcon
+      }
+    },
+    {
+      link: {
+        name: 'Live2D',
+        url: '/character/view'
+      },
+      key: 'character.view',
+      config: {
+        path: '/character/view',
+        component: CharacterViewer
+      }
+    }]
 };

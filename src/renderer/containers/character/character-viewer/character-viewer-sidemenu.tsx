@@ -3,16 +3,16 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 
 import { MetadataSink } from '@sinks/metadata/metadata-sink';
-import { CharacterSink } from '../character-sinks/character-sink';
+import { CharacterViewerSink } from './character-viewer-sink';
 import { CharacterModifySink } from '../character-sinks/character-modify-sink';
 
-export const CharacterSideMenu = () => {
+export const CharacterViewerSideMenu = () => {
   const metadata = useSink(MetadataSink);
-  const characterSink = useSink(CharacterSink);
+  const characterViewerSink = useSink(CharacterViewerSink);
   const characterModifySink = useSink(CharacterModifySink, false);
 
   const loadCharacter = React.useCallback((value: string) => {
-    characterSink.loadCharacter(value);
+    characterViewerSink.loadCharacter(value);
   }, []);
 
   return (
@@ -24,7 +24,7 @@ export const CharacterSideMenu = () => {
           </Select.Option>
         ))}
       </Select>
-      <img src={characterSink.icon} />
+      <img src={characterViewerSink.icon} />
     </div>
   );
 };

@@ -27,11 +27,7 @@ export class Live2DDataService {
     const motionKeys = Object.keys(metadata.motions);
     const motionArray = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, metadata.motions[key])));
     const motions = reduceKeys(motionKeys, (key, index) => motionArray[index]) as MotionDataCollection;
-
-    const textureArray = await Promise.all(
-      metadata.textures.map(texture => this._fileService.get(`${assetPath}/${texture}`, FileReadType.URL))
-    );
-    const textures = metadata.textures.map<TextureModel>((name, index) => ({ name, url: textureArray[index] }));
+    const textures = metadata.textures.map<TextureModel>(name => ({ name, url: `${assetPath}/${name}` }));
 
     const model = await this._fileService.get(`${assetPath}/${metadata.model}`, FileReadType.ByteArray);
 
