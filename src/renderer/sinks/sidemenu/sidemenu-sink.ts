@@ -1,6 +1,6 @@
 import { sink, state } from 'redux-sink';
 
-@sink('sideMenu')
+@sink('side-menu')
 export class SideMenuSink {
   @state component: React.ComponentClass | React.FunctionComponent | null = null;
 }

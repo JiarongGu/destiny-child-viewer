@@ -4,16 +4,17 @@ import { useSink } from 'redux-sink';
 import * as _ from 'lodash';
 
 import { Live2DCanvas } from '@components/live2d-canvas/live2d-canvas';
-import { WindowSink } from '@sinks/window/window-sink';
 import { useSideMenu } from '@sinks/sidemenu';
+import { WindowSink } from '@sinks';
 
 import { CharacterViewerSink } from './character-viewer-sink';
 import { CharacterViewerSideMenu } from './character-viewer-sidemenu';
 import * as styles from './character-viewer.scss';
 
-export const CharacterViewer: React.FunctionComponent = () => {
+export const CharacterViewer: React.FunctionComponent = (props) => {
   const character = useSink(CharacterViewerSink);
   const window = useSink(WindowSink);
+  console.log(props);
 
   const components = character.live2DComponents!;
   const position = character.position!;

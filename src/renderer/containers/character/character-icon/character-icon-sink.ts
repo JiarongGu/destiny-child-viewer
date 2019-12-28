@@ -13,14 +13,14 @@ export interface IconGrid {
 @sink('character-icon', MetadataSink)
 export class CharacterIconSink {
   @state public characters: Array<CharacterGroup> = [];
-  @state public grid: IconGrid = { height: 0, width: 0,  row: 0, column: 0 };
+  @state public grid: IconGrid = { height: 0, width: 0, row: 0, column: 0 };
 
   constructor(private _metadata: MetadataSink) { }
 
   @trigger('metadata/loaded')
   public async load(loaded: boolean) {
     if (!loaded) return;
-    this.characters = this._metadata.characterDetails;
+    this.characters = Object.keys(this._metadata.characterDetails).map(key => this._metadata.characterDetails[key]);
     this.updateGrid(this.grid.height, this.grid.width, this.characters.length);
   }
 

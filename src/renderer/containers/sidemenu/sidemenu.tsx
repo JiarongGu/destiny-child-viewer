@@ -7,7 +7,6 @@ import { SideMenuSink } from '@sinks/sidemenu';
 
 export const SideMenu: React.FunctionComponent = () => {
   const sink = useSink(SideMenuSink);
-  console.log(sink.component);
   
   return (
     (sink.component && (

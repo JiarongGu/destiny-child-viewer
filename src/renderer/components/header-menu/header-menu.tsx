@@ -10,17 +10,17 @@ export interface HeaderMenuProps {
   routes: Array<RouteModel>;
 }
 
-export const HeaderMenu: React.FunctionComponent<HeaderMenuProps> = ({
-  className,
-  selectedKeys,
-  routes
-}) => {
+export const HeaderMenu: React.FunctionComponent<HeaderMenuProps> = ({ className, selectedKeys, routes }) => {
   return (
     <Layout.Header className={className}>
       <Menu theme={'light'} mode={'horizontal'} selectedKeys={selectedKeys}>
-        {routes.map(route => (
-          <Menu.Item key={route.key}>{route.link && <Link to={route.link.url}>{route.link.name}</Link>}</Menu.Item>
-        ))}
+        {routes
+          .filter(route => route.link)
+          .map(route => (
+            <Menu.Item key={route.key}>
+              <Link to={route.link!.url}>{route.link!.name}</Link>
+            </Menu.Item>
+          ))}
       </Menu>
     </Layout.Header>
   );

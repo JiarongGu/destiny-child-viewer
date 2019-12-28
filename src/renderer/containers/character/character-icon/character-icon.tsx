@@ -10,6 +10,8 @@ import { CharacterIconRenderer } from './character-icon-renderer';
 
 export const CharacterIcon = () => {
   const sink = useSink(CharacterIconSink);
+  const grid = sink.grid;
+  const valid = grid.height > 0 && grid.width > 0;
 
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -26,16 +28,18 @@ export const CharacterIcon = () => {
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <FixedSizeGrid
-        columnCount={sink.grid.column}
-        rowCount={sink.grid.row}
-        rowHeight={128}
-        columnWidth={128}
-        height={sink.grid.height}
-        width={sink.grid.width}
-      >
-        {CharacterIconRenderer}
-      </FixedSizeGrid>
+      {valid && (
+        <FixedSizeGrid
+          columnCount={grid.column}
+          rowCount={grid.row}
+          rowHeight={128}
+          columnWidth={128}
+          height={grid.height}
+          width={grid.width}
+        >
+          {CharacterIconRenderer}
+        </FixedSizeGrid>
+      )}
     </div>
   );
 };

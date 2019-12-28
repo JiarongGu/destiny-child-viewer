@@ -17,23 +17,33 @@ export const characterRoute: RouteModel = {
   },
   routes: [
     {
+      key: 'character.overview',
       link: {
         name: 'Overview',
         url: '/character/icon'
       },
-      key: 'character.overview',
       config: {
+        exact: true,
         path: '/character/icon',
         component: CharacterIcon
       }
     },
     {
+      key: 'character.view',
+      config: {
+        strict: true,
+        path: '/character/view/:id',
+        component: CharacterViewer
+      }
+    },
+    {
+      key: 'character.view',
       link: {
         name: 'Live2D',
         url: '/character/view'
       },
-      key: 'character.view',
       config: {
+        exact: true,
         path: '/character/view',
         component: CharacterViewer
       }

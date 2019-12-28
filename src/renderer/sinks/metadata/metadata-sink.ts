@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import { MetadataService, IconDataService, ChildDataService } from '@services/data';
 import { CharacterModelInfoCollection } from '@models/character/character-model-info';
 import { CharacterGroup } from '@models/character/character-group';
-import { getCharacterId } from '@utils';
+import { getCharacterId, reduceKeys } from '@utils';
 
 @sink('metadata', new MetadataService(), new IconDataService(), new ChildDataService)
 export class MetadataSink {
@@ -13,7 +13,7 @@ export class MetadataSink {
   @state public characterIndexes: Array<string> = [];
   @state public iconPortrait: { [key: string]: string } = {};
   @state public iconPortraitBattle: { [key: string]: string } = {};
-  @state public characterDetails: Array<CharacterGroup> = [];
+  @state public characterDetails: { [key: string]: CharacterGroup } = {};
 
   @state public loaded: boolean = false;
 
@@ -42,7 +42,7 @@ export class MetadataSink {
 
   private loadCharacterDetails(
     characters: CharacterModelInfoCollection, iconPortrait: { [key: string]: string }
-  ): Array<CharacterGroup> {
+  ) {
     const characterIds = Object.keys(characters).filter(id => !id.startsWith('s'));
 
     const characterDetails = characterIds.map(id => {
@@ -53,11 +53,18 @@ export class MetadataSink {
     });
 
     const detailsGroup = _.groupBy(characterDetails, detail => detail.id);
+    const keys = Object.keys(detailsGroup);
 
-    return Object.keys(detailsGroup).map(id => {
-      const data = this._childDataService.getCharacter(id);
+    return reduceKeys<CharacterGroup>(keys, id => {
+      const data = this._childDataService.getCharacter(id as string);
       const icon = detailsGroup[id][0].icon;
-      return { id, data, icon };
+
+      const live2ds = detailsGroup[id].map(detail => {
+        const variant = detail.variant;
+        const icon = detail.icon;
+        return { variant, icon };
+      });
+      return { id, data, icon, live2ds } as CharacterGroup;
     });
   }
 }

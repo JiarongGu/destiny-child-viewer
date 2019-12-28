@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useSink } from 'redux-sink';
+import { Link } from 'react-router-dom';
 import { GridChildComponentProps } from 'react-window';
 
 import { CharacterIconSink } from './character-icon-sink';
@@ -7,9 +8,7 @@ import { CharacterIconSink } from './character-icon-sink';
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({
   columnIndex,
   rowIndex,
-  style,
-  data,
-  isScrolling
+  style
 }) => {
   const sink = useSink(CharacterIconSink);
   const index = rowIndex * sink.grid.column + columnIndex;
@@ -18,5 +17,11 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
   if (!character) {
     return null;
   }
-  return <img style={style} key={character.id} src={character.icon} />;
+  return (
+    <div style={style}>
+      <Link to={{ pathname: `/character/view/${character.id}`, state: { character } }}>
+        <img key={character.id} src={character.icon} />
+      </Link>
+    </div>
+  );
 };
