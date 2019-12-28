@@ -8,6 +8,7 @@ import { ChildData } from '@models/data/child-data';
 import { ChildVariantModel } from '@models/data/child-variant-model';
 import { ChildDataAdditional } from '@models/data/child-data-additional';
 import { getCharacterId } from '@utils';
+import { ChildDataModel } from '@models/data/child-data-model';
 
 export class ChildDataService {
   public _childDataPath: string;
@@ -23,11 +24,15 @@ export class ChildDataService {
     this._childAdditionalData = lowdb(new FileSync(this._childAdditionalDataPath));
   }
 
-  public get(id: string): ChildVariantModel {
+  public getCharacter(characterId: string): ChildDataModel {
+    const data = this._childData.get(characterId).value() as ChildData;
+    const additional = this._childAdditionalData.get(characterId).value() as ChildDataAdditional;
+    return _.merge({}, data, additional);
+  }
+
+  public getVariant(id: string): ChildVariantModel {
     const ids = getCharacterId(id);
-    const data = this._childData.get(ids.character).value() as ChildData;
-    const additional = this._childAdditionalData.get(ids.character).value() as ChildDataAdditional;
-    const result = _.merge({}, data, additional);
+    const result = this.getCharacter(ids.character);
 
     const variant = result.variants[ids.variant];
 

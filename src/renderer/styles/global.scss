@@ -1,0 +1,18 @@
+$scrollbar-background-color: rgb(245, 245, 245);
+$scrollbar-color:  rgb(195, 199, 201);
+$scrollbar-color--hover:  rgb(245, 245, 245);
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: $scrollbar-background-color;
+  z-index: 999;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $scrollbar-color--hover;
+  }
+}

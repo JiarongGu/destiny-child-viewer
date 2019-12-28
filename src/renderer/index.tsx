@@ -10,6 +10,7 @@ import { App, characterRoute, databaseRoute, settingRoute } from '@containers';
 import { WindowSink, NavigationSink, MetadataSink } from '@sinks';
 
 import 'antd/dist/antd.css';
+import '@styles/global.scss';
 
 const store = SinkFactory.createStore({
   useTrigger: true,

@@ -9,6 +9,7 @@ export class MetadataSink {
   @state public characterIndexes: Array<string> = [];
   @state public iconPortrait: { [key: string]: string } = {};
   @state public iconPortraitBattle: { [key: string]: string } = {};
+  @state public loaded: boolean = false;
 
   constructor(
     private _metadataService: MetadataService,
@@ -26,5 +27,6 @@ export class MetadataSink {
 
     this.iconPortrait = await this._iconDataService.getPortraits();
     this.iconPortraitBattle = await this._iconDataService.getPortraitsBattle();
+    this.loaded = true;
   }
 }

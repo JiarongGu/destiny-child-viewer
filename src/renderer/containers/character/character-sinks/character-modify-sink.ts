@@ -12,6 +12,6 @@ export class CharacterModifySink {
   @effect
   public loadCharacter(id: string) {
     this.id = id;
-    this.data = this.childDataService.get(id);
+    this.data = this.childDataService.getVariant(id);
   }
 }

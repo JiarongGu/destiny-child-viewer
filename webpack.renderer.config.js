@@ -31,7 +31,8 @@ module.exports = merge.smart(baseConfig, {
       '@models': `${appSrc}/models`,
       '@utils': `${appSrc}/utils`,
       '@sinks': `${appSrc}/sinks`,
-      '@decorators': `${appSrc}/decorators`
+      '@decorators': `${appSrc}/decorators`,
+      '@styles': `${appSrc}/styles`
     }
   },
   module: {

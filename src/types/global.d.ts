@@ -26,5 +26,13 @@ declare module 'global' {
     }
 
     function parseInt(s: number, radix?: number): number;
+
+    class ResizeObserver {
+      constructor(handler);
+
+      public observe(element: HTMLElement);
+
+      public unobserve(element: HTMLElement);
+    }
   }
 }

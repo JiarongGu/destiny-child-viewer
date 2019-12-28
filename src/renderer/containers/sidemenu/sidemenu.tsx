@@ -9,8 +9,11 @@ export const SideMenu: React.FunctionComponent = () => {
   const sink = useSink(SideMenuSink);
 
   return (
-    <Layout.Sider theme={'dark'} className={styles.container}>
-      {sink.component && <sink.component />}
-    </Layout.Sider>
+    (sink.component && (
+      <Layout.Sider theme={'dark'} collapsed={false} collapsible={false} className={styles.container}>
+        <sink.component />
+      </Layout.Sider>
+    )) ||
+    null
   );
 };
