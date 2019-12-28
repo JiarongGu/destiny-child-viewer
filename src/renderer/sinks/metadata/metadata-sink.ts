@@ -7,12 +7,18 @@ import { CharacterModelInfoCollection } from '@models/character/character-model-
 import { CharacterGroup } from '@models/character/character-group';
 import { getCharacterId, reduceKeys } from '@utils';
 
+type IconData = {
+  [key: string]: {
+    [key: string]: string
+  }
+};
+
 @sink('metadata', new MetadataService(), new IconDataService(), new ChildDataService)
 export class MetadataSink {
   @state public characters: CharacterModelInfoCollection = {};
   @state public characterIndexes: Array<string> = [];
-  @state public iconPortrait: { [key: string]: string } = {};
-  @state public iconPortraitBattle: { [key: string]: string } = {};
+  @state public iconPortrait: IconData = {};
+  @state public iconPortraitBattle: IconData = {};
   @state public characterDetails: { [key: string]: CharacterGroup } = {};
 
   @state public loaded: boolean = false;
@@ -40,15 +46,13 @@ export class MetadataSink {
     this.loaded = true;
   }
 
-  private loadCharacterDetails(
-    characters: CharacterModelInfoCollection, iconPortrait: { [key: string]: string }
-  ) {
+  private loadCharacterDetails(characters: CharacterModelInfoCollection, iconPortrait: IconData) {
     const characterIds = Object.keys(characters).filter(id => !id.startsWith('s'));
 
     const characterDetails = characterIds.map(id => {
       const ids = getCharacterId(id);
       const character = characters[id];
-      const icon = iconPortrait[id];
+      const icon = iconPortrait[ids.character][ids.variant];
       return { character, icon, id: ids.character, variant: ids.variant };
     });
 

@@ -38,13 +38,13 @@ export class IconDataService {
     Object.keys(folderGroups).map(async key => {
       const formattedIdsGroup = folderGroups[key];
       await Promise.all(formattedIdsGroup.map(async (ids, index) => {
-        const map = iconMap.get(ids.id).value();
+        const map = iconMap.get(ids.map).value();
 
         if (!map) {
           const dir = `${iconDir}/${key}`;
           const files = await this.getIconFilesIndex(dir);
           const file = files[index];
-          iconMap.set(ids.id, file).write();
+          iconMap.set(ids.map, file).write();
         }
       }));
     });

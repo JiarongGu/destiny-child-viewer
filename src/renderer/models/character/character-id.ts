@@ -4,4 +4,5 @@ export interface CharacterId {
   variant: string;
   folder: string;
   index: number;
+  map: string;
 }

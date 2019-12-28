@@ -1,3 +1,4 @@
+import { getCharacterId } from '@utils';
 import { sink, effect, state } from 'redux-sink';
 
 import { ChildDataService } from '@services/data/child-data-service';
@@ -39,10 +40,11 @@ export class CharacterViewerSink {
     try {
       const metadata = this.metadataSink.characters[id];
       const variant = this.childDataService.getVariant(id);
+      const ids = getCharacterId(id);
 
       if (metadata.modeltype === CharacterModelType.Live2D) {
         this.live2DComponents = await this.live2DService.loadComponents(id);
-        this.icon = this.metadataSink.iconPortrait[id];
+        this.icon = this.metadataSink.iconPortrait[ids.character][ids.variant];
 
         const metadataPosition = this.getMetadataPosition(metadata);
         const variantPosition = variant.positions.home;
