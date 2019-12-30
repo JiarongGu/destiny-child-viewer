@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["renderer/components"],
+      "@components*": ["renderer/components*"],
+      "@containers": ["renderer/containers"],
+      "@containers*": ["renderer/containers*"],
+      "@decorators": ["renderer/decorators"],
+      "@decorators*": ["renderer/decorators*"],
+      "@models": ["renderer/models"],
+      "@models*": ["renderer/models*"],
+      "@repositories": ["renderer/repositories"],
+      "@repositories*": ["renderer/repositories*"],
+      "@services": ["renderer/services"],
+      "@services*": ["renderer/services*"],
+      "@sinks": ["renderer/sinks"],
+      "@sinks*": ["renderer/sinks*"],
+      "@styles": ["renderer/styles"],
+      "@styles*": ["renderer/styles*"],
+      "@utils": ["renderer/utils"],
+      "@utils*": ["renderer/utils*"]
+    }
+  }
+}

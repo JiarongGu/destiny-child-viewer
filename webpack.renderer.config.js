@@ -3,38 +3,35 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 const path = require('path');
 
 const baseConfig = require('./webpack.base.config');
 
 const appPublic = path.resolve(__dirname, './public');
-const appSrc = path.resolve(__dirname, './src/renderer');
+const appSrc = path.resolve(__dirname, './src');
 const appResources = path.resolve(__dirname, './resources');
+const appOutput = path.resolve(__dirname, './dist');
 
-const outDir = path.resolve(__dirname, './dist');
+// get alias from tsconfig
+const tspaths = require('./tspaths.json');
+const tsAliasPaths = tspaths.compilerOptions.paths;
+const aliasKeys = Object
+  .keys(tsAliasPaths)
+  .filter(key => key.indexOf('*') < 0);
+const alias = aliasKeys.reduce((aliasValue, key) => {
+  aliasValue[key] = path.join(appSrc, tsAliasPaths[key][0]);
+  return aliasValue;
+}, {});
 
 const sassRegex = /\.s[ac]ss$/i;
-const sassModuleRegex = /\.module\.s[ac]ss$/i;
 
 module.exports = merge.smart(baseConfig, {
   target: 'electron-renderer',
-  context: appSrc,
+  context: `${appSrc}/renderer`,
   entry: {
     app: ['@babel/polyfill', './index.tsx']
   },
-  resolve: {
-    alias: {
-      '@containers': `${appSrc}/containers`,
-      '@components': `${appSrc}/components`,
-      '@services': `${appSrc}/services`,
-      '@models': `${appSrc}/models`,
-      '@utils': `${appSrc}/utils`,
-      '@sinks': `${appSrc}/sinks`,
-      '@decorators': `${appSrc}/decorators`,
-      '@styles': `${appSrc}/styles`
-    }
-  },
+  resolve: { alias },
   module: {
     rules: [
       {
@@ -112,7 +109,7 @@ module.exports = merge.smart(baseConfig, {
       template: path.resolve(appPublic, 'index.html'),
       minify: false
     }),
-    new CopyWebpackPlugin([{ from: appPublic, to: outDir }], { ignore: ['index.html'] }),
+    new CopyWebpackPlugin([{ from: appPublic, to: appOutput }], { ignore: ['index.html'] }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       'process.env.APP_RESOURCES': JSON.stringify(appResources)

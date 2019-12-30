@@ -1,7 +1,8 @@
 import * as fs from 'fs-extra';
 
-import { PathService } from '@services/file/path-service';
+import { PathService } from '@services';
 import { memorizeAsync } from '@decorators';
+import { getCacheContext } from '@utils';
 
 export enum FileReadType {
   ByteArray = 'bytearray',
@@ -23,7 +24,7 @@ export class FileService {
   public async get(filePath: string, type: FileReadType.Base64): Promise<string>;
   public async get(filePath: string, type: FileReadType.Text): Promise<string>;
   public async get(filePath: string, type: FileReadType.URL): Promise<string>;
-  @memorizeAsync
+  @memorizeAsync(getCacheContext('files'))
   public async get(filePath: string, type: FileReadType) {
     if (type === FileReadType.Json) {
       return await fs.readJSON(filePath);

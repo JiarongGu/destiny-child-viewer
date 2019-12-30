@@ -3,7 +3,7 @@ import * as lowdb from 'lowdb';
 import * as path from 'path';
 import * as _ from 'lodash';
 
-import { PathService } from '@services/file/path-service';
+import { PathService } from '@services';
 import { ChildData } from '@models/data/child-data';
 import { ChildVariantModel } from '@models/data/child-variant-model';
 import { ChildDataAdditional } from '@models/data/child-data-additional';

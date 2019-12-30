@@ -1,8 +1,7 @@
 import * as electron from 'electron';
 import * as path from 'path';
 
-import { EnvironmentService } from '@services/environment/environment-service';
-import { memorize } from '@decorators/memorize/memorize';
+import { EnvironmentService } from '@services';
 
 export class PathService {
   private _environmentService: EnvironmentService;
@@ -11,7 +10,6 @@ export class PathService {
     this._environmentService = new EnvironmentService();
   }
 
-  @memorize
   public get resourcesPath() {
     if (this._environmentService.isDevelopment) {
       return process.env.APP_RESOURCES as string;
@@ -19,17 +17,14 @@ export class PathService {
     return electron.remote.process.resourcesPath;
   }
 
-  @memorize
   public get assetPath() {
     return path.join(this.resourcesPath, 'asset');
   }
 
-  @memorize
   public get dataPath() {
     return path.join(this.resourcesPath, 'data');
   }
 
-  @memorize
   public get appPath() {
     return electron.remote.app.getAppPath();
   }
@@ -46,14 +41,7 @@ export class PathService {
     return path.join(this.resourcesPath, filePath);
   }
 
-  public getAbsolutePath(relativePath: string): string {
-    return `${this.appPath}/${relativePath}`;
-  }
-
-  public getRelativePath(absolutePath: string): string {
-    if (absolutePath.indexOf(this.appPath) > -1) {
-      return absolutePath.substring(this.appPath.length + 1);
-    }
-    return absolutePath;
+  public relativeAssetPath(filePath: string): string {
+    return path.relative(this.assetPath, filePath);
   }
 }

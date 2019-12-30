@@ -59,8 +59,8 @@ export class MetadataSink {
     const detailsGroup = _.groupBy(characterDetails, detail => detail.id);
     const keys = Object.keys(detailsGroup);
 
-    return reduceKeys<CharacterGroup>(keys, id => {
-      const data = this._childDataService.getCharacter(id as string);
+    return reduceKeys<CharacterGroup, string>(keys, id => {
+      const data = this._childDataService.getCharacter(id);
       const defaultDetail = detailsGroup[id].find(x => x.variant === '01');
       const live2dDefault = {
         icon: defaultDetail?.icon || detailsGroup[id][0].icon,
@@ -71,7 +71,7 @@ export class MetadataSink {
         const icon = detail.icon;
         return { variant, icon };
       });
-      return { id, data, live2dDefault, live2ds } as CharacterGroup;
+      return { id, data, live2dDefault, live2ds };
     });
   }
 }

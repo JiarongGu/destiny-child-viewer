@@ -51,8 +51,7 @@ export class IconDataService {
 
     return iconMap.value();
   }
-
-  @memorizeAsync
+  
   private async getIconFilesIndex(dir: string): Promise<{ [key: number]: string }> {
     const files = await readdir(dir);
     return reduceMap(files, file => parseInt(getFilename(file), 10), file => file);

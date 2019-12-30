@@ -1,10 +1,9 @@
-import { generateId } from '@utils/generate-id';
-import { tryGet, tryArrayGet } from './method-cache';
+import { CacheContext } from '@models';
+import { generateId, tryGet, tryArrayGet } from '@utils';
 
-const targetMap = new Map<Object, string>();
-const cacheMap = new Map<Object, Map<Object, any>>();
-
-export const memorize = (target: Object, key: String, descriptor: TypedPropertyDescriptor<any>) => {
+export const memorize = ({ main, util }: CacheContext) => (
+  target: Object, key: String, descriptor: TypedPropertyDescriptor<any>
+) => {
   const getter = descriptor.get;
   const method = descriptor.value;
   const valid = getter || method;
@@ -13,18 +12,18 @@ export const memorize = (target: Object, key: String, descriptor: TypedPropertyD
     return descriptor;
   }
 
-  const targetId = tryGet(targetMap, target, () => generateId());
+  const targetId = tryGet(util, target, () => generateId());
   const methodId = `${targetId}:${key.toString()}`;
 
   if (method) {
-    descriptor.value = function() {
-      return tryArrayGet(cacheMap, methodId, Array.from(arguments), () => method.apply(this, arguments as any));
+    descriptor.value = function () {
+      return tryArrayGet(main, methodId, Array.from(arguments), () => method.apply(this, arguments as any));
     };
   }
 
   if (getter) {
-    descriptor.get = function() {
-      return tryGet(cacheMap, methodId, () => getter.apply(this));
+    descriptor.get = function () {
+      return tryGet(main, methodId, () => getter.apply(this));
     };
   }
 

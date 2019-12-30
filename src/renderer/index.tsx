@@ -11,6 +11,8 @@ import { WindowSink, NavigationSink, MetadataSink } from '@sinks';
 
 import 'antd/dist/antd.css';
 import '@styles/global.scss';
+import { IconRepository } from '@repositories/icon/icon-repository';
+import { PathService } from '@services';
 
 const store = SinkFactory.createStore({
   useTrigger: true,
@@ -26,6 +28,11 @@ const history = NavigationSink.createHistory([
   databaseRoute,
   settingRoute
 ]);
+
+const iconRepo = new IconRepository();
+iconRepo.listIcons().then(icons => {
+  console.log(icons);
+});
 
 ReactDOM.render(
   <AppContainer>

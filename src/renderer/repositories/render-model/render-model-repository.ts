@@ -1,0 +1,50 @@
+import * as FileAsync from 'lowdb/adapters/FileAsync';
+import * as lowdb from 'lowdb';
+import * as _ from 'lodash';
+
+import { BaseRenderModelCollection, RenderModel, RenderModelCollection } from '@models/data/render-model';
+import { PathService } from '@services';
+import { reduceKeys, getCacheContext, reduceMap } from '@utils';
+
+import { AssetFiles } from '../common';
+import { memorizeAsync } from '@decorators';
+
+export class RenderModelRepository {
+  public static cacheName = 'render-model-repository';
+
+  private readonly _modelAdapter: lowdb.AdapterAsync<BaseRenderModelCollection>;
+
+  constructor() {
+    this._modelAdapter = new FileAsync(new PathService().getAssetPath(AssetFiles.LIVE2D_MODEL_INFO));
+  }
+
+  @memorizeAsync(getCacheContext(RenderModelRepository.cacheName))
+  public async listRenderModels(): Promise<RenderModelCollection> {
+    const models = (await this.modelLowdb).value();
+    const modelKeys = Object.keys(models);
+
+    const characterIds = modelKeys.map(modelKey => {
+      const ids = modelKey.split('_');
+      const characterId = ids[0];
+      const variantId = ids[1];
+      return { characterId, variantId, modelKey };
+    })
+
+    const characterGroups = _.groupBy(characterIds, (ids => ids.characterId));
+    const characterInfos = reduceKeys(Object.keys(characterGroups), key => {
+      const characterGroup = characterGroups[key];
+      return reduceMap(characterGroup, group => group.variantId, group => models[group.modelKey])
+    });
+    return characterInfos;
+  }
+
+  @memorizeAsync(getCacheContext(RenderModelRepository.cacheName))
+  public async getRenderModel(characterId: number, variantId: number): Promise<RenderModel> {
+    const modelKey = `${characterId}_${variantId}`;
+    return (await this.modelLowdb).get(modelKey).value();
+  }
+
+  private get modelLowdb() {
+    return lowdb(this._modelAdapter);
+  }
+}

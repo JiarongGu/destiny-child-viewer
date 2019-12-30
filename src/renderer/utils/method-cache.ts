@@ -8,7 +8,7 @@ export function tryArrayGet(map: Map<any, any>, defaultKey: any, keys: Array<any
   return tryArrayGet(currentMap, currentKey, nextKeys, get);
 }
 
-export function tryGet(map: Map<any, any>, key: any, get: () => any) {
+export function tryGet<T = any, K = any>(map: Map<K, T>, key: K, get: () => T) {
   let value = map.get(key);
   if (!value) {
     value = get();

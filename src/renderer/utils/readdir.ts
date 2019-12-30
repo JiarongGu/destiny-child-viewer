@@ -1,13 +1,13 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-export function readdir(dir: string): Promise<Array<string>> {
+export function readdir(filePath: string): Promise<Array<string>> {
   return new Promise((resolve, reject) => {
-    fs.readdir(dir, (err, files) => {
+    fs.readdir(filePath, (err, files) => {
       if (err) {
         reject(err);
       } else {
-        resolve(files.map(file => path.join(dir, file)));
+        resolve(files.map(file => path.join(filePath, file)));
       }
     });
   });

@@ -37,57 +37,6 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "baseUrl": "./src",                       /* Base directory to resolve non-absolute module names. */
-    "paths": {
-      "@components": [
-        "renderer/components"
-      ],
-      "@components*": [
-        "renderer/components*"
-      ],
-      "@containers": [
-        "renderer/containers"
-      ],
-      "@containers*": [
-        "renderer/containers*"
-      ],
-      "@services": [
-        "renderer/services"
-      ],
-      "@services*": [
-        "renderer/services*"
-      ],
-      "@utils": [
-        "renderer/utils"
-      ],
-      "@utils*": [
-        "renderer/utils*"
-      ],
-      "@models": [
-        "renderer/models"
-      ],
-      "@models*": [
-        "renderer/models*"
-      ],
-      "@sinks": [
-        "renderer/sinks"
-      ],
-      "@sinks*": [
-        "renderer/sinks*"
-      ],
-      "@decorators": [
-        "renderer/decorators"
-      ],
-      "@decorators*": [
-        "renderer/decorators*"
-      ],
-      "@styles": [
-        "renderer/styles"
-      ],
-      "@styles*": [
-        "renderer/styles*"
-      ]
-    },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
@@ -108,5 +57,6 @@
     "./src",
     "./test",
     "./mocks"
-  ]
+  ],
+  "extends": "./tspaths.json"
 }
