@@ -9,7 +9,7 @@ import {
 } from '@models/live2d';
 import { reduceKeys } from '@utils';
 
-export class Live2DDataService {
+export class Live2DRepository {
   private _fileService: FileService;
   private _pathService: PathService;
 
@@ -18,12 +18,13 @@ export class Live2DDataService {
     this._fileService = new FileService();
   }
 
-  public async getCharacterData(id: string): Promise<Live2DData> {
+  public async getData(characterId: string, variantId: string): Promise<Live2DData> {
+    const id = `${characterId}_${variantId}`;
     const assetPath = this._pathService.getAssetPath(`/character/${id}`);
-    const metaFileName = `character.DRAGME.${id}.json`;
+    const metadataFilePath =  `${assetPath}/character.DRAGME.${id}.json`;
 
-    const metadata = await this._fileService.get<Live2DMetadata>(`${assetPath}/${metaFileName}`, FileReadType.Json);
-
+    const metadata = await this._fileService.get<Live2DMetadata>(metadataFilePath, FileReadType.Json);
+    
     const motionKeys = Object.keys(metadata.motions);
     const motionArray = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, metadata.motions[key])));
     const motions = reduceKeys(motionKeys, (key, index) => motionArray[index]) as MotionDataCollection;

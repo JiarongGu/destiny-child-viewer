@@ -14,11 +14,11 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
   style
 }) => {
   const sink = useSink(CharacterIconSink);
-  const getAssetPath = React.useCallback((path) => {
+  const getAssetPath = React.useCallback(path => {
     const pathService = new PathService();
     return pathService.getAssetPath(path);
   }, []);
-  
+
   const index = rowIndex * sink.grid.column + columnIndex;
 
   const character = sink.characters[index];
@@ -26,11 +26,17 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
     return null;
   }
 
-  const icon = character.icon[CharacterVariantType.Default] || character.icon[Object.keys(character.icon)[0]];
-  
+  let variant: string = CharacterVariantType.Default;
+  let icon = character.icon[variant];
+
+  if (!icon) {
+    variant = Object.keys(character.icon)[0];
+    icon = character.icon[variant];
+  }
+
   return (
     <div style={style}>
-      <Link to={{ pathname: `/character/view/${character.id}`, state: { character } }}>
+      <Link to={{ pathname: `/character/view/${character.id}`, state: { character, defaultVariant: variant } }}>
         <img key={character.id} src={getAssetPath(icon.home)} />
       </Link>
     </div>

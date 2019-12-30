@@ -12,31 +12,31 @@ import { CharacterViewerLive2D } from './character-viewer-live2d/character-viewe
 import * as styles from './character-viewer.scss';
 import { Button } from 'antd';
 import { CharacterMetadata } from '@models/character/character-metadata';
-import { CharacterVariantType } from '@services/character/character-variant-type.enum';
 import { PathService } from '@services';
 
-type RouteProps = RouteChildrenProps<{ id: string }, { character: CharacterMetadata }>;
+type RouteProps = RouteChildrenProps<{ id: string }, { character: CharacterMetadata; defaultVariant: string }>;
 
 export const CharacterViewer: React.FunctionComponent = props => {
   const {
     location: { state }
   } = props as RouteProps;
   const character = state?.character || { variants: [], render: {} };
+  const defaultVariant = state?.defaultVariant;
   const characterView = useSink(CharacterViewerSink);
 
   React.useEffect(() => {
-    const live2d = character.render[CharacterVariantType.Default];
-    if (live2d) {
-      characterView.loadCharacter(character.id, CharacterVariantType.Default);
+    const renderModel = character.render[defaultVariant];
+    if (renderModel) {
+      characterView.loadCharacter(character.id, defaultVariant);
     }
     return () => characterView.reset();
   }, []);
 
-  const getAssetPath = React.useCallback((path) => {
+  const getAssetPath = React.useCallback(path => {
     const pathService = new PathService();
     return pathService.getAssetPath(path);
   }, []);
-  
+
   const variants = character.variants.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   // useSideMenu(CharacterViewerSideMenu);
   return (
