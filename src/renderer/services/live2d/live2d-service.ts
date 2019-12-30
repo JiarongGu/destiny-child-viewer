@@ -19,8 +19,8 @@ export class Live2DService {
     this._live2DDataService = new Live2DDataService();
   }
 
-  public async loadComponents(id: string) {
-    const data = await this._live2DDataService.getCharacterData(id);
+  public async loadComponents(characterId: string, variantId: string) {
+    const data = await this._live2DDataService.getCharacterData(`${characterId}_${variantId}`);
 
     if (data) {
       const textures = await this.loadTextureImages(data.textures);

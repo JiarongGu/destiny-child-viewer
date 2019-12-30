@@ -1,7 +1,8 @@
-import { sink, state, trigger, effect } from 'redux-sink';
 
-import { MetadataSink } from '@sinks';
-import { CharacterGroup } from '@models/character/character-group';
+import { sink, state, effect } from 'redux-sink';
+
+import { CharacterMetadata } from '@models/character/character-metadata';
+import { CharacterService } from '@services/character/character-service';
 
 export interface IconGrid {
   height: number,
@@ -10,17 +11,16 @@ export interface IconGrid {
   column: number,
 }
 
-@sink('character-icon', MetadataSink)
+@sink('character-icon', new CharacterService())
 export class CharacterIconSink {
-  @state public characters: Array<CharacterGroup> = [];
+  @state public characters: Array<CharacterMetadata> = [];
   @state public grid: IconGrid = { height: 0, width: 0, row: 0, column: 0 };
 
-  constructor(private _metadata: MetadataSink) { }
+  constructor( private _characterService: CharacterService) { }
 
-  @trigger('metadata/loaded')
-  public async load(loaded: boolean) {
-    if (!loaded) return;
-    this.characters = Object.keys(this._metadata.characterDetails).map(key => this._metadata.characterDetails[key]);
+  @effect
+  public async load() {
+    this.characters = await this._characterService.listCharacterMetadata();
     this.updateGrid(this.grid.height, this.grid.width, this.characters.length);
   }
 

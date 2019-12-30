@@ -1,7 +1,7 @@
-import { CharacterVariantAdditional } from './character-variant-additional';
 import { CharacterType } from './character-type.enum';
+import { CharacterVariant } from './character-variant';
 
-export interface CharacterVariantModel extends CharacterVariantAdditional {
+export interface CharacterVariantModel extends CharacterVariant {
   characterId: string;
   variantId: string;
   

@@ -1,17 +1,17 @@
 import { sink, effect, state } from 'redux-sink';
 
-import { ChildDataService } from '@services/data/child-data-service';
+import { CharacterService } from '@services/character/character-service';
 
-@sink('characterModify', new ChildDataService())
+@sink('characterModify', new CharacterService())
 export class CharacterModifySink {
   @state public id?: string;
   @state public data?: any;
 
-  constructor(private childDataService: ChildDataService) {}
+  constructor(private _characterService: CharacterService) { }
 
   @effect
-  public loadCharacter(id: string) {
-    this.id = id;
-    this.data = this.childDataService.getVariant(id);
+  public loadCharacter(characterId: string) {
+    this.id = characterId;
+    this.data = this._characterService.getCharacterMetadata(characterId);
   }
 }

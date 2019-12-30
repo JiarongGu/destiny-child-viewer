@@ -3,7 +3,7 @@ import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
 import { PathService } from '@services';
-import { IconModelCollection } from '@models/data';
+import { IconModelCollection, IconModel } from '@models/data';
 
 import { RepositoryFiles } from '../common';
 import { IconCollectionInitializer } from './icon-collection-initializer';
@@ -23,6 +23,11 @@ export class IconRepository {
   public async listIcons(): Promise<IconModelCollection> {
     const db = await this.iconLowdb;
     return db.value();
+  }
+
+  public async getIcon(characterId: string): Promise<IconModel> {
+    const db = await this.iconLowdb;
+    return db.get(characterId).value();
   }
 
   private get iconLowdb() {

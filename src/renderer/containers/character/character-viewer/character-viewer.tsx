@@ -4,7 +4,6 @@ import { useSink } from 'redux-sink';
 import { RouteChildrenProps } from 'react-router';
 
 import { useSideMenu } from '@sinks/sidemenu';
-import { CharacterGroup } from '@models/character/character-group';
 
 import { CharacterViewerSink } from './character-viewer-sink';
 import { CharacterViewerSideMenu } from './character-viewer-sidemenu';
@@ -12,23 +11,33 @@ import { CharacterViewerLive2D } from './character-viewer-live2d/character-viewe
 
 import * as styles from './character-viewer.scss';
 import { Button } from 'antd';
+import { CharacterMetadata } from '@models/character/character-metadata';
+import { CharacterVariantType } from '@services/character/character-variant-type.enum';
+import { PathService } from '@services';
 
-type RouteProps = RouteChildrenProps<{ id: string }, { character: CharacterGroup }>;
+type RouteProps = RouteChildrenProps<{ id: string }, { character: CharacterMetadata }>;
 
 export const CharacterViewer: React.FunctionComponent = props => {
   const {
     location: { state }
   } = props as RouteProps;
-  const character = state?.character || { live2ds: [] };
+  const character = state?.character || { variants: [], render: {} };
   const characterView = useSink(CharacterViewerSink);
 
   React.useEffect(() => {
-    if (character.live2dDefault) {
-      characterView.loadCharacter(`${character.id}_${character.live2dDefault.variant}`);
+    const live2d = character.render[CharacterVariantType.Default];
+    if (live2d) {
+      characterView.loadCharacter(character.id, CharacterVariantType.Default);
     }
     return () => characterView.reset();
   }, []);
 
+  const getAssetPath = React.useCallback((path) => {
+    const pathService = new PathService();
+    return pathService.getAssetPath(path);
+  }, []);
+  
+  const variants = character.variants.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   // useSideMenu(CharacterViewerSideMenu);
   return (
     <div className={styles.container}>
@@ -39,19 +48,16 @@ export const CharacterViewer: React.FunctionComponent = props => {
         <Button onClick={() => (characterView.play = !characterView.play)}>
           {characterView.play ? 'Pause' : 'Resume'}
         </Button>
-        {character.live2ds.map(live2d => {
-          const id = `${character.id}_${live2d.variant}`;
-          return (
-            <div key={live2d.variant}>
-              <img
-                src={live2d.icon}
-                alt={id}
-                className={styles.selectionButton}
-                onClick={() => characterView.loadCharacter(id)}
-              />
-            </div>
-          );
-        })}
+        {variants.map(variant => (
+          <div key={variant}>
+            <img
+              src={getAssetPath(character.icon[variant].home)}
+              alt={variant}
+              className={styles.selectionButton}
+              onClick={() => characterView.loadCharacter(character.id, variant)}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

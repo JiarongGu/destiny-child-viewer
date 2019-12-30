@@ -7,12 +7,10 @@ import { Router } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { App, characterRoute, databaseRoute, settingRoute } from '@containers';
-import { WindowSink, NavigationSink, MetadataSink } from '@sinks';
+import { WindowSink, NavigationSink } from '@sinks';
 
 import 'antd/dist/antd.css';
 import '@styles/global.scss';
-import { IconRepository } from '@repositories/icon/icon-repository';
-import { PathService } from '@services';
 
 const store = SinkFactory.createStore({
   useTrigger: true,
@@ -21,18 +19,12 @@ const store = SinkFactory.createStore({
 
 // initialize sinks
 WindowSink.load(window);
-MetadataSink.load();
 
 const history = NavigationSink.createHistory([
   characterRoute, 
   databaseRoute,
   settingRoute
 ]);
-
-const iconRepo = new IconRepository();
-iconRepo.listIcons().then(icons => {
-  console.log(icons);
-});
 
 ReactDOM.render(
   <AppContainer>

@@ -1,26 +1,22 @@
-import { getCharacterId } from '@utils';
+
 import { sink, effect, state } from 'redux-sink';
 
-import { ChildDataService } from '@services/data/child-data-service';
-
-import { Position } from '@models/position';
-import { CharacterModelType, CharacterLive2DInfo } from '@models/character/character-model-info';
-
+import { CharacterService } from '@services/character/character-service';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
-import { MetadataSink } from '@sinks/metadata/metadata-sink';
 import { CharacterModifySink } from '../character-sinks/character-modify-sink';
+import { RenderModelType, RenderModelLive2D } from '@models/data';
+import { CharacterVariantPosition } from '@models/data/character-model/character-variant-position';
 
-@sink('character-viewer', new Live2DService(), new ChildDataService(), MetadataSink, CharacterModifySink)
+@sink('character-viewer', new Live2DService(), new CharacterService(), CharacterModifySink)
 export class CharacterViewerSink {
   @state public live2DComponents?: Live2DRenderComponents;
-  @state public position?: Position;
+  @state public position?: CharacterVariantPosition;
   @state public play: boolean = true;
   @state public icon?: string;
 
   constructor(
     private live2DService: Live2DService,
-    private childDataService: ChildDataService,
-    private metadataSink: MetadataSink,
+    private _characterService: CharacterService,
     private characterModifySink: CharacterModifySink
   ) { }
 
@@ -33,26 +29,25 @@ export class CharacterViewerSink {
   }
 
   @effect
-  public async loadCharacter(id: string) {
+  public async loadCharacter(characterId: string, variantId: string) {
     this.reset();
-    this.characterModifySink.loadCharacter(id);
-
+    // this.characterModifySink.loadCharacter(id);
+    const metadata = await this._characterService.getCharacterMetadata(characterId);
     try {
-      const metadata = this.metadataSink.characters[id];
-      const variant = this.childDataService.getVariant(id);
-      const ids = getCharacterId(id);
+      const renderModel = metadata.render[variantId];
 
-      if (metadata.modeltype === CharacterModelType.Live2D) {
-        this.live2DComponents = await this.live2DService.loadComponents(id);
-        this.icon = this.metadataSink.iconPortrait[ids.character][ids.variant];
+      if (renderModel.modeltype === RenderModelType.Live2D) {
+        this.live2DComponents = await this.live2DService.loadComponents(characterId, variantId);
+        this.icon = metadata.icon[variantId].home;
 
-        const metadataPosition = this.getMetadataPosition(metadata);
-        const variantPosition = variant.positions.home;
+        const characterVariants = metadata.character?.variants;
+        const renderPosition = this.getMetadataPosition(renderModel);
+        const variantPosition = characterVariants && characterVariants[variantId]?.positions.home;
 
-        if (variantPosition.refined) {
+        if (variantPosition && variantPosition.refined) {
           this.position = variantPosition;
         } else {
-          this.position = this.convertPosition(variantPosition || metadataPosition);
+          this.position = this.convertPosition(variantPosition || renderPosition);
         }
       }
 
@@ -60,10 +55,11 @@ export class CharacterViewerSink {
     } catch (ex) {
       this.reset();
       console.warn(ex);
+      console.warn(metadata);
     }
   }
 
-  private getMetadataPosition(metadata: CharacterLive2DInfo): Position {
+  private getMetadataPosition(metadata: RenderModelLive2D): CharacterVariantPosition {
     const live2dInfo = metadata.home ? metadata.home : metadata;
     return {
       scale: live2dInfo.scale! * 1.25,
@@ -72,7 +68,7 @@ export class CharacterViewerSink {
     };
   }
 
-  private convertPosition(position: Position): Position {
+  private convertPosition(position: CharacterVariantPosition): CharacterVariantPosition {
     return {
       scale: position.scale * 1.25,
       x: position.x / 100,

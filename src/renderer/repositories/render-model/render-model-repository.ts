@@ -39,9 +39,15 @@ export class RenderModelRepository {
   }
 
   @memorizeAsync(getCacheContext(RenderModelRepository.cacheName))
-  public async getRenderModel(characterId: number, variantId: number): Promise<RenderModel> {
+  public async getRenderModel(characterId: string, variantId: string): Promise<RenderModel> {
     const modelKey = `${characterId}_${variantId}`;
     return (await this.modelLowdb).get(modelKey).value();
+  }
+
+  @memorizeAsync(getCacheContext(RenderModelRepository.cacheName))
+  public async getCharacterRenderModel(characterId: string) {
+    const models = await this.listRenderModels();
+    return models[characterId];
   }
 
   private get modelLowdb() {

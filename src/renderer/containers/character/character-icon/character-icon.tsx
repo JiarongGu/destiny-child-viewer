@@ -15,6 +15,10 @@ export const CharacterIcon = () => {
 
   const containerRef = React.useRef<HTMLDivElement>(null);
 
+  React.useEffect(() => {
+    sink.load();
+  }, []);
+
   React.useLayoutEffect(() => {
     const container = containerRef.current!;
     sink.updateGridBySize(container.clientHeight, container.clientWidth);

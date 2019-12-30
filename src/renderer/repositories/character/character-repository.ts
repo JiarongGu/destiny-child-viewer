@@ -10,8 +10,12 @@ import {
   CharacterModel,
   CharacterVariantModel
 } from '@models/data/character-model';
+import { memorizeAsync } from '@decorators';
+import { getCacheContext } from '@utils';
 
 export class CharacterRepository {
+  public static cacheName = 'character-repository';
+
   private readonly _characterBaseAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterBase }>;
   private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterAdditional }>;
 
@@ -21,12 +25,20 @@ export class CharacterRepository {
     this._characterAdditionalAdapter = new FileAsync(pathService.getDataPath(RepositoryFiles.CHILD_ADDITIONAL));
   }
 
-  public async getCharacter(characterId: string): Promise<CharacterModel> {
-    const data = (await this.characterBaseLowdb).get(characterId).value();
-    const additional = (await this.characterAdditionalLowdb).get(characterId).value();
-    return _.merge({}, data, additional);
+  public async ListCharacters(): Promise<{ [key: string]: CharacterModel }> {
+    const base = (await this.characterBaseLowdb).value();
+    const additional = (await this.characterAdditionalLowdb).value();
+    return _.merge({}, base, additional);
   }
 
+  @memorizeAsync(getCacheContext(CharacterRepository.cacheName))
+  public async getCharacter(characterId: string): Promise<CharacterModel> {
+    const base = (await this.characterBaseLowdb).get(characterId).value();
+    const additional = (await this.characterAdditionalLowdb).get(characterId).value();
+    return _.merge({}, base, additional);
+  }
+
+  @memorizeAsync(getCacheContext(CharacterRepository.cacheName))
   public async getCharacterVariant(characterId: string, variantId: string): Promise<CharacterVariantModel> {
     const character = await this.getCharacter(characterId);
     const variant = character.variants[variantId];
@@ -39,7 +51,6 @@ export class CharacterRepository {
       type: character.type,
       stars: character.stars,
       positions: variant.positions,
-      icon: variant.icon,
     };
   }
 

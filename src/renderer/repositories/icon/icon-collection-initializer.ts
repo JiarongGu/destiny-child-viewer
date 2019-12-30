@@ -11,7 +11,6 @@ interface CharacterFolderInfo {
   characterId: string;
   variants: BaseRenderModelCollection;
   folderId: string;
-  folderIndex: number;
 }
 
 interface VariantFolderInfo {
@@ -96,11 +95,11 @@ export class IconCollectionInitializer {
       const homeIcon = getIconPath(homeIcons, info.folderId, filename);
 
       return {
-        battleIcon,
-        homeIcon,
-        spaIcon,
         characterId: info.characterId,
-        variantId: info.variantId
+        variantId: info.variantId,
+        battle: battleIcon,
+        home: homeIcon,
+        spa: spaIcon,
       };
     });
   }
@@ -110,7 +109,8 @@ export class IconCollectionInitializer {
     const characterFolderGroups = _.groupBy(characterFolderInfos, (folderInfo) => folderInfo.folderId);
 
     const characterFolders = Object.keys(characterFolderGroups).flatMap(folderId => {
-      const characterFolderGroup = characterFolderGroups[folderId].sort((a, b) => a.folderIndex - b.folderIndex);
+      const characterFolderGroup = characterFolderGroups[folderId];
+      
       return characterFolderGroup
         .flatMap(folderInfo => this.mapToVariantFolderInfo(folderInfo))
         .flatMap((variantInfo, index) => variantInfo.variantIds.map(variantId => ({
@@ -133,7 +133,10 @@ export class IconCollectionInitializer {
     if (isPNGVariant) {
       return [Object.assign({}, baseInfo, { variantIds })];
     }
-    return variantIds.map(variantId => Object.assign({}, baseInfo, { variantIds: [variantId] }));
+    
+    return variantIds
+      .map(variantId => Object.assign({}, baseInfo, { variantIds: [variantId] }))
+      .sort((a, b) => parseInt(a.variantIds[0], 10) - parseInt(b.variantIds[0], 10));
   }
 
   private mapToCharacterFolderInfos(modelCollection: RenderModelCollection): Array<CharacterFolderInfo> {
@@ -150,8 +153,7 @@ export class IconCollectionInitializer {
   private mapToFolderInfo(characterId: string) {
     const matches = /(?<folder>[a-zA-z]*[0-9])(?<index>.*)/.exec(characterId);
     const folderId = matches?.groups?.folder || '';
-    const folderIndex = parseInt(matches?.groups?.index || '', 10);
-    return { characterId, folderId, folderIndex };
+    return { characterId, folderId };
   }
 
   private async readDirectory(filePath: string) {

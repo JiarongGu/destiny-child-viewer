@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import { createDraw } from './live2d-canvas-renderer';
-import { Position } from '@models/position';
+import { CharacterVariantPosition } from '@models/data/character-model';
 
 export interface Live2DViewer2Props {
   className?: string;
   model: ArrayBuffer;
   updaters?: Array<L2DUpdateParam>;
   textures: Array<HTMLImageElement>;
-  position: Position;
+  position: CharacterVariantPosition;
   size: number;
   play: boolean;
   onDraw?: (model: Live2DModel) => void;
@@ -20,7 +20,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
   const canvas = React.useRef<HTMLCanvasElement>(null);
   const tick = React.useRef<() => void>();
   const requireId = React.useRef<number>();
-  const status = React.useRef<{ position: Position, size: number }>();
+  const status = React.useRef<{ position: CharacterVariantPosition, size: number }>();
 
   const startAnimation = React.useCallback(() => {
     if (tick.current) {

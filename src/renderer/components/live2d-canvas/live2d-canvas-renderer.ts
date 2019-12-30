@@ -1,4 +1,4 @@
-import { Position } from '@models/position';
+import { CharacterVariantPosition } from '@models/data/character-model/character-variant-position';
 
 export function createDraw(
   canvas: HTMLCanvasElement,
@@ -23,7 +23,7 @@ export function createDraw(
   });
   model.setGL(context);
 
-  return (viewPortSize: number, position: Position) => {
+  return (viewPortSize: number, position: CharacterVariantPosition) => {
     context.viewport(0, 0, viewPortSize, viewPortSize);
     if (onDraw) {
       onDraw(model);
@@ -35,7 +35,7 @@ export function createDraw(
 export function drawCanvas(
   context: WebGLRenderer,
   model: Live2DModel,
-  position: Position,
+  position: CharacterVariantPosition,
   updaters: Array<L2DUpdateParam>
 ) {
   // clear canvas

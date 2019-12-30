@@ -1,5 +1,5 @@
-import { CharacterVariantAdditional } from './character-variant-additional';
 import { CharacterType } from './character-type.enum';
+import { CharacterVariant } from './character-variant';
 
 export interface CharacterAdditional {
   id: string;
@@ -7,7 +7,7 @@ export interface CharacterAdditional {
   numMods?: number;
   numModsNSFW?: number;
   stars?: boolean;
-  variants?: { [key: string]: CharacterVariantAdditional };
+  variants?: { [key: string]: CharacterVariant };
 
   tierBoss?: number;
   tierPVE?: number;
