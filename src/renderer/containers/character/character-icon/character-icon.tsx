@@ -7,6 +7,7 @@ import { CharacterIconSink } from './character-icon-sink';
 
 import * as styles from './character-icon.scss';
 import { CharacterIconRenderer } from './character-icon-renderer';
+import { useResizeObserver } from '@hooks';
 
 export const CharacterIcon = () => {
   const sink = useSink(CharacterIconSink);
@@ -19,16 +20,11 @@ export const CharacterIcon = () => {
     sink.load();
   }, []);
 
-  React.useLayoutEffect(() => {
-    const container = containerRef.current!;
-    sink.updateGridBySize(container.clientHeight, container.clientWidth);
-    const resizeObserver = new ResizeObserver(
-      _.debounce(() => sink.updateGridBySize(container.clientHeight, container.clientWidth), 100)
-    );
-
-    resizeObserver.observe(container);
-    return () => resizeObserver.unobserve(container);
-  }, []);
+  useResizeObserver(
+    containerRef,
+    _.debounce(({ height, width }) => sink.updateGridBySize(height, width), 100),
+    []
+  );
 
   return (
     <div className={styles.container} ref={containerRef}>

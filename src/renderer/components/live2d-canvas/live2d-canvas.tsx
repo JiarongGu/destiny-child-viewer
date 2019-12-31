@@ -1,33 +1,38 @@
 import * as React from 'react';
 
 import { createDraw } from './live2d-canvas-renderer';
-import { CharacterVariantPosition } from '@models/data/character-model';
 
-export interface Live2DViewer2Props {
+interface Live2DViewport {
+  x: number;
+  y: number;
+  scale: number;
+  size: number;
+}
+
+export interface Live2DViewer2Props extends Live2DViewport {
   className?: string;
   model: ArrayBuffer;
   updaters?: Array<L2DUpdateParam>;
   textures: Array<HTMLImageElement>;
-  position: CharacterVariantPosition;
-  size: number;
   play: boolean;
   onDraw?: (model: Live2DModel) => void;
 }
 
-export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
-  className, model, updaters, textures, position, size, play, onDraw
-}) => {
+export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = props => {
+  const { className, x, y, scale, size } = props;
+  const { model, updaters, textures, play, onDraw } = props;
+
   const canvas = React.useRef<HTMLCanvasElement>(null);
   const tick = React.useRef<() => void>();
   const requireId = React.useRef<number>();
-  const status = React.useRef<{ position: CharacterVariantPosition, size: number }>();
+  const viewportState = React.useRef<Live2DViewport>();
 
   const startAnimation = React.useCallback(() => {
     if (tick.current) {
       tick.current();
       requireId.current = requestAnimationFrame(startAnimation);
     }
-  }, [])
+  }, []);
 
   const stopAnimation = React.useCallback(() => {
     if (requireId.current) {
@@ -37,14 +42,15 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
   }, []);
 
   React.useEffect(() => {
-    status.current = { size, position };
-  }, [size, position])
+    viewportState.current = { size, x, y, scale };
+  }, [size, x, y, scale]);
 
   React.useEffect(() => {
     const draw = createDraw(canvas.current!, model, textures, updaters, onDraw);
     tick.current = () => {
-      if (status.current) {
-        draw(status.current.size, status.current.position);
+      if (viewportState.current) {
+        const state = viewportState.current;
+        draw(state.size, state.x, state.y, state.scale);
       }
     };
     if (play) {
@@ -53,7 +59,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
     return () => {
       stopAnimation();
       Live2D.dispose();
-    }
+    };
   }, []);
 
   React.useEffect(() => {
@@ -63,9 +69,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = ({
     if (play && !requireId.current) {
       startAnimation();
     }
-  },[ play ])
+  }, [play]);
 
-  return (
-    <canvas className={className} ref={canvas} width={size} height={size} />
-  );
-}
+  return <canvas className={className} ref={canvas} width={size} height={size} />;
+};

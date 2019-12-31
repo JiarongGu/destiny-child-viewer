@@ -1,5 +1,3 @@
-import { CharacterVariantPosition } from '@models/data/character-model/character-variant-position';
-
 export function createDraw(
   canvas: HTMLCanvasElement,
   modelData: ArrayBuffer,
@@ -23,20 +21,22 @@ export function createDraw(
   });
   model.setGL(context);
 
-  return (viewPortSize: number, position: CharacterVariantPosition) => {
-    context.viewport(0, 0, viewPortSize, viewPortSize);
+  return (size: number, x: number, y: number, scale: number) => {
+    context.viewport(0, 0, size, size);
     if (onDraw) {
       onDraw(model);
     }
-    drawCanvas(context, model, position, updaters);
+    drawCanvas(context, model, updaters, x, y, scale);
   };
 }
 
 export function drawCanvas(
   context: WebGLRenderer,
   model: Live2DModel,
-  position: CharacterVariantPosition,
-  updaters: Array<L2DUpdateParam>
+  updaters: Array<L2DUpdateParam>,
+  x: number, 
+  y: number, 
+  scale: number
 ) {
   // clear canvas
   context.clearColor(0.0, 0.0, 0.0, 0.0);
@@ -46,8 +46,8 @@ export function drawCanvas(
   const width = model.getCanvasWidth();
   const modelMatrix = new L2DModelMatrix(width, height);
 
-  modelMatrix.setWidth(position.scale);
-  modelMatrix.setCenterPosition(position.x, position.y);
+  modelMatrix.setWidth(scale);
+  modelMatrix.setCenterPosition(x, y);
   model.setMatrix(modelMatrix.getArray());
 
   updaters.forEach(updater => updater.updateParam(model));

@@ -1,5 +1,5 @@
 import { CharacterRepository, IconRepository, RenderModelRepository } from '@repositories';
-import { CharacterMetadata } from '@models/character/character-metadata';
+import { CharacterMetadata } from '@models';
 
 export class CharacterService {
   private _characterRepository: CharacterRepository;

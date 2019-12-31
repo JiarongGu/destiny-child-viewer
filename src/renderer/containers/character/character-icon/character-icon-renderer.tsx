@@ -5,7 +5,7 @@ import { GridChildComponentProps } from 'react-window';
 import { Tooltip } from 'antd';
 
 import { CharacterIconSink } from './character-icon-sink';
-import { CharacterVariantType } from '@services/character/character-variant-type.enum';
+import { CharacterVariantType } from '@models';
 import { PathService } from '@services';
 
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({

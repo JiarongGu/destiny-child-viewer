@@ -8,6 +8,8 @@
       "@containers*": ["renderer/containers*"],
       "@decorators": ["renderer/decorators"],
       "@decorators*": ["renderer/decorators*"],
+      "@hooks": ["renderer/hooks"],
+      "@hooks*": ["renderer/hooks*"],
       "@models": ["renderer/models"],
       "@models*": ["renderer/models*"],
       "@repositories": ["renderer/repositories"],

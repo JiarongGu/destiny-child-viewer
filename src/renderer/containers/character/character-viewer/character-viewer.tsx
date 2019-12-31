@@ -42,7 +42,7 @@ export const CharacterViewer: React.FunctionComponent = props => {
   return (
     <div className={styles.container}>
       <div className={styles.display}>
-        <CharacterViewerLive2D canvasOffset={100} />
+        <CharacterViewerLive2D />
       </div>
       <div className={styles.selection}>
         <Button onClick={() => (characterView.play = !characterView.play)}>
