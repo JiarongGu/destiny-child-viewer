@@ -23,7 +23,7 @@ export const CharacterViewer: React.FunctionComponent = props => {
   return (
     <div className={styles.container}>
       <div className={styles.display}>
-        <CharacterViewerLive2D />
+        <CharacterViewerLive2D className={styles.displayContainer} />
       </div>
       <div className={styles.detail}>
         <CharacterViewerDetail />

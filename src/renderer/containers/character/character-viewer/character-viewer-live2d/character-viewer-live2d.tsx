@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useSink } from 'redux-sink';
 import * as _ from 'lodash';
+import classnames from 'classnames';
 
 import { Live2DCanvas } from '@components';
 import { useDragPosition, useResizeObserver } from '@hooks';
@@ -8,7 +9,11 @@ import { useDragPosition, useResizeObserver } from '@hooks';
 import { CharacterViewerSink } from '../character-viewer-sink';
 import * as styles from './character-viewer-live2d.scss';
 
-export const CharacterViewerLive2D: React.FunctionComponent = () => {
+export interface CharacterViewerLive2DProps {
+  className?: string
+}
+
+export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
   const characterView = useSink(CharacterViewerSink, sink => [sink.components!, sink.position!, sink.play]);
 
   const { components, position, play } = characterView;
@@ -69,7 +74,7 @@ export const CharacterViewerLive2D: React.FunctionComponent = () => {
   );
 
   return (
-    <div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={classnames(styles.container, className)}>
       {components && position && (
         <div className={styles.canvas} onClick={onCanvasClick} onWheel={onWheel} {...mouseProps}>
           <Live2DCanvas

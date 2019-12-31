@@ -4,6 +4,8 @@ interface CssExports {
   'container': string;
   'detail': string;
   'display': string;
+  'display-container': string;
+  'displayContainer': string;
 }
 
 declare var cssExports: CssExports;

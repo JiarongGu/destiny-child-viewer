@@ -1,3 +1,6 @@
+$header-height: 48px;
+$detail-width: 400px;
+
 .container {
   display: flex;
   flex-direction: row;
@@ -6,8 +9,16 @@
 
 .display {
   flex: 1 1;
+
+  &-container {
+    height: calc(100vh - #{$header-height});
+    max-width: calc(100vw - #{$detail-width});
+  }
 }
 
 .detail {
-  flex: 0 0 400px;
+  flex: 0 0 $detail-width;
+  width: $detail-width;
+  min-width: $detail-width;
+  max-width: $detail-width;
 }
