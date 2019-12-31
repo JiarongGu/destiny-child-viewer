@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 
-import { PathService } from '@services';
 import { RenderModelRepository } from '@repositories';
 import { FileHelper, reduceMap, reduceKeys, FileStatsCollection } from '@utils';
+import { PathService } from '@services/path-service';
 import { RenderModelCollection, BaseRenderModelCollection, RenderModelType, IconModelCollection } from '@models/data';
 
 import { AssetFiles } from '../common';

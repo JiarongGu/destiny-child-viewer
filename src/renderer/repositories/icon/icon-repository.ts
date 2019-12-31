@@ -2,7 +2,7 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { PathService } from '@services';
+import { PathService } from '@services/path-service';
 import { IconModelCollection, IconModel } from '@models/data';
 
 import { RepositoryFiles } from '../common';

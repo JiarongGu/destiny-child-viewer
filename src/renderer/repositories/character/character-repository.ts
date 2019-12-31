@@ -2,16 +2,17 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { PathService } from '@services';
-import { RepositoryFiles } from '../common';
+import { PathService } from '@services/path-service';
 import {
   CharacterBase,
   CharacterAdditional,
   CharacterModel,
   CharacterVariantModel
-} from '@models/data/character-model';
+} from '@models/data';
 import { memorizeAsync } from '@decorators';
 import { getCacheContext } from '@utils';
+
+import { RepositoryFiles } from '../common';
 
 export class CharacterRepository {
   public static cacheName = 'character-repository';

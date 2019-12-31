@@ -32,7 +32,7 @@ export const characterRoute: RouteModel = {
       key: 'character.view',
       config: {
         strict: true,
-        path: '/character/view/:id',
+        path: '/character/view/:characterId/:variantId',
         component: CharacterViewer
       }
     },

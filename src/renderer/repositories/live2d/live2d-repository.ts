@@ -1,4 +1,5 @@
-import { FileService, PathService, FileReadType } from '@services';
+import { FileService, FileReadType } from '@services/file-service';
+import { PathService } from '@services/path-service';
 import {
   MotionModel,
   MotionData,
@@ -21,10 +22,10 @@ export class Live2DRepository {
   public async getData(characterId: string, variantId: string): Promise<Live2DData> {
     const id = `${characterId}_${variantId}`;
     const assetPath = this._pathService.getAssetPath(`/character/${id}`);
-    const metadataFilePath =  `${assetPath}/character.DRAGME.${id}.json`;
+    const metadataFilePath = `${assetPath}/character.DRAGME.${id}.json`;
 
     const metadata = await this._fileService.get<Live2DMetadata>(metadataFilePath, FileReadType.Json);
-    
+
     const motionKeys = Object.keys(metadata.motions);
     const motionArray = await Promise.all(motionKeys.map(key => this.getMotionData(assetPath, metadata.motions[key])));
     const motions = reduceKeys(motionKeys, (key, index) => motionArray[index]) as MotionDataCollection;

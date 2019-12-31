@@ -2,7 +2,7 @@
 import { sink, state, effect } from 'redux-sink';
 
 import { CharacterMetadata } from '@models/character/character-metadata';
-import { CharacterService } from '@services/character/character-service';
+import { CharacterService } from '@services/character-service';
 
 export interface IconGrid {
   height: number,

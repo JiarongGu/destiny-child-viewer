@@ -2,11 +2,11 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import { Link } from 'react-router-dom';
 import { GridChildComponentProps } from 'react-window';
-import { Tooltip } from 'antd';
+
+import { CharacterVariantType } from '@models';
+import { PathService } from '@services/path-service';
 
 import { CharacterIconSink } from './character-icon-sink';
-import { CharacterVariantType } from '@models';
-import { PathService } from '@services';
 
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({
   columnIndex,
@@ -36,7 +36,7 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
 
   return (
     <div style={style}>
-      <Link to={{ pathname: `/character/view/${character.id}`, state: { character, defaultVariant: variant } }}>
+      <Link to={`/character/view/${character.id}/${variant}`}>
         <img key={character.id} src={getAssetPath(icon.home)} />
       </Link>
     </div>

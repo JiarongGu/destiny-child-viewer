@@ -2,8 +2,8 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { BaseRenderModelCollection, RenderModel, RenderModelCollection } from '@models/data/render-model';
-import { PathService } from '@services';
+import { PathService } from '@services/path-service';
+import { BaseRenderModelCollection, RenderModel, RenderModelCollection } from '@models/data';
 import { reduceKeys, getCacheContext, reduceMap } from '@utils';
 
 import { AssetFiles } from '../common';
