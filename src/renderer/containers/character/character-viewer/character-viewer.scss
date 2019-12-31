@@ -1,24 +1,26 @@
-$header-height: 48px;
 $detail-width: 400px;
 
 .container {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  position: relative;
   overflow: hidden;
+  height: 100%;
+
+  padding-right: $detail-width;
 }
 
 .display {
-  flex: 1 1;
+  display: block;
+  position: relative;
 
-  &-container {
-    height: calc(100vh - #{$header-height});
-    max-width: calc(100vw - #{$detail-width});
-  }
+  height: 100%;
+  width: 100%;
 }
 
 .detail {
-  flex: 0 0 $detail-width;
-  width: $detail-width;
-  min-width: $detail-width;
-  max-width: $detail-width;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
 }

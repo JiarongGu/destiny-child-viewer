@@ -36,6 +36,7 @@ export const CharacterIcon = () => {
           columnWidth={128}
           height={grid.height}
           width={grid.width}
+          style={{ overflowX: 'hidden' }}
         >
           {CharacterIconRenderer}
         </FixedSizeGrid>

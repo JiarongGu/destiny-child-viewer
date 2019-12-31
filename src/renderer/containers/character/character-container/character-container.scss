@@ -1,3 +1,5 @@
+$header-height: 48px;
+
 .icon-container {
   position: relative;
   display: flex;
@@ -7,6 +9,10 @@
 }
 
 .header {
-  height: 48px;
+  height: $header-height;
   padding: 0;
+}
+
+.content {
+  height: calc(100vh - #{$header-height});
 }

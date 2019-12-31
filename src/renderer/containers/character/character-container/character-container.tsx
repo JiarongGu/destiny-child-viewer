@@ -15,7 +15,7 @@ export const CharacterContainer: React.FunctionComponent = () => {
   return (
     <Layout>
       <HeaderMenu routes={routes} className={styles.header} selectedKeys={layout.activeRoute.keys} />
-      <Layout.Content>
+      <Layout.Content className={styles.content}>
         <RouteContent routes={routes} />
       </Layout.Content>
     </Layout>
