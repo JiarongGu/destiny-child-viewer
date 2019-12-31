@@ -5,15 +5,9 @@
 }
 
 .display {
-  width: 100%;
+  flex: 1 1;
 }
 
-.selection {
-  width: 200px;
-
-  &-button {
-    &:hover {
-      cursor: pointer;
-    }
-  }
+.detail {
+  flex: 0 0 400px;
 }

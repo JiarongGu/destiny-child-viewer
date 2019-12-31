@@ -25,7 +25,7 @@ export const CharacterViewer: React.FunctionComponent = props => {
       <div className={styles.display}>
         <CharacterViewerLive2D />
       </div>
-      <div className={styles.selection}>
+      <div className={styles.detail}>
         <CharacterViewerDetail />
       </div>
     </div>

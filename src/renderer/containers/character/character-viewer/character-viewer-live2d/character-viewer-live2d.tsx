@@ -46,7 +46,9 @@ export const CharacterViewerLive2D: React.FunctionComponent = () => {
     containerRef,
     event => {
       const size = event.height > event.width ? event.width : event.height;
-      setCanvasSize(size);
+      if(canvasSize !== size) {
+        setCanvasSize(size);
+      }
     },
     []
   );

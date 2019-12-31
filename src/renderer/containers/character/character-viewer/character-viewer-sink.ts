@@ -66,7 +66,7 @@ export class CharacterViewerSink {
   private getMetadataPosition(metadata: RenderModelLive2D): CharacterVariantPosition {
     const live2dInfo = metadata.home ? metadata.home : metadata;
     return {
-      scale: live2dInfo.scale! * 1.25,
+      scale: live2dInfo.scale!,
       x: live2dInfo.position!.x,
       y: live2dInfo.position!.y,
     };
