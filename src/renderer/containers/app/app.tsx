@@ -1,4 +1,4 @@
-import { Layout, PageHeader } from 'antd';
+import { Layout } from 'antd';
 import * as React from 'react';
 import { useSink } from 'redux-sink';
 

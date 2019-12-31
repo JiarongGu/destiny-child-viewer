@@ -51,7 +51,7 @@ export class CharacterViewerSink {
         if (variantPosition && variantPosition.refined) {
           this.position = variantPosition;
         } else {
-          this.position = this.convertPosition(variantPosition || renderPosition);
+          this.position = this.convertPosition(renderPosition);
         }
       }
     } catch (ex) {
@@ -74,9 +74,9 @@ export class CharacterViewerSink {
 
   private convertPosition(position: CharacterVariantPosition): CharacterVariantPosition {
     return {
-      scale: position.scale * 1.25,
-      x: position.x / 100,
-      y: -position.y / 200
+      scale: position.scale,
+      x: position.x / 150,
+      y: -position.y / 300
     };
   }
 }

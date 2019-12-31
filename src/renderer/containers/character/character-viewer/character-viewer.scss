@@ -1,26 +1,9 @@
 $detail-width: 400px;
 
 .container {
-  display: block;
+  display: flex;
   position: relative;
+  height: 100%;
   overflow: hidden;
-  height: 100%;
-
-  padding-right: $detail-width;
-}
-
-.display {
-  display: block;
-  position: relative;
-
-  height: 100%;
-  width: 100%;
-}
-
-.detail {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 400px;
+  flex-direction: row;
 }

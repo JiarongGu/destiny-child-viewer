@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useSink } from 'redux-sink';
 
-import { SideMenuSink } from './sidemenu-sink';
+import { SideMenuSink, SideMenuInnerComponent } from './sidemenu-sink';
 
-export const useSideMenu = (menuComponent: React.ComponentClass | React.FunctionComponent) => {
+export const useSideMenu = (menuComponent: SideMenuInnerComponent) => {
   React.useEffect(() => {
     const sideMenu = useSink(SideMenuSink, false);
     sideMenu.component = menuComponent;

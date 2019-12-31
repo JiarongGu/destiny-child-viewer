@@ -5,12 +5,13 @@ import { RouteChildrenProps } from 'react-router';
 
 import { CharacterViewerSink } from './character-viewer-sink';
 import { CharacterViewerLive2D } from './character-viewer-live2d/character-viewer-live2d';
-import { CharacterViewerDetail } from './character-viewer-detail/character-viewer-detail';
+import { CharacterViewerSideMenu } from './character-viewer-sidemenu/character-viewer-sidemenu';
 
 import * as styles from './character-viewer.scss';
+import { useSideMenu } from '@sinks/sidemenu';
 
 export const CharacterViewer: React.FunctionComponent = props => {
-  const { match } = props as RouteChildrenProps<{ characterId: string, variantId: string }>;
+  const { match } = props as RouteChildrenProps<{ characterId: string; variantId: string }>;
   const characterViewSink = useSink(CharacterViewerSink);
 
   React.useEffect(() => {
@@ -20,14 +21,11 @@ export const CharacterViewer: React.FunctionComponent = props => {
     return () => characterViewSink.reset();
   }, []);
 
+  useSideMenu(CharacterViewerSideMenu);
+
   return (
     <div className={styles.container}>
-      <div className={styles.display}>
-        <CharacterViewerLive2D />
-      </div>
-      <div className={styles.detail}>
-        <CharacterViewerDetail />
-      </div>
+      <CharacterViewerLive2D />
     </div>
   );
 };

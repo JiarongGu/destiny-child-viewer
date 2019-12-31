@@ -1,0 +1,15 @@
+.button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  transition: all 0.2s;
+}

@@ -6,13 +6,12 @@ import * as styles from './sidemenu.module.scss';
 import { SideMenuSink } from '@sinks/sidemenu';
 
 export const SideMenu: React.FunctionComponent = () => {
-  const sink = useSink(SideMenuSink);
-  
+  const sideMenuSink = useSink(SideMenuSink);
   return (
-    (sink.component && (
-      <Layout.Sider theme={'dark'} collapsed={false} collapsible={false} className={styles.container}>
-        <sink.component />
-      </Layout.Sider>
+    (sideMenuSink.component && (
+      <aside className={styles.container}>
+        <sideMenuSink.component />
+      </aside>
     )) ||
     null
   );
