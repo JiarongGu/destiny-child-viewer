@@ -1,5 +1,4 @@
 import { FileService, FileReadType } from '@services/file-service';
-import { PathService } from '@services/path-service';
 import {
   MotionModel,
   MotionData,
@@ -9,21 +8,20 @@ import {
   Live2DData
 } from '@models/live2d';
 import { reduceKeys } from '@utils';
+import { FileLocator } from '../common';
 
 export class Live2DRepository {
   private _fileService: FileService;
-  private _pathService: PathService;
 
   constructor() {
-    this._pathService = new PathService();
     this._fileService = new FileService();
   }
 
   public async getData(characterId: string, variantId: string): Promise<Live2DData> {
     const id = `${characterId}_${variantId}`;
-    const assetPath = this._pathService.getAssetPath(`/character/${id}`);
+    const assetPath = `${FileLocator.CHARACTER_DIRECTORY}/${id}`;
+    
     const metadataFilePath = `${assetPath}/character.DRAGME.${id}.json`;
-
     const metadata = await this._fileService.get<Live2DMetadata>(metadataFilePath, FileReadType.Json);
 
     const motionKeys = Object.keys(metadata.motions);

@@ -1,11 +1,11 @@
+
 import * as _ from 'lodash';
 
 import { RenderModelRepository } from '@repositories';
 import { FileHelper, reduceMap, reduceKeys, FileStatsCollection } from '@utils';
-import { PathService } from '@services/path-service';
 import { RenderModelCollection, BaseRenderModelCollection, RenderModelType, IconModelCollection } from '@models/data';
-
-import { AssetFiles } from '../common';
+import { PathService } from '@services/path-service';
+import { FileLocator } from '../common';
 
 interface CharacterFolderInfo {
   characterId: string;
@@ -28,20 +28,11 @@ interface IconInfo {
 
 export class IconCollectionInitializer {
   private readonly _renderModelRepository: RenderModelRepository;
-
-  private readonly _pathService = new PathService();
-
-  private readonly _homeIconDirectory: string;
-  private readonly _battleIconDirectory: string;
-  private readonly _spaIconDirectory: string;
+  private readonly _pathService: PathService;
 
   constructor() {
-    this._pathService = new PathService();
-    this._homeIconDirectory = this._pathService.getAssetPath(AssetFiles.PORTRAIT_ICON_DIRECTORY);
-    this._battleIconDirectory = this._pathService.getAssetPath(AssetFiles.BATTLE_ICON_DIRECTORY);
-    this._spaIconDirectory = this._pathService.getAssetPath(AssetFiles.SPA_ICON_DIRECTORY);
-
-    this._renderModelRepository = new RenderModelRepository;
+    this._renderModelRepository = new RenderModelRepository();
+    this._pathService = new PathService()
   }
 
   public async createDefaultCollection() {
@@ -62,9 +53,9 @@ export class IconCollectionInitializer {
 
   private async mapToIconModels(iconInfos: Array<IconInfo>) {
     // get icon asset files
-    const spaIcons = await this.readDirectory(this._spaIconDirectory);
-    const homeIcons = await this.readDirectory(this._homeIconDirectory);
-    const battleIcons = await this.readDirectory(this._battleIconDirectory);
+    const spaIcons = await this.readDirectory(FileLocator.SPA_ICON_DIRECTORY);
+    const homeIcons = await this.readDirectory(FileLocator.HOME_ICON_DIRECTORY);
+    const battleIcons = await this.readDirectory(FileLocator.BATTLE_ICON_DIRECTORY);
 
     // filter out spa models
     const characterIconInfos = iconInfos.filter(x => !x.characterId.startsWith('s'));

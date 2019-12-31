@@ -2,10 +2,9 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { PathService } from '@services/path-service';
 import { IconModelCollection, IconModel } from '@models/data';
 
-import { RepositoryFiles } from '../common';
+import { FileLocator } from '../common';
 import { IconCollectionInitializer } from './icon-collection-initializer';
 
 export class IconRepository {
@@ -15,8 +14,7 @@ export class IconRepository {
   private readonly _iconCollectionInitializer: IconCollectionInitializer;
 
   constructor() {
-    const pathService = new PathService();
-    this._modelAdapter = new FileAsync(pathService.getDataPath(RepositoryFiles.ICON));
+    this._modelAdapter = new FileAsync(FileLocator.ICON_DATA);
     this._iconCollectionInitializer = new IconCollectionInitializer();
   }
 

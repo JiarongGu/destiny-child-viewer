@@ -1,13 +1,12 @@
+
 import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { PathService } from '@services/path-service';
 import { BaseRenderModelCollection, RenderModel, RenderModelCollection } from '@models/data';
 import { reduceKeys, getCacheContext, reduceMap } from '@utils';
-
-import { AssetFiles } from '../common';
 import { memorizeAsync } from '@decorators';
+import { FileLocator } from '../common';
 
 export class RenderModelRepository {
   public static cacheName = 'render-model-repository';
@@ -15,7 +14,7 @@ export class RenderModelRepository {
   private readonly _modelAdapter: lowdb.AdapterAsync<BaseRenderModelCollection>;
 
   constructor() {
-    this._modelAdapter = new FileAsync(new PathService().getAssetPath(AssetFiles.LIVE2D_MODEL_INFO));
+    this._modelAdapter = new FileAsync(FileLocator.RENDER_MODEL_INFO);
   }
 
   @memorizeAsync(getCacheContext(RenderModelRepository.cacheName))
