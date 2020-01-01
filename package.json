@@ -155,6 +155,6 @@
     "react-router-dom": "^5.1.2",
     "react-window": "^1.8.5",
     "redux": "^4.0.4",
-    "redux-sink": "^0.15.1"
+    "redux-sink": "^0.15.2"
   }
 }

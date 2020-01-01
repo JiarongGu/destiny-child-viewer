@@ -8,13 +8,14 @@ import { useDragPosition, useResizeObserver } from '@hooks';
 
 import { CharacterViewerSink } from '../character-viewer-sink';
 import * as styles from './character-viewer-live2d.scss';
+import { MathHelper } from '@utils';
 
 export interface CharacterViewerLive2DProps {
   className?: string
 }
 
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
-  const characterView = useSink(CharacterViewerSink, sink => [sink.components!, sink.position!, sink.play]);
+  const characterView = useSink(CharacterViewerSink, sink => [sink.components, sink.position, sink.play]);
   const { components, position, play } = characterView;
   const [canvasSize, setCanvasSize] = React.useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -38,7 +39,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
     (event: React.WheelEvent<HTMLDivElement>) => {
       if (position) {
         const value = event.deltaY / 2500;
-        const scale = position?.scale + value;
+        const scale = MathHelper.round(position?.scale + value, 3);
         characterView.position = { ...position, scale };
       }
     },
@@ -62,8 +63,8 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
       const positionBase = canvasSize / 1.5;
       if (position) {
         characterView.position = {
-          x: position.x + convertPosition(event.x, positionBase),
-          y: position.y - convertPosition(event.y, positionBase),
+          x: MathHelper.round(position.x + convertPosition(event.x, positionBase), 3),
+          y: MathHelper.round(position.y - convertPosition(event.y, positionBase), 3),
           scale: position.scale
         };
       }

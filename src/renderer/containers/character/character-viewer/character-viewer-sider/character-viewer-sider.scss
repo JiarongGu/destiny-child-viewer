@@ -1,32 +1,78 @@
 .container {
   height: 100%;
   background-color: lighten(#001529, 90);
+  display: flex;
+  flex-direction: column;
 }
 
-.button {
-  &:hover {
-    cursor: pointer;
-  }
-
-  &--disabled {
-    filter: grayscale(100%);
-
-    &:hover {
-      cursor: default;
-    }
-  }
+.controls {
+  flex: 0 0 64px;
+  background-color: #001529;
+  display: flex;
+  align-items: center;
+  padding: 12px;
 }
 
 .tabs {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+
   &--collapsed {
     height: auto;
   }
-  
+
   :global(.ant-tabs-nav) {
     height: 48px;
   }
 
+  :global(.ant-tabs-bar) {
+    margin: 0;
+  }
+
   :global(.ant-tabs-right-bar) {
     width: 80px;
+  }
+
+  :global(.ant-tabs-content) {
+    height: 100%;
+  }
+}
+
+.variant {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+
+  &-selection {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 6px 0 6px 6px;
+    background-color: #001529;
+
+    &__button {
+      height: 96px;
+      width: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--disabled {
+        filter: grayscale(100%);
+
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &-detail {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
   }
 }

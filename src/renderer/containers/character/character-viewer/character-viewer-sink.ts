@@ -2,6 +2,7 @@
 import { sink, effect, state } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
+import { MathHelper } from '@utils';
 import { RenderModelType, RenderModelLive2D, CharacterVariantPosition } from '@models/data';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d-service';
 import { CharacterService } from '@services/character-service';
@@ -81,8 +82,8 @@ export class CharacterViewerSink {
   private convertPosition(position: CharacterVariantPosition): CharacterVariantPosition {
     return {
       scale: position.scale,
-      x: position.x / 150,
-      y: -position.y / 300
+      x: MathHelper.round(position.x / 150, 3),
+      y: MathHelper.round(-position.y / 300, 3)
     };
   }
 }

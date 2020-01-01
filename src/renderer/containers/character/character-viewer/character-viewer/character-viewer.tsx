@@ -22,7 +22,7 @@ export const CharacterViewer: React.FunctionComponent = props => {
     return () => characterViewSink.clear();
   }, []);
 
-  SiderHook.useSider(CharacterViewerSider, { width: '400px', collapsible: true });
+  SiderHook.useSider(CharacterViewerSider, { width: '300px' });
 
   return (
     <div className={styles.container}>

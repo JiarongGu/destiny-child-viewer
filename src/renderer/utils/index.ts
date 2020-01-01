@@ -5,3 +5,4 @@ export * from './method-cache';
 export * from './cache-contexts';
 
 export * from './file-helper';
+export * from './math-helper';
