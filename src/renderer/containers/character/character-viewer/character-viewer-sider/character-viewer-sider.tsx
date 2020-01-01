@@ -13,7 +13,8 @@ import * as styles from './character-viewer-sider.scss';
 import { SiderSink } from '@sinks';
 
 export const CharacterViewerSider = () => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata, sink.play]);
+  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata, sink.play, sink.components]);
+
   const siderSink = useSink(SiderSink, sink => [sink.collapsed]);
   const tabPosition = siderSink.collapsed ? 'right' : 'top';
 
@@ -22,8 +23,9 @@ export const CharacterViewerSider = () => {
     return pathService.getAssetPath(path);
   }, []);
 
-  const metadata = characterViewSink.metadata;
+  const { metadata, components } = characterViewSink;
   const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
+
   return (
     <div className={styles.container}>
       <Tabs className={styles.tabs} tabPosition={tabPosition} onTabClick={() => (siderSink.collapsed = false)}>

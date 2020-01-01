@@ -2,6 +2,8 @@
 
 interface CssExports {
   'canvas': string;
+  'canvas--moving': string;
+  'canvasMoving': string;
   'container': string;
 }
 

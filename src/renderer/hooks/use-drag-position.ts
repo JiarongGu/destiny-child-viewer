@@ -8,6 +8,8 @@ export interface DragPosition {
 export function useDragPosition(handler: (event: DragPosition) => void, deps: React.DependencyList) {
   const dragPosition = React.useRef<DragPosition>();
 
+  const [moving, setMoving] = React.useState(false);
+
   const onMouseDown = React.useCallback(event => {
     dragPosition.current = {
       x: event.clientX,
@@ -16,11 +18,15 @@ export function useDragPosition(handler: (event: DragPosition) => void, deps: Re
   }, deps);
 
   const onMouseUp = React.useCallback(() => {
-    dragPosition.current = undefined
+    dragPosition.current = undefined;
+    setMoving(false);
   }, deps);
 
   const onMouseMove = React.useCallback(event => {
     if (dragPosition.current) {
+      if (!moving) {
+        setMoving(true);
+      }
       const x = event.clientX - dragPosition.current.x;
       const y = event.clientY - dragPosition.current.y;
 
@@ -34,5 +40,5 @@ export function useDragPosition(handler: (event: DragPosition) => void, deps: Re
     }
   }, deps);
 
-  return { onMouseDown, onMouseUp, onMouseMove }
+  return { onMouseDown, onMouseUp, onMouseMove, moving }
 }

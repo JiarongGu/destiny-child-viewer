@@ -11,13 +11,14 @@ import * as styles from './character-viewer-live2d.scss';
 import { MathHelper } from '@utils';
 
 export interface CharacterViewerLive2DProps {
-  className?: string
+  className?: string;
 }
 
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
   const characterView = useSink(CharacterViewerSink, sink => [sink.components, sink.position, sink.play]);
   const { components, position, play } = characterView;
   const [canvasSize, setCanvasSize] = React.useState(0);
+
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const onCanvasDraw = React.useCallback(() => {
@@ -30,8 +31,12 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   }, [components]);
 
   const onCanvasClick = React.useCallback(() => {
-    if (components && components.motions.attack) {
-      components.motionManager.startMotion(components.motions.attack[0]);
+    if (components) {
+      const motionKeys = Object.keys(components.motions).filter(motion => !motion.startsWith('idle')) || [];
+      const randomMotion = motionKeys[Math.round(Math.random() * motionKeys.length - 1)];
+      if (randomMotion) {
+        components.motionManager.startMotion(components.motions[randomMotion][0]);
+      }
     }
   }, [components]);
 
@@ -50,14 +55,14 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
     containerRef,
     event => {
       const size = event.height > event.width ? event.width : event.height;
-      if(canvasSize !== size) {
+      if (canvasSize !== size) {
         setCanvasSize(size);
       }
     },
     []
   );
 
-  const mouseProps = useDragPosition(
+  const { onMouseDown, onMouseMove, onMouseUp, moving } = useDragPosition(
     event => {
       const convertPosition = (value: number, base: number) => value / base;
       const positionBase = canvasSize / 1.5;
@@ -75,7 +80,14 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   return (
     <div ref={containerRef} className={classnames(styles.container, className)}>
       {components && position && (
-        <div className={styles.canvas} onClick={onCanvasClick} onWheel={onWheel} {...mouseProps}>
+        <div
+          className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
+          onClick={onCanvasClick}
+          onWheel={onWheel}
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
+        >
           <Live2DCanvas
             model={components.model!}
             textures={components.textures}

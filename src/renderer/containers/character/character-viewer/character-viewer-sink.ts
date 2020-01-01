@@ -4,15 +4,22 @@ import { sink, effect, state } from 'redux-sink';
 import { CharacterMetadata } from '@models';
 import { MathHelper } from '@utils';
 import { RenderModelType, RenderModelLive2D, CharacterVariantPosition } from '@models/data';
+import { MotionType } from '@models/live2d';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d-service';
 import { CharacterService } from '@services/character-service';
+
+export interface CurrentCharacterView { 
+  characterId: string; 
+  variantId: string; 
+  activeMotion?: string 
+}
 
 @sink('character-viewer', new Live2DService(), new CharacterService())
 export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
   @state public position?: CharacterVariantPosition;
   @state public metadata?: CharacterMetadata;
-  @state public current?: { characterId: string, variantId: string };
+  @state public current?:  { characterId: string, variantId: string };
 
   @state public play: boolean = true;
   @state public loading: boolean = false;
@@ -35,7 +42,7 @@ export class CharacterViewerSink {
   @effect
   public async loadCharacter(characterId: string, variantId: string) {
     this.loading = true;
-    
+
     if (this.current?.characterId !== characterId || !this.metadata) {
       this.metadata = await this._characterService.getCharacterMetadata(characterId);
     }
@@ -44,10 +51,10 @@ export class CharacterViewerSink {
       this.loading = false;
       return;
     }
-
+    
     this.current = { characterId, variantId };
-    const renderModel = this.metadata?.render[variantId];
 
+    const renderModel = this.metadata?.render[variantId];
     if (renderModel?.modeltype === RenderModelType.Live2D) {
       try {
         this.components = await this._live2DService.loadComponents(characterId, variantId);
@@ -66,7 +73,6 @@ export class CharacterViewerSink {
         this.position = this.convertPosition(renderPosition);
       }
     }
-
     this.loading = false;
   }
 
