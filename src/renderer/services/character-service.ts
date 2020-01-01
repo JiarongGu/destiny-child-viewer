@@ -37,7 +37,7 @@ export class CharacterService {
       icon,
       render,
       id: characterId,
-      variants: Object.keys(render)
+      variants: render && Object.keys(render)
     };
   }
 }

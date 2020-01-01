@@ -1,2 +1,3 @@
-export * from './navigation/navigation-sink';
-export * from './window/window-sink';
+export * from './navigation-sink';
+export * from './window-sink';
+export * from './sider-sink';

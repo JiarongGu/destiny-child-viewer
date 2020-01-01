@@ -1,17 +1,24 @@
 import * as React from 'react';
-import { Button, Icon } from 'antd';
+import { Button } from 'antd';
 import { useSink } from 'redux-sink';
-import classnames from 'classnames';
 
 import { PathService } from '@services/path-service';
 import { CharacterViewerSink } from '../character-viewer-sink';
 
-import * as styles from './character-viewer-sidemenu.scss';
+import * as styles from './character-viewer-sider.scss';
+import { SiderHook } from '@hooks';
 
-export const CharacterViewerSideMenu = () => {
+export const CharacterViewerSider = () => {
   const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata!, sink.play]);
-  const [collapsed, setCollapsed] = React.useState(false);
-  const width = collapsed ? '128px' : '360px';
+
+  SiderHook.useSiderCollapse(
+    (context) => {
+      context.width = context.collapsed ? '128px' : '360px';
+    },
+    (context) => {
+      context.collapsed = false;
+    }
+  );
 
   const getAssetPath = React.useCallback(path => {
     const pathService = new PathService();
@@ -19,10 +26,10 @@ export const CharacterViewerSideMenu = () => {
   }, []);
 
   const { metadata } = characterViewSink;
-  const variants = metadata?.variants.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
+  const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
 
   return (
-    <div className={styles.container} style={{ width }}>
+    <>
       {metadata &&
         variants.map(variant => (
           <div key={variant}>
@@ -37,15 +44,6 @@ export const CharacterViewerSideMenu = () => {
       <Button onClick={() => (characterViewSink.play = !characterViewSink.play)}>
         {characterViewSink.play ? 'Pause' : 'Resume'}
       </Button>
-
-      <div
-        className={classnames('ant-layout-sider-trigger', styles.trigger)}
-        onClick={() => setCollapsed(!collapsed)}
-        style={{ width }}
-      >
-        {collapsed && <Icon type={'left'} />}
-        {!collapsed && <Icon type={'right'} />}
-      </div>
-    </div>
+    </>
   );
 };

@@ -1,0 +1,7 @@
+.container {
+  position: relative;
+
+  :global(.ant-layout-sider-trigger) {
+    transform: rotate(180deg);
+  }
+}

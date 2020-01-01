@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { NavigationSink } from '@sinks';
 
-export const AppMenu: React.FunctionComponent = () => {
+export const AppNavigation: React.FunctionComponent = () => {
   const navigation = useSink(NavigationSink);
   const routeKeys = navigation.activeRoute && navigation.activeRoute.keys;
   const [collapsed, setCollapsed] = React.useState(true);

@@ -6,22 +6,22 @@ import * as styles from './app.scss';
 
 import { NavigationSink } from '@sinks';
 import { RouteContent } from '@components/route-content';
-import { SideMenu } from '@containers/sidemenu';
-import { AppMenu } from './app-menu/app-menu';
+
+import { AppNavigation } from './app-navigation/app-navigation';
+import { AppSider } from './app-sider/app-sider';
 
 export const App: React.FunctionComponent = () => {
-  const navigation = useSink(NavigationSink, sink => [ sink.routes ]);
+  const navigation = useSink(NavigationSink, sink => [sink.routes]);
 
   return (
     <Layout className={styles.layout}>
-      <AppMenu />
-
-      <Layout.Content className={styles.layoutContent}>
-        <div className={styles.layoutRouteContent}>
+      <AppNavigation />
+      <Layout>
+        <Layout.Content>
           <RouteContent routes={navigation.routes} />
-        </div>
-        <SideMenu />
-      </Layout.Content>
+        </Layout.Content>
+        <AppSider />
+      </Layout>
     </Layout>
   );
 };

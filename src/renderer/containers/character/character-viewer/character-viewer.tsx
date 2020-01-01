@@ -3,12 +3,13 @@ import * as _ from 'lodash';
 import { useSink } from 'redux-sink';
 import { RouteChildrenProps } from 'react-router';
 
+import { SiderHook } from '@hooks';
+
 import { CharacterViewerSink } from './character-viewer-sink';
 import { CharacterViewerLive2D } from './character-viewer-live2d/character-viewer-live2d';
-import { CharacterViewerSideMenu } from './character-viewer-sidemenu/character-viewer-sidemenu';
+import { CharacterViewerSider } from './character-viewer-sider/character-viewer-sider';
 
 import * as styles from './character-viewer.scss';
-import { useSideMenu } from '@sinks/sidemenu';
 
 export const CharacterViewer: React.FunctionComponent = props => {
   const { match } = props as RouteChildrenProps<{ characterId: string; variantId: string }>;
@@ -21,7 +22,7 @@ export const CharacterViewer: React.FunctionComponent = props => {
     return () => characterViewSink.reset();
   }, []);
 
-  useSideMenu(CharacterViewerSideMenu);
+  SiderHook.useSider(CharacterViewerSider);
 
   return (
     <div className={styles.container}>

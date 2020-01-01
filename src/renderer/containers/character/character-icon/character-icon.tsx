@@ -3,12 +3,11 @@ import { FixedSizeGrid } from 'react-window';
 import { useSink } from 'redux-sink';
 import * as _ from 'lodash';
 
-import { useResizeObserver } from '@hooks';
-import { useSideMenu } from '@sinks/sidemenu';
+import { useResizeObserver, SiderHook } from '@hooks';
 
 import { CharacterIconRenderer } from './character-icon-renderer';
 import { CharacterIconSink } from './character-icon-sink';
-import { CharacterIconSideMenu } from './character-icon-sidemenu/character-icon-sidemenu';
+import { CharacterIconSider } from './character-icon-sider/character-icon-sider';
 
 import * as styles from './character-icon.scss';
 
@@ -18,7 +17,7 @@ export const CharacterIcon = () => {
   const valid = grid.height > 0 && grid.width > 0;
 
   const containerRef = React.useRef<HTMLDivElement>(null);
-  
+
   React.useEffect(() => {
     sink.load();
   }, []);
@@ -29,7 +28,7 @@ export const CharacterIcon = () => {
     []
   );
 
-  useSideMenu(CharacterIconSideMenu);
+  SiderHook.useSider(CharacterIconSider);
 
   return (
     <div className={styles.container} ref={containerRef}>

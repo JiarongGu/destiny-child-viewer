@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export const DatabaseCharacterSideMenu = () => {
+export const DatabaseCharacterSider = () => {
   return <div>character sidemenu</div>
 }

@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { useSideMenu } from '@sinks/sidemenu';
+import { SiderHook } from '@hooks';
 
-import { DatabaseCharacterSideMenu } from '../database-character-sidemenu/database-character-sidemenu';
+import { DatabaseCharacterSider } from '../database-character-sider/database-character-sider';
 
 export const DatabaseCharacter = () => {
-  useSideMenu(DatabaseCharacterSideMenu);
+  SiderHook.useSider(DatabaseCharacterSider);
 
   return <div>Character Database</div>;
 };
