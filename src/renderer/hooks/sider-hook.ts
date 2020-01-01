@@ -5,12 +5,11 @@ import { SiderSink, SiderComponent } from '@sinks';
 
 export class SiderHook {
   public static useSiderCollapse(
-    onCollapse?: (context: SiderSink) => void,
-    onCreate?: (context: SiderSink) => void
+    onCollapse?: (context: SiderSink) => void
   ) {
     React.useEffect(() => {
       const sider = useSink(SiderSink, false);
-      sider.collapsed = true;
+      sider.collapsible = true;
 
       if (onCollapse) {
         sider.onCollapse = () => {
@@ -18,17 +17,14 @@ export class SiderHook {
           onCollapse(sider);
         };
       }
-      if (onCreate) {
-        onCreate(sider);
-      }
       return () => sider.clearCollapse();
     }, []);
   }
 
-  public static useSider(component: SiderComponent) {
+  public static useSider(component: SiderComponent, width?: number | string) {
     React.useEffect(() => {
       const sider = useSink(SiderSink, false);
-      sider.component = component;
+      sider.config = { component, width };
       return () => sider.clearSider();
     }, []);
   }

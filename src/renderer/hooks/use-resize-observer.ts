@@ -18,9 +18,6 @@ export function useResizeObserver(
   React.useLayoutEffect(() => {
     if (elementRef.current) {
       const resizeObserver = new ResizeObserver(() => handler(createEvent()));
-      if (handler) {
-        handler(createEvent());
-      }
       resizeObserver.observe(elementRef.current);
       return () => resizeObserver.unobserve(elementRef.current!);
     }

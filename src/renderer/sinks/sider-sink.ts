@@ -3,17 +3,21 @@ import { CollapseType } from 'antd/lib/layout/Sider';
 
 export type SiderComponent = React.ComponentClass | React.FunctionComponent;
 
+export interface SiderConfiguration {
+  component: SiderComponent;
+  width?: number | string;
+}
+
 @sink('sider')
 export class SiderSink {
-  @state component?: SiderComponent;
-  @state width?: number | string;
+  @state config?: SiderConfiguration;
 
   @state collapsed: boolean = false;
   @state collapsible: boolean = false;
   @state onCollapse?: (collapsed: boolean, type: CollapseType) => void;
 
   @effect
-  public clearSider() {
+  public clearCollapse() {
     if (this.collapsible) {
       this.collapsible = false;
       this.collapsed = false;
@@ -25,13 +29,9 @@ export class SiderSink {
   }
 
   @effect
-  public clearCollapse() {
-    if (this.component) {
-      this.component = undefined;
-    }
-
-    if (this.width) {
-      this.width = undefined;
+  public clearSider() {
+    if (this.config) {
+      this.config = undefined;
     }
   }
 }

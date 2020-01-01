@@ -20,11 +20,14 @@ export class CharacterIconSink {
 
   @effect
   public async load() {
-    this.characters = await this._characterService.listCharacterMetadata();
-    this.updateGrid(this.grid.height, this.grid.width, this.characters.length);
+    if (this.characters.length === 0) {
+      this.characters = await this._characterService.listCharacterMetadata();
+      this.updateGrid(this.grid.height, this.grid.width, this.characters.length);
+    }
   }
 
-  @effect updateGridBySize(height: number, width: number) {
+  @effect
+  public updateGridBySize(height: number, width: number) {
     this.updateGrid(height, width, this.characters.length);
   }
 

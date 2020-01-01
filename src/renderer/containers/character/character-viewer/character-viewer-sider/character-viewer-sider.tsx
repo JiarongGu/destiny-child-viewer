@@ -9,23 +9,17 @@ import * as styles from './character-viewer-sider.scss';
 import { SiderHook } from '@hooks';
 
 export const CharacterViewerSider = () => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata!, sink.play]);
-
-  SiderHook.useSiderCollapse(
-    (context) => {
-      context.width = context.collapsed ? '128px' : '360px';
-    },
-    (context) => {
-      context.collapsed = false;
-    }
-  );
+  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.current!, sink.play]);
+  SiderHook.useSiderCollapse(context => {
+    console.log('collapsed');
+  });
 
   const getAssetPath = React.useCallback(path => {
     const pathService = new PathService();
     return pathService.getAssetPath(path);
   }, []);
 
-  const { metadata } = characterViewSink;
+  const metadata = characterViewSink.current?.metadata;
   const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
 
   return (

@@ -10,8 +10,7 @@ import { CharacterService } from '@services/character-service';
 export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
   @state public position?: CharacterVariantPosition;
-  @state public metadata?: CharacterMetadata;
-  @state public current?: { characterId: string, variantId: string };
+  @state public current?: { characterId: string, variantId: string, metadata: CharacterMetadata };
 
   @state public play: boolean = true;
   @state public loading: boolean = false;
@@ -26,7 +25,6 @@ export class CharacterViewerSink {
     this.components = undefined;
     this.position = undefined;
     this.current = undefined;
-    this.metadata = undefined;
     this.play = true;
     this.loading = false;
   }
@@ -35,29 +33,29 @@ export class CharacterViewerSink {
   public async loadCharacter(characterId: string, variantId: string) {
     this.reset();
     this.loading = true;
-    this.current = { characterId, variantId };
-    this.metadata = await this._characterService.getCharacterMetadata(characterId);
+    const metadata = await this._characterService.getCharacterMetadata(characterId);
+    this.current = { characterId, variantId, metadata };
 
-    try {
-      const renderModel = this.metadata.render[variantId];
+    const renderModel = metadata.render[variantId];
 
-      if (renderModel.modeltype === RenderModelType.Live2D) {
+    if (renderModel.modeltype === RenderModelType.Live2D) {
+      try {
         this.components = await this._live2DService.loadComponents(characterId, variantId);
-
-        const characterVariants = this.metadata.character?.variants;
-        const renderPosition = this.getMetadataPosition(renderModel);
-        const variantPosition = characterVariants && characterVariants[variantId]?.positions.home;
-
-        if (variantPosition && variantPosition.refined) {
-          this.position = variantPosition;
-        } else {
-          this.position = this.convertPosition(renderPosition);
-        }
+      } catch (ex) {
+        console.warn(ex);
+        console.warn(metadata);
+        this.reset();
       }
-    } catch (ex) {
-      console.warn(ex);
-      console.warn(this.metadata);
-      this.reset();
+
+      const characterVariants = metadata.character?.variants;
+      const renderPosition = this.getMetadataPosition(renderModel);
+      const variantPosition = characterVariants && characterVariants[variantId]?.positions.home;
+
+      if (variantPosition && variantPosition.refined) {
+        this.position = variantPosition;
+      } else {
+        this.position = this.convertPosition(renderPosition);
+      }
     }
 
     this.loading = false;
