@@ -15,9 +15,7 @@ export interface CharacterViewerLive2DProps {
 
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
   const characterView = useSink(CharacterViewerSink, sink => [sink.components!, sink.position!, sink.play]);
-
   const { components, position, play } = characterView;
-
   const [canvasSize, setCanvasSize] = React.useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
 

@@ -5,24 +5,24 @@ import { RouteChildrenProps } from 'react-router';
 
 import { SiderHook } from '@hooks';
 
-import { CharacterViewerSink } from './character-viewer-sink';
-import { CharacterViewerLive2D } from './character-viewer-live2d/character-viewer-live2d';
-import { CharacterViewerSider } from './character-viewer-sider/character-viewer-sider';
+import { CharacterViewerSink } from '../character-viewer-sink';
+import { CharacterViewerLive2D } from '../character-viewer-live2d/character-viewer-live2d';
+import { CharacterViewerSider } from '../character-viewer-sider/character-viewer-sider';
 
 import * as styles from './character-viewer.scss';
 
 export const CharacterViewer: React.FunctionComponent = props => {
   const { match } = props as RouteChildrenProps<{ characterId: string; variantId: string }>;
-  const characterViewSink = useSink(CharacterViewerSink);
+  const characterViewSink = useSink(CharacterViewerSink, false);
 
   React.useEffect(() => {
     if (match?.params) {
       characterViewSink.loadCharacter(match.params.characterId, match.params.variantId);
     }
-    return () => characterViewSink.reset();
+    return () => characterViewSink.clear();
   }, []);
 
-  SiderHook.useSider(CharacterViewerSider, '360px');
+  SiderHook.useSider(CharacterViewerSider, { width: '400px', collapsible: true });
 
   return (
     <div className={styles.container}>

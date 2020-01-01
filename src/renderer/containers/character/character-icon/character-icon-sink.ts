@@ -15,8 +15,9 @@ export interface IconGrid {
 export class CharacterIconSink {
   @state public characters: Array<CharacterMetadata> = [];
   @state public grid: IconGrid = { height: 0, width: 0, row: 0, column: 0 };
+  @state public scrollTop: number = 0;
 
-  constructor( private _characterService: CharacterService) { }
+  constructor(private _characterService: CharacterService) { }
 
   @effect
   public async load() {

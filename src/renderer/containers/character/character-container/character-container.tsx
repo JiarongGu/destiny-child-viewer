@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import { Layout } from 'antd';
 
-import { HeaderMenu, RouteContent } from '@components';
+import { HeaderNavigation, RouteContent } from '@components';
 import { NavigationSink } from '@sinks';
 import { characterRoute } from '../character-route';
 
@@ -14,7 +14,7 @@ export const CharacterContainer: React.FunctionComponent = () => {
 
   return (
     <Layout>
-      <HeaderMenu routes={routes} className={styles.header} selectedKeys={layout.activeRoute.keys} />
+      <HeaderNavigation routes={routes} className={styles.header} selectedKeys={layout.activeRoute.keys} />
       <Layout.Content className={styles.content}>
         <RouteContent routes={routes} />
       </Layout.Content>

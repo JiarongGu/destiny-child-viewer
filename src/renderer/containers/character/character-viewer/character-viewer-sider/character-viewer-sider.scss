@@ -1,15 +1,32 @@
+.container {
+  height: 100%;
+  background-color: lighten(#001529, 90);
+}
+
 .button {
   &:hover {
     cursor: pointer;
   }
+
+  &--disabled {
+    filter: grayscale(100%);
+
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
-.trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.tabs {
+  &--collapsed {
+    height: auto;
+  }
+  
+  :global(.ant-tabs-nav) {
+    height: 48px;
+  }
 
-.container {
-  transition: all 0.2s;
+  :global(.ant-tabs-right-bar) {
+    width: 80px;
+  }
 }

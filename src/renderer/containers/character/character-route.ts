@@ -2,7 +2,7 @@ import { CharacterIcon } from './character-icon/character-icon';
 import { RouteModel } from '@models/route';
 
 import { CharacterContainer } from './character-container/character-container';
-import { CharacterViewer } from './character-viewer/character-viewer';
+import { CharacterViewer } from './character-viewer';
 
 export const characterRoute: RouteModel = {
   key: 'character',

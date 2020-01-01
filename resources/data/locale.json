@@ -10,5 +10,7 @@
   "00000012.unk": "Spa Descriptions",
   "00000021.unk": "Item Descriptions",
   "00000028.unk": "Character Favor Text",
-  "00000039.tab": "Skill Descriptions"
+  "00000039.tab": "Skill Descriptions",
+  "CharacterTitles": "asset\\locale\\00000009.unk",
+  "CharacterNames": "asset\\locale\\00000010.unk"
 }

@@ -38,4 +38,8 @@ export class FileLocator {
   public static get LIVE2D_DATA() { 
     return this.pathService.getDataPath('live2d.json') 
   }
+
+  public static get LOCALE_DATA() {
+    return this.pathService.getDataPath('locale.json') 
+  }
 }

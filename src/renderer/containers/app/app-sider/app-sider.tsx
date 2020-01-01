@@ -7,15 +7,17 @@ import * as styles from './app-sider.scss';
 
 export const AppSider: React.FunctionComponent = () => {
   const siderSink = useSink(SiderSink);
-  const { config, collapsed, collapsible, onCollapse } = siderSink;
+  const { config, collapsed } = siderSink;
 
   return (
     (config && (
       <Layout.Sider
         className={styles.container}
         collapsed={collapsed}
-        collapsible={collapsible}
-        onCollapse={onCollapse}
+        collapsible={config.collapsible}
+        onCollapse={() => {
+          siderSink.collapsed = !collapsed;
+        }}
         width={config.width}
       >
         <config.component />

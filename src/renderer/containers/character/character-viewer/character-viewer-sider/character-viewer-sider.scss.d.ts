@@ -2,8 +2,12 @@
 
 interface CssExports {
   'button': string;
+  'button--disabled': string;
+  'buttonDisabled': string;
   'container': string;
-  'trigger': string;
+  'tabs': string;
+  'tabs--collapsed': string;
+  'tabsCollapsed': string;
 }
 
 declare var cssExports: CssExports;

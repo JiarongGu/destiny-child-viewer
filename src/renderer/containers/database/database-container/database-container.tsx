@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Layout } from 'antd';
 import { useSink } from 'redux-sink';
 
-import { RouteContent, HeaderMenu } from '@components';
+import { RouteContent, HeaderNavigation } from '@components';
 import { NavigationSink } from '@sinks';
 import { databaseRoute } from '../database-route';
 
@@ -14,7 +14,7 @@ export const DatabaseContainer = () => {
 
   return (
     <Layout>
-      <HeaderMenu routes={routes} className={styles.header} selectedKeys={layout.activeRoute.keys} />
+      <HeaderNavigation routes={routes} className={styles.header} selectedKeys={layout.activeRoute.keys} />
       <Layout.Content>
         <div className={styles.content}>
           <RouteContent routes={routes} />

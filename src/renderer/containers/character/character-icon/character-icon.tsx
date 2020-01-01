@@ -12,14 +12,22 @@ import { CharacterIconSider } from './character-icon-sider/character-icon-sider'
 import * as styles from './character-icon.scss';
 
 export const CharacterIcon = () => {
-  const sink = useSink(CharacterIconSink);
+  const sink = useSink(CharacterIconSink, sink => [sink.grid]);
   const grid = sink.grid;
   const valid = grid.height > 0 && grid.width > 0;
 
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const gridRef = React.useRef<FixedSizeGrid>(null);
 
   React.useEffect(() => {
     sink.load();
+    if (sink.scrollTop) {
+      gridRef.current?.scrollTo({ scrollLeft: 0, scrollTop: sink.scrollTop });
+    }
+
+    return () => {
+      sink.scrollTop = (gridRef.current?.state as any)?.scrollTop || 0;
+    };
   }, []);
 
   useResizeObserver(
@@ -34,6 +42,7 @@ export const CharacterIcon = () => {
     <div className={styles.container} ref={containerRef}>
       {valid && (
         <FixedSizeGrid
+          ref={gridRef}
           columnCount={grid.column}
           rowCount={grid.row}
           rowHeight={128}

@@ -1,3 +1,4 @@
-export * from './icon-model';
-export * from './render-model';
-export * from './character-model';
+export * from './icon';
+export * from './render';
+export * from './character';
+export * from './locale';

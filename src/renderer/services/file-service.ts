@@ -38,7 +38,7 @@ export class FileService {
 
     const byteArray = Uint8Array.from(file);
     const blob = new Blob([byteArray]);
-
+    
     if (type === FileReadType.URL) {
       return URL.createObjectURL(blob);
     }

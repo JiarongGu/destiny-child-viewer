@@ -60,7 +60,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = props =
       stopAnimation();
       Live2D.dispose();
     };
-  }, []);
+  }, [model, textures, updaters, onDraw]);
 
   React.useEffect(() => {
     if (!play) {

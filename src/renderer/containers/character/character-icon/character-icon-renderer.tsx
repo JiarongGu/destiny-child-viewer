@@ -13,7 +13,7 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
   rowIndex,
   style
 }) => {
-  const sink = useSink(CharacterIconSink);
+  const sink = useSink(CharacterIconSink, sink => [sink.characters]);
   const getAssetPath = React.useCallback(path => {
     const pathService = new PathService();
     return pathService.getAssetPath(path);

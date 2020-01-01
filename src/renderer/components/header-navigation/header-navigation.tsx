@@ -10,7 +10,7 @@ export interface HeaderMenuProps {
   routes: Array<RouteModel>;
 }
 
-export const HeaderMenu: React.FunctionComponent<HeaderMenuProps> = ({ className, selectedKeys, routes }) => {
+export const HeaderNavigation: React.FunctionComponent<HeaderMenuProps> = ({ className, selectedKeys, routes }) => {
   return (
     <Layout.Header className={className}>
       <Menu theme={'light'} mode={'horizontal'} selectedKeys={selectedKeys}>
