@@ -84,6 +84,7 @@ export class CharacterViewerSink {
         RenderModelPositionType.Home, 
         this.position
       );
+      this.metadata = await this._characterService.getCharacterMetadata(this.current.characterId);
     }
   }
 

@@ -1,4 +1,8 @@
-export interface CacheContext {
-  main: Map<string, Map<any, any>>;
-  util: Map<string, Map<any, any>>;
+export class CacheContext {
+  public main = new Map<string, Map<any, any>>();
+  public util = new Map<string, Map<any, any>>();
+
+  public get(key: string) {
+    return this.main.get(key);
+  }
 }

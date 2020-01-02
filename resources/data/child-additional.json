@@ -799,9 +799,10 @@
         "title": "意地悪な カリプソ",
         "positions": {
           "home": {
-            "x": -10,
-            "y": 0,
-            "scale": 1.15
+            "x": 0,
+            "y": 0.1,
+            "scale": 1.2,
+            "refined": true
           }
         },
         "description": "青は鮮やかな愛の色と言い張る彼女だけのコスチューム。",
@@ -812,8 +813,8 @@
         "positions": {
           "home": {
             "x": 0,
-            "y": 0,
-            "scale": 1,
+            "y": 0.1,
+            "scale": 1.2,
             "refined": true
           }
         },
@@ -868,23 +869,52 @@
     }
   },
   "c041": {
+    "name": "Tiamat",
     "variants": {
       "00": {
         "title": "暗黒街の マティ",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.15,
+            "scale": 1.25,
+            "refined": true
+          }
+        },
         "description": "復讐を誓ったマフィアの女ボス。",
         "name": "大久保藍子"
       },
       "01": {
         "title": "夜の ティアマト",
+        "positions": {
+          "home": {
+            "x": -0.1,
+            "y": 0.4,
+            "scale": 1.4,
+            "refined": true
+          }
+        },
         "description": "黒すぎて、ベルトがどこかわからなくなるので、\\注意すること。",
         "name": "大久保藍子"
       },
       "02": {
         "title": "深淵の ティアマト",
+        "positions": {
+          "home": {
+            "x": -0.1,
+            "y": 0.4,
+            "scale": 1.4,
+            "refined": true
+          }
+        },
         "description": "「仮面を脱いだら美人だった！」という設定は外せない。",
         "name": "大久保藍子"
       }
-    }
+    },
+    "id": "c041",
+    "numMods": 5,
+    "numModsNSFW": 2,
+    "lastModAdded": 1574391974177
   },
   "c043": {
     "variants": {
@@ -1231,23 +1261,58 @@
     }
   },
   "c058": {
+    "stars": 5,
+    "tierPVP": 8,
+    "name": "Nirrti",
+    "tierRaid": 7,
+    "numModsNSFW": 7,
     "variants": {
       "00": {
         "title": "ニルティ",
+        "positions": {
+          "home": {
+            "x": -10,
+            "y": -35,
+            "scale": 0.85
+          }
+        },
         "description": "祓魔師の修練服。",
         "name": "井ノ上奈々"
       },
       "01": {
         "title": "祓魔師 ニルティ",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.15,
+            "scale": 1.4,
+            "refined": true
+          }
+        },
         "description": "チャイルドのイメージがそのまま表れた服装である。",
         "name": "井ノ上奈々"
       },
       "02": {
         "title": "羅刹 ニルティ",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.15,
+            "scale": 1.4,
+            "refined": true
+          }
+        },
         "description": "強靭一振りの刃となろう。",
         "name": "井ノ上奈々"
       }
-    }
+    },
+    "tierBoss": 8,
+    "lastModAdded": 1574641615099,
+    "numMods": 7,
+    "type": "debuffer",
+    "id": "c058",
+    "element": "light",
+    "tierPVE": 8
   },
   "c060": {
     "variants": {
@@ -2601,28 +2666,64 @@
     }
   },
   "c187": {
+    "name": "Thetis",
     "variants": {
       "89": {
         "title": "哀愁の テティス",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.1,
+            "scale": 1.2,
+            "refined": true
+          }
+        },
         "description": "サンゴと真珠があしらわれたテティスの限定ドレス。",
         "name": "五十嵐麗"
       },
       "00": {
         "title": "水谷 さより",
+        "positions": {
+          "home": {
+            "x": -25,
+            "y": -19,
+            "scale": 1.05
+          }
+        },
         "description": "テティスの契約者の服。",
         "name": "五十嵐麗"
       },
       "01": {
         "title": "悲嘆の テティス",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.1,
+            "scale": 1.2,
+            "refined": true
+          }
+        },
         "description": "深海の水で染め上げたテティスの最高級ドレス。",
         "name": "五十嵐麗"
       },
       "02": {
         "title": "哀愁の テティス",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.1,
+            "scale": 1.2,
+            "refined": true
+          }
+        },
         "description": "サンゴと真珠があしらわれたテティスの限定ドレス。",
         "name": "五十嵐麗"
       }
-    }
+    },
+    "id": "c187",
+    "numMods": 3,
+    "numModsNSFW": 3,
+    "lastModAdded": 1574086045230
   },
   "c188": {
     "variants": {
@@ -3038,23 +3139,58 @@
     }
   },
   "c216": {
+    "stars": 5,
+    "tierPVP": 3,
+    "name": "Warwolf",
+    "tierRaid": 8,
+    "numModsNSFW": 4,
     "variants": {
       "00": {
         "title": "尾形 真夜",
+        "positions": {
+          "home": {
+            "x": -12,
+            "y": -5,
+            "scale": 0.95
+          }
+        },
         "description": "幼い頃からサーカス団で育てられた自由を求める少女。",
         "name": "花守ゆみり"
       },
       "01": {
         "title": "月夜の ワーウルフ",
+        "positions": {
+          "home": {
+            "x": 0.025,
+            "y": 0.152,
+            "scale": 1.54,
+            "refined": true
+          }
+        },
         "description": "影に溶け込む狼。",
         "name": "花守ゆみり"
       },
       "02": {
         "title": "サムハイン ワーウルフ",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": -0.05,
+            "scale": 1.5,
+            "refined": true
+          }
+        },
         "description": "野性に目覚めた夜、ワーウルフがやってきた。",
         "name": "花守ゆみり"
       }
-    }
+    },
+    "tierBoss": 8,
+    "lastModAdded": 1574086045830,
+    "numMods": 5,
+    "type": "support",
+    "id": "c216",
+    "element": "dark",
+    "tierPVE": 4
   },
   "c220": {
     "variants": {
@@ -3151,23 +3287,58 @@
     }
   },
   "c227": {
+    "stars": 5,
+    "tierPVP": 9,
+    "name": "Mafdet",
+    "tierRaid": 8,
+    "numModsNSFW": 2,
     "variants": {
       "00": {
         "title": "百目鬼 舞",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 5,
+            "scale": 0.9
+          }
+        },
         "description": "父さんが残した警察服と警棒があれば、少しも怖くない。",
         "name": "行成とあ"
       },
       "01": {
         "title": "正義の マフデト",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.4,
+            "scale": 1.5,
+            "refined": true
+          }
+        },
         "description": "マフデトの戦闘服。見つめられると悪い事をしていないのにソワソワしてくる。",
         "name": "行成とあ"
       },
       "02": {
         "title": "独断の マフデト",
+        "positions": {
+          "home": {
+            "scale": 1.5,
+            "x": 0,
+            "y": 0.4,
+            "refined": true
+          }
+        },
         "description": "マフデトの戦闘服。サングラスを外せば命中率が上昇する。",
         "name": "行成とあ"
       }
-    }
+    },
+    "tierBoss": 8,
+    "lastModAdded": 1574636932488,
+    "numMods": 7,
+    "type": "attacker",
+    "id": "c227",
+    "element": "light",
+    "tierPVE": 8
   },
   "c229": {
     "variants": {
@@ -4271,18 +4442,48 @@
     }
   },
   "c336": {
+    "id": "c336",
+    "name": "?",
     "variants": {
+      "89": {
+        "title": "",
+        "positions": {
+          "home": {
+            "x": -15,
+            "y": -75,
+            "scale": 0.75
+          }
+        }
+      },
       "01": {
         "title": "田園の パン",
+        "positions": {
+          "home": {
+            "scale": 1,
+            "x": 0,
+            "y": 0,
+            "refined": true
+          }
+        },
         "description": "田園を見守るパンの、春らしい色のワンピース。",
         "name": "佐藤利奈"
       },
       "02": {
         "title": "牧羊の パン",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "refined": true
+          }
+        },
         "description": "満開の春の花と、白銀に輝くワンピース。",
         "name": "佐藤利奈"
       }
-    }
+    },
+    "numMods": 0,
+    "numModsNSFW": 0
   },
   "c338": {
     "variants": {
@@ -8480,28 +8681,72 @@
     }
   },
   "m261": {
+    "stars": 5,
+    "tierPVP": 5,
+    "name": "BiMoa",
+    "tierRaid": 3,
+    "numModsNSFW": 2,
     "variants": {
       "88": {
         "title": "モノクローム モア",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.2,
+            "scale": 1,
+            "refined": true
+          }
+        },
         "description": "",
         "name": "ならはしみき"
       },
       "89": {
         "title": "双面の モア",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.2,
+            "scale": 1,
+            "refined": true
+          }
+        },
         "description": "",
         "name": "ならはしみき"
       },
       "01": {
         "title": "双面の モア",
+        "positions": {
+          "home": {
+            "scale": 1,
+            "x": 0,
+            "y": 0.2,
+            "refined": true
+          }
+        },
         "description": "この世に2人しかいないモアたちのための\\カスタマイズワンピース",
         "name": "ならはしみき"
       },
       "02": {
         "title": "モノクローム モア",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0.2,
+            "scale": 1,
+            "refined": true
+          }
+        },
         "description": "光と影はいつも一緒。\\モアの新しい魅力がいま解き放たれる…",
         "name": "ならはしみき"
       }
-    }
+    },
+    "tierBoss": 3,
+    "lastModAdded": 1574086056460,
+    "numMods": 2,
+    "type": "tank",
+    "id": "m261",
+    "element": "dark",
+    "tierPVE": 5
   },
   "m262": {
     "variants": {

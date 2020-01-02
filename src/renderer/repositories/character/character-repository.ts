@@ -16,7 +16,7 @@ import { FileLocator } from '../common';
 import { CharacterAdditionalInitializer } from './character-additional-initializer';
 
 export class CharacterRepository {
-  public static cacheName = 'character-repository';
+  public static cacheContext = getCacheContext('character-repository');
 
   private readonly _characterBaseAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterBase }>;
   private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<CharacterAdditionalCollection>;
@@ -34,14 +34,14 @@ export class CharacterRepository {
     return _.merge({}, base, additional);
   }
 
-  @memorizeAsync(getCacheContext(CharacterRepository.cacheName), 'character')
+  @memorizeAsync(CharacterRepository.cacheContext, 'character')
   public async getCharacter(characterId: string): Promise<CharacterModel> {
     const base = (await this.characterBaseLowdb).get(characterId).value();
     const additional = (await this.characterAdditionalLowdb).get(characterId).value();
     return _.merge({}, base, additional);
   }
 
-  @memorizeAsync(getCacheContext(CharacterRepository.cacheName))
+  @memorizeAsync(CharacterRepository.cacheContext, 'character-variant')
   public async getCharacterVariant(characterId: string, variantId: string): Promise<CharacterVariantModel> {
     const character = await this.getCharacter(characterId);
     const variant = character.variants[variantId];
@@ -59,9 +59,15 @@ export class CharacterRepository {
 
   public async saveCharacter(characterId: string, model: CharacterModel) {
     (await this.characterAdditionalLowdb).set(characterId, model).write();
-    const cache = getCacheContext(CharacterRepository.cacheName).main.get('character');
-    if (cache) {
-      cache.delete(characterId);
+    const characterCache = CharacterRepository.cacheContext.get('character');
+    const variantCache = CharacterRepository.cacheContext.get('character-variant');
+
+    if (characterCache) {
+      characterCache.delete(characterId);
+    }
+
+    if (variantCache) {
+      variantCache.delete(characterId);
     }
   }
 
