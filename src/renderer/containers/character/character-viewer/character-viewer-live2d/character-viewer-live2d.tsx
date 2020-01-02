@@ -32,7 +32,11 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
 
   const onCanvasClick = React.useCallback(() => {
     if (components) {
-      const motionKeys = Object.keys(components.motions).filter(motion => !motion.startsWith('idle')) || [];
+      const motionKeys = Object.keys(components.motions).filter(motion => 
+        !motion.startsWith('idle') &&
+        !motion.startsWith('banner')
+      ) || [];
+      
       const randomMotion = motionKeys[Math.round(Math.random() * motionKeys.length - 1)];
       if (randomMotion) {
         components.motionManager.startMotion(components.motions[randomMotion][0]);

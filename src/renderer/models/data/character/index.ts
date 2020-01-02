@@ -1,4 +1,5 @@
 export * from './character-additional';
+export * from './character-additional-collection';
 export * from './character-base';
 export * from './character-model';
 export * from './character-type.enum';

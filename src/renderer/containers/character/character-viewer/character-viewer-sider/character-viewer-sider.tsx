@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, Tabs, Icon } from 'antd';
 import { useSink } from 'redux-sink';
 import classnames from 'classnames';
+import axios from 'axios';
 
 import { RenderModelType } from '@models/data';
 import { PathService } from '@services/path-service';
@@ -11,9 +12,10 @@ import { CharacterViewerPosition } from '../character-viewer-position/character-
 
 import * as styles from './character-viewer-sider.scss';
 import { SiderSink } from '@sinks';
+import { CharacterVariantType } from '@models';
 
 export const CharacterViewerSider = () => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata, sink.play, sink.components]);
+  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata, sink.play, sink.current]);
 
   const siderSink = useSink(SiderSink, sink => [sink.collapsed]);
   const tabPosition = siderSink.collapsed ? 'right' : 'top';
@@ -23,8 +25,19 @@ export const CharacterViewerSider = () => {
     return pathService.getAssetPath(path);
   }, []);
 
-  const { metadata, components } = characterViewSink;
+  const { metadata, current } = characterViewSink;
   const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
+  const currentVariant = current && metadata?.character.variants[current.variantId];
+  const defaultVariant = current && metadata?.character.variants[CharacterVariantType.Default];
+
+  if (defaultVariant) {
+    axios.get(`https://altema.jp/destinychild/searchresults?q=${defaultVariant.title}`).then(
+      (result) => {
+        const matches = new RegExp(`chara\/(?<altemaId>[0-9]*).*`).exec(result.data);
+        console.log(matches?.groups?.altemaId);
+      }
+    );
+  }
 
   return (
     <div className={styles.container}>
@@ -50,7 +63,14 @@ export const CharacterViewerSider = () => {
               })}
           </div>
           <div className={styles.variantDetail}>
-            <div>Variant Name</div>
+            {currentVariant && (
+              <div>
+                <div>
+                  {currentVariant?.name} {currentVariant?.title}
+                </div>
+                <div>{currentVariant?.description}</div>
+              </div>
+            )}
             <CharacterViewerPosition />
           </div>
         </Tabs.TabPane>

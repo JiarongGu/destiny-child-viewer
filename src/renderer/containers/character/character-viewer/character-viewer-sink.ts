@@ -4,7 +4,6 @@ import { sink, effect, state } from 'redux-sink';
 import { CharacterMetadata } from '@models';
 import { MathHelper } from '@utils';
 import { RenderModelType, RenderModelLive2D, CharacterVariantPosition } from '@models/data';
-import { MotionType } from '@models/live2d';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d-service';
 import { CharacterService } from '@services/character-service';
 
@@ -65,7 +64,7 @@ export class CharacterViewerSink {
 
       const characterVariants = this.metadata.character?.variants;
       const renderPosition = this.getMetadataPosition(renderModel);
-      const variantPosition = characterVariants && characterVariants[variantId]?.positions.home;
+      const variantPosition = characterVariants && characterVariants[variantId]?.positions?.home;
 
       if (variantPosition && variantPosition.refined) {
         this.position = variantPosition;

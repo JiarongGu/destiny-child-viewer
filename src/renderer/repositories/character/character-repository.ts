@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 import {
   CharacterBase,
   CharacterAdditional,
+  CharacterAdditionalCollection,
   CharacterModel,
   CharacterVariantModel
 } from '@models/data';
@@ -12,15 +13,19 @@ import { memorizeAsync } from '@decorators';
 import { getCacheContext } from '@utils';
 import { FileLocator } from '../common';
 
+import { CharacterAdditionalInitializer } from './character-additional-initializer';
+
 export class CharacterRepository {
   public static cacheName = 'character-repository';
 
   private readonly _characterBaseAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterBase }>;
-  private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterAdditional }>;
+  private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<CharacterAdditionalCollection>;
+  private readonly _characterAdditionalInitializer: CharacterAdditionalInitializer;
 
   constructor() {
     this._characterBaseAdapter = new FileAsync(FileLocator.CHILD_DATA);
     this._characterAdditionalAdapter = new FileAsync(FileLocator.CHILD_ADDITIONAL_DATA);
+    this._characterAdditionalInitializer = new CharacterAdditionalInitializer();
   }
 
   public async ListCharacters(): Promise<{ [key: string]: CharacterModel }> {
@@ -57,6 +62,16 @@ export class CharacterRepository {
   }
 
   private get characterAdditionalLowdb() {
-    return lowdb(this._characterAdditionalAdapter);
+    return lowdb(this._characterAdditionalAdapter).then(db => {
+      if (db.isEmpty().value()) {
+        return this.populateAdditional(db).then(() => db);
+      }
+      return db;
+    });
+  }
+
+  private async populateAdditional(db: lowdb.LowdbAsync<CharacterAdditionalCollection>) {
+    const modelCollection = await this._characterAdditionalInitializer.createDefaultCollection();
+    return db.defaults(modelCollection).write();
   }
 }
