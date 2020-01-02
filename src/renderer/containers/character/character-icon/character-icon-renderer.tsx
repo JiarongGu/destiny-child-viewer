@@ -26,18 +26,20 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
     return null;
   }
 
-  let variant: string = CharacterVariantType.Default;
-  let icon = character.icon[variant];
+  let variant= [
+    CharacterVariantType.Evolve, 
+    CharacterVariantType.Default, 
+    CharacterVariantType.Nature
+  ].find(variant => character.icon[variant]) as string ;
 
-  if (!icon) {
+  if (!variant) {
     variant = Object.keys(character.icon)[0];
-    icon = character.icon[variant];
   }
 
   return (
     <div style={style}>
       <Link to={`/character/view/${character.id}/${variant}`}>
-        <img key={character.id} src={getAssetPath(icon.home)} />
+        <img key={character.id} src={getAssetPath(character.icon[variant].home)} />
       </Link>
     </div>
   );

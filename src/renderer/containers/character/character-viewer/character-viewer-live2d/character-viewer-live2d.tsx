@@ -43,7 +43,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   const onWheel = React.useCallback(
     (event: React.WheelEvent<HTMLDivElement>) => {
       if (position) {
-        const value = event.deltaY / 2500;
+        const value = event.deltaY / 2000;
         const scale = MathHelper.round(position?.scale + value, 3);
         characterView.position = { ...position, scale };
       }
