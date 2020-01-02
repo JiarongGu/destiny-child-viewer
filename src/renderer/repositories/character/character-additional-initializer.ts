@@ -35,14 +35,14 @@ export class CharacterAdditionalInitializer {
       reduceKeys(Object.keys(characterTitles), (key) => ({
         variants:
           reduceMap(characterTitles[key], variant => variant.variantId, variant => ({
-            title: variant.title.replace(/\r/g, ''),
-            description: variant.description.replace(/\r/g, '')
+            title: this.formatText(variant.title),
+            description: this.formatText(variant.description)
           }))
       })),
       reduceKeys(Object.keys(characterNames), (key) => ({
         variants:
           reduceMap(characterNames[key], variant => variant.variantId, variant => ({
-            name: variant.name.replace(/\r/g, '')
+            name: this.formatText(variant.name)
           }))
       }))
     );
@@ -65,6 +65,10 @@ export class CharacterAdditionalInitializer {
       variantId: identifiers.variantId,
       name: blocks[0]
     })));
+  }
+
+  private formatText(text) {
+    return text && text.replace(/\r/g, '').replace(/\_/g, ' ').trim();
   }
 
   private getDataLines(file: string): Array<string> {
