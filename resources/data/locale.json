@@ -1,7 +1,6 @@
 {
   "00000001.unk": "Scenario List",
   "00000003.unk": "Scenario Background Descriptions",
-  "00000005.tab": "BGM Descriptions",
   "00000006.unk": "Character Descriptions",
   "00000007.tab": "Stage Descriptions",
   "00000009.unk": "Character Titles",
@@ -11,6 +10,8 @@
   "00000021.unk": "Item Descriptions",
   "00000028.unk": "Character Favor Text",
   "00000039.tab": "Skill Descriptions",
+
+  "BgmDescriptions": "locale\\00000005.tab",
   "CharacterTitles": "locale\\00000009.unk",
   "CharacterNames": "locale\\00000010.unk"
 }

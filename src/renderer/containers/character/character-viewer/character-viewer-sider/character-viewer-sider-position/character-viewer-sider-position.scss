@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  border: 1px solid #e8e8e8;
+  padding: 0px 12px;
+  height: 72px;
+  background: white;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.position {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  padding-bottom: 4px;
+  justify-content: flex-end;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+}

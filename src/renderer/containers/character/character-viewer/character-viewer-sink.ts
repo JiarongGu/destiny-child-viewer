@@ -2,15 +2,15 @@
 import { sink, effect, state } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
-import { MathHelper } from '@utils';
-import { RenderModelType, RenderModelLive2D, CharacterVariantPosition } from '@models/data';
+import { Live2DHelper } from '@utils';
+import { RenderModelType, RenderModelLive2D, CharacterVariantPosition, RenderModelPositionType } from '@models/data';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d-service';
 import { CharacterService } from '@services/character-service';
 
-export interface CurrentCharacterView { 
-  characterId: string; 
-  variantId: string; 
-  activeMotion?: string 
+export interface CurrentCharacterView {
+  characterId: string;
+  variantId: string;
+  activeMotion?: string
 }
 
 @sink('character-viewer', new Live2DService(), new CharacterService())
@@ -18,7 +18,7 @@ export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
   @state public position?: CharacterVariantPosition;
   @state public metadata?: CharacterMetadata;
-  @state public current?:  { characterId: string, variantId: string };
+  @state public current?: { characterId: string, variantId: string };
 
   @state public play: boolean = true;
   @state public loading: boolean = false;
@@ -50,7 +50,7 @@ export class CharacterViewerSink {
       this.loading = false;
       return;
     }
-    
+
     this.current = { characterId, variantId };
 
     const renderModel = this.metadata?.render[variantId];
@@ -75,6 +75,18 @@ export class CharacterViewerSink {
     this.loading = false;
   }
 
+  @effect
+  public async savePosition() {
+    if (this.current && this.position) {
+      await this._characterService.savePosition(
+        this.current.characterId, 
+        this.current.variantId, 
+        RenderModelPositionType.Home, 
+        this.position
+      );
+    }
+  }
+
   private getMetadataPosition(metadata: RenderModelLive2D): CharacterVariantPosition {
     const live2dInfo = metadata.home ? metadata.home : metadata;
     return {
@@ -86,9 +98,9 @@ export class CharacterViewerSink {
 
   private convertPosition(position: CharacterVariantPosition): CharacterVariantPosition {
     return {
-      scale: position.scale,
-      x: MathHelper.round(position.x / 150, 3),
-      y: MathHelper.round(-position.y / 300, 3)
+      scale: Live2DHelper.round(position.scale),
+      x: Live2DHelper.round(position.x / 150),
+      y: Live2DHelper.round(-position.y / 300)
     };
   }
 }

@@ -23,12 +23,16 @@ export class LocaleRepository {
   }
 
 
-  public getCharacterTitlesFile(): Promise<string> {
+  public getCharacterTitles(): Promise<string> {
     return this.readFile(LocaleType.CharacterTitles);
   }
 
-  public getCharacterNamesFile(): Promise<string> {
+  public getCharacterNames(): Promise<string> {
     return this.readFile(LocaleType.CharacterNames);
+  }
+
+  public getBgmDescriptions(): Promise<string> {
+    return this.readFile(LocaleType.BgmDescriptions);
   }
   
   @memorizeAsync(getCacheContext(LocaleRepository.cacheName))

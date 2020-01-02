@@ -35,6 +35,10 @@ export class FileLocator {
     return this.pathService.getDataPath('icon.json') 
   }
 
+  public static get SOUND_DATA() { 
+    return this.pathService.getDataPath('sound.json') 
+  }
+
   public static get LIVE2D_DATA() { 
     return this.pathService.getDataPath('live2d.json') 
   }

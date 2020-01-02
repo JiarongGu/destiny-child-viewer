@@ -1,4 +1,4 @@
 export interface CacheContext {
-  main: Map<any, any>;
-  util: Map<any, any>;
+  main: Map<string, Map<any, any>>;
+  util: Map<string, Map<any, any>>;
 }

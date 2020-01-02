@@ -1,6 +1,6 @@
 export function tryArrayGet(map: Map<any, any>, defaultKey: any, keys: Array<any>, get: () => any) {
-  if (keys.length === 0) {
-    return tryGet(map, defaultKey, get);
+  if (keys.length <= 1) {
+    return tryGet(map, keys[0] || defaultKey, get);
   }
   const currentKey = keys[0];
   const nextKeys = keys.slice(1);
@@ -24,8 +24,8 @@ export function tryArrayGetAsync(
   keys: Array<any>,
   get: () => Promise<any>
 ) {
-  if (keys.length === 0) {
-    return tryGetAsync(map, promiseMap, defaultKey, get);
+  if (keys.length <= 1) {
+    return tryGetAsync(map, promiseMap, keys[0] || defaultKey, get);
   }
   const currentKey = keys[0];
   const nextKeys = keys.slice(1);

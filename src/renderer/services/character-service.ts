@@ -1,5 +1,6 @@
 import { CharacterRepository, IconRepository, RenderModelRepository } from '@repositories';
 import { CharacterMetadata } from '@models';
+import { RenderModelPositionType, CharacterVariantPosition } from '@models/data';
 
 export class CharacterService {
   private _characterRepository: CharacterRepository;
@@ -39,5 +40,13 @@ export class CharacterService {
       id: characterId,
       variants: render && Object.keys(render)
     };
+  }
+
+  public async savePosition(
+    characterId: string, variantId: string, positionType: RenderModelPositionType, position: CharacterVariantPosition
+  ) {
+    const character = await this._characterRepository.getCharacter(characterId);
+    character.variants[variantId].positions[positionType] = { ...position, refined: true };
+    await this._characterRepository.saveCharacter(characterId, character);
   }
 }

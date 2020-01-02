@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.selection {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 6px 0 6px 6px;
+  background-color: #001529;
+
+  &__button {
+    height: 96px;
+    width: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--disabled {
+      filter: grayscale(100%);
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+}
+
+.detail {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    padding: 12px;
+    background: white;
+  }
+}
+
+
+.position {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

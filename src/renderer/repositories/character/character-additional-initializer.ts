@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { reduceMap, reduceKeys } from '@utils';
+import { reduceMap, reduceKeys, LocaleHelper } from '@utils';
 import { CharacterHelper, CharacterIdentifiers } from './../common/character-helper';
 import { LocaleRepository } from '../locale/locale-repository';
 
@@ -18,68 +18,49 @@ interface CharacterName {
 }
 
 export class CharacterAdditionalInitializer {
-  private readonly _localeRepository: LocaleRepository
-
-  constructor() {
-    this._localeRepository = new LocaleRepository();
-  }
+  private readonly _localeRepository = new LocaleRepository();
 
   public async createDefaultCollection() {
-    const titles = await this.getCharacterTitleModels();
-    const names = await this.getCharacterNameModels();
-
-    const characterTitles = _.groupBy(titles, title => title.characterId);
-    const characterNames = _.groupBy(names, name => name.characterId);
+    const titles = _.groupBy(await this.getCharacterTitleModels(), title => title.characterId);
+    const names = _.groupBy(await this.getCharacterNameModels(), name => name.characterId);
 
     return _.merge(
-      reduceKeys(Object.keys(characterTitles), (key) => ({
-        variants:
-          reduceMap(characterTitles[key], variant => variant.variantId, variant => ({
-            title: this.formatText(variant.title),
-            description: this.formatText(variant.description)
-          }))
+      reduceKeys(Object.keys(titles), (key) => ({
+        variants: reduceMap(titles[key], variant => variant.variantId, variant => ({
+          title: variant.title,
+          description: variant.description
+        }))
       })),
-      reduceKeys(Object.keys(characterNames), (key) => ({
-        variants:
-          reduceMap(characterNames[key], variant => variant.variantId, variant => ({
-            name: this.formatText(variant.name)
-          }))
+      reduceKeys(Object.keys(names), (key) => ({
+        variants: reduceMap(names[key], variant => variant.variantId, variant => ({ 
+          name: variant.name 
+        }))
       }))
     );
   }
 
   private async getCharacterTitleModels(): Promise<Array<CharacterTitle>> {
-    const file = await this._localeRepository.getCharacterTitlesFile();
-    return this.getDataLines(file).map(this.lineFormatter((identifiers, blocks) => ({
-      characterId: identifiers.characterId,
-      variantId: identifiers.variantId,
-      title: blocks[0],
-      description: blocks[1]
-    })));
+    const file = await this._localeRepository.getCharacterTitles();
+    return LocaleHelper.formatFile(file, (blocks) => {
+      const identifiers = CharacterHelper.getCharacterIdentifiers(blocks[0]);
+      return {
+        characterId: identifiers.characterId,
+        variantId: identifiers.variantId,
+        title: blocks[1],
+        description: blocks[2]
+      }
+    });
   }
 
   private async getCharacterNameModels(): Promise<Array<CharacterName>> {
-    const file = await this._localeRepository.getCharacterNamesFile();
-    return this.getDataLines(file).map(this.lineFormatter((identifiers, blocks) => ({
-      characterId: identifiers.characterId,
-      variantId: identifiers.variantId,
-      name: blocks[0]
-    })));
-  }
-
-  private formatText(text) {
-    return text && text.replace(/\r/g, '').replace(/\_/g, ' ').trim();
-  }
-
-  private getDataLines(file: string): Array<string> {
-    return file.split('\n').filter(line => line && line.indexOf('\/\/') < 0);
-  }
-
-  private lineFormatter = <T>(
-    formatter: (identifier: CharacterIdentifiers, block: Array<string>) => T
-  ) => (line: string) => {
-    const blocks = line.split('\t');
-    const identifiers = CharacterHelper.getCharacterIdentifiers(blocks[0]);
-    return formatter(identifiers, blocks.slice(1))
+    const file = await this._localeRepository.getCharacterNames();
+    return LocaleHelper.formatFile(file, (blocks) => {
+      const identifiers = CharacterHelper.getCharacterIdentifiers(blocks[0]);
+      return {
+        characterId: identifiers.characterId,
+        variantId: identifiers.variantId,
+        name: blocks[1]
+      }
+    });
   }
 }

@@ -36,7 +36,7 @@ export const CharacterIcon = () => {
     []
   );
 
-  SiderHook.useSider(CharacterIconSider, { width: '300px' });
+  SiderHook.useSider(CharacterIconSider, { width: '306px' });
 
   return (
     <div className={styles.container} ref={containerRef}>

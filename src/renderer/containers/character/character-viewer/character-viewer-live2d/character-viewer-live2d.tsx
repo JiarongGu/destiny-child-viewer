@@ -8,7 +8,7 @@ import { useDragPosition, useResizeObserver } from '@hooks';
 
 import { CharacterViewerSink } from '../character-viewer-sink';
 import * as styles from './character-viewer-live2d.scss';
-import { MathHelper } from '@utils';
+import { Live2DHelper } from '@utils';
 
 export interface CharacterViewerLive2DProps {
   className?: string;
@@ -33,11 +33,9 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   const onCanvasClick = React.useCallback(() => {
     if (components) {
       const motionKeys = Object.keys(components.motions).filter(motion => 
-        !motion.startsWith('idle') &&
-        !motion.startsWith('banner')
-      ) || [];
-      
-      const randomMotion = motionKeys[Math.round(Math.random() * motionKeys.length - 1)];
+        !motion.startsWith('idle') && !motion.startsWith('banner')
+      );
+      const randomMotion = motionKeys && motionKeys[Math.round(Math.random() * motionKeys.length - 1)];
       if (randomMotion) {
         components.motionManager.startMotion(components.motions[randomMotion][0]);
       }
@@ -48,7 +46,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
     (event: React.WheelEvent<HTMLDivElement>) => {
       if (position) {
         const value = event.deltaY / 2000;
-        const scale = MathHelper.round(position?.scale + value, 3);
+        const scale = Live2DHelper.round(position?.scale + value);
         characterView.position = { ...position, scale };
       }
     },
@@ -69,15 +67,16 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   const { onMouseDown, onMouseMove, onMouseUp, moving } = useDragPosition(
     event => {
       const convertPosition = (value: number, base: number) => value / base;
-      const positionBase = canvasSize / 1.5;
+      const positionBase = canvasSize / 2;
       if (position) {
         characterView.position = {
-          x: MathHelper.round(position.x + convertPosition(event.x, positionBase), 3),
-          y: MathHelper.round(position.y - convertPosition(event.y, positionBase), 3),
+          x: Live2DHelper.round(position.x + convertPosition(event.x, positionBase)),
+          y: Live2DHelper.round(position.y - convertPosition(event.y, positionBase)),
           scale: position.scale
         };
       }
     },
+    event => event.preventDefault(),
     [position, canvasSize]
   );
 

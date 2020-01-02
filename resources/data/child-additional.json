@@ -556,23 +556,58 @@
     }
   },
   "c029": {
+    "stars": 4,
+    "tierPVP": 8,
+    "name": "Selene",
+    "tierRaid": 9,
+    "numModsNSFW": 4,
     "variants": {
       "00": {
         "title": "朝比奈 晴恵",
+        "positions": {
+          "home": {
+            "x": -20,
+            "y": 0,
+            "scale": 1
+          }
+        },
         "description": "夜を恐れるフリーランスの翻訳家。",
         "name": "本泉莉奈"
       },
       "01": {
         "title": "夜の セレーネ",
+        "positions": {
+          "home": {
+            "scale": 1.2,
+            "x": -0.05,
+            "y": -0.05,
+            "refined": true
+          }
+        },
         "description": "月の女神は、雲を纏う。",
         "name": "本泉莉奈"
       },
       "02": {
         "title": "月の セレーネ",
+        "positions": {
+          "home": {
+            "x": -0.05,
+            "y": -0.05,
+            "scale": 1.2,
+            "refined": true
+          }
+        },
         "description": "月の女神は、光を纏う。",
         "name": "本泉莉奈"
       }
-    }
+    },
+    "tierBoss": 6,
+    "lastModAdded": 1574391512269,
+    "numMods": 5,
+    "type": "healer",
+    "id": "c029",
+    "element": "grass",
+    "tierPVE": 6
   },
   "c030": {
     "variants": {
@@ -732,23 +767,67 @@
     }
   },
   "c038": {
+    "stars": 5,
+    "tierPVP": 5,
+    "name": "Calypso",
+    "tierRaid": 6,
+    "numModsNSFW": 6,
     "variants": {
+      "10": {
+        "title": "Water Amarin",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0,
+            "scale": 1
+          }
+        }
+      },
       "00": {
         "title": "アレシャ ブラッドリー",
+        "positions": {
+          "home": {
+            "x": -10,
+            "y": 0,
+            "scale": 1.05
+          }
+        },
         "description": "海辺ではしゃぐオーストラリアから来た少女。",
         "name": "佐倉綾音"
       },
       "01": {
         "title": "意地悪な カリプソ",
+        "positions": {
+          "home": {
+            "x": -10,
+            "y": 0,
+            "scale": 1.15
+          }
+        },
         "description": "青は鮮やかな愛の色と言い張る彼女だけのコスチューム。",
         "name": "佐倉綾音"
       },
       "02": {
         "title": "魅了の カリプソ",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "refined": true
+          }
+        },
         "description": "愛には勇気が必要。だが、海で溺れるつもりはない…",
         "name": "佐倉綾音"
       }
-    }
+    },
+    "tierBoss": 9,
+    "lastModAdded": 1574637599475,
+    "numMods": 8,
+    "type": "attacker",
+    "id": "c038",
+    "element": "water",
+    "tierPVE": 5
   },
   "c039": {
     "variants": {
@@ -851,43 +930,115 @@
     }
   },
   "c045": {
+    "stars": 5,
+    "tierPVP": 7,
+    "name": "Aria",
+    "tierRaid": 7,
+    "numModsNSFW": 10,
     "variants": {
       "10": {
         "title": "クリスマス アリア",
+        "positions": {
+          "home": {
+            "x": 5,
+            "y": -15,
+            "scale": 1
+          }
+        },
         "description": "Noel〜Noel〜♪\\人間も悪魔もアリアのライブを楽しんでね！",
         "name": "高橋李依"
       },
       "11": {
         "title": "ハイライト アリア",
+        "positions": {
+          "home": {
+            "x": 0.04,
+            "y": 0.523,
+            "scale": 1.65,
+            "refined": true
+          }
+        },
         "description": "全力で行くよ！みんなで一緒に！\\《L・O・V・E！ラブリーアリア！》",
         "name": "高橋李依"
       },
       "12": {
         "title": "ブレイクタイム アリア",
+        "positions": {
+          "home": {
+            "x": 5,
+            "y": -15,
+            "scale": 1
+          }
+        },
         "description": "プラネットパーティーに出会った運命の日。",
         "name": "高橋李依"
       },
+      "13": {
+        "title": "Spotlight",
+        "positions": {
+          "home": {
+            "x": 15,
+            "y": 65,
+            "scale": 1.65
+          }
+        }
+      },
       "89": {
         "title": "ハイライト アリア",
+        "positions": {
+          "home": {
+            "x": 15,
+            "y": 60,
+            "scale": 1.65
+          }
+        },
         "description": "全力で行くよ！みんなで一緒に！\\《L・O・V・E！ラブリーアリア！》",
         "name": "高橋李依"
       },
       "00": {
         "title": "日野 亜里沙",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": -20,
+            "scale": 0.96
+          }
+        },
         "description": "レッスンルームに押しかけたカメラマンに\\とびっきりのスマイルを贈ろう。",
         "name": "高橋李依"
       },
       "01": {
         "title": "歌う アリア",
+        "positions": {
+          "home": {
+            "x": 5,
+            "y": -15,
+            "scale": 1
+          }
+        },
         "description": "アイドルの汗は、努力の結晶！",
         "name": "高橋李依"
       },
       "02": {
         "title": "歓喜する アリア",
+        "positions": {
+          "home": {
+            "x": 5,
+            "y": -15,
+            "scale": 1
+          }
+        },
         "description": "さて、舞台に上がる時間です！みんなお待たせっ！",
         "name": "高橋李依"
       }
-    }
+    },
+    "tierBoss": 7,
+    "lastModAdded": 1575305259918,
+    "numMods": 12,
+    "type": "support",
+    "id": "c045",
+    "element": "light",
+    "tierPVE": 7
   },
   "c047": {
     "variants": {
@@ -2368,23 +2519,58 @@
     }
   },
   "c183": {
+    "stars": 5,
+    "tierPVP": 10,
+    "name": "Dana",
+    "tierRaid": 8,
+    "numModsNSFW": 4,
     "variants": {
       "00": {
         "title": "田母神 多津子",
+        "positions": {
+          "home": {
+            "x": -45,
+            "y": 0,
+            "scale": 0.95
+          }
+        },
         "description": "運命に抗う生まれながらの霊能力者。",
         "name": "種田梨沙"
       },
       "01": {
         "title": "説教する ダナ",
+        "positions": {
+          "home": {
+            "scale": 1.25,
+            "x": 0.07,
+            "y": 0.09,
+            "refined": true
+          }
+        },
         "description": "女神の翼の服。選ばれた者のみ着る事ができる。",
         "name": "種田梨沙"
       },
       "02": {
         "title": "宣言する ダナ",
+        "positions": {
+          "home": {
+            "x": 0.07,
+            "y": 0.09,
+            "scale": 1.25,
+            "refined": true
+          }
+        },
         "description": "女神の神聖なローブ。神々しいオーラを纏っている。",
         "name": "種田梨沙"
       }
-    }
+    },
+    "tierBoss": 8,
+    "lastModAdded": 1574096813110,
+    "numMods": 8,
+    "type": "tank",
+    "id": "c183",
+    "element": "light",
+    "tierPVE": 10
   },
   "c184": {
     "variants": {
@@ -2515,13 +2701,56 @@
     }
   },
   "c193": {
+    "id": "c193",
+    "name": "?",
     "variants": {
+      "10": {
+        "title": "",
+        "positions": {
+          "home": {
+            "x": -15,
+            "y": -75,
+            "scale": 0.75
+          }
+        }
+      },
+      "01": {
+        "title": "",
+        "positions": {
+          "home": {
+            "x": -15,
+            "y": -75,
+            "scale": 0.75
+          }
+        }
+      },
+      "02": {
+        "title": "",
+        "positions": {
+          "home": {
+            "x": -15,
+            "y": -75,
+            "scale": 0.75
+          }
+        }
+      },
       "00": {
         "title": "見習い祓魔師 ヴィルーパー",
+        "positions": {
+          "home": {
+            "x": -0.12,
+            "y": 0.12,
+            "scale": 1.25,
+            "refined": true
+          }
+        },
         "description": "",
         "name": ""
       }
-    }
+    },
+    "numMods": 2,
+    "numModsNSFW": 2,
+    "lastModAdded": 1574086045420
   },
   "c194": {
     "variants": {
@@ -2586,23 +2815,61 @@
     }
   },
   "c198": {
+    "name": "Zelos",
     "variants": {
+      "10": {
+        "title": "Mirage",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": -10,
+            "scale": 1.3
+          }
+        }
+      },
       "00": {
         "title": "奈良 奈央",
+        "positions": {
+          "home": {
+            "x": 0,
+            "y": 0,
+            "scale": 0.88
+          }
+        },
         "description": "蛇に生まれたかったのね。\\次の願いは、それにしましょうか？",
         "name": "Lynn"
       },
       "01": {
         "title": "沈黙の ゼロス",
+        "positions": {
+          "home": {
+            "x": 0.05,
+            "y": 0.4,
+            "scale": 1.5,
+            "refined": true
+          }
+        },
         "description": "だらしない着こなしにセンスを感じる。少し危険だが…",
         "name": "Lynn"
       },
       "02": {
         "title": "裏切の ゼロス",
+        "positions": {
+          "home": {
+            "x": 0.05,
+            "y": 0.4,
+            "scale": 1.5,
+            "refined": true
+          }
+        },
         "description": "ゼロスの戦闘服。別にボタンが取れてるわけではない。",
         "name": "Lynn"
       }
-    }
+    },
+    "id": "c198",
+    "numMods": 1,
+    "numModsNSFW": 1,
+    "lastModAdded": 1574096813170
   },
   "c199": {
     "variants": {
@@ -4343,18 +4610,39 @@
     }
   },
   "c366": {
+    "name": "Deino",
     "variants": {
       "01": {
         "title": "努力家 ディーノ",
+        "positions": {
+          "home": {
+            "scale": 1.5,
+            "x": 0.3,
+            "y": 0.5,
+            "refined": true
+          }
+        },
         "description": "一生懸命努力したら、なんでも出来る！\\やっぱり努力は裏切らない！",
         "name": "椿木はる"
       },
       "02": {
         "title": "希望の ディーノ",
+        "positions": {
+          "home": {
+            "x": 0.3,
+            "y": 0.5,
+            "scale": 1.5,
+            "refined": true
+          }
+        },
         "description": "防災専門チャイルド、ディーノの戦闘服。\\消火ならおまかせ！",
         "name": "椿木はる"
       }
-    }
+    },
+    "id": "c366",
+    "numMods": 2,
+    "numModsNSFW": 1,
+    "lastModAdded": 1574702809290
   },
   "c367": {
     "variants": {

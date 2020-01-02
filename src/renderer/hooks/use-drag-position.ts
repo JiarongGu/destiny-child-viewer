@@ -1,28 +1,40 @@
-import * as React from 'react';
+import { MouseEventHandler, DependencyList, useRef, useState, useCallback } from 'react';
 
 export interface DragPosition {
   x: number;
   y: number;
 }
 
-export function useDragPosition(handler: (event: DragPosition) => void, deps: React.DependencyList) {
-  const dragPosition = React.useRef<DragPosition>();
+export type DragEventHandler = (event: DragPosition) => void;
 
-  const [moving, setMoving] = React.useState(false);
+export function useDragPosition(handler: DragEventHandler, deps: DependencyList)
+export function useDragPosition(handler: DragEventHandler, mouseHandler: MouseEventHandler, deps: DependencyList)
+export function useDragPosition(
+  handler: DragEventHandler,
+  second: MouseEventHandler | DependencyList,
+  third?: DependencyList
+) {
+  const dragPosition = useRef<DragPosition>();
+  const deps = third || second as React.DependencyList;
+  const mouseHandler = third ? second as React.MouseEventHandler : null;
 
-  const onMouseDown = React.useCallback(event => {
+  const [moving, setMoving] = useState(false);
+
+  const onMouseDown = useCallback(event => {
     dragPosition.current = {
       x: event.clientX,
       y: event.clientY
     };
+    mouseHandler && mouseHandler(event);
   }, deps);
 
-  const onMouseUp = React.useCallback(() => {
+  const onMouseUp = useCallback((event) => {
     dragPosition.current = undefined;
     setMoving(false);
+    mouseHandler && mouseHandler(event);
   }, deps);
 
-  const onMouseMove = React.useCallback(event => {
+  const onMouseMove = useCallback(event => {
     if (dragPosition.current) {
       if (!moving) {
         setMoving(true);
@@ -37,6 +49,7 @@ export function useDragPosition(handler: (event: DragPosition) => void, deps: Re
       if (handler) {
         handler({ x, y });
       }
+      mouseHandler && mouseHandler(event);
     }
   }, deps);
 

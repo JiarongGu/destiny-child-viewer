@@ -1,0 +1,35 @@
+.group {
+  display: flex;
+  align-items: baseline;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #c3c7c9;
+  border-radius: 0;
+  outline: none;
+  height: 24px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: border .3s;
+  text-align: right;
+  padding-right: 16px;
+
+  &:focus {
+    border-bottom: 1px solid lighten(#001529, 20);
+  }
+}
+
+.label {
+  margin-right: 4px;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+  margin-left: -12px;
+}

@@ -34,7 +34,7 @@ export class CharacterRepository {
     return _.merge({}, base, additional);
   }
 
-  @memorizeAsync(getCacheContext(CharacterRepository.cacheName))
+  @memorizeAsync(getCacheContext(CharacterRepository.cacheName), 'character')
   public async getCharacter(characterId: string): Promise<CharacterModel> {
     const base = (await this.characterBaseLowdb).get(characterId).value();
     const additional = (await this.characterAdditionalLowdb).get(characterId).value();
@@ -55,6 +55,14 @@ export class CharacterRepository {
       stars: character.stars,
       positions: variant.positions,
     };
+  }
+
+  public async saveCharacter(characterId: string, model: CharacterModel) {
+    (await this.characterAdditionalLowdb).set(characterId, model).write();
+    const cache = getCacheContext(CharacterRepository.cacheName).main.get('character');
+    if (cache) {
+      cache.delete(characterId);
+    }
   }
 
   private get characterBaseLowdb() {
