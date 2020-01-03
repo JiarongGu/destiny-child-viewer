@@ -9,6 +9,9 @@ module.exports = merge.smart(baseConfig, {
       'react-dom': '@hot-loader/react-dom'
     }
   },
+  output: {
+    publicPath: '/'
+  },
   devServer: {
     port: 2003,
     compress: true,

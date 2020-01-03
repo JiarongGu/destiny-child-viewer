@@ -12,12 +12,6 @@ import * as styles from './character-viewer-sider-variants.scss';
 
 export const CharacterViewerSiderVariants = () => {
   const characterViewSink = useSink(CharacterViewerSink, sink => [sink.metadata, sink.current]);
-
-  const getAssetPath = React.useCallback(path => {
-    const pathService = new PathService();
-    return pathService.getAssetPath(path);
-  }, []);
-
   const { metadata, current } = characterViewSink;
   const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
   const currentVariant = current?.variantId && metadata?.character?.variants[current.variantId];
@@ -32,7 +26,7 @@ export const CharacterViewerSiderVariants = () => {
             return (
               <img
                 key={variant}
-                src={getAssetPath(metadata!.icon[variant].home)}
+                src={metadata!.icon[variant].home}
                 alt={variant}
                 className={classnames(styles.selectionButton, {
                   [styles.selectionButtonDisabled]: disabled

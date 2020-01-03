@@ -3,15 +3,21 @@ import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
 import { IconModelCollection, IconModel } from '@models/data';
+import { FileService, FileReadType } from '@services/file-service';
+import { PathService } from '@services/path-service';
+import { getCacheContext, reduceKeysAsync } from '@utils';
 
 import { FileLocator } from '../common';
 import { IconCollectionInitializer } from './icon-collection-initializer';
+import { memorizeAsync } from '@decorators';
 
 export class IconRepository {
-  public static cacheName = 'icon-repository';
+  public static cacheContext = getCacheContext('icon-repository');
 
   private readonly _modelAdapter: lowdb.AdapterAsync<IconModelCollection>;
   private readonly _iconCollectionInitializer: IconCollectionInitializer;
+  private readonly _pathService = new PathService;
+  private readonly _fileService = new FileService();
 
   constructor() {
     this._modelAdapter = new FileAsync(FileLocator.ICON_DATA);
@@ -19,13 +25,27 @@ export class IconRepository {
   }
 
   public async listIcons(): Promise<IconModelCollection> {
-    const db = await this.iconLowdb;
-    return db.value();
+    return (await this.iconLowdb).value();
   }
 
-  public async getIcon(characterId: string): Promise<IconModel> {
-    const db = await this.iconLowdb;
-    return db.get(characterId).value();
+  @memorizeAsync(IconRepository.cacheContext, 'character-icons')
+  public async getCharacterIcons(characterId: string): Promise<IconModel> {
+    const icons = (await this.iconLowdb).get(characterId).value();
+    return icons && await reduceKeysAsync(Object.keys(icons),
+      variantId => this.getVariantIcons(characterId, variantId)
+    );
+  }
+
+  @memorizeAsync(IconRepository.cacheContext, 'variant-icons')
+  public getVariantIcons(characterId: string, variantId: string) {
+    return reduceKeysAsync(['home', 'battle', 'spa'], type => this.getIcon(characterId, variantId, type));
+  }
+
+  @memorizeAsync(IconRepository.cacheContext, 'icon')
+  public async getIcon(characterId: string, variantId: string, type: string): Promise<string> {
+    const character = (await this.iconLowdb).get(characterId).value();
+    const icon = character[variantId][type];
+    return icon && await this._fileService.get(this._pathService.getAssetPath(icon), FileReadType.URL);
   }
 
   private get iconLowdb() {

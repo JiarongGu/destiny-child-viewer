@@ -1,7 +1,7 @@
-
 import { reduceKeys } from '@utils';
 import { Live2DRepository } from '@repositories';
 import { Live2DMotionCollection, MotionDataCollection, MotionData } from '@models/live2d';
+import { FileService, FileReadType } from './file-service';
 
 export interface Live2DRenderComponents {
   model: ArrayBuffer;
@@ -12,11 +12,8 @@ export interface Live2DRenderComponents {
 }
 
 export class Live2DService {
-  private _live2DRepository: Live2DRepository;
-
-  constructor() {
-    this._live2DRepository = new Live2DRepository();
-  }
+  private _live2DRepository= new Live2DRepository();
+  private _fileService = new FileService();
 
   public async loadComponents(characterId: string, variantId: string) {
     const data = await this._live2DRepository.getData(characterId, variantId);
@@ -36,12 +33,16 @@ export class Live2DService {
     }
   }
 
-  private loadTextureImages(textures: Array<{ name: string; url: string }>): Promise<Array<HTMLImageElement>> {
+  private async loadTextureImages(textures: Array<{ name: string; url: string }>): Promise<Array<HTMLImageElement>> {
+    const textureUrls = await Promise.all(textures.map(async texture => 
+      await this._fileService.get(texture.url, FileReadType.URL
+    )));
+
     return new Promise((resolve, reject) => {
       let loadedCount = 0;
-      const images = textures.map(texture => {
+      const images = textures.map((texture, index) => {
         const image = new Image();
-        image.src = texture.url;
+        image.src = textureUrls[index];
         image.onload = function () {
           loadedCount++;
           if (loadedCount === textures.length) {
@@ -54,7 +55,6 @@ export class Live2DService {
         };
         return image;
       });
-
     })
   }
 

@@ -15,6 +15,7 @@ export enum FileReadType {
 
 export class FileService {
   public _pathService: PathService;
+  public _objectUrls: Array<string> = [];
 
   constructor() {
     this._pathService = new PathService();
@@ -40,7 +41,9 @@ export class FileService {
     const blob = new Blob([byteArray]);
     
     if (type === FileReadType.URL) {
-      return URL.createObjectURL(blob);
+      const url = URL.createObjectURL(blob);
+      this._objectUrls[filePath] = url;
+      return url;
     }
 
     if (type === FileReadType.ByteArray) {

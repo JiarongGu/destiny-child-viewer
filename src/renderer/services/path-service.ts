@@ -25,6 +25,10 @@ export class PathService {
     return path.join(this.resourcesPath, 'data');
   }
 
+  public get staticPath() {
+    return path.join(this.resourcesPath, 'static');
+  }
+
   public get appPath() {
     return electron.remote.app.getAppPath();
   }
@@ -37,11 +41,19 @@ export class PathService {
     return path.join(this.dataPath, filePath);
   }
 
+  public getStaticPath(filePath: string) {
+    return path.join(this.staticPath, filePath);
+  }
+
   public getResourcePath(filePath: string) {
     return path.join(this.resourcesPath, filePath);
   }
 
   public relativeAssetPath(filePath: string): string {
     return path.relative(this.assetPath, filePath);
+  }
+
+  public relativeStaticPath(filePath: string): string {
+    return path.relative(this.staticPath, filePath);
   }
 }

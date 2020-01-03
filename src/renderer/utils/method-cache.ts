@@ -19,20 +19,20 @@ export function tryGet<T = any, K = any>(map: Map<K, T>, key: K, get: () => T) {
 
 export function tryArrayGetAsync(
   map: Map<any, any>,
-  promiseMap: Map<any, any>,
+  utilMap: Map<any, any>,
   defaultKey: any,
   keys: Array<any>,
   get: () => Promise<any>
 ) {
   if (keys.length <= 1) {
-    return tryGetAsync(map, promiseMap, keys[0] || defaultKey, get);
+    return tryGetAsync(map, utilMap, keys[0] || defaultKey, get);
   }
   const currentKey = keys[0];
   const nextKeys = keys.slice(1);
   const currentMap = tryGet(map, currentKey, () => new Map<any, any>());
-  const currentPromiseMap = tryGet(promiseMap, currentKey, () => new Map<any, any>());
+  const currentUtilMap = tryGet(utilMap, currentKey, () => new Map<any, any>());
 
-  return tryArrayGetAsync(currentMap, currentPromiseMap, currentKey, nextKeys, get);
+  return tryArrayGetAsync(currentMap, currentUtilMap, currentKey, nextKeys, get);
 }
 
 export function tryGetAsync(

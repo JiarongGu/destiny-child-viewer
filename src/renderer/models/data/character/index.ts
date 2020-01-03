@@ -6,3 +6,5 @@ export * from './character-type.enum';
 export * from './character-variant';
 export * from './character-variant-model';
 export * from './character-variant-position';
+export * from './character-title';
+export * from './character-title-collection';
