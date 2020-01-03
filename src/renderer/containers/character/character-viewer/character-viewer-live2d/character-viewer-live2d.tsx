@@ -9,14 +9,18 @@ import { useDragPosition, useResizeObserver } from '@hooks';
 import { CharacterViewerSink } from '../character-viewer-sink';
 import * as styles from './character-viewer-live2d.scss';
 import { Live2DHelper } from '@utils';
+import { Spin } from 'antd';
 
 export interface CharacterViewerLive2DProps {
   className?: string;
 }
 
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
-  const characterView = useSink(CharacterViewerSink, sink => [sink.components, sink.position, sink.play]);
-  const { components, position, play } = characterView;
+  const characterView = useSink(CharacterViewerSink, sink => [
+    sink.components, sink.position, sink.play, sink.loading
+  ]);
+
+  const { components, position, play, loading } = characterView;
   const [canvasSize, setCanvasSize] = React.useState(0);
 
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -82,7 +86,8 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
 
   return (
     <div ref={containerRef} className={classnames(styles.container, className)}>
-      {components && position && (
+      {loading && <Spin spinning={true} /> }
+      {components && position && !loading && (
         <div
           className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
           onClick={onCanvasClick}

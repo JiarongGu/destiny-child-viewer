@@ -1,27 +1,22 @@
-import { FileService } from './file-service';
-import { PathService } from './path-service';
-import { CharacterRepository, IconRepository, RenderModelRepository } from '@repositories';
+import { IconService } from './icon-service';
+import { CharacterRepository, RenderModelRepository } from '@repositories';
 import { CharacterMetadata } from '@models';
 import { RenderModelPositionType, CharacterVariantPosition } from '@models/data';
 
 export class CharacterService {
   private readonly _characterRepository: CharacterRepository;
-  private readonly _iconRepository: IconRepository;
   private readonly _renderModelRepository: RenderModelRepository;
-  private readonly _pathService: PathService;
-  private readonly _fileService: FileService;
+  private readonly _iconService: IconService;
 
   constructor() {
     this._characterRepository = new CharacterRepository();
-    this._iconRepository = new IconRepository();
     this._renderModelRepository = new RenderModelRepository();
-    this._pathService = new PathService();
-    this._fileService = new FileService();
+    this._iconService = new IconService();
   }
 
   public async listCharacterMetadata(): Promise<Array<CharacterMetadata>> {
     const renderModels = await this._renderModelRepository.listRenderModels();
-    const iconModels = await this._iconRepository.listIcons();
+    const iconModels = await this._iconService.listIcons();
     const characters = await this._characterRepository.ListCharacters();
     const characterIds = Object.keys(renderModels).filter(id => !id.startsWith('s'));
 
@@ -36,7 +31,7 @@ export class CharacterService {
 
   public async getCharacterMetadata(characterId: string): Promise<CharacterMetadata> {
     const render = await this._renderModelRepository.getCharacterRenderModel(characterId);
-    const icon = await this._iconRepository.getCharacterIcons(characterId);
+    const icon = await this._iconService.getCharacterIcons(characterId);
     const character = await this._characterRepository.getCharacter(characterId);
 
     return {
@@ -49,11 +44,11 @@ export class CharacterService {
   }
 
   public getCharacterIcon(characterId: string) {
-    return this._iconRepository.getCharacterIcons(characterId);
+    return this._iconService.getCharacterIcons(characterId);
   }
 
   public async getIcon(characterId: string, variantId: string, type: string) {
-    return await this._iconRepository.getIcon(characterId, variantId, type);
+    return await this._iconService.getIcon(characterId, variantId, type);
   }
 
   public async savePosition(

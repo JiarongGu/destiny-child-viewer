@@ -37,6 +37,7 @@ const createWindow = async () => {
         slashes: true
       })
     );
+    win.setMenu(null);
   }
 
   if (process.env.NODE_ENV !== 'production') {

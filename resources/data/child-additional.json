@@ -915,5 +915,29 @@
         }
       }
     }
+  },
+  "c377": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "x": -0.1,
+            "y": 0.55,
+            "scale": 1.7,
+            "refined": true
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "scale": 1.7,
+            "x": -0.1,
+            "y": 0.55,
+            "refined": true
+          }
+        }
+      }
+    }
   }
 }
