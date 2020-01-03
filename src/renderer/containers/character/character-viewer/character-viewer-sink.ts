@@ -54,22 +54,14 @@ export class CharacterViewerSink {
     this.current = { characterId, variantId };
 
     const renderModel = this.metadata?.render[variantId];
+    this.position = this.getPosition(variantId, this.metadata);
+
     if (renderModel?.modeltype === RenderModelType.Live2D) {
       try {
         this.components = await this._live2DService.loadComponents(characterId, variantId);
       } catch (ex) {
         console.warn(ex);
         console.warn(this.metadata);
-      }
-
-      const characterVariants = this.metadata.character?.variants;
-      const renderPosition = this.getMetadataPosition(renderModel);
-      const variantPosition = characterVariants && characterVariants[variantId]?.positions?.home;
-
-      if (variantPosition && variantPosition.refined) {
-        this.position = variantPosition;
-      } else {
-        this.position = this.convertPosition(renderPosition);
       }
     }
     this.loading = false;
@@ -79,17 +71,38 @@ export class CharacterViewerSink {
   public async savePosition() {
     if (this.current && this.position) {
       await this._characterService.savePosition(
-        this.current.characterId, 
-        this.current.variantId, 
-        RenderModelPositionType.Home, 
+        this.current.characterId,
+        this.current.variantId,
+        RenderModelPositionType.Home,
         this.position
       );
       this.metadata = await this._characterService.getCharacterMetadata(this.current.characterId);
     }
   }
 
-  private getMetadataPosition(metadata: RenderModelLive2D): CharacterVariantPosition {
-    const live2dInfo = metadata.home ? metadata.home : metadata;
+  @effect 
+  public async resetPosition() {
+    if (this.current && this.metadata) {
+      this.position = this.getPosition(this.current.variantId, this.metadata);
+    }
+  }
+
+  private getPosition(variantId: string, metadata: CharacterMetadata) {
+    const renderModel = this.metadata?.render[variantId];
+    if (renderModel?.modeltype === RenderModelType.Live2D) {
+      const characterVariants = metadata.character?.variants;
+      const renderPosition = this.getMetadataPosition(renderModel);
+      const variantPosition = characterVariants && characterVariants[variantId]?.positions?.home;
+
+      if (variantPosition && variantPosition.refined) {
+        return variantPosition;
+      }
+      return this.convertPosition(renderPosition);
+    }
+  }
+
+  private getMetadataPosition(model: RenderModelLive2D): CharacterVariantPosition {
+    const live2dInfo = model.home ? model.home : model;
     return {
       scale: live2dInfo.scale!,
       x: live2dInfo.position!.x,

@@ -20,7 +20,7 @@ export const CharacterViewerSiderVariants = () => {
 
   const { metadata, current } = characterViewSink;
   const variants = metadata?.variants?.sort((a, b) => parseInt(a, 10) - parseInt(b, 10)) || [];
-  const currentVariant = current && metadata?.character.variants[current.variantId];
+  const currentVariant = current?.variantId && metadata?.character?.variants[current.variantId];
 
   return (
     <div className={styles.container}>
