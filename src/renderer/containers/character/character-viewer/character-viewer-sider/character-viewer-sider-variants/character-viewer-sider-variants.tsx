@@ -2,8 +2,7 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import classnames from 'classnames';
 
-import { RenderModelType } from '@models/data';
-import { PathService } from '@services/path-service';
+import { RenderModelType } from '@shared/models';
 
 import { CharacterViewerSink } from '../../character-viewer-sink';
 import { CharacterViewerSiderPosition } from '../character-viewer-sider-position';

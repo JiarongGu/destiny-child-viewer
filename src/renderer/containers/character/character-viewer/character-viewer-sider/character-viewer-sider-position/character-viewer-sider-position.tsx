@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import classnames from 'classnames';
 
-import { Live2DHelper } from '@utils';
+import { Live2DHelper } from '@shared/utils';
 import { PercentageInput } from '@components';
-import { CharacterVariantPosition } from '@models/data';
+import { CharacterVariantPosition } from '@shared/models';
 import { CharacterViewerSink } from '../../character-viewer-sink';
 
 import * as styles from './character-viewer-sider-position.scss';

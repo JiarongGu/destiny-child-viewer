@@ -2,26 +2,25 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
+      "@shared": ["shared"],
+      "@shared*": ["shared*"],
+      "@main": ["main"],
+      "@main*": ["main*"],
+
       "@components": ["renderer/components"],
       "@components*": ["renderer/components*"],
       "@containers": ["renderer/containers"],
       "@containers*": ["renderer/containers*"],
-      "@decorators": ["renderer/decorators"],
-      "@decorators*": ["renderer/decorators*"],
       "@hooks": ["renderer/hooks"],
       "@hooks*": ["renderer/hooks*"],
       "@models": ["renderer/models"],
       "@models*": ["renderer/models*"],
-      "@repositories": ["renderer/repositories"],
-      "@repositories*": ["renderer/repositories*"],
       "@services": ["renderer/services"],
       "@services*": ["renderer/services*"],
       "@sinks": ["renderer/sinks"],
       "@sinks*": ["renderer/sinks*"],
       "@styles": ["renderer/styles"],
-      "@styles*": ["renderer/styles*"],
-      "@utils": ["renderer/utils"],
-      "@utils*": ["renderer/utils*"]
+      "@styles*": ["renderer/styles*"]
     }
   }
 }

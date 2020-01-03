@@ -8,7 +8,7 @@ import { useDragPosition, useResizeObserver } from '@hooks';
 
 import { CharacterViewerSink } from '../character-viewer-sink';
 import * as styles from './character-viewer-live2d.scss';
-import { Live2DHelper } from '@utils';
+import { Live2DHelper } from '@shared/utils';
 import { Spin } from 'antd';
 
 export interface CharacterViewerLive2DProps {
@@ -90,7 +90,6 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
       {components && position && !loading && (
         <div
           className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
-          onClick={onCanvasClick}
           onWheel={onWheel}
           onMouseDown={onMouseDown}
           onMouseUp={onMouseUp}
@@ -106,6 +105,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
             x={position.x}
             y={position.y}
             scale={position.scale}
+            onClick={onCanvasClick}
           />
         </div>
       )}

@@ -1,4 +1,4 @@
-import { MotionType } from './motion-type.enum';
+import { MotionType } from '@shared/models';
 
 export interface MotionData {
   fadeIn: number;

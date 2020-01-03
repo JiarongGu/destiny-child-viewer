@@ -2,10 +2,10 @@
 import { sink, effect, state } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
-import { Live2DHelper } from '@utils';
-import { RenderModelType, RenderModelLive2D, CharacterVariantPosition, RenderModelPositionType } from '@models/data';
-import { Live2DService, Live2DRenderComponents } from '@services/live2d-service';
-import { CharacterService } from '@services/character-service';
+import { Live2DHelper } from '@shared/utils';
+import { RenderModelType, RenderModelLive2D, CharacterVariantPosition, RenderModelPositionType } from '@shared/models';
+import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
+import { CharacterService } from '@services/character/character-service';
 
 export interface CurrentCharacterView {
   characterId: string;

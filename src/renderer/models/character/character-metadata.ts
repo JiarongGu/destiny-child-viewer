@@ -1,4 +1,4 @@
-import { CharacterModel, BaseRenderModelCollection, IconModel } from '@models/data';
+import { CharacterModel, BaseRenderModelCollection, IconModel } from '@shared/models';
 
 export interface CharacterMetadata {
   id: string;

@@ -16,10 +16,11 @@ export interface Live2DViewer2Props extends Live2DViewport {
   textures: Array<HTMLImageElement>;
   play: boolean;
   onDraw?: (model: Live2DModel) => void;
+  onClick?: React.MouseEventHandler<HTMLCanvasElement>;
 }
 
 export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = props => {
-  const { className, x, y, scale, size } = props;
+  const { className, x, y, scale, size, onClick } = props;
   const { model, updaters, textures, play, onDraw } = props;
 
   const canvas = React.useRef<HTMLCanvasElement>(null);
@@ -71,5 +72,5 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = props =
     }
   }, [play]);
 
-  return <canvas className={className} ref={canvas} width={size} height={size} />;
+  return <canvas className={className} ref={canvas} width={size} height={size} onClick={onClick} />;
 };

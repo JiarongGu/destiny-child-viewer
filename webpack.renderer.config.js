@@ -7,21 +7,9 @@ const path = require('path');
 
 const baseConfig = require('./webpack.base.config');
 
-const appPublic = path.resolve(__dirname, './public');
 const appSrc = path.resolve(__dirname, './src');
-const appResources = path.resolve(__dirname, './resources');
+const appPublic = path.resolve(__dirname, './public');
 const appOutput = path.resolve(__dirname, './dist');
-
-// get alias from tsconfig
-const tspaths = require('./tspaths.json');
-const tsAliasPaths = tspaths.compilerOptions.paths;
-const aliasKeys = Object
-  .keys(tsAliasPaths)
-  .filter(key => key.indexOf('*') < 0);
-const alias = aliasKeys.reduce((aliasValue, key) => {
-  aliasValue[key] = path.join(appSrc, tsAliasPaths[key][0]);
-  return aliasValue;
-}, {});
 
 const sassRegex = /\.s[ac]ss$/i;
 
@@ -31,7 +19,6 @@ module.exports = merge.smart(baseConfig, {
   entry: {
     app: ['@babel/polyfill', './index.tsx']
   },
-  resolve: { alias },
   module: {
     rules: [
       {
@@ -111,8 +98,7 @@ module.exports = merge.smart(baseConfig, {
     }),
     new CopyWebpackPlugin([{ from: appPublic, to: appOutput }], { ignore: ['index.html'] }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-      'process.env.APP_RESOURCES': JSON.stringify(appResources)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     })
   ]
 });

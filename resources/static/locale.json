@@ -11,7 +11,7 @@
   "00000028.unk": "Character Favor Text",
   "00000039.tab": "Skill Descriptions",
 
-  "BgmDescriptions": "locale\\00000005.tab",
-  "CharacterTitles": "locale\\00000009.unk",
-  "CharacterNames": "locale\\00000010.unk"
+  "BgmDescriptions": "asset\\locale\\00000005.tab",
+  "CharacterTitles": "asset\\locale\\00000009.unk",
+  "CharacterNames": "asset\\locale\\00000010.unk"
 }

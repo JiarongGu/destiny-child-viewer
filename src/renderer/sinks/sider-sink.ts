@@ -1,5 +1,4 @@
 import { sink, state, effect } from 'redux-sink';
-import { CollapseType } from 'antd/lib/layout/Sider';
 
 export type SiderComponent = React.ComponentClass | React.FunctionComponent;
 

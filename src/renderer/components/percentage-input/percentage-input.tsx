@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { MathHelper } from '@utils';
+import { MathHelper } from '@shared';
 import * as styles from './percentage-input.scss';
 
 export interface PercentageInputProps {
