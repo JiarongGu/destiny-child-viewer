@@ -14,6 +14,16 @@ export interface CharacterViewerSiderPositionProps {
   className?: string;
 }
 
+const PositionButton = ({ onClick, disabled, title, icon }) => {
+  return (
+    <Tooltip title={title} placement={'topRight'}>
+      <Button className={styles.button} size={'small'} onClick={onClick} disabled={disabled}>
+        <Icon type={icon} />
+      </Button>
+    </Tooltip>
+  );
+};
+
 export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterViewerSiderPositionProps> = ({
   className
 }) => {
@@ -53,6 +63,10 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
     }
   }, [position]);
 
+  const resetPosition = React.useCallback(() => {
+    characterViewSink.resetPosition();
+  }, []);
+
   return (
     <div className={classnames(styles.container, className)}>
       <Spin spinning={spinning}>
@@ -79,31 +93,10 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
           />
         </div>
         <div className={styles.buttons}>
-          <Tooltip title={'reset'} placement={'topRight'}>
-            <Button
-              className={styles.button}
-              size={'small'}
-              onClick={() => characterViewSink.resetPosition()}
-              disabled={!positionUpdated}
-            >
-              <Icon type={'sync'} />
-            </Button>
-          </Tooltip>
-          <Tooltip title={'copy'} placement={'topRight'}>
-            <Button className={styles.button} size={'small'} onClick={copyPosition}>
-              <Icon type={'copy'} />
-            </Button>
-          </Tooltip>
-          <Tooltip title={'paste'} placement={'topRight'}>
-            <Button className={styles.button} size={'small'} onClick={pastePosition} disabled={!copied}>
-              <Icon type={'snippets'} />
-            </Button>
-          </Tooltip>
-          <Tooltip title={'save'} placement={'topRight'}>
-            <Button className={styles.button} size={'small'} onClick={savePosition} disabled={!positionUpdated}>
-              <Icon type={'save'} />
-            </Button>
-          </Tooltip>
+          <PositionButton title={'reset'} icon={'sync'} onClick={resetPosition} disabled={!positionUpdated} />
+          <PositionButton title={'copy'} icon={'copy'} onClick={copyPosition} disabled={false} />
+          <PositionButton title={'paste'} icon={'snippets'} onClick={pastePosition} disabled={!copied} />
+          <PositionButton title={'save'} icon={'save'} onClick={savePosition} disabled={!positionUpdated} />
         </div>
       </Spin>
     </div>

@@ -16,14 +16,14 @@ export interface CharacterViewerLive2DProps {
 }
 
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
-  const characterView = useSink(CharacterViewerSink, sink => [
-    sink.components, sink.position, sink.play, sink.loading
-  ]);
+  const canvasScale = 2;
 
-  const { components, position, play, loading } = characterView;
+  const characterView = useSink(CharacterViewerSink, sink => [sink.components, sink.position, sink.play, sink.loading]);
   const [canvasSize, setCanvasSize] = React.useState(0);
 
   const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const { components, position, play, loading } = characterView;
 
   const onCanvasDraw = React.useCallback(() => {
     if (components) {
@@ -36,8 +36,8 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
 
   const onCanvasClick = React.useCallback(() => {
     if (components) {
-      const motionKeys = Object.keys(components.motions).filter(motion => 
-        !motion.startsWith('idle') && !motion.startsWith('banner')
+      const motionKeys = Object.keys(components.motions).filter(
+        motion => !motion.startsWith('idle') && !motion.startsWith('banner')
       );
       const randomMotion = motionKeys && motionKeys[Math.round(Math.random() * motionKeys.length - 1)];
       if (randomMotion) {
@@ -60,9 +60,10 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   useResizeObserver(
     containerRef,
     event => {
-      const size = event.height > event.width ? event.width : event.height;
-      if (canvasSize !== size) {
-        setCanvasSize(size);
+      const min = Math.min(event.height, event.width);
+      
+      if (canvasSize !== min) {
+        setCanvasSize(min);
       }
     },
     []
@@ -71,7 +72,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   const { onMouseDown, onMouseMove, onMouseUp, moving } = useDragPosition(
     event => {
       const convertPosition = (value: number, base: number) => value / base;
-      const positionBase = canvasSize / 2;
+      const positionBase = canvasSize;
       if (position) {
         characterView.position = {
           x: Live2DHelper.round(position.x + convertPosition(event.x, positionBase)),
@@ -86,7 +87,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
 
   return (
     <div ref={containerRef} className={classnames(styles.container, className)}>
-      {loading && <Spin spinning={true} /> }
+      {loading && <Spin spinning={true} />}
       {components && position && !loading && (
         <div
           className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
@@ -101,10 +102,10 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
             updaters={components.updaters}
             onDraw={onCanvasDraw}
             play={play}
-            size={canvasSize}
             x={position.x}
             y={position.y}
-            scale={position.scale}
+            size={canvasSize * canvasScale}
+            scale={position.scale / canvasScale}
             onClick={onCanvasClick}
           />
         </div>

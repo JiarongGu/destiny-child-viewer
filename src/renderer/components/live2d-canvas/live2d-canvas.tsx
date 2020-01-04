@@ -51,7 +51,7 @@ export const Live2DCanvas: React.FunctionComponent<Live2DViewer2Props> = props =
     tick.current = () => {
       if (viewportState.current) {
         const state = viewportState.current;
-        draw(state.size, state.x, state.y, state.scale);
+        draw(state.size, state.size, state.x, state.y, state.scale);
       }
     };
     if (play) {

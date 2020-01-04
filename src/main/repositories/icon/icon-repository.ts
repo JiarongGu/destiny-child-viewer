@@ -3,6 +3,7 @@ import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
 import { IconModelCollection, IconModel, reduceKeysAsync } from '@shared';
+import { PathService } from '@main/services';
 
 import { FileLocator } from '../common';
 import { IconCollectionInitializer } from './icon-collection-initializer';
@@ -10,10 +11,16 @@ import { IconCollectionInitializer } from './icon-collection-initializer';
 export class IconRepository {
   private readonly _modelAdapter: lowdb.AdapterAsync<IconModelCollection>;
   private readonly _iconCollectionInitializer: IconCollectionInitializer;
+  private readonly _pathService: PathService;
+  private readonly _defaultVariantIcon = {
+    home: 'asset/icon/portrait/00000_empty.png',
+    battle: 'asset/icon/portrait_battle/10000_empty.png'
+  }
 
   constructor() {
     this._modelAdapter = new FileAsync(FileLocator.ICON_DATA);
     this._iconCollectionInitializer = new IconCollectionInitializer();
+    this._pathService = new PathService();
   }
   
   public async listIcons(): Promise<IconModelCollection> {
@@ -33,8 +40,11 @@ export class IconRepository {
 
   public async getIcon(characterId: string, variantId: string, type: string): Promise<string> {
     const character = (await this.iconLowdb).get(characterId).value();
-    const icon = character[variantId][type];
-    return icon;
+    const variant = character[variantId];
+    if (!variant) {
+      return this._defaultVariantIcon[type];
+    }
+    return character[variantId][type];
   }
 
   private get iconLowdb() {

@@ -60,8 +60,8 @@ export class CharacterViewerSink {
     this.current = { characterId, variantId };
 
     const renderModel = this.metadata?.render[variantId];
-    this.position = this.getPosition(variantId, this.metadata);
-    this.originalPosition = this.position;
+    this.originalPosition = this.getPosition(variantId, this.metadata);
+    this.position = this.originalPosition;
 
     if (renderModel?.modeltype === RenderModelType.Live2D) {
       try {
@@ -84,6 +84,8 @@ export class CharacterViewerSink {
         this.position
       );
       this.metadata = await this._characterService.getCharacterMetadata(this.current.characterId);
+      this.originalPosition = this.position;
+      this.positionUpdated = false;
     }
   }
 
@@ -97,7 +99,7 @@ export class CharacterViewerSink {
     if (this.originalPosition) {
       this.positionUpdated = !_.isEqual(this.originalPosition, position);
     }
-  } 
+  }
 
   private getPosition(variantId: string, metadata: CharacterMetadata) {
     const renderModel = this.metadata?.render[variantId];

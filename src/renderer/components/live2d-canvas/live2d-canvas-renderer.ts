@@ -21,8 +21,8 @@ export function createDraw(
   });
   model.setGL(context);
 
-  return (size: number, x: number, y: number, scale: number) => {
-    context.viewport(0, 0, size, size);
+  return (width: number, height: number, x: number, y: number, scale: number) => {
+    context.viewport(0, 0, width, height);
     if (onDraw) {
       onDraw(model);
     }
