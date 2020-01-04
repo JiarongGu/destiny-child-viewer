@@ -3,7 +3,7 @@ import { sink, effect, state, trigger } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
 import { Live2DHelper } from '@shared/utils';
-import { RenderModelType, RenderModelLive2D, CharacterVariantPosition, RenderModelPositionType } from '@shared/models';
+import { RenderModelType, RenderModelLive2D, VariantPosition, RenderModelPositionType } from '@shared/models';
 import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
 import { CharacterService } from '@services/character/character-service';
 
@@ -16,7 +16,7 @@ export interface CurrentCharacterView {
 @sink('character-viewer', new Live2DService(), new CharacterService())
 export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
-  @state public position?: CharacterVariantPosition;
+  @state public position?: VariantPosition;
   @state public metadata?: CharacterMetadata;
   @state public current?: { characterId: string, variantId: string };
 
@@ -24,7 +24,7 @@ export class CharacterViewerSink {
   @state public loading: boolean = false;
   @state public positionUpdated: boolean = false;
 
-  private originalPosition?: CharacterVariantPosition;
+  private originalPosition?: VariantPosition;
 
   constructor(
     private _live2DService: Live2DService,
@@ -46,6 +46,11 @@ export class CharacterViewerSink {
 
   @effect
   public async loadCharacter(characterId: string, variantId: string) {
+    if (!characterId || !variantId) {
+      return;
+    }
+    this.clear();
+    
     this.loading = true;
 
     if (this.current?.characterId !== characterId || !this.metadata) {
@@ -95,7 +100,7 @@ export class CharacterViewerSink {
   }
 
   @trigger('character-viewer/position')
-  public onPositionChanged(position: CharacterVariantPosition) {
+  public onPositionChanged(position: VariantPosition) {
     if (this.originalPosition) {
       this.positionUpdated = !_.isEqual(this.originalPosition, position);
     }
@@ -115,7 +120,7 @@ export class CharacterViewerSink {
     }
   }
 
-  private getMetadataPosition(model: RenderModelLive2D): CharacterVariantPosition {
+  private getMetadataPosition(model: RenderModelLive2D): VariantPosition {
     const live2dInfo = model.home ? model.home : model;
     return {
       scale: live2dInfo.scale!,
@@ -124,7 +129,7 @@ export class CharacterViewerSink {
     };
   }
 
-  private convertPosition(position: CharacterVariantPosition): CharacterVariantPosition {
+  private convertPosition(position: VariantPosition): VariantPosition {
     return {
       scale: Live2DHelper.round(position.scale),
       x: Live2DHelper.round(position.x / 150),

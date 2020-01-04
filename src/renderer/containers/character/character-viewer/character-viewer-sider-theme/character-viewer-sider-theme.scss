@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.music-group {
+  height: 400px;
+  overflow: auto;
+}
+
+.music-item {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+    color: #1890ff;
+    font-weight: 500;
+  }
+}

@@ -1,41 +1,40 @@
+
 import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
+import { IIconRepository } from '@shared/remote';
 import { IconModelCollection, IconModel, reduceKeysAsync } from '@shared';
-import { PathService } from '@main/services';
-
 import { FileLocator } from '../common';
-import { IconCollectionInitializer } from './icon-collection-initializer';
+import { IconInitializer } from './icon-initializer';
 
-export class IconRepository {
+export class IconRepository implements IIconRepository {
   private readonly _modelAdapter: lowdb.AdapterAsync<IconModelCollection>;
-  private readonly _iconCollectionInitializer: IconCollectionInitializer;
-  private readonly _pathService: PathService;
+  private readonly _iconInitializer: IconInitializer;
+
   private readonly _defaultVariantIcon = {
     home: 'asset/icon/portrait/00000_empty.png',
     battle: 'asset/icon/portrait_battle/10000_empty.png'
   }
 
   constructor() {
-    this._modelAdapter = new FileAsync(FileLocator.ICON_DATA);
-    this._iconCollectionInitializer = new IconCollectionInitializer();
-    this._pathService = new PathService();
+    this._modelAdapter = new FileAsync(FileLocator.ICON_STATIC);
+    this._iconInitializer = new IconInitializer();
   }
-  
-  public async listIcons(): Promise<IconModelCollection> {
+
+  public async getCollection(): Promise<IconModelCollection> {
     return (await this.iconLowdb).value();
   }
 
-  public async getCharacterIcons(characterId: string): Promise<IconModel> {
+  public async getIconsByCharacterId(characterId: string): Promise<IconModel> {
     const icons = (await this.iconLowdb).get(characterId).value();
     return icons && await reduceKeysAsync(Object.keys(icons),
-      variantId => this.getVariantIcons(characterId, variantId)
+      variantId => this.getIconsByVariantId(characterId, variantId)
     );
   }
 
-  public getVariantIcons(characterId: string, variantId: string) {
-    return reduceKeysAsync(['home', 'battle', 'spa'], type => this.getIcon(characterId, variantId, type));
+  public async getIconsByVariantId(characterId: string, variantId: string) {
+    return await reduceKeysAsync(['home', 'battle', 'spa'], type => this.getIcon(characterId, variantId, type));
   }
 
   public async getIcon(characterId: string, variantId: string, type: string): Promise<string> {
@@ -57,7 +56,7 @@ export class IconRepository {
   }
 
   private async populateIcons(db: lowdb.LowdbAsync<IconModelCollection>) {
-    const modelCollection = await this._iconCollectionInitializer.createDefaultCollection();
+    const modelCollection = await this._iconInitializer.getCollection();
     return db.defaults(modelCollection).write();
   }
 }

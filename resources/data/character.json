@@ -66,41 +66,33 @@
   },
   "c038": {
     "variants": {
-      "10": {
-        "positions": {
-          "home": {
-            "x": 0,
-            "y": 0,
-            "scale": 1
-          }
-        }
-      },
       "00": {
         "positions": {
           "home": {
-            "x": -10,
-            "y": 0,
-            "scale": 1.05
+            "refined": true,
+            "scale": 1.1,
+            "x": -0.05,
+            "y": 0.05
           }
         }
       },
       "01": {
         "positions": {
           "home": {
-            "x": 0,
-            "y": 0.1,
+            "refined": true,
             "scale": 1.2,
-            "refined": true
+            "x": 0,
+            "y": 0.05
           }
         }
       },
       "02": {
         "positions": {
           "home": {
-            "x": 0,
-            "y": 0.1,
+            "refined": true,
             "scale": 1.2,
-            "refined": true
+            "x": 0,
+            "y": 0.05
           }
         }
       }
@@ -158,7 +150,7 @@
             "refined": true,
             "scale": 1.7,
             "x": 0,
-            "y": 0.4
+            "y": 0.2
           }
         }
       },
@@ -178,7 +170,7 @@
             "refined": true,
             "scale": 1.7,
             "x": 0,
-            "y": 0.4
+            "y": 0.2
           }
         }
       },
@@ -276,29 +268,28 @@
       "00": {
         "positions": {
           "home": {
-            "x": -45,
-            "y": 0,
-            "scale": 0.95
+            "refined": true,
+            "scale": 1,
+            "x": -0.03,
+            "y": 0.05
           }
         }
       },
       "01": {
         "positions": {
           "home": {
-            "scale": 1.25,
-            "x": 0.07,
-            "y": 0.09,
-            "refined": true
+            "refined": true,
+            "x": 0,
+            "y": 0.05
           }
         }
       },
       "02": {
         "positions": {
           "home": {
-            "x": 0.07,
-            "y": 0.09,
-            "scale": 1.25,
-            "refined": true
+            "refined": true,
+            "x": 0,
+            "y": 0.05
           }
         }
       }
@@ -309,39 +300,40 @@
       "89": {
         "positions": {
           "home": {
+            "refined": true,
+            "scale": 1.4,
             "x": 0,
-            "y": 0.1,
-            "scale": 1.2,
-            "refined": true
+            "y": 0.05
           }
         }
       },
       "00": {
         "positions": {
           "home": {
-            "x": -25,
-            "y": -19,
-            "scale": 1.05
+            "refined": true,
+            "scale": 1.1,
+            "x": -0.02,
+            "y": 0.05
           }
         }
       },
       "01": {
         "positions": {
           "home": {
+            "refined": true,
+            "scale": 1.4,
             "x": 0,
-            "y": 0.1,
-            "scale": 1.2,
-            "refined": true
+            "y": 0.05
           }
         }
       },
       "02": {
         "positions": {
           "home": {
+            "refined": true,
+            "scale": 1.4,
             "x": 0,
-            "y": 0.1,
-            "scale": 1.2,
-            "refined": true
+            "y": 0.05
           }
         }
       }
@@ -408,29 +400,29 @@
       "00": {
         "positions": {
           "home": {
-            "x": -12,
-            "y": -5,
-            "scale": 0.95
+            "refined": true,
+            "x": -0.02,
+            "y": 0
           }
         }
       },
       "01": {
         "positions": {
           "home": {
-            "x": 0.025,
-            "y": 0.152,
-            "scale": 1.54,
-            "refined": true
+            "refined": true,
+            "scale": 1.6,
+            "x": 0,
+            "y": 0
           }
         }
       },
       "02": {
         "positions": {
           "home": {
+            "refined": true,
+            "scale": 1.6,
             "x": 0,
-            "y": -0.05,
-            "scale": 1.5,
-            "refined": true
+            "y": 0
           }
         }
       }
@@ -441,29 +433,26 @@
       "00": {
         "positions": {
           "home": {
-            "x": 0,
-            "y": 5,
-            "scale": 0.9
+            "refined": true,
+            "y": -0.05
           }
         }
       },
       "01": {
         "positions": {
           "home": {
-            "x": 0,
-            "y": 0.4,
+            "refined": true,
             "scale": 1.5,
-            "refined": true
+            "y": 0.2
           }
         }
       },
       "02": {
         "positions": {
           "home": {
+            "refined": true,
             "scale": 1.5,
-            "x": 0,
-            "y": 0.4,
-            "refined": true
+            "y": 0.2
           }
         }
       }
@@ -878,23 +867,62 @@
   },
   "c377": {
     "variants": {
+      "10": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0.1
+          }
+        }
+      },
+      "11": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "y": 0
+          }
+        }
+      },
+      "89": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0.1
+          }
+        }
+      },
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 0.9,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
       "01": {
         "positions": {
           "home": {
-            "x": -0.1,
-            "y": 0.55,
+            "refined": true,
             "scale": 1.7,
-            "refined": true
+            "x": -0.05,
+            "y": 0.3
           }
         }
       },
       "02": {
         "positions": {
           "home": {
+            "refined": true,
             "scale": 1.7,
-            "x": -0.1,
-            "y": 0.55,
-            "refined": true
+            "x": -0.05,
+            "y": 0.3
           }
         }
       }
@@ -1010,7 +1038,7 @@
           "home": {
             "refined": true,
             "scale": 1.7,
-            "x": 0.05,
+            "x": 0,
             "y": 0.3
           }
         }
@@ -1020,7 +1048,7 @@
           "home": {
             "refined": true,
             "scale": 1.7,
-            "x": 0.05,
+            "x": 0,
             "y": 0.3
           }
         }
@@ -1902,6 +1930,312 @@
             "refined": true,
             "scale": 1.1,
             "x": -0.1,
+            "y": 0.05
+          }
+        }
+      }
+    }
+  },
+  "c255": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      }
+    }
+  },
+  "c347": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.4,
+            "x": 0,
+            "y": 0.25
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.4,
+            "x": 0,
+            "y": 0.25
+          }
+        }
+      }
+    }
+  },
+  "c026": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 0.95,
+            "y": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      }
+    }
+  },
+  "c190": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": -0.02,
+            "y": 0.1
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": -0.02,
+            "y": 0.1
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": -0.02,
+            "y": 0.1
+          }
+        }
+      }
+    }
+  },
+  "c180": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0.05,
+            "y": 0.15
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0.05,
+            "y": 0.15
+          }
+        }
+      }
+    }
+  },
+  "c222": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "y": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      }
+    }
+  },
+  "c301": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.25,
+            "x": -0.05,
+            "y": 0.1
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.25,
+            "x": -0.05,
+            "y": 0.1
+          }
+        }
+      }
+    }
+  },
+  "c318": {
+    "variants": {
+      "10": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0.2
+          }
+        }
+      },
+      "89": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.5,
+            "x": 0,
+            "y": -0.1
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "y": 0.1
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "y": 0.1
+          }
+        }
+      }
+    }
+  },
+  "c359": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0.1
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0.1
+          }
+        }
+      }
+    }
+  },
+  "c057": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": -0.02
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "y": 0
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "y": 0
+          }
+        }
+      }
+    }
+  },
+  "c065": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "y": 0.05
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
             "y": 0.05
           }
         }

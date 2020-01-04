@@ -4,4 +4,5 @@ export enum RemoteServiceType {
   Live2D = 'live2d',
   Icon = 'icon',
   Render = 'render',
+  Theme = 'theme',
 }

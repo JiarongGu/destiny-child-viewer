@@ -24,30 +24,31 @@ export class FileLocator {
     return this.pathService.getResourcePath('asset/asset/character')
   }
 
-  // static data / generated data
-  public static get LOCALE_DATA() {
-    return this.pathService.getResourcePath('static/locale.json') 
-  }
-
-  public static get CHILD_DATA() { 
+  // static data
+  public static get CHILD_STATIC() { 
     return this.pathService.getResourcePath('static/child.json') 
   }
 
-  public static get ICON_DATA() { 
+  // generated data
+  public static get LOCALE_STATIC() {
+    return this.pathService.getResourcePath('static/locale.json') 
+  }
+
+  public static get ICON_STATIC() { 
     return this.pathService.getResourcePath('static/icon.json') 
   }
 
-  public static get SOUND_DATA() { 
-    return this.pathService.getResourcePath('static/sound.json') 
+  public static get THEME_STATIC() { 
+    return this.pathService.getResourcePath('static/theme.json') 
   }
 
-  public static get TITLE_DATE() { 
-    return this.pathService.getResourcePath('static/title.json') 
+  public static get CHARACTER_STATIC() { 
+    return this.pathService.getResourcePath('static/character.json') 
   }
 
   // runtime data
-  public static get CHILD_ADDITIONAL_DATA() { 
-    return this.pathService.getResourcePath('data/child-additional.json') 
+  public static get CHARACTER_DATA() { 
+    return this.pathService.getResourcePath('data/character.json') 
   }
 
   public static get LIVE2D_DATA() { 

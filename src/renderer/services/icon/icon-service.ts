@@ -8,13 +8,13 @@ export class IconService {
   private readonly _iconRepository = new RemoteService<IIconRepository>(RemoteServiceType.Icon);
 
   @memorizeAsync(IconService.cacheContext)
-  public async listIcons(): Promise<IconModelCollection> {
-    return await this._iconRepository.invoke('listIcons');
+  public async getCollection(): Promise<IconModelCollection> {
+    return await this._iconRepository.invoke('getCollection');
   }
 
   @memorizeAsync(IconService.cacheContext)
   public async loadCharacterIcons(characterId: string): Promise<IconModel> {
-    const icons = await this._iconRepository.invoke('getCharacterIcons', characterId);
+    const icons = await this._iconRepository.invoke('getIconsByCharacterId', characterId);
     return icons && await reduceKeysAsync(Object.keys(icons),
       variantId => this.loadVariantIcons(characterId, variantId)
     );
@@ -22,7 +22,7 @@ export class IconService {
   
   @memorizeAsync(IconService.cacheContext)
   public async loadVariantIcons(characterId: string, variantId: string) {
-    const icons = await this._iconRepository.invoke('getVariantIcons', characterId, variantId);
+    const icons = await this._iconRepository.invoke('getIconsByVariantId', characterId, variantId);
     return reduceKeysAsync(Object.keys(icons), type => this.loadIcon(characterId, variantId, type));
   }
 

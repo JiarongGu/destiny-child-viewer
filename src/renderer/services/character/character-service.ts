@@ -1,9 +1,7 @@
-import { CharacterModel } from '@shared/models';
 import { CharacterMetadata } from '@models';
-import { RenderModelPositionType, CharacterVariantPosition, getCacheContext, memorizeAsync } from '@shared';
+import { RenderModelPositionType, CharacterModel, getCacheContext, memorizeAsync, VariantPosition } from '@shared';
 import { ICharacterRepository, IRenderRepository, RemoteService, RemoteServiceType } from '@shared/remote';
-
-import { IconService } from '../icon';
+import { IconService } from '../icon/icon-service';
 
 export class CharacterService {
   public static cacheContext = getCacheContext('character-service');
@@ -17,12 +15,12 @@ export class CharacterService {
     this._renderRepository = new RemoteService(RemoteServiceType.Render);
     this._iconService = new IconService();
   }
-  
+
   @memorizeAsync(CharacterService.cacheContext)
-  public async listCharacterMetadata(): Promise<Array<CharacterMetadata>> {
-    const renderModels = await this._renderRepository.invoke('listRenderModels');
-    const characters = await this._characterRepository.invoke('ListCharacters');
-    const iconModels = await this._iconService.listIcons();
+  public async listAll(): Promise<Array<CharacterMetadata>> {
+    const renderModels = await this._renderRepository.invoke('getCollection');
+    const characters = await this._characterRepository.invoke('getCollection');
+    const iconModels = await this._iconService.getCollection();
     const characterIds = Object.keys(renderModels).filter(id => !id.startsWith('s'));
 
     return characterIds.map(id => ({
@@ -33,10 +31,10 @@ export class CharacterService {
       variants: Object.keys(renderModels[id])
     }));
   }
-  
+
   @memorizeAsync(CharacterService.cacheContext)
   public async getCharacterMetadata(characterId: string): Promise<CharacterMetadata> {
-    const render = await this._renderRepository.invoke('getCharacterRenderModel', characterId);
+    const render = await this._renderRepository.invoke('getRendersByCharacterId', characterId);
     const character = await this._characterRepository.invoke('getCharacter', characterId);
     const icon = await this._iconService.loadCharacterIcons(characterId);
 
@@ -50,7 +48,7 @@ export class CharacterService {
   }
 
   public async savePosition(
-    characterId: string, variantId: string, positionType: RenderModelPositionType, position: CharacterVariantPosition
+    characterId: string, variantId: string, positionType: RenderModelPositionType, position: VariantPosition
   ) {
     const character = (await this.getCharacterMetadata(characterId)).character;
     character.variants[variantId].positions[positionType] = { ...position, refined: true };

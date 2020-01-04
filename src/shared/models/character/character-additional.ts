@@ -1,17 +1,10 @@
-import { CharacterType } from './character-type.enum';
-import { CharacterVariant } from './character-variant';
+import { CharacterStatic } from './character-static';
+import { CharacterBase } from './character-base';
+import { VariantAdditional } from './variant';
 
-export interface CharacterAdditional {
-  id: string;
-  name?: string;
-  numMods?: number;
-  numModsNSFW?: number;
-  stars?: boolean;
-  variants?: { [key: string]: CharacterVariant };
 
-  tierBoss?: number;
-  tierPVE?: number;
-  tierPVP?: number;
-  tierRaid?: number;
-  type?: CharacterType;
+export interface CharacterAdditional extends Omit<Partial<CharacterBase>, 'variants'>, Omit<Partial<CharacterStatic>, 'variants'> {
+  variants: {
+    [key: string]: VariantAdditional
+  }
 }

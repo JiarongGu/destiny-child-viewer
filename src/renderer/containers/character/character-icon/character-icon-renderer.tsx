@@ -3,11 +3,11 @@ import { useSink } from 'redux-sink';
 import { Link } from 'react-router-dom';
 import { GridChildComponentProps } from 'react-window';
 
-import { CharacterVariantType } from '@models';
+import { VariantType } from '@models';
 
 import { CharacterIconSink } from './character-icon-sink';
 
-const defaultVariants = [CharacterVariantType.Evolve, CharacterVariantType.Default, CharacterVariantType.Nature];
+const defaultVariants = [VariantType.SClass, VariantType.EClass, VariantType.Story];
 
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({
   columnIndex,

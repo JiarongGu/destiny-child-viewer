@@ -1,4 +1,4 @@
-export interface BgmModel {
+export interface MusicModel {
   title: string;
   description: string;
   filePath: string;

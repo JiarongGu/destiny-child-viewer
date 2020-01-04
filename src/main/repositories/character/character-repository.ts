@@ -5,38 +5,36 @@ import { diff } from 'deep-object-diff';
 
 import {
   CharacterBase,
-  CharacterTitleCollection,
-  CharacterAdditionalCollection,
+  CharacterStatic,
+  CharacterAdditional,
   CharacterModel,
   CharacterVariantModel,
-  CharacterTitle,
-  reduceKeys,
 } from '@shared';
 
 import { ICharacterRepository } from '@shared/remote';
-import { CharacterTitleInitializer } from './character-title-initializer';
+import { CharacterInitializer } from './character-initializer';
 import { FileLocator } from '../common';
 
 export class CharacterRepository implements ICharacterRepository {
   private readonly _characterBaseAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterBase }>;
-  private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<CharacterAdditionalCollection>;
-  private readonly _characterTitleAdapter: lowdb.AdapterAsync<CharacterTitleCollection>;
+  private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterAdditional }>;
+  private readonly _characterStaticAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterStatic }>;
 
-  private readonly _characterTitleInitializer: CharacterTitleInitializer;
+  private readonly _characterInitializer: CharacterInitializer;
 
   constructor() {
-    this._characterBaseAdapter = new FileAsync(FileLocator.CHILD_DATA);
-    this._characterAdditionalAdapter = new FileAsync(FileLocator.CHILD_ADDITIONAL_DATA);
-    this._characterTitleAdapter = new FileAsync(FileLocator.TITLE_DATE);
+    this._characterBaseAdapter = new FileAsync(FileLocator.CHILD_STATIC);
+    this._characterStaticAdapter = new FileAsync(FileLocator.CHARACTER_STATIC);
+    this._characterAdditionalAdapter = new FileAsync(FileLocator.CHARACTER_DATA);
 
-    this._characterTitleInitializer = new CharacterTitleInitializer();
+    this._characterInitializer = new CharacterInitializer();
   }
 
-  public async ListCharacters(): Promise<{ [key: string]: CharacterModel }> {
+  public async getCollection(): Promise<{ [key: string]: CharacterModel }> {
     const base = (await this.characterBaseLowdb).value();
-    const title = (await this.characterTitleLowdb).value();
+    const other = (await this.characterStaticLowdb).value();
     const additional = (await this.characterAdditionalLowdb).value();
-    return _.merge({}, base, title, additional);
+    return _.merge({}, base, other, additional);
   }
 
   public async getCharacter(characterId: string): Promise<CharacterModel> {
@@ -44,12 +42,6 @@ export class CharacterRepository implements ICharacterRepository {
     const lowdb = await this.characterAdditionalLowdb;
     const additional = lowdb.get(characterId).value();
     return _.merge({}, base, additional);
-  }
-
-  public async getCharacterBase(characterId: string): Promise<CharacterBase & CharacterTitle> {
-    const base = (await this.characterBaseLowdb).get(characterId).value();
-    const title = (await this.characterTitleLowdb).get(characterId).value();
-    return _.merge({}, base, title);
   }
 
   public async saveCharacter(characterId: string, model: CharacterModel) {
@@ -74,6 +66,12 @@ export class CharacterRepository implements ICharacterRepository {
     };
   }
 
+  private async getCharacterBase(characterId: string): Promise<CharacterModel> {
+    const base = (await this.characterBaseLowdb).get(characterId).value();
+    const other = (await this.characterStaticLowdb).get(characterId).value();
+    return _.merge({}, base, other);
+  }
+
   private get characterBaseLowdb() {
     return lowdb(this._characterBaseAdapter);
   }
@@ -82,48 +80,17 @@ export class CharacterRepository implements ICharacterRepository {
     return lowdb(this._characterAdditionalAdapter);
   }
 
-  private get characterTitleLowdb() {
-    return lowdb(this._characterTitleAdapter).then(db => {
+  private get characterStaticLowdb() {
+    return lowdb(this._characterStaticAdapter).then(db => {
       if (db.isEmpty().value()) {
-        return this.populateTitleCollection(db).then(() => db);
+        return this.populate(db).then(() => db);
       }
       return db;
     });
   }
 
-  private async populateTitleCollection(db: lowdb.LowdbAsync<CharacterTitleCollection>) {
-    const modelCollection = await this._characterTitleInitializer.createDefaultCollection();
+  private async populate(db: lowdb.LowdbAsync<{ [key: string]: CharacterStatic }>) {
+    const modelCollection = await this._characterInitializer.getCollection();
     return db.defaults(modelCollection).write();
-  }
-
-  private async cleanAdditional() {
-    const lowdb = await this.characterAdditionalLowdb;
-    const collection = await this.cleanAdditionalCollection(lowdb);
-
-    Object.keys(collection).forEach(characterId => {
-      if (collection[characterId]) {
-        lowdb.set(characterId, collection[characterId]).write();
-      } else {
-        lowdb.set(characterId, undefined).write();
-      }
-    })
-  }
-
-  private async cleanAdditionalCollection(db: lowdb.LowdbAsync<CharacterAdditionalCollection>) {
-    const collection = (await this.characterAdditionalLowdb).value();
-    const cleanup = reduceKeys(Object.keys(collection), characterId => {
-      const character = collection[characterId];
-      const variants = character.variants && reduceKeys(Object.keys(character.variants), (variantId) => {
-        const variant = character.variants![variantId];
-        const position = (variant as any).position || (variant as any).positions;
-        return position && { positions: position };
-      });
-      const isValid = variants && Object.keys(variants)
-        .some(variantId => variants[variantId] && variants[variantId].positions);
-      return isValid && {
-        variants
-      } || undefined;
-    });
-    return cleanup;
   }
 }

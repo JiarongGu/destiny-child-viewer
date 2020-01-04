@@ -19,7 +19,7 @@ export class RenderRepository implements IRenderRepository {
     this._modelAdapter = new FileAsync(FileLocator.RENDER_MODEL_INFO);
   }
 
-  public async listRenderModels(): Promise<RenderModelCollection> {
+  public async getCollection(): Promise<RenderModelCollection> {
     const models = (await this.modelLowdb).value();
     const modelKeys = Object.keys(models);
 
@@ -38,13 +38,13 @@ export class RenderRepository implements IRenderRepository {
     return characterInfos;
   }
 
-  public async getRenderModel(characterId: string, variantId: string): Promise<RenderModel> {
+  public async getRender(characterId: string, variantId: string): Promise<RenderModel> {
     const modelKey = `${characterId}_${variantId}`;
     return (await this.modelLowdb).get(modelKey).value();
   }
 
-  public async getCharacterRenderModel(characterId: string) {
-    const models = await this.listRenderModels();
+  public async getRendersByCharacterId(characterId: string) {
+    const models = await this.getCollection();
     return models[characterId];
   }
 

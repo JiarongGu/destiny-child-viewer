@@ -1,17 +1,16 @@
 {
   "00000001.unk": "Scenario List",
-  "00000003.unk": "Scenario Background Descriptions",
   "00000006.unk": "Character Descriptions",
   "00000007.tab": "Stage Descriptions",
-  "00000009.unk": "Character Titles",
-  "00000010.unk": "Character Names",
-  "00000011.unk": "Character Voice Text",
-  "00000012.unk": "Spa Descriptions",
+  "00000012.unk": "Spa Voice",
   "00000021.unk": "Item Descriptions",
-  "00000028.unk": "Character Favor Text",
   "00000039.tab": "Skill Descriptions",
 
-  "BgmDescriptions": "asset\\locale\\00000005.tab",
-  "CharacterTitles": "asset\\locale\\00000009.unk",
-  "CharacterNames": "asset\\locale\\00000010.unk"
+  "BackgroundMusic": "asset\\locale\\00000005.tab",
+  "BackgroundImage": "asset\\locale\\00000003.unk",
+
+  "CharacterTitle": "asset\\locale\\00000009.unk",
+  "CharacterName": "asset\\locale\\00000010.unk",
+  "CharacterVoice": "asset\\locale\\00000011.unk",
+  "CharacterFavor": "asset\\locale\\00000028.unk"
 }

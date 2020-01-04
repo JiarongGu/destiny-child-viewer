@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 
 import { reduceMap, reduceKeys, LocaleHelper } from '@shared/utils';
 import { LocaleRepository } from '../locale/locale-repository';
+import { LocaleType } from '@shared';
 
 interface CharacterTitle {
   characterId: string;
@@ -16,10 +17,10 @@ interface CharacterName {
   name: string;
 }
 
-export class CharacterTitleInitializer {
+export class CharacterInitializer {
   private readonly _localeRepository = new LocaleRepository();
 
-  public async createDefaultCollection() {
+  public async getCollection() {
     const titles = _.groupBy(await this.getCharacterTitleModels(), title => title.characterId);
     const names = _.groupBy(await this.getCharacterNameModels(), name => name.characterId);
 
@@ -48,8 +49,8 @@ export class CharacterTitleInitializer {
   }
 
   private async getCharacterTitleModels(): Promise<Array<CharacterTitle>> {
-    const file = await this._localeRepository.getCharacterTitles();
-    return LocaleHelper.formatFile(file, (blocks) => {
+    const titleFile = await this._localeRepository.get(LocaleType.CharacterTitle);
+    return LocaleHelper.formatFile(titleFile, (blocks) => {
       const ids = blocks[0].split(' ');
       return {
         characterId: ids[0],
@@ -61,7 +62,7 @@ export class CharacterTitleInitializer {
   }
 
   private async getCharacterNameModels(): Promise<Array<CharacterName>> {
-    const file = await this._localeRepository.getCharacterNames();
+    const file = await this._localeRepository.get(LocaleType.CharacterName);
     return LocaleHelper.formatFile(file, (blocks) => {
       const ids = blocks[0].split(' ');
       return {

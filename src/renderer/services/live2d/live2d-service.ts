@@ -17,7 +17,7 @@ export class Live2DService {
   private _blobService = new BlobService();
 
   public async loadComponents(characterId: string, variantId: string) {
-    const data = await this._live2DRepository.invoke('getData', characterId, variantId);
+    const data = await this._live2DRepository.invoke('getLive2D', characterId, variantId);
 
     if (data) {
       const [textures, model, motions] = await Promise.all([

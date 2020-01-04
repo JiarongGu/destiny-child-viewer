@@ -1,4 +1,9 @@
 import { CharacterBase } from './character-base';
-import { CharacterAdditional } from './character-additional';
+import { CharacterStatic } from './character-static';
+import { VariantModel } from './variant';
 
-export type CharacterModel = CharacterBase & CharacterAdditional;
+export interface CharacterModel extends Omit<CharacterBase, 'variants'>, Omit<CharacterStatic, 'variants'> {
+  variants: {
+    [key: string]: VariantModel
+  }
+}

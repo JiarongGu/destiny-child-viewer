@@ -26,7 +26,7 @@ interface IconInfo {
   fileId: number;
 }
 
-export class IconCollectionInitializer {
+export class IconInitializer {
   private readonly _renderRepository: RenderRepository;
   private readonly _pathService: PathService;
 
@@ -35,8 +35,8 @@ export class IconCollectionInitializer {
     this._pathService = new PathService()
   }
 
-  public async createDefaultCollection() {
-    const modelCollection = await this._renderRepository.listRenderModels();
+  public async getCollection() {
+    const modelCollection = await this._renderRepository.getCollection();
     const iconInfos = this.mapToIconInfos(modelCollection);
     const modelIcons = await this.mapToIconModels(iconInfos);
 

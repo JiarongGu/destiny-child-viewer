@@ -9,7 +9,7 @@ export class Live2DRepository implements ILive2DRepository {
   private _fileService = new FileService();
   private _pathService = new PathService();
 
-  public async getData(characterId: string, variantId: string): Promise<Live2DModel> {
+  public async getLive2D(characterId: string, variantId: string): Promise<Live2DModel> {
     const id = `${characterId}_${variantId}`;
     const assetPath = `${FileLocator.CHARACTER_DIRECTORY}/${id}`;
     const assetRelative = this._pathService.relativeResourcePath(assetPath);

@@ -2,9 +2,8 @@ import * as React from 'react';
 import { useSink } from 'redux-sink';
 import classnames from 'classnames';
 
-import { Live2DHelper } from '@shared/utils';
+import { Live2DHelper, VariantPosition } from '@shared';
 import { PercentageInput } from '@components';
-import { CharacterVariantPosition } from '@shared/models';
 import { CharacterViewerSink } from '../../character-viewer-sink';
 
 import * as styles from './character-viewer-sider-position.scss';
@@ -31,11 +30,11 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
   const [spinning, setSpinning] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 
-  const copyRef = React.useRef<CharacterVariantPosition>();
+  const copyRef = React.useRef<VariantPosition>();
   const { position, positionUpdated } = characterViewSink;
 
   const onChange = React.useCallback(
-    (type: keyof CharacterVariantPosition) => (percentage: number) => {
+    (type: keyof VariantPosition) => (percentage: number) => {
       const actualValue = Live2DHelper.actual(percentage);
       if (position && position[type] !== actualValue) {
         characterViewSink.position = {

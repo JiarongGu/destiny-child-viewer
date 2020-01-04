@@ -19,7 +19,6 @@ export const CharacterViewer: React.FunctionComponent = props => {
     if (match?.params) {
       characterViewSink.loadCharacter(match.params.characterId, match.params.variantId);
     }
-    return () => characterViewSink.clear();
   }, []);
 
   SiderHook.useSider(CharacterViewerSider, { width: '306px' });

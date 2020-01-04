@@ -12,21 +12,13 @@ export class LocaleRepository {
   private readonly _fileService: FileService;
 
   constructor() {
-    this._localeAdapter = new FileAsync(FileLocator.LOCALE_DATA);
+    this._localeAdapter = new FileAsync(FileLocator.LOCALE_STATIC);
     this._fileService = new FileService();
     this._pathService = new PathService();
   }
 
-  public getCharacterTitles(): Promise<string> {
-    return this.readFile(LocaleType.CharacterTitles);
-  }
-
-  public getCharacterNames(): Promise<string> {
-    return this.readFile(LocaleType.CharacterNames);
-  }
-
-  public getBgmDescriptions(): Promise<string> {
-    return this.readFile(LocaleType.BgmDescriptions);
+  public get(locale: LocaleType) {
+    return this.readFile(locale);
   }
 
   private async readFile(type: LocaleType) {

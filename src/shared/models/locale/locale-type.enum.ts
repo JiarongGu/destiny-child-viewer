@@ -1,5 +1,7 @@
 export enum LocaleType {
-  CharacterTitles = 'CharacterTitles',
-  CharacterNames = 'CharacterNames',
-  BgmDescriptions = 'BgmDescriptions',
+  CharacterTitle = 'CharacterTitle',
+  CharacterName = 'CharacterName',
+  CharacterVoice = 'CharacterVoice',
+  BackgroundMusic = 'BackgroundMusic',
+  BackgroundImage = 'BackgroundImage'
 }

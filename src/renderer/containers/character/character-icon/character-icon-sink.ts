@@ -24,7 +24,7 @@ export class CharacterIconSink {
   @effect
   public async load() {
     if (this.characters.length === 0) {
-      this.characters = await this._characterService.listCharacterMetadata();
+      this.characters = await this._characterService.listAll();
       this.updateGrid(this.grid.height, this.grid.width, this.characters.length);
     }
   }

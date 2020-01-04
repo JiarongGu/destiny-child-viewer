@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 import { RenderModelType } from '@shared/models';
 
-import { CharacterViewerSink } from '../../character-viewer-sink';
-import { CharacterViewerSiderPosition } from '../character-viewer-sider-position';
+import { CharacterViewerSink } from '../character-viewer-sink';
+import { CharacterViewerSiderPosition } from './character-viewer-sider-position';
 
 import * as styles from './character-viewer-sider-variants.scss';
 

@@ -1,4 +1,4 @@
-export interface CharacterVariantPosition {
+export interface VariantPosition {
   x: number;
   y: number;
   scale: number;
