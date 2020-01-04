@@ -83,6 +83,29 @@ module.exports = merge.smart(baseConfig, {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          test: path.resolve(process.cwd(), 'node_modules'),
+          name: 'vendor',
+          enforce: true,
+          priority: 10
+        },
+        utils: {
+          test: /\.js$/,
+          chunks: 'initial',
+          name: 'common',
+          minSize: 0
+        }
+      }
+    },
+    runtimeChunk: {
+      name: 'manifest'
+    }
+  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new MiniCssExtractPlugin({

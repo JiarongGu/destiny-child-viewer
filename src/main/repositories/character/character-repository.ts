@@ -10,8 +10,7 @@ import {
   CharacterModel,
   CharacterVariantModel,
   CharacterTitle,
-  getCacheContext, reduceKeys,
-  memorizeAsync
+  reduceKeys,
 } from '@shared';
 
 import { ICharacterRepository } from '@shared/remote';
@@ -19,8 +18,6 @@ import { CharacterTitleInitializer } from './character-title-initializer';
 import { FileLocator } from '../common';
 
 export class CharacterRepository implements ICharacterRepository {
-  public static cacheContext = getCacheContext('character-repository');
-
   private readonly _characterBaseAdapter: lowdb.AdapterAsync<{ [key: string]: CharacterBase }>;
   private readonly _characterAdditionalAdapter: lowdb.AdapterAsync<CharacterAdditionalCollection>;
   private readonly _characterTitleAdapter: lowdb.AdapterAsync<CharacterTitleCollection>;
@@ -42,7 +39,6 @@ export class CharacterRepository implements ICharacterRepository {
     return _.merge({}, base, title, additional);
   }
 
-  @memorizeAsync(CharacterRepository.cacheContext, 'character')
   public async getCharacter(characterId: string): Promise<CharacterModel> {
     const base = await this.getCharacterBase(characterId);
     const lowdb = await this.characterAdditionalLowdb;
@@ -50,7 +46,6 @@ export class CharacterRepository implements ICharacterRepository {
     return _.merge({}, base, additional);
   }
 
-  @memorizeAsync(CharacterRepository.cacheContext, 'character-base')
   public async getCharacterBase(characterId: string): Promise<CharacterBase & CharacterTitle> {
     const base = (await this.characterBaseLowdb).get(characterId).value();
     const title = (await this.characterTitleLowdb).get(characterId).value();
@@ -62,10 +57,8 @@ export class CharacterRepository implements ICharacterRepository {
     const lowdb = await this.characterAdditionalLowdb;
     const update = diff(base, model);
     await lowdb.set(characterId, update).write();
-    this.clearCharacterCache(characterId);
   }
 
-  @memorizeAsync(CharacterRepository.cacheContext, 'character-variant')
   public async getCharacterVariant(characterId: string, variantId: string): Promise<CharacterVariantModel> {
     const character = await this.getCharacter(characterId);
     const variant = character.variants[variantId];
@@ -79,19 +72,6 @@ export class CharacterRepository implements ICharacterRepository {
       stars: character.stars,
       positions: variant.positions,
     };
-  }
-
-  private clearCharacterCache(characterId: string) {
-    const characterCache = CharacterRepository.cacheContext.get('character');
-    const variantCache = CharacterRepository.cacheContext.get('character-variant');
-
-    if (characterCache) {
-      characterCache.delete(characterId);
-    }
-
-    if (variantCache) {
-      variantCache.delete(characterId);
-    }
   }
 
   private get characterBaseLowdb() {

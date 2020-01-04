@@ -2,13 +2,11 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { LocaleType, LocaleModelCollection, FileReadType, getCacheContext, memorizeAsync } from '@shared';
+import { LocaleType, LocaleModelCollection, FileReadType } from '@shared';
 import { FileService, PathService } from '@main/services';
 import { FileLocator } from '../common';
 
 export class LocaleRepository {
-  public static cacheName = 'locale-repository';
-
   private readonly _localeAdapter: lowdb.AdapterAsync<LocaleModelCollection>;
   private readonly _pathService: PathService;
   private readonly _fileService: FileService;
@@ -31,7 +29,6 @@ export class LocaleRepository {
     return this.readFile(LocaleType.BgmDescriptions);
   }
 
-  @memorizeAsync(getCacheContext(LocaleRepository.cacheName))
   private async readFile(type: LocaleType) {
     const db = await this.localeLowdb;
     const filePath = db.get(type).value();

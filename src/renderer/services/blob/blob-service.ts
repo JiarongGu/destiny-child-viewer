@@ -3,10 +3,12 @@ import { RemoteService, IFileService, RemoteServiceType } from '@shared/remote';
 import { BlobReadType } from './blob-read-type.enum';
 
 export class BlobService {
-  private readonly _fileService = new RemoteService<IFileService>(RemoteServiceType.File);
-  public readonly _objectUrls: Array<string> = [];
+  public static cacheContext = getCacheContext('blob');
 
-  @memorizeAsync(getCacheContext('blob'))
+  private readonly _fileService = new RemoteService<IFileService>(RemoteServiceType.File);
+  private readonly _objectUrls: Array<string> = [];
+
+  @memorizeAsync(BlobService.cacheContext)
   public async read(filePath: string, type: BlobReadType) {
     const fileReadType = this.toFileType(type);
     const result = await this._fileService.invoke('read', filePath, fileReadType);

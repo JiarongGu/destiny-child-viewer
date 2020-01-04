@@ -7,23 +7,18 @@ import {
   RenderModel,
   RenderModelCollection,
   reduceKeys,
-  getCacheContext,
   reduceMap,
-  memorizeAsync
 } from '@shared';
 import { IRenderRepository } from '@shared/remote';
 import { FileLocator } from '../common';
 
 export class RenderRepository implements IRenderRepository {
-  public static cacheName = 'render-repository';
-
   private readonly _modelAdapter: lowdb.AdapterAsync<BaseRenderModelCollection>;
 
   constructor() {
     this._modelAdapter = new FileAsync(FileLocator.RENDER_MODEL_INFO);
   }
 
-  @memorizeAsync(getCacheContext(RenderRepository.cacheName))
   public async listRenderModels(): Promise<RenderModelCollection> {
     const models = (await this.modelLowdb).value();
     const modelKeys = Object.keys(models);
@@ -43,13 +38,11 @@ export class RenderRepository implements IRenderRepository {
     return characterInfos;
   }
 
-  @memorizeAsync(getCacheContext(RenderRepository.cacheName))
   public async getRenderModel(characterId: string, variantId: string): Promise<RenderModel> {
     const modelKey = `${characterId}_${variantId}`;
     return (await this.modelLowdb).get(modelKey).value();
   }
 
-  @memorizeAsync(getCacheContext(RenderRepository.cacheName))
   public async getCharacterRenderModel(characterId: string) {
     const models = await this.listRenderModels();
     return models[characterId];

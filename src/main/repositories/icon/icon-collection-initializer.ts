@@ -1,10 +1,10 @@
 
 import * as _ from 'lodash';
 
-import { FileHelper, reduceMap, reduceKeys, FileStatsCollection } from '@shared/utils';
+import { reduceMap, reduceKeys } from '@shared/utils';
 import { RenderModelCollection, BaseRenderModelCollection, RenderModelType, IconModelCollection } from '@shared/models';
 import { RenderRepository } from '../render/render-repository';
-import { PathService } from '../../services';
+import { PathService, FileStatsCollection, FileHelper } from '../../services';
 import { FileLocator } from '../common';
 
 interface CharacterFolderInfo {

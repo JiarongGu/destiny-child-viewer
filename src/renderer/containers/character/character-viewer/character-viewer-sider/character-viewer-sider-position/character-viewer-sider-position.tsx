@@ -17,17 +17,17 @@ export interface CharacterViewerSiderPositionProps {
 export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterViewerSiderPositionProps> = ({
   className
 }) => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.position]);
+  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.position, sink.positionUpdated]);
   const [spinning, setSpinning] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 
   const copyRef = React.useRef<CharacterVariantPosition>();
-
-  const position = characterViewSink.position;
+  const { position, positionUpdated } = characterViewSink;
 
   const onChange = React.useCallback(
     (type: keyof CharacterVariantPosition) => (percentage: number) => {
-      if (position) {
+      const actualValue = Live2DHelper.actual(percentage);
+      if (position && position[type] !== actualValue) {
         characterViewSink.position = {
           ...position,
           [type]: Live2DHelper.actual(percentage)
@@ -80,7 +80,12 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
         </div>
         <div className={styles.buttons}>
           <Tooltip title={'reset'} placement={'topRight'}>
-            <Button className={styles.button} size={'small'} onClick={() => characterViewSink.resetPosition()}>
+            <Button
+              className={styles.button}
+              size={'small'}
+              onClick={() => characterViewSink.resetPosition()}
+              disabled={!positionUpdated}
+            >
               <Icon type={'sync'} />
             </Button>
           </Tooltip>
@@ -95,7 +100,7 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
             </Button>
           </Tooltip>
           <Tooltip title={'save'} placement={'topRight'}>
-            <Button className={styles.button} size={'small'} onClick={savePosition}>
+            <Button className={styles.button} size={'small'} onClick={savePosition} disabled={!positionUpdated}>
               <Icon type={'save'} />
             </Button>
           </Tooltip>

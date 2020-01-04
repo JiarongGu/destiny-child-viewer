@@ -1,10 +1,13 @@
+import { CharacterModel } from '@shared/models';
 import { CharacterMetadata } from '@models';
-import { RenderModelPositionType, CharacterVariantPosition } from '@shared';
+import { RenderModelPositionType, CharacterVariantPosition, getCacheContext, memorizeAsync } from '@shared';
 import { ICharacterRepository, IRenderRepository, RemoteService, RemoteServiceType } from '@shared/remote';
 
 import { IconService } from '../icon';
 
 export class CharacterService {
+  public static cacheContext = getCacheContext('character-service');
+
   private readonly _characterRepository: RemoteService<ICharacterRepository>;
   private readonly _renderRepository: RemoteService<IRenderRepository>;;
   private readonly _iconService: IconService;
@@ -14,7 +17,8 @@ export class CharacterService {
     this._renderRepository = new RemoteService(RemoteServiceType.Render);
     this._iconService = new IconService();
   }
-
+  
+  @memorizeAsync(CharacterService.cacheContext)
   public async listCharacterMetadata(): Promise<Array<CharacterMetadata>> {
     const renderModels = await this._renderRepository.invoke('listRenderModels');
     const characters = await this._characterRepository.invoke('ListCharacters');
@@ -29,11 +33,12 @@ export class CharacterService {
       variants: Object.keys(renderModels[id])
     }));
   }
-
+  
+  @memorizeAsync(CharacterService.cacheContext)
   public async getCharacterMetadata(characterId: string): Promise<CharacterMetadata> {
     const render = await this._renderRepository.invoke('getCharacterRenderModel', characterId);
     const character = await this._characterRepository.invoke('getCharacter', characterId);
-    const icon = await this._iconService.getCharacterIcons(characterId);
+    const icon = await this._iconService.loadCharacterIcons(characterId);
 
     return {
       character,
@@ -44,19 +49,23 @@ export class CharacterService {
     };
   }
 
-  public getCharacterIcon(characterId: string) {
-    return this._iconService.getCharacterIcons(characterId);
-  }
-
-  public async getIcon(characterId: string, variantId: string, type: string) {
-    return await this._iconService.getIcon(characterId, variantId, type);
-  }
-
   public async savePosition(
     characterId: string, variantId: string, positionType: RenderModelPositionType, position: CharacterVariantPosition
   ) {
-    const character = await this._characterRepository.invoke('getCharacter', characterId);
+    const character = (await this.getCharacterMetadata(characterId)).character;
     character.variants[variantId].positions[positionType] = { ...position, refined: true };
+    await this.saveCharacter(characterId, character);
+  }
+
+  public async saveCharacter(characterId: string, character: CharacterModel) {
     await this._characterRepository.invoke('saveCharacter', characterId, character);
+    this.clearCharacterCache(characterId);
+  }
+
+  private clearCharacterCache(characterId: string) {
+    const characterCache = CharacterService.cacheContext.get(this.getCharacterMetadata.name);
+    if (characterCache) {
+      characterCache.delete(characterId);
+    }
   }
 }

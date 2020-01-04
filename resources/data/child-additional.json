@@ -1238,5 +1238,173 @@
         }
       }
     }
+  },
+  "c311": {
+    "variants": {
+      "89": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "y": 0.1
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.2,
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    }
+  },
+  "c430": {
+    "variants": {
+      "10": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": -0.05,
+            "y": 0.05
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    }
+  },
+  "c043": {
+    "variants": {
+      "10": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "y": 0
+          }
+        }
+      },
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "y": 0
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "y": 0
+          }
+        }
+      }
+    }
+  },
+  "c051": {
+    "variants": {
+      "21": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 0.9,
+            "y": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0.05,
+            "y": 0.1
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "x": 0.05,
+            "y": 0.1
+          }
+        }
+      }
+    }
   }
 }

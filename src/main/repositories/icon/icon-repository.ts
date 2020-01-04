@@ -2,13 +2,12 @@ import * as FileAsync from 'lowdb/adapters/FileAsync';
 import * as lowdb from 'lowdb';
 import * as _ from 'lodash';
 
-import { IconModelCollection, IconModel, reduceKeysAsync, getCacheContext, memorizeAsync } from '@shared';
+import { IconModelCollection, IconModel, reduceKeysAsync } from '@shared';
 
 import { FileLocator } from '../common';
 import { IconCollectionInitializer } from './icon-collection-initializer';
 
 export class IconRepository {
-  public static cacheContext = getCacheContext('icon-repository');
   private readonly _modelAdapter: lowdb.AdapterAsync<IconModelCollection>;
   private readonly _iconCollectionInitializer: IconCollectionInitializer;
 
@@ -21,7 +20,6 @@ export class IconRepository {
     return (await this.iconLowdb).value();
   }
 
-  @memorizeAsync(IconRepository.cacheContext, 'character-icons')
   public async getCharacterIcons(characterId: string): Promise<IconModel> {
     const icons = (await this.iconLowdb).get(characterId).value();
     return icons && await reduceKeysAsync(Object.keys(icons),
@@ -29,12 +27,10 @@ export class IconRepository {
     );
   }
 
-  @memorizeAsync(IconRepository.cacheContext, 'variant-icons')
   public getVariantIcons(characterId: string, variantId: string) {
     return reduceKeysAsync(['home', 'battle', 'spa'], type => this.getIcon(characterId, variantId, type));
   }
 
-  @memorizeAsync(IconRepository.cacheContext, 'icon')
   public async getIcon(characterId: string, variantId: string, type: string): Promise<string> {
     const character = (await this.iconLowdb).get(characterId).value();
     const icon = character[variantId][type];

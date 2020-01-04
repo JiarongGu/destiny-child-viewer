@@ -1,7 +1,7 @@
 import { sink, state, effect } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
-import { CharacterService } from '@services';
+import { CharacterService, IconService } from '@services';
 
 export interface IconGrid {
   height: number,
@@ -10,14 +10,15 @@ export interface IconGrid {
   column: number,
 }
 
-@sink('character-icon', new CharacterService())
+@sink('character-icon', new CharacterService(), new IconService())
 export class CharacterIconSink {
   @state public characters: Array<CharacterMetadata> = [];
   @state public grid: IconGrid = { height: 0, width: 0, row: 0, column: 0 };
   @state public scrollTop: number = 0;
 
   constructor(
-    private _characterService: CharacterService
+    private _characterService: CharacterService,
+    private _iconService: IconService
   ) { }
 
   @effect
@@ -35,7 +36,7 @@ export class CharacterIconSink {
 
   @effect
   public getIcon(characterId: string, variantId: string, type: string) {
-    return this._characterService.getIcon(characterId, variantId, type);
+    return this._iconService.loadIcon(characterId, variantId, type);
   }
 
   private updateGrid(height: number, width: number, count: number) {

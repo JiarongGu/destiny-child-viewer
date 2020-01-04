@@ -1,5 +1,5 @@
-
-import { sink, effect, state } from 'redux-sink';
+import * as _ from 'lodash';
+import { sink, effect, state, trigger } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
 import { Live2DHelper } from '@shared/utils';
@@ -22,6 +22,9 @@ export class CharacterViewerSink {
 
   @state public play: boolean = true;
   @state public loading: boolean = false;
+  @state public positionUpdated: boolean = false;
+
+  private originalPosition?: CharacterVariantPosition;
 
   constructor(
     private _live2DService: Live2DService,
@@ -30,12 +33,15 @@ export class CharacterViewerSink {
 
   @effect
   public clear() {
+    this.loading = false;
     this.components = undefined;
-    this.position = undefined;
+    this.metadata = undefined;
     this.current = undefined;
     this.play = true;
-    this.loading = false;
-    this.metadata = undefined;
+
+    this.position = undefined;
+    this.originalPosition = undefined;
+    this.positionUpdated = false;
   }
 
   @effect
@@ -55,6 +61,7 @@ export class CharacterViewerSink {
 
     const renderModel = this.metadata?.render[variantId];
     this.position = this.getPosition(variantId, this.metadata);
+    this.originalPosition = this.position;
 
     if (renderModel?.modeltype === RenderModelType.Live2D) {
       try {
@@ -82,10 +89,15 @@ export class CharacterViewerSink {
 
   @effect 
   public async resetPosition() {
-    if (this.current && this.metadata) {
-      this.position = this.getPosition(this.current.variantId, this.metadata);
-    }
+    this.position = this.originalPosition;
   }
+
+  @trigger('character-viewer/position')
+  public onPositionChanged(position: CharacterVariantPosition) {
+    if (this.originalPosition) {
+      this.positionUpdated = !_.isEqual(this.originalPosition, position);
+    }
+  } 
 
   private getPosition(variantId: string, metadata: CharacterMetadata) {
     const renderModel = this.metadata?.render[variantId];
