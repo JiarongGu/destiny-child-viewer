@@ -90,7 +90,7 @@ export class CharacterRepository implements ICharacterRepository {
   }
 
   private async populate(db: lowdb.LowdbAsync<{ [key: string]: CharacterStatic }>) {
-    const modelCollection = await this._characterInitializer.getCollection();
+    const modelCollection = await this._characterInitializer.getStaticCollection();
     return db.defaults(modelCollection).write();
   }
 }

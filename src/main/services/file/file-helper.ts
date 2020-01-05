@@ -35,6 +35,14 @@ export class FileHelper {
     });
   }
 
+  public static exists(filePath: string): Promise<boolean> {
+    return new Promise((resolve) => {
+      fs.exists(filePath, (exists) => {
+        resolve(exists);
+      })
+    });
+  }
+
   public static getFileNameWithOutExtension(filePath: string) {
     const ext = path.extname(filePath);
     const fileName = path.basename(filePath, ext);

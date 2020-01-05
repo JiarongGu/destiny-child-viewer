@@ -1,10 +1,10 @@
+import { CharacterFavor } from './character-favor';
+import { CharacterVoice } from './character-voice';
 import { VariantStatic } from './variant';
-import { CharacterVoiceCollection } from './character-voice-collection';
 
 export interface CharacterStatic {
-  name: string;
-  voices?: CharacterVoiceCollection;
-
+  voices?: CharacterVoice;
+  favors: CharacterFavor;
   variants: {
     [key: string]: VariantStatic
   }

@@ -1,8 +1,8 @@
-import { CharacterVoiceCollection } from '../character-voice-collection';
+import { CharacterVoice } from '../character-voice';
 
 export interface VariantStatic {
   name?: string;
   title?: string;
   description?: string;
-  voices?: CharacterVoiceCollection;
+  voices?: CharacterVoice;
 }
