@@ -13,4 +13,8 @@ export class MathHelper {
     const offset = Math.pow(10, digits);
     return Math.floor(value * offset) / offset;
   }
+
+  public static random(start: number, end: number) {
+    return Math.floor(Math.random() * (end - start + 1)) + start
+  }
 }

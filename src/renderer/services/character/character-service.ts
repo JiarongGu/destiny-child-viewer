@@ -51,7 +51,13 @@ export class CharacterService {
     characterId: string, variantId: string, positionType: RenderModelPositionType, position: VariantPosition
   ) {
     const character = (await this.getCharacterMetadata(characterId)).character;
-    character.variants[variantId].positions[positionType] = { ...position, refined: true };
+    const positionValue = { ...position, refined: true };
+
+    if (!character.variants[variantId].positions) {
+      character.variants[variantId].positions = { [positionType]: positionValue };
+    } else {
+      character.variants[variantId].positions[positionType] = positionValue;
+    }
     await this.saveCharacter(characterId, character);
   }
 

@@ -2241,5 +2241,52 @@
         }
       }
     }
+  },
+  "c012": {
+    "variants": {
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "y": 0.05
+          }
+        }
+      }
+    }
+  },
+  "c431": {
+    "variants": {
+      "10": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.35,
+            "x": 0,
+            "y": 0.2
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.35,
+            "x": 0,
+            "y": 0.2
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.35,
+            "x": 0,
+            "y": 0.2
+          }
+        }
+      }
+    }
   }
 }

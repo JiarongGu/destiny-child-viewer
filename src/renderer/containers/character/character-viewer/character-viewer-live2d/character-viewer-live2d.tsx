@@ -3,7 +3,7 @@ import { useSink } from 'redux-sink';
 import * as _ from 'lodash';
 import classnames from 'classnames';
 
-import { Live2DCanvas } from '@components';
+import { Live2DCanvas, AudioPlayer } from '@components';
 import { useDragPosition, useResizeObserver } from '@hooks';
 
 import { CharacterViewerSink } from '../character-viewer-sink';
@@ -18,12 +18,14 @@ export interface CharacterViewerLive2DProps {
 export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2DProps> = ({ className }) => {
   const canvasScale = 2;
 
-  const characterView = useSink(CharacterViewerSink, sink => [sink.components, sink.position, sink.play, sink.loading]);
+  const characterView = useSink(CharacterViewerSink, sink => [
+    sink.components, sink.position, sink.play, sink.loading, sink.voice
+  ]);
   const [canvasSize, setCanvasSize] = React.useState(0);
 
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const { components, position, play, loading } = characterView;
+  const { components, position, play, loading, voice } = characterView;
 
   const onCanvasDraw = React.useCallback(() => {
     if (components) {
@@ -43,6 +45,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
       if (randomMotion) {
         components.motionManager.startMotion(components.motions[randomMotion][0]);
       }
+      characterView.playRandomVoice();
     }
   }, [components]);
 
@@ -110,6 +113,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
           />
         </div>
       )}
+      <AudioPlayer play={!!voice} src={voice?.url} />
     </div>
   );
 };

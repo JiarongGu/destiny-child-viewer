@@ -3,5 +3,4 @@ import { VariantStatic } from './variant-static';
 import { VariantAdditional } from './variant-additional';
 
 
-export interface VariantModel
-  extends VariantBase, VariantStatic, Omit<VariantAdditional, 'positions'> { }
+export type VariantModel = VariantBase & VariantStatic & VariantAdditional

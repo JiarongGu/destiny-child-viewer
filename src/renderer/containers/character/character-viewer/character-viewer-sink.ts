@@ -2,10 +2,16 @@ import * as _ from 'lodash';
 import { sink, effect, state, trigger } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
-import { Live2DHelper } from '@shared/utils';
-import { RenderModelType, RenderModelLive2D, VariantPosition, RenderModelPositionType } from '@shared/models';
-import { Live2DService, Live2DRenderComponents } from '@services/live2d/live2d-service';
-import { CharacterService } from '@services/character/character-service';
+import { 
+  Live2DHelper, 
+  RenderModelType, 
+  RenderModelLive2D, 
+  RenderModelPositionType,
+  VariantPosition, 
+  CharacterVoiceType, 
+  MathHelper
+} from '@shared';
+import { Live2DService, Live2DRenderComponents, CharacterService, BlobReadType, BlobService } from '@services';
 
 export interface CurrentCharacterView {
   characterId: string;
@@ -13,7 +19,7 @@ export interface CurrentCharacterView {
   activeMotion?: string
 }
 
-@sink('character-viewer', new Live2DService(), new CharacterService())
+@sink('character-viewer', new Live2DService(), new CharacterService(), new BlobService())
 export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
   @state public position?: VariantPosition;
@@ -24,11 +30,14 @@ export class CharacterViewerSink {
   @state public loading: boolean = false;
   @state public positionUpdated: boolean = false;
 
+  @state public voice?: { url: string, text: string };
+
   private originalPosition?: VariantPosition;
 
   constructor(
     private _live2DService: Live2DService,
-    private _characterService: CharacterService
+    private _characterService: CharacterService,
+    private _blobService: BlobService
   ) { }
 
   @effect
@@ -42,6 +51,7 @@ export class CharacterViewerSink {
     this.position = undefined;
     this.originalPosition = undefined;
     this.positionUpdated = false;
+    this.voice = undefined;
   }
 
   @effect
@@ -99,11 +109,42 @@ export class CharacterViewerSink {
     this.position = this.originalPosition;
   }
 
+  @effect
+  public async playRandomVoice() {
+    const voices = this.getVoices();
+
+    if (!voices) return;
+    
+    const types = Object.keys(voices);
+    const randomType = types[MathHelper.random(0, types.length - 1)];
+
+    this.playVoice(randomType as CharacterVoiceType);
+  }
+
+  @effect 
+  public async playVoice(type: CharacterVoiceType) {
+    const voices = this.getVoices();
+    
+    if (!voices || !voices[type]) return;
+
+    const voice = voices[type]!;
+
+    this.voice = { 
+      url: await this._blobService.read(voice.filePath, BlobReadType.URL),
+      text: voice.text
+    }
+  }
+
   @trigger('character-viewer/position')
   public onPositionChanged(position: VariantPosition) {
     if (this.originalPosition) {
       this.positionUpdated = !_.isEqual(this.originalPosition, position);
     }
+  }
+
+  private getVoices() {
+    if(!this.current || !this.metadata) return; 
+    return this.metadata.character.variants[this.current.variantId].voices || this.metadata.character.voices!;
   }
 
   private getPosition(variantId: string, metadata: CharacterMetadata) {

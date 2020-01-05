@@ -3,5 +3,5 @@ import { VariantPosition } from './variant-position';
 
 export interface VariantBase {
   title?: string;
-  positions: { [key in RenderModelPositionType]: VariantPosition };
+  positions: { [key in RenderModelPositionType]?: VariantPosition };
 }
