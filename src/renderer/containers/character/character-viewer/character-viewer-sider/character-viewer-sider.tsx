@@ -3,14 +3,14 @@ import { Button, Tabs, Icon, Tooltip } from 'antd';
 import { useSink } from 'redux-sink';
 
 import { SiderSink } from '@sinks';
-import { CharacterViewerSink } from '../character-viewer-sink';
+import { CharacterViewerActionSink } from '../character-viewer-action-sink';
 import { CharacterViewerSiderVariants } from '../character-viewer-sider-variants';
-
-import * as styles from './character-viewer-sider.scss';
 import { CharacterViewerSiderTheme } from '../character-viewer-sider-theme';
 
+import * as styles from './character-viewer-sider.scss';
+
 export const CharacterViewerSider = () => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.play]);
+  const characterAction = useSink(CharacterViewerActionSink, sink => [sink.play]);
   const siderSink = useSink(SiderSink, sink => [sink.collapsed]);
 
   const tabPosition = siderSink.collapsed ? 'right' : 'top';
@@ -26,9 +26,9 @@ export const CharacterViewerSider = () => {
         </Tabs.TabPane>
       </Tabs>
       <div className={styles.controls}>
-        <Tooltip title={characterViewSink.play ? 'Pause' : 'Resume'}>
-          <Button shape={'circle'} size={'large'} onClick={() => (characterViewSink.play = !characterViewSink.play)}>
-            {characterViewSink.play ? <Icon type={'pause'} /> : <Icon type={'caret-right'} />}
+        <Tooltip title={characterAction.play ? 'Pause' : 'Resume'}>
+          <Button shape={'circle'} size={'large'} onClick={() => (characterAction.play = !characterAction.play)}>
+            {characterAction.play ? <Icon type={'pause'} /> : <Icon type={'caret-right'} />}
           </Button>
         </Tooltip>
       </div>

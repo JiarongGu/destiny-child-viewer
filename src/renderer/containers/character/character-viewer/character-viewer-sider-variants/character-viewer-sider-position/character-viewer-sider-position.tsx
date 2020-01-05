@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { Live2DHelper, VariantPosition } from '@shared';
 import { PercentageInput } from '@components';
-import { CharacterViewerSink } from '../../character-viewer-sink';
+import { CharacterViewerPositionSink } from '../../character-viewer-position-sink';
 
 import * as styles from './character-viewer-sider-position.scss';
 import { Button, Tooltip, Icon, Spin } from 'antd';
@@ -26,18 +26,17 @@ const PositionButton = ({ onClick, disabled, title, icon }) => {
 export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterViewerSiderPositionProps> = ({
   className
 }) => {
-  const characterViewSink = useSink(CharacterViewerSink, sink => [sink.position, sink.positionUpdated]);
-  const [spinning, setSpinning] = React.useState(false);
+  const characterPosition = useSink(CharacterViewerPositionSink);
   const [copied, setCopied] = React.useState(false);
 
   const copyRef = React.useRef<VariantPosition>();
-  const { position, positionUpdated } = characterViewSink;
+  const { position, positionUpdated, saving, savePosition, resetPosition } = characterPosition;
 
   const onChange = React.useCallback(
     (type: keyof VariantPosition) => (percentage: number) => {
       const actualValue = Live2DHelper.actual(percentage);
       if (position && position[type] !== actualValue) {
-        characterViewSink.position = {
+        characterPosition.position = {
           ...position,
           [type]: Live2DHelper.actual(percentage)
         };
@@ -46,11 +45,6 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
     [position]
   );
 
-  const savePosition = React.useCallback(() => {
-    setSpinning(true);
-    characterViewSink.savePosition().then(() => setSpinning(false));
-  }, []);
-
   const copyPosition = React.useCallback(() => {
     copyRef.current = position;
     setCopied(true);
@@ -58,17 +52,13 @@ export const CharacterViewerSiderPosition: React.FunctionComponent<CharacterView
 
   const pastePosition = React.useCallback(() => {
     if (copyRef.current) {
-      characterViewSink.position = copyRef.current;
+      characterPosition.position = copyRef.current;
     }
   }, [position]);
 
-  const resetPosition = React.useCallback(() => {
-    characterViewSink.resetPosition();
-  }, []);
-
   return (
     <div className={classnames(styles.container, className)}>
-      <Spin spinning={spinning}>
+      <Spin spinning={saving}>
         <div className={styles.position}>
           <PercentageInput
             label={'X:'}
