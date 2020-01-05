@@ -7,7 +7,7 @@ import { VariantType } from '@models';
 
 import { CharacterIconSink } from './character-icon-sink';
 
-const defaultVariants = [VariantType.SClass, VariantType.EClass, VariantType.Story];
+const defaultVariants = [VariantType.EClass, VariantType.SClass, VariantType.Story];
 
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({
   columnIndex,

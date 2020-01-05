@@ -21,7 +21,7 @@ export class CharacterService {
     const renderModels = await this._renderRepository.invoke('getCollection');
     const characters = await this._characterRepository.invoke('getCollection');
     const iconModels = await this._iconService.getCollection();
-    const characterIds = Object.keys(renderModels).filter(id => !id.startsWith('s'));
+    const characterIds = Object.keys(renderModels).filter(id => !id.startsWith('s')).sort();
 
     return characterIds.map(id => ({
       id,
