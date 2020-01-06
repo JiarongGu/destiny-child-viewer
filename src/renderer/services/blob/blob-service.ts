@@ -1,9 +1,11 @@
-import { FileReadType, memorizeAsync, getCacheContext } from '@shared';
+import { MemorizeContext, memorizeAsync } from 'ts-memorize-decorator';
+
+import { FileReadType} from '@shared';
 import { RemoteService, IFileService, RemoteServiceType } from '@shared/remote';
 import { BlobReadType } from './blob-read-type.enum';
 
 export class BlobService {
-  public static cacheContext = getCacheContext('blob');
+  public static cacheContext = new MemorizeContext();
 
   private readonly _fileService = new RemoteService<IFileService>(RemoteServiceType.File);
   private readonly _objectUrls: Array<string> = [];

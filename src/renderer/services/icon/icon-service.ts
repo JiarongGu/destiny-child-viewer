@@ -1,9 +1,11 @@
+import { MemorizeContext, memorizeAsync } from 'ts-memorize-decorator';
+
 import { RemoteService, IIconRepository, RemoteServiceType } from '@shared/remote';
-import { IconModel, IconModelCollection, reduceKeysAsync, getCacheContext, memorizeAsync } from '@shared';
+import { IconModel, IconModelCollection, reduceKeysAsync } from '@shared';
 import { BlobService, BlobReadType } from '../blob';
 
 export class IconService {
-  public static cacheContext = getCacheContext('icon-service');
+  public static cacheContext = new MemorizeContext();
   private readonly _blobService = new BlobService();
   private readonly _iconRepository = new RemoteService<IIconRepository>(RemoteServiceType.Icon);
 

@@ -1,10 +1,11 @@
 import { CharacterMetadata } from '@models';
-import { RenderModelPositionType, CharacterModel, getCacheContext, memorizeAsync, VariantPosition } from '@shared';
+import { RenderModelPositionType, CharacterModel, VariantPosition } from '@shared';
 import { ICharacterRepository, IRenderRepository, RemoteService, RemoteServiceType } from '@shared/remote';
 import { IconService } from '../icon/icon-service';
+import { MemorizeContext, memorizeAsync } from 'ts-memorize-decorator';
 
 export class CharacterService {
-  public static cacheContext = getCacheContext('character-service');
+  public static cacheContext = new MemorizeContext();
 
   private readonly _characterRepository: RemoteService<ICharacterRepository>;
   private readonly _renderRepository: RemoteService<IRenderRepository>;;
@@ -34,6 +35,7 @@ export class CharacterService {
 
   @memorizeAsync(CharacterService.cacheContext)
   public async getCharacterMetadata(characterId: string): Promise<CharacterMetadata> {
+    console.log('no-cache');
     const render = await this._renderRepository.invoke('getRendersByCharacterId', characterId);
     const character = await this._characterRepository.invoke('getCharacter', characterId);
     const icon = await this._iconService.loadCharacterIcons(characterId);
