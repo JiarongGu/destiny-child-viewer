@@ -2,7 +2,7 @@ import { tryArrayGetAsync, tryGet, tryGetAsync } from '@shared/utils';
 import { CacheContext } from '@shared/models';
 
 export const memorizeAsync = ({ main, util }: CacheContext, cacheName?: string) => (
-  target: Object, key: String, descriptor: TypedPropertyDescriptor<any>
+  _: Object, key: String, descriptor: TypedPropertyDescriptor<any>
 ) => {
   const getter = descriptor.get;
   const method = descriptor.value;
@@ -22,12 +22,14 @@ export const memorizeAsync = ({ main, util }: CacheContext, cacheName?: string) 
         method.apply(this, arguments as any)
       );
     };
+    Object.defineProperties(descriptor.value, Object.getOwnPropertyDescriptors(method));
   }
 
   if (getter) {
     descriptor.get = function () {
       return tryGetAsync(methodCache, methodUtilCache, methodId, () => getter.apply(this));
     };
+    Object.defineProperties(descriptor.get, Object.getOwnPropertyDescriptors(getter));
   }
   return descriptor;
 };

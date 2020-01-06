@@ -28,12 +28,13 @@ export class CharacterViewerActionSink {
   @effect
   public async playRandomMotion() {
     if (this.current && this.components) {
-      const motion = this.getRandom(_.pickBy(this.components?.motions, (model, key) =>
+      const motion = this.getRandom(_.pickBy(this.components?.motions, (_, key) =>
         !key.startsWith('idle') && !key.startsWith('banner')
       ));
       if (motion) {
-        this._characterViewer.components?.motionManager.startMotion(motion[0]);
-        this.playRandomVoice();
+        this.playRandomVoice().then(() => {
+          this._characterViewer.components?.motionManager.startMotion(motion[0]);
+        });
       };
     }
   }

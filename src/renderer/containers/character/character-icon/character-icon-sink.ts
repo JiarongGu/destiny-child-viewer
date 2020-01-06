@@ -45,5 +45,4 @@ export class CharacterIconSink {
 
     this.grid = Object.assign({}, this.grid, { column, row, height, width });
   }
-
 }
