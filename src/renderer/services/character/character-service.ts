@@ -35,7 +35,6 @@ export class CharacterService {
 
   @memorizeAsync(CharacterService.cacheContext)
   public async getCharacterMetadata(characterId: string): Promise<CharacterMetadata> {
-    console.log('no-cache');
     const render = await this._renderRepository.invoke('getRendersByCharacterId', characterId);
     const character = await this._characterRepository.invoke('getCharacter', characterId);
     const icon = await this._iconService.loadCharacterIcons(characterId);

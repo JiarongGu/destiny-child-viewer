@@ -13,6 +13,8 @@ export class CharacterViewerActionSink {
   @state public voice?: { url: string, text: string };
   @state public volume: number = 50;
 
+  private cancellation?: () => void;
+
   constructor(
     private _characterViewer: CharacterViewerSink,
     private _blobService: BlobService
@@ -23,6 +25,7 @@ export class CharacterViewerActionSink {
     this.play = true;
     this.positionUpdated = false;
     this.voice = undefined;
+    if (this.cancellation) this.cancellation();
   }
 
   @effect
@@ -42,11 +45,18 @@ export class CharacterViewerActionSink {
   @effect
   public async playRandomVoice() {
     if (this.voices) {
-      const voice = this.getRandom(this.voices);
-      if (voice) {
-        this.voice = {
-          url: await this._blobService.read(voice.filePath, BlobReadType.URL),
-          text: voice.text
+      const voiceInfo = this.getRandom(this.voices); 
+
+      if (voiceInfo) {
+        let cancelled = false;
+        this.cancellation = () => cancelled = true;
+        const voiceUrl =  await this._blobService.read(voiceInfo.filePath, BlobReadType.URL);
+
+        if (!cancelled) {
+          this.voice = {
+            url: voiceUrl,
+            text: voiceInfo.text
+          }
         }
       }
     }

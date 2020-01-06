@@ -13,7 +13,7 @@ export class CharacterViewerPositionSink {
 
   private current?: { characterId: string, variantId: string };
   private defaultPosition?: VariantPosition;
-
+  
   constructor(
     private _characterService: CharacterService
   ) { }
@@ -36,7 +36,7 @@ export class CharacterViewerPositionSink {
   }
 
   @effect 
-  public async resetPosition() {
+  public resetPosition() {
     this.position = this.defaultPosition;
   }
 
@@ -56,7 +56,7 @@ export class CharacterViewerPositionSink {
       this.saving = false;
     }
   }
-  
+
   @trigger('character-viewer-position/position')
   public onPositionChanged(position: VariantPosition) {
     if (this.defaultPosition) {

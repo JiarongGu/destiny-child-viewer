@@ -6,13 +6,14 @@ import classnames from 'classnames';
 
 import { Live2DCanvas, AudioPlayer } from '@components';
 import { useDragPosition, useResizeObserver } from '@hooks';
-import { Live2DHelper } from '@shared';
+import { Live2DHelper, VariantPosition } from '@shared';
 
 import { CharacterViewerSink } from '../character-viewer-sink';
 import { CharacterViewerActionSink } from '../character-viewer-action-sink';
 import { CharacterViewerPositionSink } from '../character-viewer-position-sink';
 
 import * as styles from './character-viewer-live2d.scss';
+import { usePositionUpdater } from './use-position-updater';
 
 export interface CharacterViewerLive2DProps {
   className?: string;
@@ -26,11 +27,9 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   const characterPosition = useSink(CharacterViewerPositionSink, sink => [sink.position]);
 
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const [canvasSize, setCanvasSize] = React.useState(0);
 
   const { components, loading, current } = characterView;
   const { volume, voice, play } = characterAction;
-  const { position } = characterPosition;
 
   React.useEffect(() => {
     if (current) {
@@ -51,33 +50,9 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
     }
   }, [components]);
 
-  const onWheel = React.useCallback(
-    (event: React.WheelEvent<HTMLDivElement>) => {
-      if (position) {
-        const value = event.deltaY / 2000;
-        const scale = Live2DHelper.round(position?.scale + value);
-        characterPosition.position = { ...position, scale };
-      }
-    },
-    [position]
-  );
+  const { position, moving, canvasSize, ...handlers  } = usePositionUpdater(characterPosition, containerRef);
 
-  const { onMouseDown, onMouseMove, onMouseUp, moving } = useDragPosition(
-    event => {
-      const convertPosition = (value: number, base: number) => value / base;
-      if (position) {
-        characterPosition.position = {
-          x: Live2DHelper.round(position.x + convertPosition(event.x, canvasSize)),
-          y: Live2DHelper.round(position.y - convertPosition(event.y, canvasSize)),
-          scale: position.scale
-        };
-      }
-    },
-    event => event.preventDefault(),
-    [position, canvasSize]
-  );
-
-  useResizeObserver(containerRef, event => setCanvasSize(Math.min(event.height, event.width)), []);
+  const onClick = React.useCallback(() => characterAction.playRandomMotion(), []);
 
   return (
     <div ref={containerRef} className={classnames(styles.container, className)}>
@@ -85,10 +60,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
       {!loading && position && components && (
         <div
           className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
-          onWheel={onWheel}
-          onMouseDown={onMouseDown}
-          onMouseUp={onMouseUp}
-          onMouseMove={onMouseMove}
+          {...handlers}
         >
           <Live2DCanvas
             model={components.model!}
@@ -100,7 +72,7 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
             y={position.y}
             size={canvasSize * canvasScale}
             scale={position.scale / canvasScale}
-            onClick={characterAction.playRandomMotion}
+            onClick={onClick}
           />
         </div>
       )}
