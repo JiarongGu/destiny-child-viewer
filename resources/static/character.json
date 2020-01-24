@@ -10546,7 +10546,7 @@
       },
       "01": {
         "title": "決戦の ティタニア",
-        "description": "キラキラ輝いて見えるのは、ティタニアの魅力です〜",
+        "description": "キラキラ輝いて見えるのは、ティタニアの魅力です。",
         "name": "本多真梨子"
       },
       "02": {
@@ -10638,8 +10638,8 @@
       }
     },
     "favors": {
-      "interest": "甘っちょろい悪魔様だね。",
-      "like": "前よりはやる気になった？\\悪魔様。",
+      "interest": "甘っちょろい悪魔様だね",
+      "like": "前よりはやる気になった？\\悪魔様",
       "love": "やはり悪魔様は\\甘いから…",
       "profile": "みんなに愛される存在になりたかった契約者の願いに応じて妖精の女王《ティタニア》の名前を洗礼名として借り受けた。\\甘く見える相手に嫌がらせやイタズラをするのが好きだ。\\イタズラは、彼女の愛情表現であり、その事実を知っているチャイルドは少ない。"
     }
@@ -20398,7 +20398,7 @@
     "variants": {
       "00": {
         "title": "人間界の ブリジット",
-        "description": "魔力を節約するために子供の姿になったブリジット。",
+        "description": "人間界の少女に変装した悪魔ブリジット。",
         "name": "椎名へきる"
       },
       "01": {
@@ -22121,13 +22121,13 @@
     "variants": {
       "01": {
         "title": "錬金術師 メトセラ",
-        "description": "メトセラのカジュアルコート。旅行に最適。",
-        "name": ""
+        "description": "メトセラのカジュアルコート。\\旅行に最適。",
+        "name": "福島潤"
       },
       "02": {
         "title": "探求者 メトセラ",
         "description": "メトセラの旅行用コート。",
-        "name": ""
+        "name": "福島潤"
       }
     },
     "voices": {
@@ -30929,7 +30929,7 @@
     "variants": {
       "00": {
         "title": "人間界の ケイノウ",
-        "description": "人間界の少女に変装したケイノウ。\\謎の裁縫箱を持っている。",
+        "description": "人間界の少女に変装した悪魔ケイノウ。\\謎の裁縫箱を持っている。",
         "name": "篠田みなみ"
       },
       "01": {
@@ -31111,7 +31111,7 @@
       },
       "00": {
         "title": "人化 タマモ",
-        "description": "人間の女性に変装したタマモ。\\傾国の美人に次ぐ美しさを誇る。",
+        "description": "人間の女性に変装した妖怪タマモ。\\その美しさは傾国の美女の如し。",
         "name": "福原綾香"
       },
       "01": {
@@ -32393,6 +32393,123 @@
       "like": "どっちが早いか\\賭けてみる？",
       "love": "運も実力のうちでしょ？",
       "profile": "夜の世界にある地下闘技場のディーラー《エシュ》\\彼女の意外な趣味はウィンタースポーツ。\\ある日、とある悪魔からスキー場の招待券をもらうと\\彼女は主人公たちと一緒に行くことにした。\\ところが主人公はバイトの疲れと予期せぬ事故で遅れてしまう。\\そんなことはつゆ知らず、先に到着したエシュは思う存分\\スキーを楽しむのだった。"
+    }
+  },
+  "c433": {
+    "variants": {
+      "01": {
+        "title": "うきうき パケト",
+        "description": "かわいくてセクシーなパケトのコスチューム。",
+        "name": "武石あゆ実"
+      },
+      "02": {
+        "title": "きゃぴきゃぴ パケト",
+        "description": "パケトのかわいさが爆発するコスチューム。",
+        "name": "武石あゆ実"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "ふふ～ん！\\素直に諦めてください！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "世界一かわいいパケトで～す♥",
+        "filePath": "asset\\asset\\sound\\voice\\c433_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "痛いけど、我慢してね～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "悔しい…\\ふわぁ～ん！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_death_1.ogg"
+      },
+      "death_2": {
+        "text": "復讐してやる～\\ぐすん…",
+        "filePath": "asset\\asset\\sound\\voice\\c433_death_2.ogg"
+      },
+      "drive": {
+        "text": "私についてきて～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_drive.ogg"
+      },
+      "hit_1": {
+        "text": "こわ～い！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "つまんない！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "痛ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "助けてあげます、先輩！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_prskill.ogg"
+      },
+      "skill": {
+        "text": "無視しないで～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_skill.ogg"
+      },
+      "spa": {
+        "text": "だ、だ、誰がのぞいてもいいって言いました～？\\本当に、エッチなんだから～\\もう…",
+        "filePath": "asset\\asset\\sound\\voice\\c433_spa.ogg"
+      },
+      "startbt": {
+        "text": "一筋縄じゃいかないんだから～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_startbt.ogg"
+      },
+      "story1": {
+        "text": "先輩が私に似てるかわいくてキュートな花を\\買ってきて、私にひざまずきながら渡すの～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_story1.ogg"
+      },
+      "story2": {
+        "text": "も～！今に見てなさい！\\先輩は、必ず私を好きになりますから～",
+        "filePath": "asset\\asset\\sound\\voice\\c433_story2.ogg"
+      },
+      "story3": {
+        "text": "ダメダメ～！\\パケトの前で他の女の子の話なんてしないで～！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_story3.ogg"
+      },
+      "true1": {
+        "text": "先輩！また逃げようとしてるんですか～？\\ふふ～ん…わかった。私があまりにもかわいすぎて\\耐えられないんですね～\\も～先輩ったらかわいいんだから～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c433_true1.ogg"
+      },
+      "true2": {
+        "text": "正直に言ってくれればいいのに…\\えっ、何のことかって？\\もちろん、あ、あ、愛…\\あ～ん分かんな～い！",
+        "filePath": "asset\\asset\\sound\\voice\\c433_true2.ogg"
+      },
+      "true3": {
+        "text": "先輩と別れたら…なんて想像もしたくない。\\いつも、私の側にいてくれますよね？",
+        "filePath": "asset\\asset\\sound\\voice\\c433_true3.ogg"
+      },
+      "victory": {
+        "text": "先輩！ちゃんと見てました～？",
+        "filePath": "asset\\asset\\sound\\voice\\c433_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "先輩！\\私の手！\\ちゃんとつかんでて！",
+      "like": "私から5cm以上\\離れちゃダメですよ",
+      "love": "プロポーズって\\まだですか？",
+      "profile": "古代エジプトの猫の女神の名を借り受けた《パケト》\\かなりの自信家で、自分のかわいさをアピールしたがるが\\相手から嫌がられると泣いて弱々しくなる。\\内気な契約者では経験できなかったことを全てやりたいと\\思っており、その中でも恋愛に興味津々。"
+    }
+  },
+  "c437": {
+    "variants": {
+      "01": {
+        "title": "かわいい エウロス",
+        "description": "ドレスアップしたエウロスのかわいいコスチューム。",
+        "name": ""
+      }
+    },
+    "favors": {
+      "interest": "",
+      "like": "",
+      "love": "",
+      "profile": ""
     }
   },
   "m001": {
@@ -44908,6 +45025,22 @@
       "03": {
         "title": "氷雪の エシュ",
         "description": "氷雪のエシュの温泉魔力。"
+      }
+    }
+  },
+  "sc433": {
+    "variants": {
+      "01": {
+        "title": "パケト",
+        "description": "パケトの温泉魔力。"
+      },
+      "02": {
+        "title": "パケト",
+        "description": "パケトの温泉魔力。"
+      },
+      "03": {
+        "title": "パケト",
+        "description": "パケトの温泉魔力。"
       }
     }
   },

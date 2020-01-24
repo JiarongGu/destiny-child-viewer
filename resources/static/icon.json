@@ -4149,6 +4149,24 @@
       "spa": "asset\\asset\\icon\\spa\\sc4\\00000022.png"
     }
   },
+  "c433": {
+    "01": {
+      "battle": "asset\\asset\\icon\\portrait_battle\\c4\\00000069.png",
+      "home": "asset\\asset\\icon\\portrait\\c4\\00000069.png",
+      "spa": "asset\\asset\\icon\\spa\\sc4\\00000023.png"
+    },
+    "02": {
+      "battle": "asset\\asset\\icon\\portrait_battle\\c4\\00000070.png",
+      "home": "asset\\asset\\icon\\portrait\\c4\\00000070.png",
+      "spa": "asset\\asset\\icon\\spa\\sc4\\00000023.png"
+    }
+  },
+  "c437": {
+    "01": {
+      "battle": "asset\\asset\\icon\\portrait_battle\\c4\\00000071.png",
+      "home": "asset\\asset\\icon\\portrait\\c4\\00000071.png"
+    }
+  },
   "m001": {
     "01": {
       "battle": "asset\\asset\\icon\\portrait_battle\\m0\\00000000.png",

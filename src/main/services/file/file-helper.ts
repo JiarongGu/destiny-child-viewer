@@ -55,7 +55,7 @@ export class FileHelper {
 
   public static async readDirectoryDeep(filePath: string): Promise<FileStatsCollection> {
     return await reduceMapAsync<string, FileStats>(await this.readDirectory(filePath),
-      suhPath => this.getFileNameWithOutExtension(suhPath),
+      suhPath => this.getFileName(suhPath),
       async subPath => {
         const isDirectory = await this.isDirectory(subPath);
         const fileStats: FileStats = { isDirectory, path: subPath };

@@ -3489,5 +3489,148 @@
         }
       }
     }
+  },
+  "c410": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.3,
+            "x": 0,
+            "y": 0.075
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.3,
+            "x": 0,
+            "y": 0.075
+          }
+        }
+      }
+    }
+  },
+  "c397": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.05,
+            "x": -0.025,
+            "y": 0
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.05,
+            "x": -0.025,
+            "y": 0
+          }
+        }
+      }
+    }
+  },
+  "c156": {
+    "variants": {
+      "00": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "y": 0
+          }
+        }
+      },
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.4,
+            "x": 0,
+            "y": 0.075
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.4,
+            "x": 0,
+            "y": 0.075
+          }
+        }
+      }
+    }
+  },
+  "c355": {
+    "variants": {
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1,
+            "x": -0.025,
+            "y": -0.025
+          }
+        }
+      }
+    }
+  },
+  "c433": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 0.95,
+            "x": 0,
+            "y": 0.025
+          }
+        }
+      },
+      "02": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 0.95,
+            "x": 0,
+            "y": 0.025
+          }
+        }
+      }
+    }
+  },
+  "c437": {
+    "variants": {
+      "01": {
+        "positions": {
+          "home": {
+            "refined": true,
+            "scale": 1.1,
+            "x": 0,
+            "y": 0.05
+          }
+        }
+      }
+    }
   }
 }

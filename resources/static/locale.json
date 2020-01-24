@@ -6,7 +6,7 @@
   "00000021.unk": "Item Descriptions",
   "00000039.tab": "Skill Descriptions",
 
-  "BackgroundMusic": "asset\\locale\\00000005.tab",
+  "BackgroundMusic": "asset\\locale\\00000005.unk",
   "BackgroundImage": "asset\\locale\\00000003.unk",
 
   "CharacterTitle": "asset\\locale\\00000009.unk",
