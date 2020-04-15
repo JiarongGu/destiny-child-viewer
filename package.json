@@ -156,7 +156,7 @@
     "react-router-dom": "^5.1.2",
     "react-window": "^1.8.5",
     "redux": "^4.0.4",
-    "redux-sink": "^0.16.7",
+    "redux-sink": "^0.17.0",
     "ts-memorize-decorator": "0.0.1"
   }
 }
