@@ -15,11 +15,13 @@ export function useResizeObserver(
     width: elementRef.current?.clientWidth || 0
   }), deps);
 
+  const onResizeEvent = React.useCallback(() => handler(createEvent()), [handler]);
+
   React.useLayoutEffect(() => {
     if (elementRef.current) {
-      const resizeObserver = new ResizeObserver(() => handler(createEvent()));
+      const resizeObserver = new ResizeObserver(onResizeEvent);
       resizeObserver.observe(elementRef.current);
       return () => resizeObserver.unobserve(elementRef.current!);
     }
-  }, deps);
+  }, [...deps, handler]);
 }

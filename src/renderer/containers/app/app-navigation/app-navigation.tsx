@@ -9,9 +9,10 @@ export const AppNavigation: React.FunctionComponent = () => {
   const navigation = useSink(NavigationSink);
   const routeKeys = navigation.activeRoute && navigation.activeRoute.keys;
   const [collapsed, setCollapsed] = React.useState(true);
+  const onCollapse = React.useCallback(() => setCollapsed(!collapsed), [collapsed]);
 
   return (
-    <Layout.Sider collapsible={true} collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
+    <Layout.Sider collapsible={true} collapsed={collapsed} onCollapse={onCollapse}>
       <Menu theme={'dark'} mode={'inline'} selectedKeys={routeKeys}>
         {navigation.routes
           .filter(route => route.link)
