@@ -42,26 +42,43 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
   }, [current]);
 
   const onCanvasDraw = React.useCallback(() => {
-    if (components) {
-      const idleMotion = components.motions.idle![0];
+    if (components && components.motions.idle) {
+      const idleMotion = components.motions.idle[0];
       if (idleMotion && components.motionManager.isFinished()) {
         components.motionManager.startMotion(idleMotion);
       }
     }
   }, [components]);
 
-  const { position, moving, canvasSize, ...handlers  } = usePositionUpdater(characterPosition, containerRef);
+  const { position, moving, canvasSize, ...handlers } = usePositionUpdater(characterPosition, containerRef);
 
   const onClick = React.useCallback(() => characterAction.playRandomMotion(), []);
 
+  const onLeftClick = React.useCallback(
+    () => {
+      if (characterView.metadata?.orderIndex != null) {
+        characterView.loadCharacterByIndex(characterView.metadata?.orderIndex - 1)
+      }
+    },
+    [characterView]
+  );
+
+  const onRightClick = React.useCallback(
+    () => {
+      if (characterView.metadata?.orderIndex != null) {
+        characterView.loadCharacterByIndex(characterView.metadata?.orderIndex + 1)
+      }
+    },
+    [characterView]
+  );
+
   return (
     <div ref={containerRef} className={classnames(styles.container, className)}>
-      {loading && <Spin spinning={true} />}
-      {!loading && position && components && (
-        <div
-          className={classnames(styles.canvas, { [styles.canvasMoving]: moving })}
-          {...handlers}
-        >
+      <div className={classnames(styles.canvas, { [styles.canvasMoving]: moving })} {...handlers}>
+        <button className={classnames(styles.navigationButton, styles.left)} onClick={onLeftClick}/>
+        <button className={classnames(styles.navigationButton, styles.right)} onClick={onRightClick}/>
+        {loading && <Spin spinning={true} />}
+        {!loading && position && components && (
           <Live2DCanvas
             model={components.model!}
             textures={components.textures}
@@ -74,8 +91,8 @@ export const CharacterViewerLive2D: React.FunctionComponent<CharacterViewerLive2
             scale={position.scale / canvasScale}
             onClick={onClick}
           />
-        </div>
-      )}
+        )}
+      </div>
       <AudioPlayer play={!!voice} src={voice?.url} volume={volume} />
     </div>
   );

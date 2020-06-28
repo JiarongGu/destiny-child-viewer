@@ -248,7 +248,7 @@
     },
     "favors": {
       "interest": "サキュバスの\\営業秘密です♥",
-      "like": "行きますね~",
+      "like": "行きますね～",
       "love": "もう少し、\\大人になってください…",
       "profile": "謎に包まれたサキュバスのリーダー。\\誘惑や試すような言動が多いが、時折みせる真面目な表情には甘さは感じられない。\\普段の軽く見える態度の裏では、戦いの準備に余念がない。\\幼い頃から魔界の中心部で生活していた為か、人間界の生活が長い主人公とは会話がかみ合わない事もしばしば…"
     }
@@ -802,38 +802,6 @@
           "spa": {
             "text": "毎日が今日みたいだと良いわね～",
             "filePath": "asset\\asset\\sound\\voice\\c003_89_spa.ogg"
-          },
-          "startbt": {
-            "text": "魔王ダビに任せなさい！",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_startbt.ogg"
-          },
-          "story1": {
-            "text": "新しい魔王、ダビ様の登場よ！\\ま、そんなわけで、これからよろしくね。",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_story1.ogg"
-          },
-          "story2": {
-            "text": "神は騙せても、この魔王ダビは騙すことはできないってことよ。",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_story2.ogg"
-          },
-          "story3": {
-            "text": "この魔王ダビが、教育がよくされたストーカーですって？",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_story3.ogg"
-          },
-          "true1": {
-            "text": "モナ姉さま～♥えへへへへ～魔王ダビはモナ姉さまと結婚するわよ！",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_true1.ogg"
-          },
-          "true2": {
-            "text": "ううう…いつ頃魔界に戻れるのか…\\それもこれも全部お前のせいではないか！",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_true2.ogg"
-          },
-          "true3": {
-            "text": "お前のせいで魔王ダビ様の計画が全部狂ってしまったのよ！",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_true3.ogg"
-          },
-          "victory": {
-            "text": "ふっふっふ～！\\これくらいとっても簡単でしょ？",
-            "filePath": "asset\\asset\\sound\\voice\\c003_89_victory.ogg"
           }
         }
       },
@@ -1420,7 +1388,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c008_story2.ogg"
       },
       "story3": {
-        "text": "腕比べだ。\\オマエと剣を交えれば何か分かる気がする。",
+        "text": "腕比べだ。\\お前と剣を交えれば何か分かる気がする。",
         "filePath": "asset\\asset\\sound\\voice\\c008_story3.ogg"
       },
       "true1": {
@@ -1432,7 +1400,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c008_true2.ogg"
       },
       "true3": {
-        "text": "肩書は一応主人なんだし…\\実力くらい見てみないと。\\オマエのサポーターが言うように\\もう少し様子を見てやるよ。",
+        "text": "肩書は一応主人なんだし…\\実力くらい見てみないと。\\お前のサポーターが言うように\\もう少し様子を見てやるよ。",
         "filePath": "asset\\asset\\sound\\voice\\c008_true3.ogg"
       },
       "victory": {
@@ -1982,7 +1950,7 @@
     "variants": {
       "00": {
         "title": "藤堂 勝美",
-        "description": "アストレアの契約者のミリタリーコスチューム。",
+        "description": "伝説の連隊長だった父に憧れる、新任の小隊長。",
         "name": "池上千尋"
       },
       "01": {
@@ -2940,7 +2908,7 @@
     "variants": {
       "00": {
         "title": "黒笠 影子",
-        "description": "スカートがめくれ上がる！でも大丈夫！！",
+        "description": "ヒーローに憧れる中学生。",
         "name": "篠原遥"
       },
       "01": {
@@ -3096,7 +3064,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c028_hit_1.ogg"
       },
       "hit_2": {
-        "text": "いったぁ～い",
+        "text": "いったぁ～い。",
         "filePath": "asset\\asset\\sound\\voice\\c028_hit_2.ogg"
       },
       "hit_3": {
@@ -3266,7 +3234,7 @@
     "variants": {
       "00": {
         "title": "サラ J",
-        "description": "探偵さん？ハンティングキャップが可愛いです。",
+        "description": "自分の推理を証明するために悪魔と契約した探偵。",
         "name": "仲谷明香"
       },
       "01": {
@@ -3480,7 +3448,7 @@
     "variants": {
       "00": {
         "title": "谷川 佐奈",
-        "description": "成熟した精神世界に合わせた最適な選択は、レトロ。",
+        "description": "世界一のメイドになることを夢見る少女。",
         "name": "倉瀬ひまり"
       },
       "01": {
@@ -3801,7 +3769,7 @@
     "variants": {
       "00": {
         "title": "桐島 かんな",
-        "description": "リボンに込められた意味を知っている？それは世に残された父の愛情。",
+        "description": "優等生の少女のリボンは、父の形見。",
         "name": "相羽あいな"
       },
       "01": {
@@ -5158,6 +5126,11 @@
   },
   "c048": {
     "variants": {
+      "10": {
+        "title": "乳母役の ネヴァン",
+        "description": "舞台《ロミオとジュリエット》の乳母役の\\コスチューム。フレイの乳母ではない。",
+        "name": "名塚佳織"
+      },
       "00": {
         "title": "浦江 めい",
         "description": "不幸な少女の呪いを受けた服。お土産に強くお勧め。",
@@ -5380,7 +5353,7 @@
       "02": {
         "title": "暴君 オード",
         "description": "悪魔オードの覚醒した真の姿。",
-        "name": ""
+        "name": "神尾晋一郎"
       }
     },
     "favors": {
@@ -5392,6 +5365,11 @@
   },
   "c051": {
     "variants": {
+      "12": {
+        "title": "ティボルト役の フレイ",
+        "description": "舞台《ロミオとジュリエット》のティボルト役の\\コスチューム。リザは俺を見ている。",
+        "name": "KENN"
+      },
       "21": {
         "title": "呪われた人形 フレイ",
         "description": "フレイのセクシーボディはどこかへ消えた。",
@@ -5883,8 +5861,8 @@
   "c054": {
     "variants": {
       "00": {
-        "title": "一鷹",
-        "description": "主君への為、修業の毎日。ニンニン！",
+        "title": "忍田 一鷹",
+        "description": "武道家の祖父と父に一羽の鷹と名づけられた少女。",
         "name": "國立幸"
       },
       "01": {
@@ -7148,7 +7126,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c066_boss_long.ogg"
       },
       "boss_short": {
-        "text": "俺が相手になろう",
+        "text": "俺が相手になろう。",
         "filePath": "asset\\asset\\sound\\voice\\c066_boss_short.ogg"
       },
       "ctskill": {
@@ -7226,8 +7204,8 @@
     },
     "favors": {
       "interest": "愚なヤツだ…",
-      "like": "面白い駒だ。",
-      "love": "私を輝かせるには\\申し分ない存在だ。",
+      "like": "面白いヤツだ",
+      "love": "俺を輝かせるには\\申し分ない存在だ",
       "profile": "裏表がある狡猾な契約者から生まれたアテン。\\その狡猾さはチャイルドになって完全にその姿を現した。\\他の神を追い出し、自らが神になった《アテン》のように、自分も他人を踏み台にし、その上に立つことを願う。\\主人公を手伝う理由も自分の利益の為である。\\《燦爛たるアポロン》とは契約者の時から縁があるが、大きな関心はないようだ。"
     }
   },
@@ -7521,15 +7499,15 @@
         "filePath": "asset\\asset\\sound\\voice\\c069_story1.ogg"
       },
       "story2": {
-        "text": "オマエさ、リーダーらしくしてみろよ。",
+        "text": "お前さ、リーダーらしくしてみろよ。",
         "filePath": "asset\\asset\\sound\\voice\\c069_story2.ogg"
       },
       "story3": {
-        "text": "力以外必要ない。力だけで世界を\\変えられるということを…オマエが証明してみろ。",
+        "text": "力以外必要ない。力だけで世界を\\変えられるということを…お前が証明してみろ。",
         "filePath": "asset\\asset\\sound\\voice\\c069_story3.ogg"
       },
       "true1": {
-        "text": "しっかりしろ！\\オマエみたいな才能のないヤツは根性で耐えるんだ！",
+        "text": "しっかりしろ！\\お前みたいな才能のないヤツは根性で耐えるんだ！",
         "filePath": "asset\\asset\\sound\\voice\\c069_true1.ogg"
       },
       "true2": {
@@ -7537,7 +7515,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c069_true2.ogg"
       },
       "true3": {
-        "text": "オマエは俺の願いを聞いてくれそうな\\気がする。だからよろしくな、マスター。",
+        "text": "お前は俺の願いを聞いてくれそうな\\気がする。だからよろしくな、マスター。",
         "filePath": "asset\\asset\\sound\\voice\\c069_true3.ogg"
       },
       "victory": {
@@ -7770,7 +7748,7 @@
     "variants": {
       "00": {
         "title": "吉田 喜子",
-        "description": "真の応援少女は、道具を選ばない。",
+        "description": "ネオンカラーのポンポンがなくても\\掃除用具のはたきで応援！",
         "name": "山本彩乃"
       },
       "01": {
@@ -7940,7 +7918,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c082_hit_2.ogg"
       },
       "hit_3": {
-        "text": "痛みは慣れっこです",
+        "text": "痛みは慣れっこです。",
         "filePath": "asset\\asset\\sound\\voice\\c082_hit_3.ogg"
       },
       "prskill": {
@@ -8243,12 +8221,12 @@
     "variants": {
       "00": {
         "title": "凛堂 圭斗",
-        "description": "障害があっても強く生きて行く。",
+        "description": "足が不自由だが野望を抱く財閥の子息。",
         "name": "永塚拓馬"
       },
       "01": {
         "title": "再生の ヴァルカン",
-        "description": "クラシックなマペットの心を捕らえるコスチューム",
+        "description": "クラシックなマペットの心を捕らえるコスチューム。",
         "name": "永塚拓馬"
       },
       "02": {
@@ -9241,7 +9219,7 @@
     "variants": {
       "00": {
         "title": "弦巻 詩乃",
-        "description": "白玉のような肌を維持する秘訣ですか？若いうちに死ぬ事ですね！",
+        "description": "ひき逃げ事故で非業の死を遂げた女子高生。",
         "name": "雨宮夕夏"
       },
       "01": {
@@ -9678,7 +9656,7 @@
     "variants": {
       "00": {
         "title": "金田 香峯子",
-        "description": "メガホンまで持って追いかけてくる上司はどう対応すればよいのでしょうか？",
+        "description": "祖父のコネで大企業に就職した企画チーム長。",
         "name": "結城光"
       },
       "01": {
@@ -9882,7 +9860,7 @@
       },
       "00": {
         "title": "人間界の イブ",
-        "description": "可憐な少女を見たら、親切に道を教えてあげよう。",
+        "description": "人間の少女になりすました悪魔イブ。",
         "name": "石川由依"
       },
       "01": {
@@ -9892,7 +9870,7 @@
       },
       "02": {
         "title": "原罪の イブ",
-        "description": "戦闘力が上昇し、方向感覚が減少…。",
+        "description": "戦闘力が上昇し、方向感覚が減少…",
         "name": "石川由依"
       }
     },
@@ -9987,16 +9965,271 @@
   },
   "c125": {
     "variants": {
+      "10": {
+        "title": "ロマンティック アルティス",
+        "description": "この恋が茨の道でも、僕の想いは変わりません！",
+        "name": "村田太志＆明坂聡美",
+        "voices": {
+          "boss_long": {
+            "text": "アルティス…私を守って…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "ルサルカ…\\ここは僕に任せてください！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "<color=ff3287>助けて！</color>\\<color=2287d8>守ります！</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "<color=ff3287>アルティス…ずっと…一緒よ…</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_death_1.ogg"
+          },
+          "death_2": {
+            "text": "<color=2287d8>もう…ルサルカを…離しません…</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_death_2.ogg"
+          },
+          "drive": {
+            "text": "<color=2287d8>僕を信じて！</color>\\<color=ff3287>ええ！</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_drive.ogg"
+          },
+          "hit_1": {
+            "text": "うッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "どいてください！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "やめてください！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "ルサルカのために！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_prskill.ogg"
+          },
+          "skill": {
+            "text": "ルサルカ…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_skill.ogg"
+          },
+          "spa": {
+            "text": "今日の天気は、温泉でゆっくりするのに\\ぴったりですね。",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_spa.ogg"
+          },
+          "startbt": {
+            "text": "お待ちしていました。ルサルカ。",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_startbt.ogg"
+          },
+          "story1": {
+            "text": "がんばってください。\\愛は勇気ある者だけに与えられるのです。",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_story1.ogg"
+          },
+          "story2": {
+            "text": "迷っていても時間のムダですから…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_story2.ogg"
+          },
+          "story3": {
+            "text": "男なら言葉を交わすより、剣を交えて\\語り合うのみです！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_story3.ogg"
+          },
+          "true1": {
+            "text": "<color=ff3287>ずっとアルティスの…そばにいたい…</color>\\<color=2287d8>ルサルカ…僕もです！</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_true1.ogg"
+          },
+          "true2": {
+            "text": "<color=2287d8>恋に悩みはつきものです。</color>\\<color=ff3287>大丈夫よ…一緒なら…</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_true2.ogg"
+          },
+          "true3": {
+            "text": "<color=2287d8>もうあなたの気持ちに背きません。</color>\\<color=ff3287>感じるわ…あなたの愛を…</color>",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_true3.ogg"
+          },
+          "victory": {
+            "text": "一緒に帰りましょう。\\ルサルカ。",
+            "filePath": "asset\\asset\\sound\\voice\\c125_10_victory.ogg"
+          }
+        }
+      },
+      "89": {
+        "title": "ロマンティック アルティス",
+        "description": "僕の恋路は、誰にも邪魔などさせません！",
+        "name": "村田太志＆明坂聡美",
+        "voices": {
+          "boss_long": {
+            "text": "甘い恋はまどろみのごとく…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "僕の魂に誓って…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "これで決まりです！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_prskill.ogg"
+          },
+          "skill": {
+            "text": "光よ、僕を導いてくれ！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_skill.ogg"
+          },
+          "ctskill": {
+            "text": "落ち着いて…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "覚悟が…足りなかったようです…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_death_1.ogg"
+          },
+          "death_2": {
+            "text": "ルサル…カ…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_death_2.ogg"
+          },
+          "drive": {
+            "text": "剣よ、僕に力を！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_drive.ogg"
+          },
+          "hit_1": {
+            "text": "あなたのためなら…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "もうそろそろ…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "やりすぎですよ。",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "うッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "くッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "待ってください！ルサルカ！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "諦めません！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "さがりなさい！",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "まだ死ぬわけには…",
+            "filePath": "asset\\asset\\sound\\voice\\c125_89_hit_9.ogg"
+          }
+        }
+      },
       "00": {
         "title": "仙石 誠二",
-        "description": "基本的な学生服である。",
-        "name": ""
+        "description": "ルサルカの契約者に片思いする高校生。",
+        "name": "村田太志"
       },
       "01": {
-        "title": "地上の アルティス",
-        "description": "アルティスの基本的な服装である。",
-        "name": ""
+        "title": "喜劇の アルティス",
+        "description": "純粋な心で精錬したアルティスの剣。",
+        "name": "村田太志"
+      },
+      "02": {
+        "title": "誓剣の勇者 アルティス",
+        "description": "愛するルサルカのための誓いの剣。",
+        "name": "村田太志"
       }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "正々堂々と勝負しましょう！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "恐れることなどありません！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "落ち着いて…",
+        "filePath": "asset\\asset\\sound\\voice\\c125_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "覚悟が…足りなかったようです…",
+        "filePath": "asset\\asset\\sound\\voice\\c125_death_1.ogg"
+      },
+      "death_2": {
+        "text": "ルサル…カ…",
+        "filePath": "asset\\asset\\sound\\voice\\c125_death_2.ogg"
+      },
+      "drive": {
+        "text": "ルサルカ～ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_drive.ogg"
+      },
+      "hit_1": {
+        "text": "うッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "まだまだッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "ぐッ…！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "無礼なッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_prskill.ogg"
+      },
+      "skill": {
+        "text": "あぁ～ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_skill.ogg"
+      },
+      "spa": {
+        "text": "今日の天気は、温泉でゆっくりするのに\\ぴったりですね。",
+        "filePath": "asset\\asset\\sound\\voice\\c125_spa.ogg"
+      },
+      "startbt": {
+        "text": "僕の勇気が試される時です！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_startbt.ogg"
+      },
+      "story1": {
+        "text": "がんばってください。\\愛は勇気ある者だけに与えられるのです。",
+        "filePath": "asset\\asset\\sound\\voice\\c125_story1.ogg"
+      },
+      "story2": {
+        "text": "迷っていても時間のムダですから…",
+        "filePath": "asset\\asset\\sound\\voice\\c125_story2.ogg"
+      },
+      "story3": {
+        "text": "男なら言葉を交わすより、剣を交えて\\語り合うのみです！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_story3.ogg"
+      },
+      "true1": {
+        "text": "ご主人様のやさしさ…決して忘れません。",
+        "filePath": "asset\\asset\\sound\\voice\\c125_true1.ogg"
+      },
+      "true2": {
+        "text": "はぁ…自分の気持ちを伝えるのって…\\意外と難しいな…",
+        "filePath": "asset\\asset\\sound\\voice\\c125_true2.ogg"
+      },
+      "true3": {
+        "text": "もう迷いません。\\ルサルカに僕の気持ちを伝えます！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_true3.ogg"
+      },
+      "victory": {
+        "text": "この剣に誓います！",
+        "filePath": "asset\\asset\\sound\\voice\\c125_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "ご主人様がくれた\\この力で！",
+      "like": "今日もルサルカのことが\\気になって…",
+      "love": "ルサルカは\\僕が守ります！",
+      "profile": "ギリシャ神話に登場する悲劇の美男子から名を借り受けた\\チャイルド、アルティス。\\彼の契約者が、ルサルカの契約者を守れる力を欲したためか\\アルティスは剣に愛を誓う純粋なチャイルドとして生まれた。\\契約者同様、アルティスはルサルカに対して好意があるが\\ルサルカは主人公が好きなのだと誤解していた。"
     }
   },
   "c126": {
@@ -10541,7 +10774,7 @@
     "variants": {
       "00": {
         "title": "光国 礼佳",
-        "description": "ドッジボール選手の服ではなく、バレーボール選手の服です。",
+        "description": "スポーツ界の妖精の女王を夢見るバレーボール少女。",
         "name": "本多真梨子"
       },
       "01": {
@@ -11330,7 +11563,7 @@
       },
       "02": {
         "title": "告白の ルサルカ",
-        "description": "今のルサルカならどこでも歌う事ができる。",
+        "description": "今のルサルカならどこでも歌える。",
         "name": "明坂聡美"
       }
     },
@@ -11360,11 +11593,11 @@
         "filePath": "asset\\asset\\sound\\voice\\c149_drive.ogg"
       },
       "hit_1": {
-        "text": "…痛い",
+        "text": "…痛い。",
         "filePath": "asset\\asset\\sound\\voice\\c149_hit_1.ogg"
       },
       "hit_2": {
-        "text": "ひどい…っ",
+        "text": "ひどいっ。",
         "filePath": "asset\\asset\\sound\\voice\\c149_hit_2.ogg"
       },
       "hit_3": {
@@ -11417,8 +11650,8 @@
       }
     },
     "favors": {
-      "interest": "私の心をわかって。",
-      "like": "私の話を聞いて？",
+      "interest": "私の気持ちを\\わかって…",
+      "like": "私の話を聞いて…",
       "love": "ありがとう…",
       "profile": "思いはどんどん強くなるのに、なぜ何も言えないんだろう…\\そんな切ない思いを受け、声を失ったせいで愛を告白する事ができなかった人魚《ルサルカ》の名を借り受けた。\\恥ずかしがり屋なので、なかなかしゃべれない。片思いの人に自分の想いを告白するなんて夢のまた夢…\\主人公の助けを借りて告白する方法を学んでいるところである。\\彼女の告白は一体いつになることやら…"
     }
@@ -11652,6 +11885,113 @@
       "profile": "知恵と正義の神《トート》の名から洗礼名を借り受けた。\\刑事にもかかわらず、闇の組織と結託した契約者とは異なり、正義と秩序を固持する厳格なチャイルドだ。これこそトートのあるべき姿。\\事あるごとに自分に絡んで来る《夜のティアマト》の事を気にしている。\\一番嫌いなのは、主人公の部屋。世界で最も汚れているから…"
     }
   },
+  "c155": {
+    "variants": {
+      "00": {
+        "title": "天音 奏恵",
+        "description": "デビューから10年目のベテランアイドル。",
+        "name": "石井麻美"
+      },
+      "01": {
+        "title": "シンガー エコー",
+        "description": "エコーの美しい歌声を響かせるマイクとスピーカー。",
+        "name": "石井麻美"
+      },
+      "02": {
+        "title": "アイドル エコー",
+        "description": "エコーの歌声に反応して発光するマイクとスピーカー。",
+        "name": "石井麻美"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "エコーのコンサートへようこそ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "私のコンサートの邪魔はさせないわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c155_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "もっと声出せるでしょ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "何よ…私のファンじゃ…なかったの？",
+        "filePath": "asset\\asset\\sound\\voice\\c155_death_1.ogg"
+      },
+      "death_2": {
+        "text": "こんな…はずじゃ…！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_death_2.ogg"
+      },
+      "drive": {
+        "text": "ザ・ラスト・ソング！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_drive.ogg"
+      },
+      "hit_1": {
+        "text": "キャ～ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "ううッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "何するのよ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "クラップ・ユア・ハンズ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_prskill.ogg"
+      },
+      "skill": {
+        "text": "私の歌を聞いて！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_skill.ogg"
+      },
+      "spa": {
+        "text": "アイドルの入浴シーンなんて\\めったに観れるモノじゃないわよ～",
+        "filePath": "asset\\asset\\sound\\voice\\c155_spa.ogg"
+      },
+      "startbt": {
+        "text": "ウェルカム・トゥ・エコーズ・ショー！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_startbt.ogg"
+      },
+      "story1": {
+        "text": "だから～\\私を作ったのはマネージャーってことでしょ？",
+        "filePath": "asset\\asset\\sound\\voice\\c155_story1.ogg"
+      },
+      "story2": {
+        "text": "私の一番好きな歌手の歌よ。",
+        "filePath": "asset\\asset\\sound\\voice\\c155_story2.ogg"
+      },
+      "story3": {
+        "text": "推しに向かって何なの、その態度は？\\ファンクラブ会長なんだから\\もっと丁寧に話しなさいよ！",
+        "filePath": "asset\\asset\\sound\\voice\\c155_story3.ogg"
+      },
+      "true1": {
+        "text": "アイドルって疲れるのよね～",
+        "filePath": "asset\\asset\\sound\\voice\\c155_true1.ogg"
+      },
+      "true2": {
+        "text": "みんなの記憶に残るように輝いていたいの…",
+        "filePath": "asset\\asset\\sound\\voice\\c155_true2.ogg"
+      },
+      "true3": {
+        "text": "マネージャーのことは…その…\\た…大切な存在だって…思ってるから…",
+        "filePath": "asset\\asset\\sound\\voice\\c155_true3.ogg"
+      },
+      "victory": {
+        "text": "最高のコンサートだったわ。",
+        "filePath": "asset\\asset\\sound\\voice\\c155_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "私を作ったのは\\マネージャーでしょ？",
+      "like": "推しに向かって何なの？\\その態度は？",
+      "love": "大切な存在だって…\\思ってるから…",
+      "profile": "ギリシャ神話に登場する森のニンフから名を借り受けた\\チャイルド、エコー。\\彼女の契約者はデビューから10年目のベテランアイドル。\\だが、10年経っても歌唱力はイマイチ。すでに人気は地に落ち\\あらぬ疑いをかけられ、所属事務所から退社させられた彼女は\\自らの境遇を嘆き、酒に酔いつつ公園で歌っていた。\\するとそこへ偶然、主人公が通りかかった。\\彼女の愚痴を聞き、共感した主人公は彼女と契約した。"
+    }
+  },
   "c156": {
     "variants": {
       "00": {
@@ -11724,7 +12064,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c156_startbt.ogg"
       },
       "story1": {
-        "text": "ふむ…坊や、そなたの尾から、何やらよい香りがするな。",
+        "text": "ふむ…\\坊や、そなたの尾から、何やらよい香りがするな。",
         "filePath": "asset\\asset\\sound\\voice\\c156_story1.ogg"
       },
       "story2": {
@@ -11869,6 +12209,21 @@
       "like": "ところであなた...\\彼女っている？",
       "love": "やっぱりイケメンが好き！ごめんね！あなたは脱落～",
       "profile": "一度も恋愛に成功したことがない少女から生まれたチャイルド。\\愛されながら生きて行きたいという契約者の欲望に応じ、イケメンを誘惑して水の中に連れ込むという妖精《ナイアス》の名前を授かった。\\好きなのはもちろんイケメン。イケメンを見るとダッシュで近寄る積極的なチャイルドだ。\\イケメン獲得の方法は、妖精ナイアスと同じ方法である…"
+    }
+  },
+  "c159": {
+    "variants": {
+      "01": {
+        "title": "あかつきの セメレー",
+        "description": "セメレーのヘアカラーに合わせた古風なレザースカート。",
+        "name": "上田麗奈"
+      }
+    },
+    "favors": {
+      "interest": "イブ…",
+      "like": "うざい。",
+      "love": "つまんない。",
+      "profile": "情熱的な恋に落ちた小悪魔。\\2人のうち1人は必ず魔王になるというイブとの約束も忘れたようだ。\\祓魔師のそばでも正体がバレないほど優れた変装術の持ち主。\\正体不明の悪魔ロキに一目惚れしたが、愛していると言うよりむしろ崇拝している様子。\\熱く激しい想いは果たして恋なのか、注目しておこう。"
     }
   },
   "c160": {
@@ -12612,7 +12967,7 @@
         "name": "小林ゆう"
       },
       "00": {
-        "title": "A.I",
+        "title": "普段着の A.I",
         "description": "ステージの外の姿は期待と異なる。",
         "name": "小林ゆう"
       },
@@ -13661,7 +14016,7 @@
     "variants": {
       "00": {
         "title": "安藤 佳奈子",
-        "description": "相手を選ばないクラトスの契約者。",
+        "description": "上級生でも校長先生でも許さない風紀委員。",
         "name": "船本深文"
       },
       "01": {
@@ -13982,22 +14337,27 @@
     "variants": {
       "00": {
         "title": "見習い祓魔師 ヴィルーパー",
-        "description": "",
-        "name": ""
+        "description": "カインによって才能を見い出された祓魔師。",
+        "name": "古賀葵"
+      },
+      "01": {
+        "title": "祓魔師 ヴィルーパー",
+        "description": "煩悩を断ち切る祓魔師ヴィルーパーの宝剣。",
+        "name": "古賀葵"
       }
     },
     "favors": {
-      "interest": "",
-      "like": "",
-      "love": "",
-      "profile": ""
+      "interest": "チャイルドになるなんて…\\お断りよ！",
+      "like": "悪魔は嫌いなのっ！",
+      "love": "カイン様を救えたら…",
+      "profile": "カインによって才能を見い出された祓魔師ヴィルーパー。\\彼女にとってカインは恩人であり師匠であり家族であり\\人生の全てだった。\\そんなカインは悪魔に惑わされてしまい、許されざる罪を\\犯してしまった。\\そんな師匠を見て彼女は決意した。\\たとえ悪魔に力を借りようとも必ず師匠を救うと…"
     }
   },
   "c194": {
     "variants": {
       "00": {
         "title": "黒木 麗花",
-        "description": "全身をふんわり包み込む少女風パフスリーブワンピース。",
+        "description": "人間でも悪魔でも利用する、貪欲すぎる腹黒少女。",
         "name": "堀江由衣"
       },
       "01": {
@@ -14852,6 +15212,25 @@
       "like": "楽しく遊ぼうよ！",
       "love": "一緒にイタズラしない？",
       "profile": "ゲームの中から飛び出した魔法使いチャイルド。\\魔法使いに憧れていた契約者の性格に応じて、中世の伝説におけるもっとも高名な魔法使い《マーリン》の名を借り受けた。\\自分をゲームの中のキャラクターと信じている。\\楽観的であり、いたずらが大好きである。\\時々マーリンのいたずらが予想外の結果を生むことがある。\\それはまるで魔法使いの奇跡のような..."
+    }
+  },
+  "c206": {
+    "variants": {
+      "00": {
+        "title": "見習い祓魔師 ヨナ",
+        "description": "",
+        "name": ""
+      },
+      "01": {
+        "title": "祓魔師 ヨナ",
+        "description": "",
+        "name": ""
+      },
+      "02": {
+        "title": "痛悔する ヨナ",
+        "description": "",
+        "name": ""
+      }
     }
   },
   "c208": {
@@ -15814,9 +16193,14 @@
   },
   "c224": {
     "variants": {
+      "00": {
+        "title": "人間界の ロキ",
+        "description": "小公子ロキの普段着。\\おいっ！お前ホントにあのロキかっ？！",
+        "name": "緒方恵美"
+      },
       "01": {
         "title": "黒太子 ロキ",
-        "description": "黒太子ロキの戦闘服。胸に抱くは謀略と黒い本音。",
+        "description": "黒太子ロキの戦闘服。\\胸に抱くは謀略と黒い本心。",
         "name": "緒方恵美"
       }
     }
@@ -16047,8 +16431,8 @@
   "c229": {
     "variants": {
       "00": {
-        "title": "ベリー",
-        "description": "夜の話はネズミが聞き、昼の話もネズミが聞く…",
+        "title": "チンチラ ベリー",
+        "description": "壁に耳あり障子に目あり…",
         "name": "ニーコ"
       },
       "01": {
@@ -16256,6 +16640,113 @@
       "like": "私の秘密に気づいたようだな…",
       "love": "力を使うのはルール違反だが、お前の為なら…",
       "profile": "中二病とは恐ろしい…\\こんなチャイルドを作り出してしまうから…\\自分を宇宙滅亡のカギを握っている神秘の存在だと信じているスクルド。《スクルド》という名前も宇宙に死の呪いを下すという女神の名を借りて自ら付けた名前だ。\\包帯で隠された右目には宇宙滅亡の秘密を知る古代の魂が封印されているという設定がある。"
+    }
+  },
+  "c231": {
+    "variants": {
+      "00": {
+        "title": "小森 美麗",
+        "description": "かわいいけど、かなり物好きな悪女。",
+        "name": "田中貴子"
+      },
+      "01": {
+        "title": "誘惑の天使 レアシルヴィア",
+        "description": "青いバラから冷気を放つ天使。",
+        "name": "田中貴子"
+      },
+      "02": {
+        "title": "誘惑の悪女 レアシルヴィア",
+        "description": "あなたを惑わす黒羽の悪女。",
+        "name": "田中貴子"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "悪魔様は私の物。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "悪魔様は私のために。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "邪魔よ！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "私としたことが…",
+        "filePath": "asset\\asset\\sound\\voice\\c231_death_1.ogg"
+      },
+      "death_2": {
+        "text": "ううっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c231_death_2.ogg"
+      },
+      "drive": {
+        "text": "歴史に名を残すのよ！\\うふっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_drive.ogg"
+      },
+      "hit_1": {
+        "text": "あ～っ！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "キャッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "うッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "どこを見ているの？",
+        "filePath": "asset\\asset\\sound\\voice\\c231_prskill.ogg"
+      },
+      "skill": {
+        "text": "我慢できるかしら？",
+        "filePath": "asset\\asset\\sound\\voice\\c231_skill.ogg"
+      },
+      "spa": {
+        "text": "どうしたのですか、悪魔様？\\じろじろ見過ぎですよ？",
+        "filePath": "asset\\asset\\sound\\voice\\c231_spa.ogg"
+      },
+      "startbt": {
+        "text": "この勝負、勝たせていただきます。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_startbt.ogg"
+      },
+      "story1": {
+        "text": "そんなこと言わずに！\\さあ、私の未来の伴侶になると誓ってください！",
+        "filePath": "asset\\asset\\sound\\voice\\c231_story1.ogg"
+      },
+      "story2": {
+        "text": "それでは、普通に結婚から始めましょう。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_story2.ogg"
+      },
+      "story3": {
+        "text": "悪魔様と私は毎日愛をささやき合う関係なんです♥",
+        "filePath": "asset\\asset\\sound\\voice\\c231_story3.ogg"
+      },
+      "true1": {
+        "text": "偉大な母として歴史に名を残したいのです。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_true1.ogg"
+      },
+      "true2": {
+        "text": "究極の理想…\\それは悪魔様と結婚して偉大な子を産むことです。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_true2.ogg"
+      },
+      "true3": {
+        "text": "悪魔様を究極の存在にしてあげますわ。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_true3.ogg"
+      },
+      "victory": {
+        "text": "もう終わり？\\物足りないですね。",
+        "filePath": "asset\\asset\\sound\\voice\\c231_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "悪魔のくせに\\禁欲ですか？",
+      "like": "我慢するのは\\よくないですよ",
+      "love": "抱きしめてください\\悪魔様♥",
+      "profile": "ローマの建国神話に登場するローマの建設者ロームルスと\\レムスの母から名を借り受けたチャイルド、レアシルヴィア。\\世界で最も偉大な母になりたい彼女の契約者は\\究極の存在と結婚し偉大な子を産み歴史に名を残そうと考える。\\そして書物を読み漁った結果、究極の存在とは悪魔であると\\結論づけ、悪魔召喚の儀を行うのであった。"
     }
   },
   "c232": {
@@ -16782,12 +17273,12 @@
       },
       "01": {
         "title": "夜祭り ティフォン",
-        "description": "暗い夜でも月の光を浴びて浮き上がる\\王道バンパイアスタイル。",
+        "description": "暗い夜でも月の光を浴びて浮き上がる\\王道ヴァンパイアスタイル。",
         "name": "小田久史"
       },
       "02": {
         "title": "サムハイン ティフォン",
-        "description": "中世貴族のようにクラシカルでゴージャスな\\王道バンパイアスタイル。",
+        "description": "中世貴族のようにクラシカルでゴージャスな\\王道ヴァンパイアスタイル。",
         "name": "小田久史"
       }
     },
@@ -16990,6 +17481,15 @@
       "like": "お姉様の\\アドバイスを聞きなさい！",
       "love": "さぁ～悪魔だけの\\お祭りを楽しもう！",
       "profile": "魔界では、魔王争奪戦が開始されて初めての「ハロウィン」を記念し魔王候補生の為の特別なイベントを準備する。\\それは先輩たちの心が込められた熱い応援！\\ハロウィン応援団サムハインパーティーの団長《メブ》は意気消沈する主人公を応援し「真の悪魔」とは何かを教えてくれる。\\力だけは魔王級の大先輩メブのハードな筋力トレーニングを受けてみよう！"
+    }
+  },
+  "c241": {
+    "variants": {
+      "01": {
+        "title": "地下の オルクス",
+        "description": "",
+        "name": ""
+      }
     }
   },
   "c242": {
@@ -17383,14 +17883,6 @@
           "spa": {
             "text": "あんまり見つめないで……",
             "filePath": "asset\\asset\\sound\\voice\\c246_88_spa.ogg"
-          },
-          "startbt": {
-            "text": "可愛いクリスマスの妖精がやってきましたよ～",
-            "filePath": "asset\\asset\\sound\\voice\\c246_88_startbt.ogg"
-          },
-          "victory": {
-            "text": "あら、ホントに勝っちゃった。",
-            "filePath": "asset\\asset\\sound\\voice\\c246_88_victory.ogg"
           }
         }
       },
@@ -17470,20 +17962,12 @@
           "spa": {
             "text": "あんまり見つめないで……",
             "filePath": "asset\\asset\\sound\\voice\\c246_89_spa.ogg"
-          },
-          "startbt": {
-            "text": "可愛いクリスマスの妖精がやってきましたよ～",
-            "filePath": "asset\\asset\\sound\\voice\\c246_89_startbt.ogg"
-          },
-          "victory": {
-            "text": "あら、ホントに勝っちゃった。",
-            "filePath": "asset\\asset\\sound\\voice\\c246_89_victory.ogg"
           }
         }
       },
       "00": {
         "title": "クリスマスの 妖精",
-        "description": "クリスマスに突然現れたクリスマスの妖精。",
+        "description": "クリスマスに突然現れた妖精の正体とは…？",
         "name": "三森すずこ"
       },
       "01": {
@@ -17793,7 +18277,7 @@
       },
       "89": {
         "title": "聖誕 ニコル",
-        "description": "聖なる前夜祭に降臨した神の使者ニコルの戦闘服",
+        "description": "な～に？プレゼントがほしいの？でもどうしよう。\\悪魔にあげるプレゼントなんて愛のムチだけよ。",
         "name": "小松未可子",
         "voices": {
           "boss_long": {
@@ -17979,7 +18463,7 @@
         "name": ""
       },
       "02": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       }
@@ -19029,8 +19513,8 @@
   "c274": {
     "variants": {
       "00": {
-        "title": "バスト",
-        "description": "いつも楽しいバストのおでかけ服！",
+        "title": "普段着の バスト",
+        "description": "クレオパトラの猫から生まれたチャイルドの\\人間界での普段着。",
         "name": "桜咲千依"
       },
       "01": {
@@ -19131,6 +19615,113 @@
       "like": "弱い猫ね？",
       "love": "こっちに来て～\\遊ぼ～",
       "profile": "遥か昔の、遥か遠くからやってきた歌う猫。\\洗礼名は猫の女神《バスト》の名を借り受けた。\\魔王争奪戦のことはよく分からないが、主人のクレオパトラのために喜んで参戦。\\本当はホルスのチャイルドであり、ホルスがクレオパトラを掌握するため適当にだまして契約させた。\\そのせいか、ホルスが憎らしくてたまらない…"
+    }
+  },
+  "c275": {
+    "variants": {
+      "00": {
+        "title": "鳥井 美由",
+        "description": "元アイドルグループのメンバーで\\インディーズバンドのボーカル。",
+        "name": "吉田仁美"
+      },
+      "01": {
+        "title": "アウトロー ハーピー",
+        "description": "自由を求めて逃亡するハーピーのコスチューム。",
+        "name": "吉田仁美"
+      },
+      "02": {
+        "title": "ランナウェイ ハーピー",
+        "description": "あらゆるルールから逃れるハーピーのコスチューム。",
+        "name": "吉田仁美"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "来てくれてありがと～呼んでないけどねっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "ようこそ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "ウザいんだけど！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "はぁ…負けちゃった…",
+        "filePath": "asset\\asset\\sound\\voice\\c275_death_1.ogg"
+      },
+      "death_2": {
+        "text": "なんで～？なんで負けるの～！？",
+        "filePath": "asset\\asset\\sound\\voice\\c275_death_2.ogg"
+      },
+      "drive": {
+        "text": "ルールなんて破るためにあるのよっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_drive.ogg"
+      },
+      "hit_1": {
+        "text": "痛いんだけど～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "びっくりした～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "すごくな～い？",
+        "filePath": "asset\\asset\\sound\\voice\\c275_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "調子に乗ってくれちゃって～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_prskill.ogg"
+      },
+      "skill": {
+        "text": "ふんっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_skill.ogg"
+      },
+      "spa": {
+        "text": "エッチ～！\\こっそりのぞき見しちゃって～！\\バレないとでも思った～？",
+        "filePath": "asset\\asset\\sound\\voice\\c275_spa.ogg"
+      },
+      "startbt": {
+        "text": "ボッコボコにしちゃうから！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_startbt.ogg"
+      },
+      "story1": {
+        "text": "なにしてるの～？\\ごしゅじんさま～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_story1.ogg"
+      },
+      "story2": {
+        "text": "行かないなら脇腹くすぐっちゃうよ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_story2.ogg"
+      },
+      "story3": {
+        "text": "それじゃ～\\不器用なご主人様の頼みを\\聞いてあげよっか？",
+        "filePath": "asset\\asset\\sound\\voice\\c275_story3.ogg"
+      },
+      "true1": {
+        "text": "あ～しろこ～しろうるさいわね…\\主人だからって口出ししないで…",
+        "filePath": "asset\\asset\\sound\\voice\\c275_true1.ogg"
+      },
+      "true2": {
+        "text": "悪魔なんだから自由に生きればいいのよ！\\だからさ～あたしと今夜デートしな～い？",
+        "filePath": "asset\\asset\\sound\\voice\\c275_true2.ogg"
+      },
+      "true3": {
+        "text": "魔王になりたくないの～？\\だったらさ～あんたが魔王になって\\魔王争奪戦なんてなくしちゃえばいいじゃん！",
+        "filePath": "asset\\asset\\sound\\voice\\c275_true3.ogg"
+      },
+      "victory": {
+        "text": "ふ～\\なんだか本気出しちゃった…",
+        "filePath": "asset\\asset\\sound\\voice\\c275_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "めんどくない？",
+      "like": "ルールなんて\\破るためにあるのよ！",
+      "love": "魔王になったら\\法律なんて\\失くしちゃって～！",
+      "profile": "ルールに縛られない自由奔放なチャイルド、ハーピー。\\彼女の契約者は人気アイドルグループのメンバーだったが\\厳しいルールに耐えられず、突然卒業を発表し芸能界から\\姿を消した。\\ところがある日、ハーレム街のライブハウスから彼女の歌声が\\響き渡る。彼女のファンとなった悪魔たちは彼女と契約するため\\なら手段を選ばない。そんな悪魔たちを見かねてか、彼女は\\契約の相手として主人公を指名する。"
     }
   },
   "c277": {
@@ -19238,6 +19829,123 @@
       "like": "マンモンよりいい人かも...",
       "love": "転職しようかしら…？",
       "profile": "お酒とお金、そして女さえあれば幸せだという男、マンモンの為に、モナが雇用した魔界のニンフ。\\うんざりな魔界の生活を清算し、いよいよ人間界で社会人になろうとしていたが、よりによって初雇用主がマンモンだなんて…\\趣味はSNS、好きな物は自分だけを愛してくれるイケメン悪魔。\\まだ新社会人だが、「給料の分だけ仕事をしよう」をモットーに着実に一日一日を乗り切っている。"
+    }
+  },
+  "c278": {
+    "variants": {
+      "01": {
+        "title": "オーダーメイド ヘル",
+        "description": "人造人間ヘルのオーダーメイドコスチューム。",
+        "name": "道井悠"
+      },
+      "02": {
+        "title": "カスタマイズ ヘル",
+        "description": "人造人間ヘルのカスタマイズコスチューム。",
+        "name": "道井悠"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "最善を尽くします。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "仕方ありませんね。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "なかなかやりますね。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "やっと…安らかに…眠れます…",
+        "filePath": "asset\\asset\\sound\\voice\\c278_death_1.ogg"
+      },
+      "death_2": {
+        "text": "お許しください…",
+        "filePath": "asset\\asset\\sound\\voice\\c278_death_2.ogg"
+      },
+      "drive": {
+        "text": "甘く見ないでください！",
+        "filePath": "asset\\asset\\sound\\voice\\c278_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ムダです！",
+        "filePath": "asset\\asset\\sound\\voice\\c278_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "失敗です！",
+        "filePath": "asset\\asset\\sound\\voice\\c278_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "意外ですね！",
+        "filePath": "asset\\asset\\sound\\voice\\c278_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "頑張ってみましょうか？",
+        "filePath": "asset\\asset\\sound\\voice\\c278_prskill.ogg"
+      },
+      "skill": {
+        "text": "失せなさい！",
+        "filePath": "asset\\asset\\sound\\voice\\c278_skill.ogg"
+      },
+      "spa": {
+        "text": "親切な態度には、必ず何か裏があります。\\あなたは何をお望みですか？",
+        "filePath": "asset\\asset\\sound\\voice\\c278_spa.ogg"
+      },
+      "startbt": {
+        "text": "助けてあげましょう。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_startbt.ogg"
+      },
+      "story1": {
+        "text": "私には祈る対象がありません。\\神を信じていませんので…",
+        "filePath": "asset\\asset\\sound\\voice\\c278_story1.ogg"
+      },
+      "story2": {
+        "text": "ロキ様が邪魔するのは、退屈しのぎなのです。\\あの方は、退屈な日常を嫌いますので…",
+        "filePath": "asset\\asset\\sound\\voice\\c278_story2.ogg"
+      },
+      "story3": {
+        "text": "それはただ…私が…寂しがり屋だからです。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_story3.ogg"
+      },
+      "true1": {
+        "text": "ロキ様がお呼びです。\\あなたには聞こえませんか？",
+        "filePath": "asset\\asset\\sound\\voice\\c278_true1.ogg"
+      },
+      "true2": {
+        "text": "あの方がいないと生きていけない…\\大事なのはそれだけです。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_true2.ogg"
+      },
+      "true3": {
+        "text": "どうかロキ様と戦わないでください。\\あなたの力では、あの方には絶対勝てません。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_true3.ogg"
+      },
+      "victory": {
+        "text": "苦労した甲斐がありました。",
+        "filePath": "asset\\asset\\sound\\voice\\c278_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "お望みのままに…",
+      "like": "私の助けが\\必要ですか？",
+      "love": "心配です…\\あなたが勝ち残れるか…",
+      "profile": "気まぐれなロキが自分をサポートするために作った人造人間\\ヘル。\\苦痛を感じない完璧なボディと人間らしい感情を持つ。\\一見、人造人間の限界を超えた性能を誇るが、彼女にとって\\ロキに従うのは難しいことだった。\\ロキをサポートするために必要なのは、彼を守り続ける\\無限の愛。それを持たない彼女は失敗作とみなされた。"
+    }
+  },
+  "c279": {
+    "variants": {
+      "01": {
+        "title": "オーダーメイド ラウフェイ",
+        "description": "人造人間ラウフェイのオーダーメイドコスチューム。",
+        "name": "朝比奈幸"
+      }
+    },
+    "favors": {
+      "interest": "ラウフェイと\\お呼びください",
+      "like": "一緒に\\行きましょうか？",
+      "love": "申し訳ありませんが\\私はずっとロキ様の物です",
+      "profile": "気まぐれなロキが自分をサポートするために作らせた人造人間\\ラウフェイ。\\ロキを理解できる唯一無二の存在。\\しかし、ロキへの献身的な愛はプログラムされた\\行動パターンに過ぎない。\\ラウフェイにとって大切なことは設計通り機能することのみ。"
     }
   },
   "c280": {
@@ -19860,7 +20568,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c286_death_2.ogg"
       },
       "drive": {
-        "text": "私にお任せ下さい！",
+        "text": "私にお任せください！",
         "filePath": "asset\\asset\\sound\\voice\\c286_drive.ogg"
       },
       "hit_1": {
@@ -19900,7 +20608,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c286_story2.ogg"
       },
       "story3": {
-        "text": "貴方と手を組むのは、魔王争奪戦が終わるまでです…この生意気な女狐め！",
+        "text": "あなたと手を組むのは、魔王争奪戦が終わるまでです…この生意気な女狐め！",
         "filePath": "asset\\asset\\sound\\voice\\c286_story3.ogg"
       },
       "true1": {
@@ -19921,9 +20629,9 @@
       }
     },
     "favors": {
-      "interest": "リザの主人か。何かすごい\\力を秘めているのだろう…",
-      "like": "リザを選んだ事は、誤りだ…",
-      "love": "私の名誉にかけて、\\魔王にしてみせよう！",
+      "interest": "リザの主人か\\何かすごい力を\\秘めているのだろう…",
+      "like": "リザを選んだのは、間違いだ…",
+      "love": "私の名誉にかけて\\魔王にしてあげましょう！",
       "profile": "《完璧なサポーターは完璧な主人を作る》\\彼は、自分の完璧さを証明してくれる悪魔を探していた。\\自分の唯一のライバルであり、魔界最強のエリートサポーターであるリザの主人こそ、自分に相応しい悪魔と思うが、果たして…\\主人を補佐するサポーターの役割に相応しく地獄の侍従長である悪魔《ヴェルデレト》の名前を借りた。\\《ヒルド》と《モーガン》を配下に置く。モーガンが自分に特別な感情を持っていることを知り、巧みに利用している。"
     }
   },
@@ -20001,14 +20709,6 @@
           "hit_9": {
             "text": "こんなの反則よ！",
             "filePath": "asset\\asset\\sound\\voice\\c287_88_hit_9.ogg"
-          },
-          "startbt": {
-            "text": "これからは、アタシの独擅場よ！",
-            "filePath": "asset\\asset\\sound\\voice\\c287_88_startbt.ogg"
-          },
-          "victory": {
-            "text": "思う存分、悔しがりなさい！",
-            "filePath": "asset\\asset\\sound\\voice\\c287_88_victory.ogg"
           }
         }
       },
@@ -20084,14 +20784,6 @@
           "skill": {
             "text": "たいしたことないわね！",
             "filePath": "asset\\asset\\sound\\voice\\c287_89_skill.ogg"
-          },
-          "startbt": {
-            "text": "これからは、アタシの独擅場よ！",
-            "filePath": "asset\\asset\\sound\\voice\\c287_89_startbt.ogg"
-          },
-          "victory": {
-            "text": "思う存分、悔しがりなさい！",
-            "filePath": "asset\\asset\\sound\\voice\\c287_89_victory.ogg"
           }
         }
       },
@@ -20612,17 +21304,17 @@
     "variants": {
       "00": {
         "title": "花園 小夜子",
-        "description": "厳しすぎる校則を必ず守る生徒会長",
+        "description": "厳しすぎる校則を必ず守る\\聖ミカエル女学院の生徒会長。",
         "name": "雨宮天"
       },
       "01": {
         "title": "レディ バートリー",
-        "description": "バートリーの気品あふれるゴシックドレス",
+        "description": "バートリーの気品あふれるゴシックドレス。",
         "name": "雨宮天"
       },
       "02": {
         "title": "ブラッディ バートリー",
-        "description": "夜の如き漆黒を帯びたバートリーのバッスルドレス",
+        "description": "夜の如き漆黒を帯びたバートリーのバッスルドレス。",
         "name": "雨宮天"
       }
     },
@@ -20719,7 +21411,7 @@
     "variants": {
       "00": {
         "title": "朝霧 テレサ",
-        "description": "聖ミカエル女学院のブレザー制服がよく似合う。",
+        "description": "バートリーの同伴者となった\\聖ミカエル女学院の生徒。",
         "name": "田代安梨"
       },
       "01": {
@@ -21040,12 +21732,12 @@
     "variants": {
       "01": {
         "title": "敬愛の ピエタス",
-        "description": "心構えは服装から。ベテラン解決師の戦闘服はメイド服。",
+        "description": "心構えは服装から。\\ベテラン解決師の戦闘用メイド服。",
         "name": "後藤沙緒里"
       },
       "02": {
         "title": "信義の ピエタス",
-        "description": "真っ白なエプロンが汚れたら、プロとは言えません！",
+        "description": "エプロンが汚れたら、プロとは言えません！\\敏腕解決師の戦闘用メイド服。",
         "name": "後藤沙緒里"
       }
     },
@@ -21063,11 +21755,11 @@
         "filePath": "asset\\asset\\sound\\voice\\c300_ctskill.ogg"
       },
       "death_1": {
-        "text": "ふっ…甘くないね…",
+        "text": "ふっ…甘くないわね…",
         "filePath": "asset\\asset\\sound\\voice\\c300_death_1.ogg"
       },
       "death_2": {
-        "text": "う、ううう…",
+        "text": "うっ、ううう…",
         "filePath": "asset\\asset\\sound\\voice\\c300_death_2.ogg"
       },
       "drive": {
@@ -21107,7 +21799,7 @@
         "filePath": "asset\\asset\\sound\\voice\\c300_story1.ogg"
       },
       "story2": {
-        "text": "魔王争奪戦史上最弱の悪魔を魔王にした解決師。\\どんな悪魔も認めざるを得ない、最高の解決師になれるでしょう。",
+        "text": "魔王争奪戦史上最弱の悪魔を\\魔王にした解決師。\\どんな悪魔も認めざるを得ない\\最高の解決師になれるでしょう。",
         "filePath": "asset\\asset\\sound\\voice\\c300_story2.ogg"
       },
       "story3": {
@@ -21115,11 +21807,11 @@
         "filePath": "asset\\asset\\sound\\voice\\c300_story3.ogg"
       },
       "true1": {
-        "text": "私の新しい依頼人ですね。\\最後の機会と思って最善を尽くしてお手伝いします。",
+        "text": "私の新しい依頼人ですね。\\最後の機会と思って最善を尽くして\\お手伝いします。",
         "filePath": "asset\\asset\\sound\\voice\\c300_true1.ogg"
       },
       "true2": {
-        "text": "そろそろ私を認める気になったのではないでしょうか？",
+        "text": "そろそろ私を認める気になったのでは\\ないでしょうか？",
         "filePath": "asset\\asset\\sound\\voice\\c300_true2.ogg"
       },
       "true3": {
@@ -21132,10 +21824,10 @@
       }
     },
     "favors": {
-      "interest": "難しい任務に\\なりそうですね",
-      "like": "いいですね！\\可能性を感じます！",
-      "love": "必ず魔王にして\\あげましょう",
-      "profile": "ハーレム街最高の解決師と魔王争奪戦史上最も弱い悪魔が出会った。\\失った名誉を回復するために主人公を魔王にすると誓った契約者。そんな契約者の意志を受け継いだチャイルド、ピエタス。\\一度引き受けた任務は命懸けで完遂するため信義の女神《ピエタス》の名を借り受けた。\\戦闘だけではなく、すべてのことを完璧に成し遂げるピエタス。そんな彼女でも主人公を魔王にすることは容易ではないだろう。"
+      "interest": "難しい依頼ですね",
+      "like": "可能性を感じます！",
+      "love": "必ず魔王にして\\みせます！",
+      "profile": "失った名誉を取り戻すため主人公と契約した、ハーレム街最高の\\解決師がいた。\\そんな契約者から生まれたのがチャイルド、ピエタスだ。\\引き受けた依頼は命懸けで完遂するため、彼女は信義の女神\\《ピエタス》の名を借り受けた。\\完璧主義者の彼女でも主人公を魔王にすることは容易ではない。"
     }
   },
   "c301": {
@@ -22119,56 +22811,136 @@
   },
   "c315": {
     "variants": {
+      "10": {
+        "title": "礼装紳士 メトセラ",
+        "description": "メトセラの格式高いインバネスコート。",
+        "name": "福島潤"
+      },
+      "89": {
+        "title": "礼装紳士 メトセラ",
+        "description": "メトセラの格式高いインバネスコート。",
+        "name": "福島潤",
+        "voices": {
+          "boss_long": {
+            "text": "私に勝てますか？",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "弱そうなヤツらですね～",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "生き残りたくないのですか？",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_prskill.ogg"
+          },
+          "skill": {
+            "text": "いらっしゃいませ～！",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_skill.ogg"
+          },
+          "ctskill": {
+            "text": "ショ～タ～イムッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "メトセラは…死なない…\\グハッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_death_1.ogg"
+          },
+          "death_2": {
+            "text": "まさかっ！\\この私が～っ！",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_death_2.ogg"
+          },
+          "drive": {
+            "text": "さぁ！生まれ変わりましょう！！",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_drive.ogg"
+          },
+          "hit_1": {
+            "text": "ふ～ん…",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "ふっ…ふふっ…",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "この程度ですか？",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "面倒ですね。",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "うッ…",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "はぁ…",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "醜いですね。",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "邪魔です。",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "黙ってください。",
+            "filePath": "asset\\asset\\sound\\voice\\c315_89_hit_9.ogg"
+          }
+        }
+      },
       "01": {
         "title": "錬金術師 メトセラ",
-        "description": "メトセラのカジュアルコート。\\旅行に最適。",
+        "description": "悪魔式錬金術研究所を創設したメトセラのコート。",
         "name": "福島潤"
       },
       "02": {
         "title": "探求者 メトセラ",
-        "description": "メトセラの旅行用コート。",
+        "description": "悪魔の真の姿を探し求めるメトセラのコート。",
         "name": "福島潤"
       }
     },
     "voices": {
       "boss_long": {
-        "text": "いらっしゃいませ、《リバースラビリンス》で～す！",
+        "text": "よ～こそ～っ！\\Re:birth LABへ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_boss_long.ogg"
       },
       "boss_short": {
-        "text": "いらっしゃいませ、お客様～！",
+        "text": "いらっしゃいませ、お客様。",
         "filePath": "asset\\asset\\sound\\voice\\c315_boss_short.ogg"
       },
       "ctskill": {
-        "text": "楽しいショータイム！",
+        "text": "ショ～タ～イムッ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_ctskill.ogg"
       },
       "death_1": {
-        "text": "《メトセラは死なない…》",
+        "text": "メトセラは…死なない…\\グハッ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_death_1.ogg"
       },
       "death_2": {
-        "text": "ちいっ…",
+        "text": "まさかっ！\\この私が～っ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_death_2.ogg"
       },
       "drive": {
-        "text": "再誕の時。",
+        "text": "さぁ！\\生まれ変わりましょう！！",
         "filePath": "asset\\asset\\sound\\voice\\c315_drive.ogg"
       },
       "hit_1": {
-        "text": "なんだ？",
+        "text": "チッ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_hit_1.ogg"
       },
       "hit_2": {
-        "text": "ちっ…",
+        "text": "うううっ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_hit_2.ogg"
       },
       "hit_3": {
-        "text": "くうっ…",
+        "text": "ぐわッ！",
         "filePath": "asset\\asset\\sound\\voice\\c315_hit_3.ogg"
       },
       "prskill": {
-        "text": "こっちだよ、ハニ～",
+        "text": "どうです？\\この美しさ。",
         "filePath": "asset\\asset\\sound\\voice\\c315_prskill.ogg"
       },
       "skill": {
@@ -22176,47 +22948,47 @@
         "filePath": "asset\\asset\\sound\\voice\\c315_skill.ogg"
       },
       "spa": {
-        "text": "くくっ…私と一緒で光栄でしょう？",
+        "text": "うっふふっ…\\私と湯舟につかれるなんて、うれしいでしょう？",
         "filePath": "asset\\asset\\sound\\voice\\c315_spa.ogg"
       },
       "startbt": {
-        "text": "本日もお越しいただきありがとうございます。",
+        "text": "お越しいただき、ありがとうございます！",
         "filePath": "asset\\asset\\sound\\voice\\c315_startbt.ogg"
       },
       "story1": {
-        "text": "今日も素敵な一日だよね？\\僕は…あなたに出会ってうれしい。\\く…くく…くくくっ！今日も素晴らしい顔だな。\\メトセラ、かっこよさのほかの名前よ！",
+        "text": "ボタンさんの意見により、今月は\\《ギャンブル禁止月間》としましょう。",
         "filePath": "asset\\asset\\sound\\voice\\c315_story1.ogg"
       },
       "story2": {
-        "text": "これはこれは、ランフェイ姉様～\\このかっこいい顔に免じて1週間ぐらいいただけませんか～！",
+        "text": "そんなお前のことを永遠に覚えておこう。\\お前の名が色あせぬように。",
         "filePath": "asset\\asset\\sound\\voice\\c315_story2.ogg"
       },
       "story3": {
-        "text": "醜さのどこか、\\欲望のどん底から真の姿を引き出せる手段…\\あなたと私なら必ず探し出せると思います。",
+        "text": "私とあなただけですよ。\\ボタン…\\お互いを理解できる唯一無二の存在は。",
         "filePath": "asset\\asset\\sound\\voice\\c315_story3.ogg"
       },
       "true1": {
-        "text": "私の名前はメトセラ。年はまあ、ちょっとあります…はははっ！ボタンと200年間一緒に仕事してます。",
+        "text": "私の名前はメトセラ。\\歳はまぁ、結構取っていますよ。\\はっはっはっはっはっはっはっはっ！\\ああ、ボタンさんとは200年来の友人です。",
         "filePath": "asset\\asset\\sound\\voice\\c315_true1.ogg"
       },
       "true2": {
-        "text": "お客様が魔王になったら、僕も偉くなれますかね？\\ふふっ、冗談です。冗談。",
+        "text": "お客様が魔王になったら、私もそれなりの\\地位につけますよね～？\\あっはっはっはっ、冗談です。\\冗談…",
         "filePath": "asset\\asset\\sound\\voice\\c315_true2.ogg"
       },
       "true3": {
-        "text": "私は魔王みたいなつまらない目標に命を投げ出したくないです。逆に魔王はモナさんみたいなはっきりしている女性がやるほうがよさそうですね。",
+        "text": "魔王争奪戦のようなくだらないことに\\命を賭けたくありません。\\もっと大事なことがありますから。",
         "filePath": "asset\\asset\\sound\\voice\\c315_true3.ogg"
       },
       "victory": {
-        "text": "戦うのは性に合わない。",
+        "text": "戦いには向かなかったようですね～",
         "filePath": "asset\\asset\\sound\\voice\\c315_victory.ogg"
       }
     },
     "favors": {
-      "interest": "さて、営業を開始するには？",
-      "like": "何か必要ですか？",
-      "love": "至極の美しさを探そうと。",
-      "profile": "欲しい物があれば言ってください！あなたに最も必要な物を届けましょう。\\直感の鋭さなら、他の追従を許さない悪魔界のカリスマ、メトセラ。\\魔王争奪戦が始まったと聞いて、慌てて人間界にやってきた悪魔を相手に商売を始める。\\しかし、人間界はいつの間にこんなに殺伐としているのやら…\\夜の世界の実力者ランフェイは何だか怖い…"
+      "interest": "いらっしゃいませ～！",
+      "like": "どんな姿に\\なりたいですか？",
+      "love": "究極の美しさとは…",
+      "profile": "鋭いセンスで他の追随を許さない魔界のカリスマ、メトセラ。\\彼はパートナーのボタンと共に、悪魔の真の姿を探求する\\悪魔式錬金術研究所《Re:birth LAB》を創設する。\\魔王争奪戦が始まると、人間界で悪魔相手に商売を始める。"
     }
   },
   "c316": {
@@ -23139,6 +23911,188 @@
       "profile": "かつて、《祓魔師アジア支部》からスカウトされた、\\才能溢れる若き祓魔師。スカウト後、すぐに脱走し\\自分の力を金儲けのために使っている\\そのため、厳しい戒律を守る正統派の祓魔師たちからは、\\異端児扱いされている。\\現在、数名の祓魔師がガネーシャを逆賊として追跡しているが、\\ガネーシャ本人は全く気にしておらず、追手から適当に逃げ回り\\自分の快楽のためだけに生きている。"
     }
   },
+  "c333": {
+    "variants": {
+      "88": {
+        "title": "箱入り娘 デボラ",
+        "description": "主の御名を冒涜したわね！\\私が許すとでも思って？",
+        "name": "立花芽恵夢",
+        "voices": {
+          "boss_long": {
+            "text": "礼儀を知らないヤツらね！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "ホントにみにくいヤツらね！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "主をたたえよ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_prskill.ogg"
+          },
+          "skill": {
+            "text": "ビビってるの！ふふっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_skill.ogg"
+          },
+          "ctskill": {
+            "text": "面倒ねっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "こんな死に方…\\ありえないわ…",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_death_1.ogg"
+          },
+          "death_2": {
+            "text": "覚えて…おきなさい…",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_death_2.ogg"
+          },
+          "drive": {
+            "text": "浄化してあげるわっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_drive.ogg"
+          },
+          "hit_1": {
+            "text": "かかってきなさい。",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "覚えておきなさい！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "どいて！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "目障りねっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "ふんっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "あっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "キャッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "やるわね～",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "ふふっ。",
+            "filePath": "asset\\asset\\sound\\voice\\c333_88_hit_9.ogg"
+          }
+        }
+      },
+      "00": {
+        "title": "見習い祓魔師 デボラ",
+        "description": "由緒ある祓魔師一族の7人兄弟姉妹の末っ子。",
+        "name": "立花芽恵夢"
+      },
+      "01": {
+        "title": "祓魔師 デボラ",
+        "description": "気難しいデボラに相応しいバトルドレス。",
+        "name": "立花芽恵夢"
+      },
+      "02": {
+        "title": "箱入り娘 デボラ",
+        "description": "高貴なデボラのための特注バトルドレス。",
+        "name": "立花芽恵夢"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "私に歯向かうつもり？",
+        "filePath": "asset\\asset\\sound\\voice\\c333_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "大したことなさそうね。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "面倒ねっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "こんな死に方…\\ありえないわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c333_death_1.ogg"
+      },
+      "death_2": {
+        "text": "覚えて…おきなさい…",
+        "filePath": "asset\\asset\\sound\\voice\\c333_death_2.ogg"
+      },
+      "drive": {
+        "text": "浄化してあげるわっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ふざけないで。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "ふわっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "ムカつくわねっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "浄化ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_prskill.ogg"
+      },
+      "skill": {
+        "text": "バカねっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_skill.ogg"
+      },
+      "spa": {
+        "text": "ふ～っ、いい湯だわ～\\な～に？その顔？\\私が嘘をついてるとでも？",
+        "filePath": "asset\\asset\\sound\\voice\\c333_spa.ogg"
+      },
+      "startbt": {
+        "text": "邪魔しないで。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_startbt.ogg"
+      },
+      "story1": {
+        "text": "私だって、もうあなたと一緒にいたくないわよ。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_story1.ogg"
+      },
+      "story2": {
+        "text": "私ひとりでも、なんとかなるはずよ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_story2.ogg"
+      },
+      "story3": {
+        "text": "はぁ…\\先生の声を聞いたら気持ちが楽になったわ。\\先生に会いたい…",
+        "filePath": "asset\\asset\\sound\\voice\\c333_story3.ogg"
+      },
+      "true1": {
+        "text": "私の名前はデボラ。\\この世で最も偉大な祓魔師の名よ。\\だから…あまり呼ばないでね。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_true1.ogg"
+      },
+      "true2": {
+        "text": "祓魔師の力なんて所詮生まれついての才能よっ！\\ま、努力も大事だけどねっ！\\うっふふふっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c333_true2.ogg"
+      },
+      "true3": {
+        "text": "先生は努力を怠るなって言ってたわ。\\私にはわからないけど…\\先生の教えには従うわ。",
+        "filePath": "asset\\asset\\sound\\voice\\c333_true3.ogg"
+      },
+      "victory": {
+        "text": "気に入ったわ！",
+        "filePath": "asset\\asset\\sound\\voice\\c333_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "私に会うなんて\\ホント不幸な悪魔ね",
+      "like": "私が相手よ！\\ありがたく思いなさい！",
+      "love": "悔い改めたら\\許してあげるかもね！",
+      "profile": "由緒ある祓魔師一族の末っ子として生まれたデボラ。\\一族の光栄は彼女のプライドそのもの。\\何ひとつ不自由なく育った世間知らずのお嬢様。\\そんな彼女にも辛いことがある。\\それは、偉大な一族に相応しい祓魔師になることと\\意地悪な姉や兄の存在である。"
+    }
+  },
   "c336": {
     "variants": {
       "01": {
@@ -23636,6 +24590,11 @@
           }
         }
       },
+      "88": {
+        "title": "ノヴァ イゾルデ",
+        "description": "ホットサマー、ロックオン！\\あなたのハートを狙い撃つイゾルデのサマービキニ。",
+        "name": ""
+      },
       "89": {
         "title": "サマースパイク イゾルデ",
         "description": "耐えられる？！イゾルデの挑戦状！\\ファイナルスパイクイゾルデ！",
@@ -23813,6 +24772,16 @@
   },
   "c345": {
     "variants": {
+      "88": {
+        "title": "ギャンブラー アネモネ",
+        "description": "ラグジュアリーに着飾ったアネモネのレースビキニ。",
+        "name": ""
+      },
+      "89": {
+        "title": "サンライズ アネモネ",
+        "description": "夏の砂浜に輝く太陽、アネモネの白いラッシュガード。",
+        "name": ""
+      },
       "01": {
         "title": "真夏の アネモネ",
         "description": "流行の最先端！紫外線から肌を守る、\\アネモネのラッシュガードファッション。",
@@ -24203,12 +25172,12 @@
     "variants": {
       "10": {
         "title": "スウィートラブ マーズ",
-        "description": "あま～い愛をあなたにあげる♥\\マーズのスペシャルライブ衣装",
+        "description": "あま～い愛をあなたにあげる♥\\マーズのスペシャルライブ衣装。",
         "name": "和氣あず未"
       },
       "00": {
         "title": "研修生 マーズ",
-        "description": "マーズの研修生時代の衣装",
+        "description": "マーズの研修生時代の衣装。",
         "name": "和氣あず未"
       },
       "01": {
@@ -25418,6 +26387,381 @@
       "like": "煩悩を捨て、このマアトの\\福音を聞きなさい。",
       "love": "被造物のお仕事は、毎日\\楽しく生きる事ですよ～！",
       "profile": "安らぎを得るために神に祈りを捧げた少女。しかし、祈りは空虚な木霊となって戻るだけ。少女は結局悪魔の手を取り、やがてその魂は徐々に荒んでゆく。\\もう信じられることは何もない。悪魔も、神も全ては作り物。\\彼女は信仰を投げ捨て、自ら神になることを決意した。\\私の言葉こそ神の言葉。私の意志こそ神の意志。故に、寒い朝布団から出れなくても、ダラダラしながらミカンばかり食べていても、マアトの意志であれば、それは正しい行いで間違いはない。だって神様なんだもん！"
+    }
+  },
+  "c362": {
+    "variants": {
+      "10": {
+        "title": "メイド レオ",
+        "description": "こんにちは！インキュバス…\\じゃなくてサキュバスの…レオです。",
+        "name": "榊原優希",
+        "voices": {
+          "boss_long": {
+            "text": "イブ様～どこですか～？",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "イブ様～？イブ様～？",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "これくらいなら…！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "イブ…様…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_death_1.ogg"
+          },
+          "death_2": {
+            "text": "しまった…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_death_2.ogg"
+          },
+          "drive": {
+            "text": "が、がんばりますっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_drive.ogg"
+          },
+          "hit_1": {
+            "text": "うわっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "痛いっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "うっ…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "やぁ～っ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_prskill.ogg"
+          },
+          "skill": {
+            "text": "任せてください！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_skill.ogg"
+          },
+          "spa": {
+            "text": "はぁ～っ！す、す、す…すみません！\\あれ？貸し切りじゃなかったっけ？\\今、出ますね～",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_spa.ogg"
+          },
+          "startbt": {
+            "text": "ついてきてくださ～い！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_startbt.ogg"
+          },
+          "story1": {
+            "text": "イブ様と僕の助けが必要な時は\\よろしくお願いします！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_story1.ogg"
+          },
+          "story2": {
+            "text": "ほしい物があれば僕が用意します。\\もっと強いインキュバスがほしいなら\\努力します！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_story2.ogg"
+          },
+          "story3": {
+            "text": "イブ様と一緒に行く道ですが、新しい道を\\歩いてもいいじゃないですか？",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_story3.ogg"
+          },
+          "true1": {
+            "text": "こんにちは、イブ様のサポーター、レオです！\\イブ様からお話はたくさん聞いています。\\これからよろしくお願いします！えへへ…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_true1.ogg"
+          },
+          "true2": {
+            "text": "イブ様は僕に勇気があるとおっしゃいましたが、\\それは単に僕を励ますためでしょう。\\イブ様は優しい方ですから。",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_true2.ogg"
+          },
+          "true3": {
+            "text": "えっ？僕の話をしてくれって？困ったなぁ…\\じゃ、じゃあまずは自己紹介から…\\あ…もうやりましたね。えっ、だから…\\え～と、どうしたらいいのかな…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_true3.ogg"
+          },
+          "victory": {
+            "text": "何もおかしなことはなかったですよね？",
+            "filePath": "asset\\asset\\sound\\voice\\c362_10_victory.ogg"
+          }
+        }
+      },
+      "11": {
+        "voices": {
+          "boss_long": {
+            "text": "甘く見ないでください！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "がんばります、イブ様！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "負けるわけには！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "また戻りますね……",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_death_1.ogg"
+          },
+          "death_2": {
+            "text": "イブ様に達するでしょう！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_death_2.ogg"
+          },
+          "drive": {
+            "text": "習ったとおりにすれば！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_drive.ogg"
+          },
+          "hit_1": {
+            "text": "落ち着いて！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "話し合いましょう！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "怒りますよ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "危ないですよ！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_prskill.ogg"
+          },
+          "skill": {
+            "text": "こうすれば！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_skill.ogg"
+          },
+          "spa": {
+            "text": "気持ちがいいとイブ様を思い出します。\\またどこかで道に迷っているかも～",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_spa.ogg"
+          },
+          "startbt": {
+            "text": "イブ様～！\\返事してくださ～い！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_startbt.ogg"
+          },
+          "story1": {
+            "text": "イブ様と僕の助けが必要な時は\\よろしくお願いします！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_story1.ogg"
+          },
+          "story2": {
+            "text": "ほしい物があれば僕が用意します。\\もっと強いインキュバスがほしいなら\\努力します！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_story2.ogg"
+          },
+          "story3": {
+            "text": "イブ様と一緒に行く道ですが、新しい道を\\歩いてもいいじゃないですか？",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_story3.ogg"
+          },
+          "true1": {
+            "text": "イブ様のいじわる…\\僕に黙って出かけるなんて～！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_true1.ogg"
+          },
+          "true2": {
+            "text": "僕もモナ様やリザ様のように立派なサポーターに\\なりたいです。\\そうすればいつかイブ様が褒めてくれるから…\\えへへ…",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_true2.ogg"
+          },
+          "true3": {
+            "text": "僕の夢は最高のサポーターになることでした。\\でも今は、イブ様の力になりたいだけです。",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_true3.ogg"
+          },
+          "victory": {
+            "text": "イブ様には、やっぱり僕が一番です！",
+            "filePath": "asset\\asset\\sound\\voice\\c362_11_victory.ogg"
+          }
+        }
+      },
+      "01": {
+        "title": "やさしい レオ",
+        "description": "かばんの中身はガラクタだらけ。\\レオの普段着。",
+        "name": "榊原優希"
+      },
+      "02": {
+        "title": "インキュバス レオ",
+        "description": "戦いに自信はない。\\臆病なレオのバトルコート。",
+        "name": "榊原優希"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "イブ様～どこですか～？",
+        "filePath": "asset\\asset\\sound\\voice\\c362_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "イブ様～？イブ様～？",
+        "filePath": "asset\\asset\\sound\\voice\\c362_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "これくらいなら…！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "イブ…様…",
+        "filePath": "asset\\asset\\sound\\voice\\c362_death_1.ogg"
+      },
+      "death_2": {
+        "text": "しまった…",
+        "filePath": "asset\\asset\\sound\\voice\\c362_death_2.ogg"
+      },
+      "drive": {
+        "text": "が、がんばりますっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_drive.ogg"
+      },
+      "hit_1": {
+        "text": "うわっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "痛いっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "うっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c362_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "やぁ～っ！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_prskill.ogg"
+      },
+      "skill": {
+        "text": "任せてください！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_skill.ogg"
+      },
+      "spa": {
+        "text": "はぁ～っ！\\す、す、す…すみません！\\あれ？貸し切りじゃなかったっけ～？\\今、出ますね～！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_spa.ogg"
+      },
+      "startbt": {
+        "text": "ついてきてくださ～い！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_startbt.ogg"
+      },
+      "story1": {
+        "text": "イブ様と僕の助けが必要な時は\\よろしくお願いします！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_story1.ogg"
+      },
+      "story2": {
+        "text": "ほしい物があれば僕が用意します。\\もっと強いインキュバスがほしいなら\\努力します！",
+        "filePath": "asset\\asset\\sound\\voice\\c362_story2.ogg"
+      },
+      "story3": {
+        "text": "イブ様と一緒に行く道ですが、新しい道を\\歩いてもいいじゃないですか？",
+        "filePath": "asset\\asset\\sound\\voice\\c362_story3.ogg"
+      },
+      "true1": {
+        "text": "こんにちは、イブ様のサポーター、レオです！\\イブ様からお話はたくさん聞いています。\\これからよろしくお願いします！えへへ…",
+        "filePath": "asset\\asset\\sound\\voice\\c362_true1.ogg"
+      },
+      "true2": {
+        "text": "イブ様は僕に勇気があるとおっしゃいましたが、\\それは単に僕を励ますためでしょう。\\イブ様は優しい方ですから。",
+        "filePath": "asset\\asset\\sound\\voice\\c362_true2.ogg"
+      },
+      "true3": {
+        "text": "えっ？僕の話をしてくれって？困ったなぁ…\\じゃ、じゃあまずは自己紹介から…\\あ…もうやりましたね。えっ、だから…\\え～と、どうしたらいいのかな…",
+        "filePath": "asset\\asset\\sound\\voice\\c362_true3.ogg"
+      },
+      "victory": {
+        "text": "何もおかしなことはなかったですよね？",
+        "filePath": "asset\\asset\\sound\\voice\\c362_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "イブ様の友達ですよね？",
+      "like": "よろしくお願いします！",
+      "love": "イブ様がOKなら\\僕もOKです！",
+      "profile": "やさしいイブのサポーター、インキュバスのレオ。\\自信がなく、いつも周りに流されているように見えるが\\任されたことは必ずやり遂げる真面目な性格。\\自分を救ってくれたイブのことばかり考えている。"
+    }
+  },
+  "c363": {
+    "variants": {
+      "01": {
+        "title": "怪盗 ルパン",
+        "description": "怪盗ルパンの妖艶なコスチューム。",
+        "name": "大地葉"
+      },
+      "02": {
+        "title": "ムードメーカー ルパン",
+        "description": "ムードメーカールパンのきわどすぎるコスチューム。",
+        "name": "大地葉"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "え～と…宝物はどこ？",
+        "filePath": "asset\\asset\\sound\\voice\\c363_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "次の挑戦者は誰っ？",
+        "filePath": "asset\\asset\\sound\\voice\\c363_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "そこよっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "失敗ね…\\あっははっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c363_death_1.ogg"
+      },
+      "death_2": {
+        "text": "また…今度ね…",
+        "filePath": "asset\\asset\\sound\\voice\\c363_death_2.ogg"
+      },
+      "drive": {
+        "text": "もう手遅れよっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_drive.ogg"
+      },
+      "hit_1": {
+        "text": "アイタッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "やるわね。",
+        "filePath": "asset\\asset\\sound\\voice\\c363_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "うっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "お宝は私の物よ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_prskill.ogg"
+      },
+      "skill": {
+        "text": "無視しないで！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_skill.ogg"
+      },
+      "spa": {
+        "text": "ホントにいいところね～\\ローガン様も呼びた～い！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_spa.ogg"
+      },
+      "startbt": {
+        "text": "かかってきなさ～い！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_startbt.ogg"
+      },
+      "story1": {
+        "text": "うふっ。\\狙った獲物は逃さない！\\それが怪盗PHAN+ICよ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_story1.ogg"
+      },
+      "story2": {
+        "text": "怪盗PHAN+ICの名に相応しい、有名な物を\\探すのよっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_story2.ogg"
+      },
+      "story3": {
+        "text": "渡さないなら盗むだけよっ！\\今夜のターゲットは悪魔の大事なゲーム機で\\決まりねっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_story3.ogg"
+      },
+      "true1": {
+        "text": "えっ?\\怪盗なんて興味ない？\\うっふっふっふっ…\\そんなこと言ってると後悔するわよ。",
+        "filePath": "asset\\asset\\sound\\voice\\c363_true1.ogg"
+      },
+      "true2": {
+        "text": "当たり前でしょ～！\\怪盗PHAN+ICに盗めぬ物なしっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_true2.ogg"
+      },
+      "true3": {
+        "text": "悪魔なのに欲望がないなんて…\\あなた大丈夫？\\ホントに協力できるの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c363_true3.ogg"
+      },
+      "victory": {
+        "text": "ミッションコンプリートッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c363_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "ローガン様の選択なら\\信じるしか！",
+      "like": "やってみなくちゃ\\わからないわ！",
+      "love": "やるじゃない？\\私たち気が合いそうね！",
+      "profile": "かつて怪盗として活動していたチャイルド《ルパン》\\とはいえ、盗むのは自分の実力を誇る手段に過ぎない。\\どんなに厳重な警備であろうと突破し、宝物を盗み\\数日後、元の場所に戻すことを楽しんでいたルパン。\\怪盗としての名声を上げた彼女はある日、とある富豪の宝物を\\盗もうとしたが、まんまと捕まってしまう。\\実はその富豪の正体は人間ではなく悪魔ローガン。\\ローガンはルパンを怪盗PHAN+ICに誘うのであった。"
     }
   },
   "c364": {
@@ -26900,7 +28244,7 @@
     "variants": {
       "00": {
         "title": "葛城 冬花",
-        "description": "",
+        "description": "離婚により別れた母との再会を不安がる少女。",
         "name": "ユキカ"
       },
       "01": {
@@ -27102,7 +28446,7 @@
       "interest": "契約の誠実な履行…\\それが私の願い",
       "like": "マスター…\\あなたは優しい方だ",
       "love": "全力をもって、\\あなたをお守りします…",
-      "profile": "契約者・葛城冬花の欲望から生まれたチャイルド。\\冬花の表向きの性格と似て、真面目で大人しく、\\周囲対して一定の距離を保ちつつ、優しく振る舞う。\\冬花への同調が強く、冬花が傷つくことを避け、\\辛い現実に向き合い傷つくよりも、優しい嘘で守られる\\ことを望んでいる。\\ただ、契約者の平穏を脅かすものは全て敵と判断し、\\”今”を守ろうとする。"
+      "profile": "契約者・葛城冬花の欲望から生まれたチャイルド。\\冬花の表向きの性格と似て、真面目で大人しく、\\周囲に対して一定の距離を保ちつつ、優しく振る舞う。\\冬花への同調が強く、冬花が傷つくことを避け、\\辛い現実に向き合い傷つくよりも、優しい嘘で守られる\\ことを望んでいる。\\ただ、契約者の平穏を脅かすものは全て敵と判断し、\\”今”を守ろうとする。"
     }
   },
   "c381": {
@@ -27201,7 +28545,7 @@
       }
     },
     "favors": {
-      "interest": "ハロー！\\スウィーティ～",
+      "interest": "こんにちは！\\悪魔様～",
       "like": "運命って…\\本当にあるのかな？",
       "love": "気になりませんか？\\私たちの運命について…",
       "profile": "愛を理解したい《シトリー》は、自身の作った愛のキャンディを使い恋に落ちた人々を観察する趣味を持つ。\\しかし《トート》は、そんなやり方で相手の心を弄ぶのは卑劣な行為だと《シトリー》を非難する。\\一方、海での夏休みを計画する主人公と彼のチャイルドたち。\\《シトリー》と《トート》はこの機会に愛のキャンディを使わずに正攻法で主人公の心を掴もうとするのだが…"
@@ -28217,12 +29561,12 @@
     "variants": {
       "01": {
         "title": "パーティスター メブ",
-        "description": "最大魔力を解放したスリープドレス",
+        "description": "最大魔力を解放したスリープドレス。",
         "name": "内田彩"
       },
       "02": {
         "title": "パーティナイト メブ",
-        "description": "ハロウィンの夜を盛り上げるメブのお祭り衣装",
+        "description": "ハロウィンの夜を盛り上げるメブのお祭り衣装。",
         "name": "内田彩"
       }
     },
@@ -28874,12 +30218,12 @@
     "variants": {
       "01": {
         "title": "謎の転校生 イブ",
-        "description": "見よう見まねで作った有名私立高校の制服",
+        "description": "見よう見まねで作った有名私立高校の制服。",
         "name": "石川由依"
       },
       "02": {
         "title": "ピンクブレザー イブ",
-        "description": "イブにぴったり似合うブレザージャケット",
+        "description": "イブにぴったり似合うブレザージャケット。",
         "name": "石川由依"
       }
     },
@@ -30549,6 +31893,272 @@
       }
     }
   },
+  "c412": {
+    "variants": {
+      "88": {
+        "title": "異端審問官 カイン",
+        "description": "祓魔師協会より与えられし異端審問官の装束。",
+        "name": "土田玲央",
+        "voices": {
+          "boss_long": {
+            "text": "殉教者の血によって汝に命じる。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "主よ、慈悲を施したまえ。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "我々のためにお祈りください。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_prskill.ogg"
+          },
+          "skill": {
+            "text": "我が祈りを聞き入れたまえ。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_skill.ogg"
+          },
+          "ctskill": {
+            "text": "どうかお許しください…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "主よ…罪人が戻ります…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_death_1.ogg"
+          },
+          "death_2": {
+            "text": "慈悲を…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_death_2.ogg"
+          },
+          "drive": {
+            "text": "この上なく高貴な方が命じる…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_drive.ogg"
+          },
+          "hit_1": {
+            "text": "最初のように…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "いっ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "ゴフッ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "退け！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "小細工を弄するとは…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "チッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "我を許したまえ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "消えろ、悪魔…！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "もう…！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_88_hit_9.ogg"
+          }
+        }
+      },
+      "89": {
+        "title": "祓魔師 カイン",
+        "description": "祓魔師協会より与えられし神父の装束。",
+        "name": "土田玲央",
+        "voices": {
+          "boss_long": {
+            "text": "殉教者の血によって汝に命じる。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "主よ、慈悲を施したまえ。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "我々のためにお祈りください。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_prskill.ogg"
+          },
+          "skill": {
+            "text": "我が祈りを聞き入れたまえ。",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_skill.ogg"
+          },
+          "ctskill": {
+            "text": "どうかお許しください…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "主よ…罪人が戻ります…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_death_1.ogg"
+          },
+          "death_2": {
+            "text": "慈悲を…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_death_2.ogg"
+          },
+          "drive": {
+            "text": "この上なく高貴な方が命じる…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_drive.ogg"
+          },
+          "hit_1": {
+            "text": "最初のように…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "いっ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "ゴフッ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "退け！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "小細工を弄するとは…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "チッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "我を許したまえ…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "消えろ、悪魔…",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "もう…！",
+            "filePath": "asset\\asset\\sound\\voice\\c412_89_hit_9.ogg"
+          }
+        }
+      },
+      "00": {
+        "title": "司祭 カイン",
+        "description": "祓魔師協会バチカン本部の司祭。",
+        "name": "土田玲央"
+      },
+      "01": {
+        "title": "祓魔師 カイン",
+        "description": "祓魔師協会より与えられし神父の装束。",
+        "name": "土田玲央"
+      },
+      "02": {
+        "title": "異端審問官 カイン",
+        "description": "祓魔師協会より与えられし異端審問官の装束。",
+        "name": "土田玲央"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "魂を導きたまえ。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "憐れみたまえ。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "どうかお許しください…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "主よ…罪人が戻ります…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_death_1.ogg"
+      },
+      "death_2": {
+        "text": "慈悲を…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_death_2.ogg"
+      },
+      "drive": {
+        "text": "我は主の使いなり！",
+        "filePath": "asset\\asset\\sound\\voice\\c412_drive.ogg"
+      },
+      "hit_1": {
+        "text": "はぁ…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "ぐっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "…うぐっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c412_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "主は仰せである！",
+        "filePath": "asset\\asset\\sound\\voice\\c412_prskill.ogg"
+      },
+      "skill": {
+        "text": "主の声を聞け！",
+        "filePath": "asset\\asset\\sound\\voice\\c412_skill.ogg"
+      },
+      "spa": {
+        "text": "サタンの誘惑に惑わされない勇気を\\お与えください…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_spa.ogg"
+      },
+      "startbt": {
+        "text": "主よ、お守りください。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_startbt.ogg"
+      },
+      "story1": {
+        "text": "我々をお許しください、主よ。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_story1.ogg"
+      },
+      "story2": {
+        "text": "すべての創造物には役割がある。\\これが主の意思ならば、私はそれに従うだけだ。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_story2.ogg"
+      },
+      "story3": {
+        "text": "あらゆる過ちを正す時間だ。\\主は言った。\\《塵にすぎないお前は塵に返る》と…",
+        "filePath": "asset\\asset\\sound\\voice\\c412_story3.ogg"
+      },
+      "true1": {
+        "text": "アベル、お前か？\\ついに私を許してくれるのか？\\おかしい…お前は死んだのに。\\ふっ、どうやら私は悪い夢を見ているらしい。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_true1.ogg"
+      },
+      "true2": {
+        "text": "おはよう、アベル。\\今日は長い1日になりそうだ。\\お前はいつも無茶をするから…\\大変なことがあったら、いつでも言ってくれ。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_true2.ogg"
+      },
+      "true3": {
+        "text": "ああ、アベル。今日も夢を見た…毎日同じ夢だ。\\私の手でお前を殺して、私は生き残り…\\そしてあの方の声が聞こえるんだ。\\カイン、とうとう私の声が聞こえるのか、と。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_true3.ogg"
+      },
+      "victory": {
+        "text": "主よ、感謝します。",
+        "filePath": "asset\\asset\\sound\\voice\\c412_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "主よ…\\あわれみたまえ…",
+      "like": "主よ…\\慈悲を与えたまえ…",
+      "love": "主よ…\\聖なる御言葉を…",
+      "profile": "世界中に信仰を伝える誠実な司祭。\\その正体は祓魔師協会バチカン支部の異端審問官。\\悪魔と戦う際は誰よりも残酷だと言われるが\\普段は笑顔を絶やさない穏やかな性格。\\弟のアベルと仲が良い。"
+    }
+  },
+  "c413": {
+    "variants": {
+      "00": {
+        "title": "アベル",
+        "description": "",
+        "name": "新田杏樹"
+      }
+    }
+  },
   "c414": {
     "variants": {
       "10": {
@@ -31036,7 +32646,7 @@
     "variants": {
       "89": {
         "title": "九尾の狐 タマモ",
-        "description": "",
+        "description": "妾を襲うとは生意気なヤツめ！",
         "name": "福原綾香",
         "voices": {
           "boss_long": {
@@ -31772,6 +33382,159 @@
       "profile": "二人のキャサリンの間で翻弄されるヴィンセントにとっての\\癒やしの存在となる3人目のキャサリン。\\何者かに追われているところをヴィンセントに助けられる。\\何やら込み入った事情を抱えているようだが、\\名前以外の記憶を失っている。"
     }
   },
+  "c422": {
+    "variants": {
+      "88": {
+        "title": "母なる ヘケト",
+        "description": "あら～そこの一緒に少子化問題を解決しませんか～？",
+        "name": "山岡ゆり",
+        "voices": {
+          "boss_long": {
+            "text": "お手柔らかにお願いね♥",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "待ちくたびれちゃった～",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_boss_short.ogg"
+          },
+          "hit_1": {
+            "text": "結構やるのね。",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "キライにならないで～",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "あら？",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "びっくりした～！",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "ふぅ～ん？",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "うふふ♥",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "結構丈夫でしょ？",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "積極的なんだから♥",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "も～落ち着いて。",
+            "filePath": "asset\\asset\\sound\\voice\\c422_88_hit_9.ogg"
+          }
+        }
+      },
+      "01": {
+        "title": "誘惑する ヘケト",
+        "description": "世の男性を誘惑するヘケトのドレス。",
+        "name": "山岡ゆり"
+      },
+      "02": {
+        "title": "母なる ヘケト",
+        "description": "人類の繁栄を願う母なるヘケトのドレス。",
+        "name": "山岡ゆり"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "あんまり嫌いにならないでね～？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "ほら～正直になって～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c422_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "逃げないで！",
+        "filePath": "asset\\asset\\sound\\voice\\c422_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "断られるのって、いつも辛いよね…",
+        "filePath": "asset\\asset\\sound\\voice\\c422_death_1.ogg"
+      },
+      "death_2": {
+        "text": "うはぁ…",
+        "filePath": "asset\\asset\\sound\\voice\\c422_death_2.ogg"
+      },
+      "drive": {
+        "text": "ぎゅ～って抱きしめてあげる♥",
+        "filePath": "asset\\asset\\sound\\voice\\c422_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ううっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c422_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "きゃ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c422_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "優しくしてよ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c422_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "愛が欲しいの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_prskill.ogg"
+      },
+      "skill": {
+        "text": "チュッ♥",
+        "filePath": "asset\\asset\\sound\\voice\\c422_skill.ogg"
+      },
+      "spa": {
+        "text": "悪魔くんって本当に面白いよね～\\わたしのこと苦手だって言うくせに\\なんでこんな点数稼ぎみたいなことをするの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_spa.ogg"
+      },
+      "startbt": {
+        "text": "わたしに任せて～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c422_startbt.ogg"
+      },
+      "story1": {
+        "text": "《百聞は一見にしかず！》\\直接一度、体験してみな～い？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_story1.ogg"
+      },
+      "story2": {
+        "text": "少し気になってる程度だと思っていたのに…\\これじゃ～わたしが入り込む隙がないじゃな～い。",
+        "filePath": "asset\\asset\\sound\\voice\\c422_story2.ogg"
+      },
+      "story3": {
+        "text": "はぁ…\\《愛》は手段に過ぎないと思っていたのに…",
+        "filePath": "asset\\asset\\sound\\voice\\c422_story3.ogg"
+      },
+      "true1": {
+        "text": "どうしてそんな上品ぶるの？\\野性的な本能も、種を繁栄させるためには\\必要不可欠だって、わからな～い？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_true1.ogg"
+      },
+      "true2": {
+        "text": "子供は、多いほうがいいでしょ～？\\だから、そんな恥ずかしがらずにこっちに来て～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c422_true2.ogg"
+      },
+      "true3": {
+        "text": "悪魔くんがどんなに落ちこぼれだって構わない。\\最初から、そんなのは問題じゃなかったんだから～",
+        "filePath": "asset\\asset\\sound\\voice\\c422_true3.ogg"
+      },
+      "victory": {
+        "text": "わたしのおかげだって、ちゃんとわかってる～？",
+        "filePath": "asset\\asset\\sound\\voice\\c422_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "わたしと\\子孫繁栄しましょ～♥",
+      "like": "ホテルの鍵が\\あるんだけど…",
+      "love": "もう逃げられないわよ♥\\さぁ、いらっしゃ～い♥",
+      "profile": "古代エジプトの多産の女神の名を借り受けた《ヘケト》は\\少子化問題に衝撃を受けた契約者から生まれたチャイルド。\\そのため、少しでも子供を増やそうと極端な行動に出る。\\もしヘケトから声をかけられたら一目散に逃げるべし。"
+    }
+  },
   "c423": {
     "variants": {
       "01": {
@@ -31874,12 +33637,109 @@
       "profile": "世にも珍しい《弱者フェチ》の悪魔《ライマ》\\すでに全盛期を過ぎているが、自分を少女だと思い込み\\ずっと運命の出会いを夢見ていた。\\魔界でその夢は叶わなかったが、ハロウィンの月明かりの下\\人間界で主人公に出会った。\\彼こそ心も体も弱い運命の悪魔だった。"
     }
   },
+  "c424": {
+    "variants": {
+      "01": {
+        "title": "鍛冶場の ヘパイストス",
+        "description": "鋼鉄を鍛えるヘパイストスの槌。",
+        "name": "大津愛理"
+      }
+    },
+    "favors": {
+      "interest": "",
+      "like": "",
+      "love": "",
+      "profile": ""
+    }
+  },
   "c426": {
     "variants": {
       "00": {
         "title": "二階堂 ふたば",
-        "description": "悩み多き女子大生。",
-        "name": "奈波果林"
+        "description": "何でも2回やらないと気が済まない女子大生。",
+        "name": "奈波果林",
+        "voices": {
+          "boss_long": {
+            "text": "最善を尽くして勝ちます！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "頑張ります！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "先手必勝！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "やっぱり…ダメか…",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_death_1.ogg"
+          },
+          "death_2": {
+            "text": "うう…難しいな…",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_death_2.ogg"
+          },
+          "drive": {
+            "text": "1回で終わらせるわ！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_drive.ogg"
+          },
+          "hit_1": {
+            "text": "あーっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "し…しまった",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "痛い！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "ちゃんとしてみせます！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_prskill.ogg"
+          },
+          "skill": {
+            "text": "負けられない！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_skill.ogg"
+          },
+          "spa": {
+            "text": "えっ？\\あなたと一緒に温泉に…？",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_spa.ogg"
+          },
+          "startbt": {
+            "text": "必ず戦わなければならないなら…！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_startbt.ogg"
+          },
+          "story1": {
+            "text": "他人より遅れを取ることも、行く手を遮られるのも\\我慢できない！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_story1.ogg"
+          },
+          "story2": {
+            "text": "最終的にいつか深い関係になるでしょう？\\そうしたら、私たちの間に子供ができるでしょう？",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_story2.ogg"
+          },
+          "story3": {
+            "text": "やっぱり1番じゃないと意味がないのよ。",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_story3.ogg"
+          },
+          "true1": {
+            "text": "私は、なんでも2回やらないと気が済まない\\大人になっちゃったの。\\治そうとしてるんだけど…",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_true1.ogg"
+          },
+          "true2": {
+            "text": "あなたが私に勇気があるって言ってくれた時\\なんでも2回やらないと気が済まない私が\\恥ずかしくなくなったの。\\ありがとうね。",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_true2.ogg"
+          },
+          "true3": {
+            "text": "私はもしかしたら、あの時あなたのことが\\好きになったんじゃないかな？\\私の姿をそのまま見てくれたあなたが好き。\\悪魔でもね。",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_true3.ogg"
+          },
+          "victory": {
+            "text": "やりました！",
+            "filePath": "asset\\asset\\sound\\voice\\c426_00_victory.ogg"
+          }
+        }
       },
       "01": {
         "title": "革新者 オフォイス",
@@ -31990,7 +33850,7 @@
       },
       "88": {
         "title": "雪原の ジヴァ",
-        "description": "",
+        "description": "極寒の冷気に抗う愛情。\\凍てつく寒さを和らげるジヴァの光。",
         "name": "東城日沙子",
         "voices": {
           "boss_long": {
@@ -32060,14 +33920,6 @@
           "hit_9": {
             "text": "ふぅっ！",
             "filePath": "asset\\asset\\sound\\voice\\c429_88_hit_9.ogg"
-          },
-          "startbt": {
-            "text": "あなたの声が聞こえました。",
-            "filePath": "asset\\asset\\sound\\voice\\c429_88_startbt.ogg"
-          },
-          "victory": {
-            "text": "少しやりすぎましたか？",
-            "filePath": "asset\\asset\\sound\\voice\\c429_88_victory.ogg"
           }
         }
       },
@@ -32497,19 +34349,1283 @@
       "profile": "古代エジプトの猫の女神の名を借り受けた《パケト》\\かなりの自信家で、自分のかわいさをアピールしたがるが\\相手から嫌がられると泣いて弱々しくなる。\\内気な契約者では経験できなかったことを全てやりたいと\\思っており、その中でも恋愛に興味津々。"
     }
   },
+  "c434": {
+    "variants": {
+      "01": {
+        "title": "スウィート レダ",
+        "description": "チョコを欲しがる魅力的なレダ。",
+        "name": "伊月ゆい"
+      },
+      "02": {
+        "title": "ラブリー レダ",
+        "description": "甘い魅力を放つレダ。",
+        "name": "伊月ゆい"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "あたしに会えて光栄でしょ～",
+        "filePath": "asset\\asset\\sound\\voice\\c434_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "使用人になりたいの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c434_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "あたしを崇めなさい！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "うっ…覚えてなさいよ…！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_death_1.ogg"
+      },
+      "death_2": {
+        "text": "もう…！\\許さないんだから～！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_death_2.ogg"
+      },
+      "drive": {
+        "text": "あたしの美貌に勝てるの！？",
+        "filePath": "asset\\asset\\sound\\voice\\c434_drive.ogg"
+      },
+      "hit_1": {
+        "text": "アァ～ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "あっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "痛ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "ホント失礼ね。",
+        "filePath": "asset\\asset\\sound\\voice\\c434_prskill.ogg"
+      },
+      "skill": {
+        "text": "ひざまずきなさい！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_skill.ogg"
+      },
+      "spa": {
+        "text": "あったか～い…\\いい湯加減だわ～",
+        "filePath": "asset\\asset\\sound\\voice\\c434_spa.ogg"
+      },
+      "startbt": {
+        "text": "あたしの魅力に、うっとりしちゃうでしょ～？",
+        "filePath": "asset\\asset\\sound\\voice\\c434_startbt.ogg"
+      },
+      "story1": {
+        "text": "もう…！\\どいつもこいつも、つまんないヤツばっかり！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_story1.ogg"
+      },
+      "story2": {
+        "text": "ふぅ…\\あたしの使用人としては力不足ね…\\これくらいで勘弁してあげるわ。",
+        "filePath": "asset\\asset\\sound\\voice\\c434_story2.ogg"
+      },
+      "story3": {
+        "text": "ごめんなさい！\\今まであんたのこと、タダの子供だと思ってた！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_story3.ogg"
+      },
+      "true1": {
+        "text": "どこ見てんのよ～！\\なに企んでるの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c434_true1.ogg"
+      },
+      "true2": {
+        "text": "使用人は使用人らしくなさい！\\あなたにはそれが一番よ！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_true2.ogg"
+      },
+      "true3": {
+        "text": "これからもあたしに尽くしなさい！\\いつかご褒美がもらえるかもね。",
+        "filePath": "asset\\asset\\sound\\voice\\c434_true3.ogg"
+      },
+      "victory": {
+        "text": "もっと感謝しなさい！",
+        "filePath": "asset\\asset\\sound\\voice\\c434_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "なんでチョコ\\買ってくれないの！",
+      "like": "えっ！\\チョコ買ってくれるの？",
+      "love": "あたしがチョコを\\あげたい男はね…",
+      "profile": "チョコをたくさん食べたいレダは、バレンタインデーに\\男だけがチョコをもらえるのは不公平だと言い、自分に惚れた\\男にチョコをプレゼントさせる。"
+    }
+  },
+  "c435": {
+    "variants": {
+      "10": {
+        "title": "ハートフル シトリー",
+        "description": "愛は私の近くに。\\愛に気づいたシトリーの真の姿。",
+        "name": "夏川椎菜",
+        "voices": {
+          "boss_long": {
+            "text": "セルケトのためです！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "妹に触らないで！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "これがお姉さんの気持ちです！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "セルケトを…守らなきゃ…",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_death_1.ogg"
+          },
+          "death_2": {
+            "text": "セルケト…ごめんね…",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_death_2.ogg"
+          },
+          "drive": {
+            "text": "妹に手を出さないで！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_drive.ogg"
+          },
+          "hit_1": {
+            "text": "ヒドいじゃない！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "フン！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "許しません！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "怒りますよ～",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_prskill.ogg"
+          },
+          "skill": {
+            "text": "甘～い。",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_skill.ogg"
+          },
+          "spa": {
+            "text": "そんなところで見てないで\\一緒に楽しみましょう！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_spa.ogg"
+          },
+          "startbt": {
+            "text": "セルケトは私が守ります！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_startbt.ogg"
+          },
+          "story1": {
+            "text": "こ…これはその…サービスみたいな物です～！\\みなさんに私の自家製キャンディを配ろうと\\思って…",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_story1.ogg"
+          },
+          "story2": {
+            "text": "甘～いデザートを用意しました。\\どうぞお召し上がりください！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_story2.ogg"
+          },
+          "story3": {
+            "text": "冗談ですよ～\\私にもそのくらい分かります～\\それで、いつからリザのことが好きなんですか！？",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_story3.ogg"
+          },
+          "true1": {
+            "text": "セルケトは私の家族じゃないですか？\\だからプレゼントを用意しました。\\私の自家製キャンディ！",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_true1.ogg"
+          },
+          "true2": {
+            "text": "私が妹ばかりかわいがっているから嫉妬したわけ\\じゃないですよね～？\\セルケトもあなたも大好きですよ。",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_true2.ogg"
+          },
+          "true3": {
+            "text": "セルケトを守るためなら何でもやります。\\家族ですから。",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_true3.ogg"
+          },
+          "victory": {
+            "text": "セルケトは私が守るって言ったでしょ？",
+            "filePath": "asset\\asset\\sound\\voice\\c435_10_victory.ogg"
+          }
+        }
+      },
+      "01": {
+        "title": "ファンシー シトリー",
+        "description": "甘い幻想に誘い込むシトリーのメイドコスチューム。",
+        "name": "夏川椎菜"
+      },
+      "02": {
+        "title": "メイド シトリー",
+        "description": "世の男性を虜にするシトリーのメイドコスチューム。",
+        "name": "夏川椎菜"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "どんな味がお好きですか？",
+        "filePath": "asset\\asset\\sound\\voice\\c435_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "怒らないでくださ～い。",
+        "filePath": "asset\\asset\\sound\\voice\\c435_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "私にもできます！",
+        "filePath": "asset\\asset\\sound\\voice\\c435_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "う～死んじゃう～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_death_1.ogg"
+      },
+      "death_2": {
+        "text": "きゃあぁぁぁ～っ！",
+        "filePath": "asset\\asset\\sound\\voice\\c435_death_2.ogg"
+      },
+      "drive": {
+        "text": "本当の愛を知っていますか～？",
+        "filePath": "asset\\asset\\sound\\voice\\c435_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ひど～い。",
+        "filePath": "asset\\asset\\sound\\voice\\c435_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "優しくして～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "助けてっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c435_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "簡単です～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_prskill.ogg"
+      },
+      "skill": {
+        "text": "キャハッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c435_skill.ogg"
+      },
+      "spa": {
+        "text": "あんまりジロジロ見ないでくださ～い。\\一緒にキャンディを食べましょうよ～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_spa.ogg"
+      },
+      "startbt": {
+        "text": "会いたかったです～悪魔様～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_startbt.ogg"
+      },
+      "story1": {
+        "text": "こ…これはその…サービスみたいな物です～！\\みなさんに私の自家製キャンディを配ろうと\\思って…",
+        "filePath": "asset\\asset\\sound\\voice\\c435_story1.ogg"
+      },
+      "story2": {
+        "text": "甘～いデザートを用意しました。\\どうぞお召し上がりください！",
+        "filePath": "asset\\asset\\sound\\voice\\c435_story2.ogg"
+      },
+      "story3": {
+        "text": "冗談ですよ～\\私にもそのくらい分かります～\\それで、いつからリザのことが好きなんですか！？",
+        "filePath": "asset\\asset\\sound\\voice\\c435_story3.ogg"
+      },
+      "true1": {
+        "text": "私の作ったキャンディ食べてくれないんですか～？\\とってもとっても普通のキャンディですよ～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_true1.ogg"
+      },
+      "true2": {
+        "text": "恋に落ちた人の気持ちがわかりません。\\どうしてあんなに夢中になれるのか…",
+        "filePath": "asset\\asset\\sound\\voice\\c435_true2.ogg"
+      },
+      "true3": {
+        "text": "愛が分かる日が来るのでしょうか？\\愛の妙薬がなくても…\\その時は誰かがそばにいればいいですね。",
+        "filePath": "asset\\asset\\sound\\voice\\c435_true3.ogg"
+      },
+      "victory": {
+        "text": "お疲れ様でした～悪魔様～",
+        "filePath": "asset\\asset\\sound\\voice\\c435_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "悪魔様の愛が\\ほしいで～す！",
+      "like": "私のメイド服\\かわいいでしょ～？",
+      "love": "悪魔様の愛を\\くださ～い！",
+      "profile": "主人公から愛されたいチャイルド《シトリー》\\これまでいろいろ試したが失敗ばかり。\\今度はインターネットの某サイトの書き込みを信じ込み\\メイド服とキャンディとチョコで主人公の心をつかもうとする。"
+    }
+  },
+  "c436": {
+    "variants": {
+      "10": {
+        "title": "アガペー セルケト",
+        "description": "私を救うのはあなただけ。\\愛に気づいたシトリーの真の姿。",
+        "name": "山下七海",
+        "voices": {
+          "boss_long": {
+            "text": "姉さんに触るな！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "姉さんに近寄るな…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_boss_short.ogg"
+          },
+          "ctskill": {
+            "text": "大好きだよ、姉さん！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "姉さん…先に、行くよ…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_death_1.ogg"
+          },
+          "death_2": {
+            "text": "姉さんを…守らないと…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_death_2.ogg"
+          },
+          "drive": {
+            "text": "もう離さないよ、姉さん！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_drive.ogg"
+          },
+          "hit_1": {
+            "text": "痛ッ…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "キミ、最低だよ！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "もう我慢できない！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_hit_3.ogg"
+          },
+          "prskill": {
+            "text": "邪魔するな！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_prskill.ogg"
+          },
+          "skill": {
+            "text": "構ってられない。",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_skill.ogg"
+          },
+          "spa": {
+            "text": "ふぅわぁ～っ…\\寝てしまいそうだ。\\ここは本当に平和だな…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_spa.ogg"
+          },
+          "startbt": {
+            "text": "ずっと一緒だよ、姉さん！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_startbt.ogg"
+          },
+          "story1": {
+            "text": "姉さん。\\私は姉さんに幸せになってほしい。\\だって私は、姉さんのこと…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_story1.ogg"
+          },
+          "story2": {
+            "text": "正直に言ってくれ。\\私なら大丈夫だ。\\何を言われても。",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_story2.ogg"
+          },
+          "story3": {
+            "text": "私は姉さんのそばにいられるだけで、\\本当に幸せなんだ。",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_story3.ogg"
+          },
+          "true1": {
+            "text": "姉さんは、とても綺麗で、かわいらしくて…\\大好きだ、姉さん。",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_true1.ogg"
+          },
+          "true2": {
+            "text": "姉さんは、私のこと好き？\\私は、姉さんが大好きだ。\\姉さんのためなら、何だってできるよ。",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_true2.ogg"
+          },
+          "true3": {
+            "text": "もし姉さんに何かあっても、私が命懸けで守るよ。\\姉さんは、私のすべてだから…",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_true3.ogg"
+          },
+          "victory": {
+            "text": "終わったよ、姉さん！",
+            "filePath": "asset\\asset\\sound\\voice\\c436_10_victory.ogg"
+          }
+        }
+      },
+      "89": {
+        "title": "アガペー セルケト",
+        "description": "私を救うのはあなただけ。\\愛に気づいたシトリーの真の姿。",
+        "name": "山下七海"
+      },
+      "01": {
+        "title": "気になる セルケト",
+        "description": "愛とは何なのか気になるセルケトのコスチューム。",
+        "name": "山下七海"
+      },
+      "02": {
+        "title": "メイド セルケト",
+        "description": "シトリーに影響されたセルケトのメイドコスチューム。",
+        "name": "山下七海"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "こんな形で会うなんてね。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "姉さんを見なかった？",
+        "filePath": "asset\\asset\\sound\\voice\\c436_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "消えてくれる？",
+        "filePath": "asset\\asset\\sound\\voice\\c436_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "こんな…はずじゃ…！",
+        "filePath": "asset\\asset\\sound\\voice\\c436_death_1.ogg"
+      },
+      "death_2": {
+        "text": "もう…疲れたよ…",
+        "filePath": "asset\\asset\\sound\\voice\\c436_death_2.ogg"
+      },
+      "drive": {
+        "text": "ずっと一緒だ！",
+        "filePath": "asset\\asset\\sound\\voice\\c436_drive.ogg"
+      },
+      "hit_1": {
+        "text": "この程度…！",
+        "filePath": "asset\\asset\\sound\\voice\\c436_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "ううっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c436_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "痛ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c436_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "姉さんのためだ！",
+        "filePath": "asset\\asset\\sound\\voice\\c436_prskill.ogg"
+      },
+      "skill": {
+        "text": "問題ない。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_skill.ogg"
+      },
+      "spa": {
+        "text": "ふぅわぁ～っ…\\寝てしまいそうだ。\\ここは本当に平和だな…",
+        "filePath": "asset\\asset\\sound\\voice\\c436_spa.ogg"
+      },
+      "startbt": {
+        "text": "私についてきて。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_startbt.ogg"
+      },
+      "story1": {
+        "text": "姉さん。\\私は姉さんに幸せになってほしい。\\だって私は、姉さんのこと…",
+        "filePath": "asset\\asset\\sound\\voice\\c436_story1.ogg"
+      },
+      "story2": {
+        "text": "正直に言ってくれ。\\私なら大丈夫だ。\\何を言われても。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_story2.ogg"
+      },
+      "story3": {
+        "text": "私は姉さんのそばにいられるだけで、\\本当に幸せなんだ。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_story3.ogg"
+      },
+      "true1": {
+        "text": "生まれ変わる前は、暗闇だけだった。\\でも、姉さんに会ってからは\\世界がとても明るく、眩しくて…\\私には、姉さんしかいないんだ。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_true1.ogg"
+      },
+      "true2": {
+        "text": "姉さんは、とっても甘い香りがするんだ。\\酔ってしまいそうなほどにね。\\ふふっ…姉さんには秘密だよ。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_true2.ogg"
+      },
+      "true3": {
+        "text": "昔の記憶はないけど、そんなことどうだっていい。\\これからは姉さんと一緒に、新しい思い出を\\たくさん作っていくから。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_true3.ogg"
+      },
+      "victory": {
+        "text": "姉さん、喜んでくれるかな。",
+        "filePath": "asset\\asset\\sound\\voice\\c436_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "教えてくれ…\\愛とは何だ？",
+      "like": "見てるだけじゃダメだ",
+      "love": "キミに興味がある",
+      "profile": "古代エジプトの治癒の女神の名を借り受けた《セルケト》\\彼女は肉体と記憶を失ない地上をさまよっていた悪魔の魂\\だったが、シトリーの服についていた欲望の破片と融合し\\愛の妙薬を浴びて生まれ変わった。\\そのせいか、常に愛とは何か探究し続けている。"
+    }
+  },
   "c437": {
     "variants": {
       "01": {
         "title": "かわいい エウロス",
         "description": "ドレスアップしたエウロスのかわいいコスチューム。",
-        "name": ""
+        "name": "大西望"
+      },
+      "02": {
+        "title": "しあわせ エウロス",
+        "description": "ドレスアップしたエウロスのしあわせコスチューム。",
+        "name": "大西望"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "あんまり怒らないで～！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "へへっ、チョコ食べる～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "もう1個食べる～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "も～チョコあげないよ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_death_1.ogg"
+      },
+      "death_2": {
+        "text": "もう…ダメ…",
+        "filePath": "asset\\asset\\sound\\voice\\c437_death_2.ogg"
+      },
+      "drive": {
+        "text": "チョコ好き～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_drive.ogg"
+      },
+      "hit_1": {
+        "text": "うえ～ん！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "痛ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "もうっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "私の番なの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_prskill.ogg"
+      },
+      "skill": {
+        "text": "おいしいでしょ～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_skill.ogg"
+      },
+      "spa": {
+        "text": "ふわぁ～っ…\\温かくて…\\溶けちゃいそう…\\へへっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c437_spa.ogg"
+      },
+      "startbt": {
+        "text": "も～見てらんない！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_startbt.ogg"
+      },
+      "story1": {
+        "text": "あ～っ！\\チョコが～！\\つぶれちゃった～！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_story1.ogg"
+      },
+      "story2": {
+        "text": "なんでこんなに大変なの？\\気持ちを伝えるだけなのに…",
+        "filePath": "asset\\asset\\sound\\voice\\c437_story2.ogg"
+      },
+      "story3": {
+        "text": "ずっと伝えたかったの…\\私の気持ち…",
+        "filePath": "asset\\asset\\sound\\voice\\c437_story3.ogg"
+      },
+      "true1": {
+        "text": "チョコは甘いけどちょっと苦い。\\人間の心と同じ。\\だから複雑。",
+        "filePath": "asset\\asset\\sound\\voice\\c437_true1.ogg"
+      },
+      "true2": {
+        "text": "へへっ！\\私、チョコ作るの上手だよ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_true2.ogg"
+      },
+      "true3": {
+        "text": "今日もおいしいチョコを作らなきゃ～\\みんな食べてくれるかな～？",
+        "filePath": "asset\\asset\\sound\\voice\\c437_true3.ogg"
+      },
+      "victory": {
+        "text": "やった～！勝った～！",
+        "filePath": "asset\\asset\\sound\\voice\\c437_victory.ogg"
       }
     },
     "favors": {
-      "interest": "",
-      "like": "",
-      "love": "",
-      "profile": ""
+      "interest": "チョコ…\\好きでしょ？",
+      "like": "チョコは恋の味～\\へへっ",
+      "love": "私の心は\\ご主人様のものっ！",
+      "profile": "超鈍感な主人公の心をつかむため、かわいい洋服と\\真心をこめたチョコを用意したエウロス。\\ところが恋のライバルが行く手を阻む。\\メイド服に着替えたシトリーが起こした事故から逃れたかと\\思いきや、パケトと手作りチョコ対決をするハメに\\なってしまう。"
+    }
+  },
+  "c439": {
+    "variants": {
+      "01": {
+        "title": "ドリーマー サターン",
+        "description": "ジュリエット役になることを夢見る\\サターンの舞台衣装。",
+        "name": "千本木彩花"
+      },
+      "02": {
+        "title": "アクトレス サターン",
+        "description": "ジュリエットになりきるサターンの舞台衣装。",
+        "name": "千本木彩花"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "マエストロ様のために…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "準備はよろしいですか？",
+        "filePath": "asset\\asset\\sound\\voice\\c439_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "こちらです！",
+        "filePath": "asset\\asset\\sound\\voice\\c439_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "まだ何も…言えてないのに…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_death_1.ogg"
+      },
+      "death_2": {
+        "text": "マエストロ様…申し訳ございません…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_death_2.ogg"
+      },
+      "drive": {
+        "text": "私の気持ち、聴いてください！",
+        "filePath": "asset\\asset\\sound\\voice\\c439_drive.ogg"
+      },
+      "hit_1": {
+        "text": "くッ…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "まだです…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "もう一度です…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "任せてください！",
+        "filePath": "asset\\asset\\sound\\voice\\c439_prskill.ogg"
+      },
+      "skill": {
+        "text": "心配いりません！",
+        "filePath": "asset\\asset\\sound\\voice\\c439_skill.ogg"
+      },
+      "spa": {
+        "text": "アイドルにとって自己管理は基本です。",
+        "filePath": "asset\\asset\\sound\\voice\\c439_spa.ogg"
+      },
+      "startbt": {
+        "text": "私はもう、あきらめません。",
+        "filePath": "asset\\asset\\sound\\voice\\c439_startbt.ogg"
+      },
+      "story1": {
+        "text": "はぁ…びっくりした…\\マエストロ様に告白してしまうところだったわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_story1.ogg"
+      },
+      "story2": {
+        "text": "マエストロ様が用意してくださった\\ジュリエットの衣装です。\\もう着ることはないと思っていたのですが…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_story2.ogg"
+      },
+      "story3": {
+        "text": "待っていてください…マエストロ様…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_story3.ogg"
+      },
+      "true1": {
+        "text": "もう迷っている場合ではありません。\\マエストロ様に私の気持ちを伝えないと…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_true1.ogg"
+      },
+      "true2": {
+        "text": "ずっと…マエストロ様のそばにいたい…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_true2.ogg"
+      },
+      "true3": {
+        "text": "無理をするなと言われていますが…\\私は大丈夫です。\\マエストロ様のためなら…",
+        "filePath": "asset\\asset\\sound\\voice\\c439_true3.ogg"
+      },
+      "victory": {
+        "text": "あきらめなくてよかったです。",
+        "filePath": "asset\\asset\\sound\\voice\\c439_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "恋に痛みはつきものです",
+      "like": "つのる思い…\\どうすれば隠せますか？",
+      "love": "応援してください\\よろしくお願いします！",
+      "profile": "ルサルカの願いを叶えるためジュリエット役を譲ったサターン。\\ルサルカの演技と行動はサターンに勇気を与えた。\\胸に秘めたマエストロへの想いを伝えるためジュリエットの\\衣装に身を包み、彼女は愛の告白の練習を始める。"
+    }
+  },
+  "c441": {
+    "variants": {
+      "01": {
+        "title": "正義の礼剣 ロビン",
+        "description": "世界の平和を守る正義の剣！",
+        "name": "桑原由気"
+      },
+      "02": {
+        "title": "正義のヒーロー ロビン",
+        "description": "闇を斬り光り輝く正義の剣！",
+        "name": "桑原由気"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "さあ、正義の時間よ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "正義は勝利あるのみっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "運がよかったわね！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "正義は…負けない…！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_death_1.ogg"
+      },
+      "death_2": {
+        "text": "正義は…不滅…",
+        "filePath": "asset\\asset\\sound\\voice\\c441_death_2.ogg"
+      },
+      "drive": {
+        "text": "必殺！\\ジャスティ～スラ～ッシュ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_drive.ogg"
+      },
+      "hit_1": {
+        "text": "痛ッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "ううっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "うわっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "卑怯ね！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_prskill.ogg"
+      },
+      "skill": {
+        "text": "悪党め！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_skill.ogg"
+      },
+      "spa": {
+        "text": "私だけ楽しんでるなんて…\\なんだか悪いわね～",
+        "filePath": "asset\\asset\\sound\\voice\\c441_spa.ogg"
+      },
+      "startbt": {
+        "text": "負けるわけないでしょ～？",
+        "filePath": "asset\\asset\\sound\\voice\\c441_startbt.ogg"
+      },
+      "story1": {
+        "text": "あら、悪魔ったら…\\知ってたのなら教えてくれたらいいのに。",
+        "filePath": "asset\\asset\\sound\\voice\\c441_story1.ogg"
+      },
+      "story2": {
+        "text": "覚悟しなさい、暗殺者！\\たとえ天が許しても正義のロビンは許さないわ！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_story2.ogg"
+      },
+      "story3": {
+        "text": "そんな話を聞いたら、正義のロビンが放って\\おくわけないじゃない！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_story3.ogg"
+      },
+      "true1": {
+        "text": "ヒーローは滅びても正義は不滅！\\あはっ！今のいいわね～\\今度の決め台詞にしよう！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_true1.ogg"
+      },
+      "true2": {
+        "text": "どんなにピンチでも正義は諦めちゃダメなのよっ！\\うっふふっ…",
+        "filePath": "asset\\asset\\sound\\voice\\c441_true2.ogg"
+      },
+      "true3": {
+        "text": "悪魔ってやさしいのね～\\よかったわ！\\いい主人に会えて…",
+        "filePath": "asset\\asset\\sound\\voice\\c441_true3.ogg"
+      },
+      "victory": {
+        "text": "正義は必ず勝つ！\\決まったわね！",
+        "filePath": "asset\\asset\\sound\\voice\\c441_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "悪魔ってやさしいのね！\\ほめてあげるわ",
+      "like": "あら？\\助けてあげましょうか？",
+      "love": "誰だって英雄になれるわ",
+      "profile": "義賊ロビン・フットの名を洗礼名とした正義感の強いチャイルド\\ロビン。\\契約者を騙し、悪事ばかり命令する主人である悪魔を見限り\\正義を実現できる新たな主人を探す旅に出かけたが\\猫のような生来の好奇心のせいか、行く先々でトラブルばかり。"
+    }
+  },
+  "c443": {
+    "variants": {
+      "01": {
+        "title": "怪盗 ラッフルズ",
+        "description": "静かな夜空にギターを響かせ、夜の街に降臨する怪盗。",
+        "name": "工藤晴香"
+      },
+      "02": {
+        "title": "ファントム ラッフルズ",
+        "description": "ギターの音色で心を惑わせ、幻のように宝を奪う怪盗。",
+        "name": "工藤晴香"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "宝物はいただきます！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "あなたの宝物は何ですか？",
+        "filePath": "asset\\asset\\sound\\voice\\c443_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "運も実力のうちです！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "うっ、ローガン様…",
+        "filePath": "asset\\asset\\sound\\voice\\c443_death_1.ogg"
+      },
+      "death_2": {
+        "text": "次こそ…必ず…",
+        "filePath": "asset\\asset\\sound\\voice\\c443_death_2.ogg"
+      },
+      "drive": {
+        "text": "警告しましたよね？",
+        "filePath": "asset\\asset\\sound\\voice\\c443_drive.ogg"
+      },
+      "hit_1": {
+        "text": "うッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "面白いですね。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "フンッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "諦めなさい！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_prskill.ogg"
+      },
+      "skill": {
+        "text": "逃しませんよ～！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_skill.ogg"
+      },
+      "spa": {
+        "text": "意外ですね。\\あなたがこんなに素敵な場所を知っているなんて。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_spa.ogg"
+      },
+      "startbt": {
+        "text": "全力で行きます。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_startbt.ogg"
+      },
+      "story1": {
+        "text": "みなさん、怪盗PHAN+ICの活躍にご期待ください！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_story1.ogg"
+      },
+      "story2": {
+        "text": "やはり…\\これはひとつの試練ですね。\\難しいほどやる気が出ます。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_story2.ogg"
+      },
+      "story3": {
+        "text": "本当に…悪魔に感謝したいです…\\ニューヨークでは、こんな経験できません！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_story3.ogg"
+      },
+      "true1": {
+        "text": "ローガン様が認めてくださるなら…\\なんでもするわ。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_true1.ogg"
+      },
+      "true2": {
+        "text": "最高の怪盗になるためには徹底的に訓練しないと…\\完璧なプランを立てなきゃ…",
+        "filePath": "asset\\asset\\sound\\voice\\c443_true2.ogg"
+      },
+      "true3": {
+        "text": "欲望渦巻く月の下で…\\怪盗PHAN+ICに盗めぬ物なし！",
+        "filePath": "asset\\asset\\sound\\voice\\c443_true3.ogg"
+      },
+      "victory": {
+        "text": "完璧です。",
+        "filePath": "asset\\asset\\sound\\voice\\c443_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "足手まといにならないと\\いいですね",
+      "like": "私の言う通りに\\してください",
+      "love": "私だって\\ほめますよ",
+      "profile": "悪魔にそそのかされて契約した元キャリアウーマンから\\誕生したチャイルド、ラッフルズ。\\彼女は契約者を騙した悪魔に不信感を抱き、家出するが\\他の魔王候補生から物を盗んで生活するのは過酷だった。\\そんな彼女に新たなチャンスが訪れる。"
+    }
+  },
+  "c448": {
+    "variants": {
+      "88": {
+        "title": "幻惑の マーカラ",
+        "description": "あらっ、血の香りがしますね～♥\\ちょっとだけ吸わせてもらってもいいですか～？",
+        "name": "山本亜衣",
+        "voices": {
+          "boss_long": {
+            "text": "えっ…呼んでませんけど…",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_boss_long.ogg"
+          },
+          "boss_short": {
+            "text": "も～！いい加減にしてくださいっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_boss_short.ogg"
+          },
+          "prskill": {
+            "text": "準備はよろしいですか～？",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_prskill.ogg"
+          },
+          "skill": {
+            "text": "我慢してくださいねっ♥",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_skill.ogg"
+          },
+          "ctskill": {
+            "text": "あ～ん…ガブッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_ctskill.ogg"
+          },
+          "death_1": {
+            "text": "100倍にして…返しますわ…",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_death_1.ogg"
+          },
+          "death_2": {
+            "text": "もう少し…吸わせてよ…",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_death_2.ogg"
+          },
+          "drive": {
+            "text": "チクッとしますよ～！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_drive.ogg"
+          },
+          "hit_1": {
+            "text": "キャッ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_1.ogg"
+          },
+          "hit_2": {
+            "text": "もう！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_2.ogg"
+          },
+          "hit_3": {
+            "text": "やりますね～",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_3.ogg"
+          },
+          "hit_4": {
+            "text": "うふっ…",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_4.ogg"
+          },
+          "hit_5": {
+            "text": "うっふ～ん♥",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_5.ogg"
+          },
+          "hit_6": {
+            "text": "くすぐった～い♥",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_6.ogg"
+          },
+          "hit_7": {
+            "text": "やめてくださいっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_7.ogg"
+          },
+          "hit_8": {
+            "text": "痛いじゃないですかっ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_8.ogg"
+          },
+          "hit_9": {
+            "text": "100倍にして返しますわ！",
+            "filePath": "asset\\asset\\sound\\voice\\c448_88_hit_9.ogg"
+          }
+        }
+      },
+      "00": {
+        "title": "普段着の マーカラ",
+        "description": "悪魔によって生み出されし魔造ヴァンパイアクイーンが\\人間になりすました姿。",
+        "name": "山本亜衣"
+      },
+      "01": {
+        "title": "吸血の マーカラ",
+        "description": "あなたを誘惑するマーカラのドレス。",
+        "name": "山本亜衣"
+      },
+      "02": {
+        "title": "幻惑の マーカラ",
+        "description": "あなたの妄想を刺激するマーカラのドレス。",
+        "name": "山本亜衣"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "あらっ、血の香りがしますね～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c448_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "お手柔らかにお願いしま～す♥",
+        "filePath": "asset\\asset\\sound\\voice\\c448_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "あ～ん…ガブッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "100倍にして…返しますわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c448_death_1.ogg"
+      },
+      "death_2": {
+        "text": "もう少し…吸わせてよ…",
+        "filePath": "asset\\asset\\sound\\voice\\c448_death_2.ogg"
+      },
+      "drive": {
+        "text": "今夜は帰しませんよ～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c448_drive.ogg"
+      },
+      "hit_1": {
+        "text": "あ～ん！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "キャッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "いや～ん！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "噛んじゃいますよ～♥",
+        "filePath": "asset\\asset\\sound\\voice\\c448_prskill.ogg"
+      },
+      "skill": {
+        "text": "あっは～ん♥",
+        "filePath": "asset\\asset\\sound\\voice\\c448_skill.ogg"
+      },
+      "spa": {
+        "text": "え～っ？\\温泉じゃなくて～血がほしいんですけど～",
+        "filePath": "asset\\asset\\sound\\voice\\c448_spa.ogg"
+      },
+      "startbt": {
+        "text": "うっふ～ん♥\\またお会いましたね～",
+        "filePath": "asset\\asset\\sound\\voice\\c448_startbt.ogg"
+      },
+      "story1": {
+        "text": "はあ…\\人間も悪魔も…\\結局やることは変わりませんね。",
+        "filePath": "asset\\asset\\sound\\voice\\c448_story1.ogg"
+      },
+      "story2": {
+        "text": "ごめんなさいね～\\喉が乾きすぎて…\\うっふっ♥\\失礼しました。",
+        "filePath": "asset\\asset\\sound\\voice\\c448_story2.ogg"
+      },
+      "story3": {
+        "text": "人間界ってどれだけ変わったかしら～\\ワクワクするわね～！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_story3.ogg"
+      },
+      "true1": {
+        "text": "人間界って大変ですけど～魔界よりマシですねっ！\\だって魔界には～\\私を生み出した悪魔がいたんですから～！",
+        "filePath": "asset\\asset\\sound\\voice\\c448_true1.ogg"
+      },
+      "true2": {
+        "text": "血液パックってなかなかおいしいですね～\\でも～…くんくん…なんだか変な匂いがします…",
+        "filePath": "asset\\asset\\sound\\voice\\c448_true2.ogg"
+      },
+      "true3": {
+        "text": "他のヴァンパイアみたいに人間になりすますのは…\\ちょっと怖いけど大丈夫ですっ！\\なんだかワクワクしますし…",
+        "filePath": "asset\\asset\\sound\\voice\\c448_true3.ogg"
+      },
+      "victory": {
+        "text": "あらっ？\\もう死んじゃったんですか～？",
+        "filePath": "asset\\asset\\sound\\voice\\c448_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "でもね～♥\\悪魔って無理なんです～♥",
+      "like": "うっふ～ん♥\\いい香りがしますね～♥",
+      "love": "あっは～ん♥\\私の奴隷に\\なりませんか～？",
+      "profile": "悪魔によって生み出された魔造ヴァンパイアクイーンマーカラ。\\小説《吸血鬼カーミラ》に登場する吸血鬼から名を借り受けた。\\主人を見限り人間界へ逃亡した彼女は生きるために必要な\\最低限度の血を吸いつつ、ひっそりと暮らしていた。\\だが、多くの人々を襲い、無理やり血を吸った凶暴な\\ヴァンパイアと噂され祓魔師協会から狙われることになる。\\追い詰められた彼女は断崖絶壁から海に飛び降り難を逃れたが\\その後、数百年間、眠りについたのであった。"
+    }
+  },
+  "c449": {
+    "variants": {
+      "01": {
+        "title": "シャーマン ローラ",
+        "description": "長時間の着用に適したローラの特殊コスチューム。",
+        "name": "紡木吏佐"
+      },
+      "02": {
+        "title": "吸血鬼ハンター ローラ",
+        "description": "機能性と耐久性に優れたローラの特殊コスチューム。",
+        "name": "紡木吏佐"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "こんなところまでやってくるとはね～",
+        "filePath": "asset\\asset\\sound\\voice\\c449_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "な～に？私のこと探してたの～？",
+        "filePath": "asset\\asset\\sound\\voice\\c449_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "さっさと失せなさいッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "意外と…強いのね…",
+        "filePath": "asset\\asset\\sound\\voice\\c449_death_1.ogg"
+      },
+      "death_2": {
+        "text": "覚えてなさい…",
+        "filePath": "asset\\asset\\sound\\voice\\c449_death_2.ogg"
+      },
+      "drive": {
+        "text": "これでトドメよッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ううッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "うわっ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "いやッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "勝てる自信があって？",
+        "filePath": "asset\\asset\\sound\\voice\\c449_prskill.ogg"
+      },
+      "skill": {
+        "text": "そこよッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_skill.ogg"
+      },
+      "spa": {
+        "text": "はぁ…気持ちいい～\\このまま一生…\\のんびりできたらいいのに…",
+        "filePath": "asset\\asset\\sound\\voice\\c449_spa.ogg"
+      },
+      "startbt": {
+        "text": "戦いに集中するわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c449_startbt.ogg"
+      },
+      "story1": {
+        "text": "山奥で…おいしい物なんて…\\食べられるわけないじゃない！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_story1.ogg"
+      },
+      "story2": {
+        "text": "ねえミーナ…\\またヴァンパイアを探さなきゃ…\\ミーナが見つけたら教えてくれる？",
+        "filePath": "asset\\asset\\sound\\voice\\c449_story2.ogg"
+      },
+      "story3": {
+        "text": "ヴァンパイアに普通の弾丸は効かないのよ。",
+        "filePath": "asset\\asset\\sound\\voice\\c449_story3.ogg"
+      },
+      "true1": {
+        "text": "山奥で野宿するハメになっても\\初代の研究資料は必ず見つけ出すわよ。",
+        "filePath": "asset\\asset\\sound\\voice\\c449_true1.ogg"
+      },
+      "true2": {
+        "text": "かつてのヘルシング家は、その残酷さで\\有名だったわ。\\でも、今は違うの…",
+        "filePath": "asset\\asset\\sound\\voice\\c449_true2.ogg"
+      },
+      "true3": {
+        "text": "怖がってる場合じゃないわ！\\一族の名誉がかかっているのよ！",
+        "filePath": "asset\\asset\\sound\\voice\\c449_true3.ogg"
+      },
+      "victory": {
+        "text": "私が勝つのは当然でしょ～？",
+        "filePath": "asset\\asset\\sound\\voice\\c449_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "あなたってホント\\役立たずね！",
+      "like": "やさしいヴァンパイア？\\ホントにいるの？",
+      "love": "ヴァンパイアは\\人類の敵よ！",
+      "profile": "オランダのシャーマン、ヘルシング家の末裔\\ローラ・ヴァン・ヘルシング。\\彼女は初代当主エイブラハム・ヴァン・ヘルシングが遺した\\研究日誌の秘密に迫ろうとしていた。\\そしてその秘密の鍵を握るのが、ヴァンパイアクイーンで\\あることを突き止めるのだが…"
+    }
+  },
+  "c450": {
+    "variants": {
+      "01": {
+        "title": "悲劇の ルサルカ",
+        "description": "悲劇のジュリエットを演じるルサルカ。",
+        "name": "明坂聡美"
+      },
+      "02": {
+        "title": "ヒロイン ルサルカ",
+        "description": "ヒロイン、ジュリエットになりきるルサルカ。",
+        "name": "明坂聡美"
+      }
+    },
+    "voices": {
+      "boss_long": {
+        "text": "あなたは…誰…？",
+        "filePath": "asset\\asset\\sound\\voice\\c450_boss_long.ogg"
+      },
+      "boss_short": {
+        "text": "痛いのは…嫌…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_boss_short.ogg"
+      },
+      "ctskill": {
+        "text": "私、がんばるから！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_ctskill.ogg"
+      },
+      "death_1": {
+        "text": "アルティスに…会いたい…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_death_1.ogg"
+      },
+      "death_2": {
+        "text": "助けて…アルティス…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_death_2.ogg"
+      },
+      "drive": {
+        "text": "私の気持ち、聞いてほしいの！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_drive.ogg"
+      },
+      "hit_1": {
+        "text": "ああッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_hit_1.ogg"
+      },
+      "hit_2": {
+        "text": "うッ！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_hit_2.ogg"
+      },
+      "hit_3": {
+        "text": "平気よ…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_hit_3.ogg"
+      },
+      "prskill": {
+        "text": "怖くない！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_prskill.ogg"
+      },
+      "skill": {
+        "text": "待って…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_skill.ogg"
+      },
+      "spa": {
+        "text": "ふ～っ…\\ちょっと熱いけど…大丈夫。\\すぐに慣れるわ…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_spa.ogg"
+      },
+      "startbt": {
+        "text": "もう…逃げない。",
+        "filePath": "asset\\asset\\sound\\voice\\c450_startbt.ogg"
+      },
+      "story1": {
+        "text": "私のこと…信じられないってことでしょ…\\私には…あなたしかいないのに…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_story1.ogg"
+      },
+      "story2": {
+        "text": "恋愛経験のない人を…\\傷つけてしまった…\\ああ…どうしたらいいの！",
+        "filePath": "asset\\asset\\sound\\voice\\c450_story2.ogg"
+      },
+      "story3": {
+        "text": "たぶん…悪魔さんは恋愛経験がなくて…\\さびしいから…\\あんなこと言ったのかな…？",
+        "filePath": "asset\\asset\\sound\\voice\\c450_story3.ogg"
+      },
+      "true1": {
+        "text": "アルティスと出会った瞬間…\\運命の相手だって思ったの。",
+        "filePath": "asset\\asset\\sound\\voice\\c450_true1.ogg"
+      },
+      "true2": {
+        "text": "アルティスのいない世界なんて嫌…\\アルティスも…私のいない世界なんて…嫌でしょ？",
+        "filePath": "asset\\asset\\sound\\voice\\c450_true2.ogg"
+      },
+      "true3": {
+        "text": "生まれてきて…よかった…\\アルティスに出会えて…よかった…",
+        "filePath": "asset\\asset\\sound\\voice\\c450_true3.ogg"
+      },
+      "victory": {
+        "text": "もう…泣かないって決めたの。",
+        "filePath": "asset\\asset\\sound\\voice\\c450_victory.ogg"
+      }
+    },
+    "favors": {
+      "interest": "話さなきゃ…\\伝わらないでしょ…？",
+      "like": "待って…\\私をさけないで…",
+      "love": "もう迷わない…\\本当の気持ちを…\\話すわ…",
+      "profile": "チャンネルEvilが企画した舞台《ロミオとジュリエット》\\そのロミオ役のオーディションにアルティスが応募することに。\\たとえ演技であっても、誰かと恋に落ちるアルティスを絶対に\\観たくないルサルカはサターンの協力でジュリエット役の\\オーディションに応募することを決意する。\\そしてルサルカはついに、ジュリエットの台詞でアルティスに\\自分の想いを打ち明けるのであった。"
     }
   },
   "m001": {
@@ -34571,107 +37687,107 @@
     "variants": {
       "00": {
         "title": "水上 円花",
-        "description": "ヒドラの契約者。小さくて弱い者をその拳で守る。",
-        "name": ""
+        "description": "ヒドラの契約者。\\小さくて弱い者を拳で守る。",
+        "name": "小川マユ子"
       },
       "01": {
         "title": "混沌の ヒドラ",
-        "description": "聖ミカエルで発見された正体不明のモンスター。",
-        "name": ""
+        "description": "聖ミカエル女学院で発見された正体不明のモンスター。",
+        "name": "小川マユ子"
       },
       "02": {
         "title": "貪欲の ヒドラ",
         "description": "調子が良い日には簡単な会話もできるらしい。",
-        "name": ""
+        "name": "小川マユ子"
       }
     },
     "voices": {
       "boss_long": {
-        "text": "苦シい…助けテ…\\助けテアげル…！",
+        "text": "苦しい…助けて…\\助けてあげる…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_boss_long.ogg"
       },
       "boss_short": {
-        "text": "私ハ…私はココにいル…！",
+        "text": "私は…私はここにいる…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_boss_short.ogg"
       },
       "ctskill": {
-        "text": "モう少シ食べサセて…！",
+        "text": "もう少し食べさせて…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_ctskill.ogg"
       },
       "death_1": {
-        "text": "私ハ…何ノたメニ…",
+        "text": "私は…何のために…",
         "filePath": "asset\\asset\\sound\\voice\\m053_death_1.ogg"
       },
       "death_2": {
-        "text": "あアああ…",
+        "text": "うわぁ～っ！",
         "filePath": "asset\\asset\\sound\\voice\\m053_death_2.ogg"
       },
       "drive": {
-        "text": "いたダキまス！",
+        "text": "いただきま～す！",
         "filePath": "asset\\asset\\sound\\voice\\m053_drive.ogg"
       },
       "hit_1": {
-        "text": "グルるる…",
+        "text": "グルルル…",
         "filePath": "asset\\asset\\sound\\voice\\m053_hit_1.ogg"
       },
       "hit_2": {
-        "text": "痛イ…痛いヨ…",
+        "text": "痛い…痛いよ…",
         "filePath": "asset\\asset\\sound\\voice\\m053_hit_2.ogg"
       },
       "hit_3": {
-        "text": "許セない…",
+        "text": "許せない…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_hit_3.ogg"
       },
       "prskill": {
-        "text": "悪魔…許セナい！！",
+        "text": "悪魔…許せない！！",
         "filePath": "asset\\asset\\sound\\voice\\m053_prskill.ogg"
       },
       "skill": {
-        "text": "全部食べル…！",
+        "text": "全部食べる…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_skill.ogg"
       },
       "spa": {
-        "text": "こ…コれ以上ハモう飲めナい…",
+        "text": "こ…これ以上はもう飲めない…",
         "filePath": "asset\\asset\\sound\\voice\\m053_spa.ogg"
       },
       "startbt": {
-        "text": "次は…誰ヲ食ベてアゲよウか…？",
+        "text": "次は…\\誰を食ベてあげようか…？",
         "filePath": "asset\\asset\\sound\\voice\\m053_startbt.ogg"
       },
       "story1": {
-        "text": "小夜…子…！小夜子ヲ…\\悪魔…悪魔ヲ殺す…悪魔を殺シて…小夜子…",
+        "text": "小夜…子…！小夜子を…\\悪魔…悪魔を殺す…！\\悪魔を殺して…小夜子…",
         "filePath": "asset\\asset\\sound\\voice\\m053_story1.ogg"
       },
       "story2": {
-        "text": "くウ…悪魔…死ンだ…殺シてシマッた…",
+        "text": "くう…\\悪魔…\\死んだ…\\殺してしまった…",
         "filePath": "asset\\asset\\sound\\voice\\m053_story2.ogg"
       },
       "story3": {
-        "text": "小夜子…イや…悪魔バーとリー…\\守ッテあゲる…そノ悪魔カラ……くっ…グアア…",
+        "text": "小夜子…いや…悪魔バートリー…\\守ってあげる…その悪魔から…\\…くッ…うわぁ～ッ！",
         "filePath": "asset\\asset\\sound\\voice\\m053_story3.ogg"
       },
       "true1": {
-        "text": "私ハ…私ノ名前は…何だロウ…？\\悪魔…私は…私ハ悪魔？……ソレとモ…怪物？",
+        "text": "私は…私の名前は…何だろう…？\\悪魔…私は…私は悪魔…？\\それとも…怪物？",
         "filePath": "asset\\asset\\sound\\voice\\m053_true1.ogg"
       },
       "true2": {
-        "text": "私は…ヒドラ…お前ハ…悪魔？\\小夜子…シスたー小夜子ハドコに…\\しすターは私ガ守ル…",
+        "text": "私は…ヒドラ…\\お前は…悪魔？\\小夜子…シスター小夜子はどこに…\\シスターは私が守る…",
         "filePath": "asset\\asset\\sound\\voice\\m053_true2.ogg"
       },
       "true3": {
-        "text": "私は…小サいモノが好キ…可愛イのモ…好キ。\\小さイ悪魔ヲ…知っテる…お、オ前じゃナくテ…。\\ 猫に似テいル悪魔………ダレだッけ…？",
+        "text": "私は…小さいものが好き…かわいいのも好き。\\小さい悪魔を…知ってる…お、お前じゃなくて…\\猫に似ている悪魔…誰…だっけ…？",
         "filePath": "asset\\asset\\sound\\voice\\m053_true3.ogg"
       },
       "victory": {
-        "text": "良シ…私ガ勝っタ…",
+        "text": "よし…私が勝った…！",
         "filePath": "asset\\asset\\sound\\voice\\m053_victory.ogg"
       }
     },
     "favors": {
-      "interest": "",
-      "like": "",
-      "love": "",
-      "profile": ""
+      "interest": "ひ弱な…\\悪魔め…\\皆殺しだ…！",
+      "like": "あ…悪魔め…\\許さない… \\許さない… ！",
+      "love": "小さくて…\\弱い者…\\お前を…守る…",
+      "profile": "聖ミカエル女学院で発見された正体不明のモンスター。\\一見ゾンビのようだが、これでも生きている。\\普段は何を話しているのかよくわからないが、\\調子がいい時は短時間だが会話できるらしい。"
     }
   },
   "m054": {
@@ -34679,17 +37795,17 @@
       "00": {
         "title": "守重 真理子",
         "description": "ベテラン教師の魅力が引き立つオフィスルック。",
-        "name": ""
+        "name": "平岡歌恋"
       },
       "01": {
         "title": "審判の ゴモラ",
-        "description": "硫黄の匂いを放つゴモラの十字架。",
-        "name": ""
+        "description": "硫黄臭を放つゴモラの十字架。",
+        "name": "平岡歌恋"
       },
       "02": {
         "title": "滅亡の ゴモラ",
         "description": "地獄の炎が燃え盛るゴモラの十字架。",
-        "name": ""
+        "name": "平岡歌恋"
       }
     },
     "voices": {
@@ -34710,7 +37826,7 @@
         "filePath": "asset\\asset\\sound\\voice\\m054_death_1.ogg"
       },
       "death_2": {
-        "text": "ぐおおおお…",
+        "text": "ぐお…おおお…",
         "filePath": "asset\\asset\\sound\\voice\\m054_death_2.ogg"
       },
       "drive": {
@@ -34738,7 +37854,7 @@
         "filePath": "asset\\asset\\sound\\voice\\m054_skill.ogg"
       },
       "spa": {
-        "text": "あ、暑い…死んでしまう…ゴモラ…溶ける…",
+        "text": "あ、暑い…\\死んでしまう…\\ゴモラ…\\溶ける…",
         "filePath": "asset\\asset\\sound\\voice\\m054_spa.ogg"
       },
       "startbt": {
@@ -34746,39 +37862,39 @@
         "filePath": "asset\\asset\\sound\\voice\\m054_startbt.ogg"
       },
       "story1": {
-        "text": "ゴ、ゴモラ…ゴモラって誰…？\\私は誰？誰？お前は誰なの？",
+        "text": "ゴ、ゴモラ…\\ゴモラって誰…？\\私は誰？誰？\\お前は誰なの？",
         "filePath": "asset\\asset\\sound\\voice\\m054_story1.ogg"
       },
       "story2": {
-        "text": "さ…さよ…小夜子…バー…バート…バートル？",
+        "text": "さ…さよ…小夜子…\\バー…バート…バートル？",
         "filePath": "asset\\asset\\sound\\voice\\m054_story2.ogg"
       },
       "story3": {
-        "text": "渇いた…喉が渇いた…ここはどこ？\\私は誰…くおお…苦しい…苦しいよ！",
+        "text": "渇いた…喉が渇いた…\\ここはどこ？\\私は誰…？\\く…苦しい…苦しいよ！",
         "filePath": "asset\\asset\\sound\\voice\\m054_story3.ogg"
       },
       "true1": {
-        "text": "ここは、どこ？どこ？私はどこにいるの？\\苦しい…苦しい…",
+        "text": "ここは、どこ？どこ？\\私はどこにいるの？\\苦しい…苦しい…",
         "filePath": "asset\\asset\\sound\\voice\\m054_true1.ogg"
       },
       "true2": {
-        "text": "こ…こっちへ来て…私…喉渇いた…助けて。\\私を救ってくれて…",
+        "text": "こ…こっちへ来て…\\私…喉渇いた…\\助けて…\\私を救ってくれて…",
         "filePath": "asset\\asset\\sound\\voice\\m054_true2.ogg"
       },
       "true3": {
-        "text": "わ…私の名前はゴモラ…ゴモ…ラ…\\忘れないで…私の名前…ゴモラ…",
+        "text": "わ…私の名前はゴモラ…\\ゴモ…ラ…\\忘れないで…\\私の名前…ゴモラ…",
         "filePath": "asset\\asset\\sound\\voice\\m054_true3.ogg"
       },
       "victory": {
-        "text": "私はゴモラ…そうでしょ？",
+        "text": "私はゴモラ…\\そうでしょ？",
         "filePath": "asset\\asset\\sound\\voice\\m054_victory.ogg"
       }
     },
     "favors": {
-      "interest": "私が生まれた時。\\私はいなかった…私はだ、レ？",
-      "like": "空から天使が…てんシ…\\悪魔が降臨する！",
-      "love": "うるさい！うるさい！\\つらい！助けて！",
-      "profile": "極めて平凡に見える人間にも醜い欲望はあるもの。\\自身もそれに気づかないまま、ただ毎日を過ごすだけ。\\もし悪魔が「その欲望」を暴き出したら、人は平凡な日常を続けることができるだろうか。\\バベルの実験で誕生したチャイルド《ゴモラ》は永遠に自分では気づかなかったであろう醜悪で原初的な欲望まで全てを露わにした。\\幸いにも同じ実験体である《ヒドラ》だけは、《ゴモラ》を扱うことができるようだ。\\"
+      "interest": "私が生まれた時\\私はいなかった…",
+      "like": "空から天使が…\\悪魔が降臨する！",
+      "love": "うるさい！うるさい！\\あああ～！助けて！",
+      "profile": "バベルの実験から生まれたチャイルド、ゴモラ。\\醜く、原始的な欲望が噴き出し、未曾有の怪物となった。\\それゆえ、神に滅ぼされた欲望の都市の名を冠する。\\同じ実験体のヒドラとは、妙に気が合うようだ。"
     }
   },
   "m056": {
@@ -38580,14 +41696,19 @@
   },
   "m154": {
     "variants": {
+      "00": {
+        "title": "矢野 真夜実",
+        "description": "毒舌なネット動画配信者。",
+        "name": "うのちひろ"
+      },
       "01": {
         "title": "ダーク グングニル",
-        "description": "何物にも染まらない漆黒こそ正義の色！\\グングニルの意志で染めあげた黒い翼。",
+        "description": "何物にも染まらない漆黒こそ正義の色！\\グングニルの意志で染め上げた黒き翼。",
         "name": "うのちひろ"
       },
       "02": {
         "title": "レッド グングニル",
-        "description": "その身に流れる血のような赤こそ正義の色！\\グングニルの執念で染めあげた赤い翼。",
+        "description": "その身に流れる血の如き赤こそ正義の色！\\グングニルの執念で染め上げた赤き翼。",
         "name": "うのちひろ"
       }
     },
@@ -38605,11 +41726,11 @@
         "filePath": "asset\\asset\\sound\\voice\\m154_ctskill.ogg"
       },
       "death_1": {
-        "text": "裁きはまだ終わっていない！",
+        "text": "裁きはまだ…終わっていない…",
         "filePath": "asset\\asset\\sound\\voice\\m154_death_1.ogg"
       },
       "death_2": {
-        "text": "貴様を裁くまでは……ぎゃーーー！",
+        "text": "貴様を裁くまでは…！",
         "filePath": "asset\\asset\\sound\\voice\\m154_death_2.ogg"
       },
       "drive": {
@@ -38617,7 +41738,7 @@
         "filePath": "asset\\asset\\sound\\voice\\m154_drive.ogg"
       },
       "hit_1": {
-        "text": "調子に乗るな",
+        "text": "調子に乗るな。",
         "filePath": "asset\\asset\\sound\\voice\\m154_hit_1.ogg"
       },
       "hit_2": {
@@ -38637,7 +41758,7 @@
         "filePath": "asset\\asset\\sound\\voice\\m154_skill.ogg"
       },
       "spa": {
-        "text": "俺の休み時間を邪魔する者は…全て悪だ。",
+        "text": "俺の休み時間を邪魔する者は！\\全て悪だ…",
         "filePath": "asset\\asset\\sound\\voice\\m154_spa.ogg"
       },
       "startbt": {
@@ -38649,11 +41770,11 @@
         "filePath": "asset\\asset\\sound\\voice\\m154_story1.ogg"
       },
       "story2": {
-        "text": "安心するな、悪魔。\\正義の鉄槌がその傲慢な頭に落ちる日はそう遠くはない。",
+        "text": "安心するな、悪魔。\\正義の鉄槌がその傲慢な頭に落ちる日は\\そう遠くない。",
         "filePath": "asset\\asset\\sound\\voice\\m154_story2.ogg"
       },
       "story3": {
-        "text": "俺たちは悪などではない…俺たちは…俺たちこそ正義！",
+        "text": "俺たちは悪などではない…\\俺たちは…\\俺たちこそ正義！",
         "filePath": "asset\\asset\\sound\\voice\\m154_story3.ogg"
       },
       "true1": {
@@ -38661,7 +41782,7 @@
         "filePath": "asset\\asset\\sound\\voice\\m154_true1.ogg"
       },
       "true2": {
-        "text": "正義と悪。二つに一つだ。\\オマエはどっちだ？",
+        "text": "正義と悪。\\2つに1つだ。\\オマエはどっちだ？",
         "filePath": "asset\\asset\\sound\\voice\\m154_true2.ogg"
       },
       "true3": {
@@ -38675,9 +41796,9 @@
     },
     "favors": {
       "interest": "悪魔は悪だ",
-      "like": "俺が正義だということを認めるならば、\\お前の存在を認めてやろう。",
-      "love": "悪魔の正義とやらに従おう",
-      "profile": "《覚醒していない人間は存在する価値がない！》\\確固たる自分の正義を持っており、それに従わない者には審判を下す。\\その歪んだ正義の裏には、「自分が不正を暴き、世を正す。」と言うエゴイズムによって他人を死に追いやった偽善者が隠れている。\\悪魔との契約によって誕生したチャイルドであるにも関わらず、《悪魔は悪》と声高に叫び、主人公に審判が下る日を待っている。"
+      "like": "お前が正義なら\\存在も正義だ",
+      "love": "悪魔の正義に従おう",
+      "profile": "正義を知らぬ者には容赦なく審判を下すグングニル。\\他人を死に追いやった契約者の過ちを認めず、自らを審判者と\\呼ぶ怪物。\\悪魔との契約によって生まれたチャイルドだが、悪魔は悪と\\断言し、主人公に審判を下す日を待ち構えている"
     }
   },
   "m155": {
@@ -40881,13 +44002,13 @@
     "variants": {
       "01": {
         "title": "弓使い 天使ロット",
-        "description": "愛を求める天使ロットのハートの矢はあなたに向けられているようだ。",
-        "name": ""
+        "description": "愛を求める天使ロットのハートの矢は\\あなたに向けられた。",
+        "name": "植田理沙"
       },
       "02": {
         "title": "百発百中 天使ロット",
-        "description": "愛の戦士、天使ロットのハートの矢はあなたに向けられているようだ。",
-        "name": ""
+        "description": "愛の戦士、天使ロットのハートの矢は\\あなたに向けられた。",
+        "name": "植田理沙"
       }
     },
     "voices": {
@@ -40908,11 +44029,11 @@
         "filePath": "asset\\asset\\sound\\voice\\m211_death_1.ogg"
       },
       "death_2": {
-        "text": "うわぁ～！！",
+        "text": "うわぁ～っ！！",
         "filePath": "asset\\asset\\sound\\voice\\m211_death_2.ogg"
       },
       "drive": {
-        "text": "ホーリー！ホーリ～！",
+        "text": "ホ～リ～！ホ～リ～！",
         "filePath": "asset\\asset\\sound\\voice\\m211_drive.ogg"
       },
       "hit_1": {
@@ -40944,27 +44065,27 @@
         "filePath": "asset\\asset\\sound\\voice\\m211_startbt.ogg"
       },
       "story1": {
-        "text": "人間が絶望と裏切りに震え、涙し、\\ひれ伏す姿は想像するだけでも、とても楽しいね～！",
+        "text": "人間が絶望と裏切りに震え、涙し、\\ひれ伏す姿は想像するだけでも\\とても楽しいね～！",
         "filePath": "asset\\asset\\sound\\voice\\m211_story1.ogg"
       },
       "story2": {
-        "text": "こんにちは～！僕は天使ロットだよ～！\\アナタの祈りを聞いてやって来たんだ～！",
+        "text": "こんにちはっ！\\僕は天使ロットだよ～！\\アナタの祈りを聞いてやって来たんだ～！",
         "filePath": "asset\\asset\\sound\\voice\\m211_story2.ogg"
       },
       "story3": {
-        "text": "ああっ！可憐な天使ロットが、無能で寝坊助な\\ご主人様の足かせになってしまうなんて…",
+        "text": "ああっ！\\可憐な天使ロットが、無能で寝坊助な\\ご主人様の足かせになってしまうなんて…",
         "filePath": "asset\\asset\\sound\\voice\\m211_story3.ogg"
       },
       "true1": {
-        "text": "こんにちは～！僕は天使ロットだよ～！\\アナタに全能なる神のメッセージを伝えにやって来たよ！",
+        "text": "こんにちは～！\\僕は天使ロットだよ～！\\アナタに全能なる神のメッセージを伝えに\\やって来たよ！",
         "filePath": "asset\\asset\\sound\\voice\\m211_true1.ogg"
       },
       "true2": {
-        "text": "天使ロットがアナタに天使の祝福を授けるよ～！\\悪魔にとっては呪いかな？あはは！",
+        "text": "天使ロットがアナタに天使の祝福を授けるよ～！\\悪魔にとっては呪いかな？\\あははっ！",
         "filePath": "asset\\asset\\sound\\voice\\m211_true2.ogg"
       },
       "true3": {
-        "text": "祈りましょう、ご主人様。でも悪魔は祈りなんてしないよね？\\あはは！",
+        "text": "祈りましょう、ご主人様。\\でも悪魔は祈りなんてしないよね？\\あははっ！",
         "filePath": "asset\\asset\\sound\\voice\\m211_true3.ogg"
       },
       "victory": {
@@ -40973,10 +44094,10 @@
       }
     },
     "favors": {
-      "interest": "祈りましょう～！\\どうせ叶わないけど！",
-      "like": "悪魔との約束なんて\\信じませ～ん！",
-      "love": "どんな願い事を\\聞いてあげましょうか？",
-      "profile": "可愛らしい赤ん坊のような天使の姿をしているが、その中身は残忍極まりない悪魔、その名もチャイルド《天使ロット》。\\趣味は人間の悲劇を見物すること、好きなことは人間の絶望的な悲劇の中で、無我夢中になること。\\《天使ロット》も、神に祈りを捧げたことがあるけれど、その時何を願ったのかは忘れてしまった。\\願いを再び思い出すための対価として主人公と契約した《天使ロット》は果たして純粋だったあの頃を思い出すことはできるだろうか。"
+      "interest": "祈りましょう！\\どうせ叶わないけど！",
+      "like": "悪魔との約束なんて\\信じられませ～ん！",
+      "love": "どんな願いでも\\聞いてあげますよ～",
+      "profile": "見かけは赤子の天使、心は残忍非道なチャイルド、天使ロット。\\人間が絶望する瞬間を好む。\\天使ロットの契約者は神に祈っていたが、彼はその願いごとすら\\忘れてしまった。\\純粋だった頃の記憶を思い出すため、天使ロットは主人公と\\契約した。"
     }
   },
   "m212": {
@@ -41647,7 +44768,7 @@
         "name": ""
       },
       "02": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       }
@@ -41757,12 +44878,12 @@
   "m229": {
     "variants": {
       "01": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       },
       "02": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       }
@@ -41777,12 +44898,12 @@
   "m230": {
     "variants": {
       "01": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       },
       "02": {
-        "title": "無名のチャイルド",
+        "title": "",
         "description": "",
         "name": ""
       }
@@ -43652,6 +46773,22 @@
       }
     }
   },
+  "sc125": {
+    "variants": {
+      "01": {
+        "title": "アルティス",
+        "description": "アルティスの温泉魔力。"
+      },
+      "02": {
+        "title": "アルティス",
+        "description": "アルティスの温泉魔力。"
+      },
+      "03": {
+        "title": "アルティス",
+        "description": "アルティスの温泉魔力。"
+      }
+    }
+  },
   "sc126": {
     "variants": {
       "01": {
@@ -43761,6 +46898,22 @@
       "01": {
         "title": "トート",
         "description": "トートの温泉魔力。"
+      }
+    }
+  },
+  "sc155": {
+    "variants": {
+      "01": {
+        "title": "エコー",
+        "description": "エコーの温泉魔力。"
+      },
+      "02": {
+        "title": "エコー",
+        "description": "エコーの温泉魔力。"
+      },
+      "03": {
+        "title": "エコー",
+        "description": "エコーの温泉魔力。"
       }
     }
   },
@@ -44076,6 +47229,22 @@
       }
     }
   },
+  "sc231": {
+    "variants": {
+      "01": {
+        "title": "レアシルヴィア",
+        "description": "レアシルヴィアの温泉魔力。"
+      },
+      "02": {
+        "title": "レアシルヴィア",
+        "description": "レアシルヴィアの温泉魔力。"
+      },
+      "03": {
+        "title": "レアシルヴィア",
+        "description": "レアシルヴィアの温泉魔力。"
+      }
+    }
+  },
   "sc232": {
     "variants": {
       "01": {
@@ -44111,14 +47280,6 @@
   "sc237": {
     "variants": {
       "01": {
-        "title": "ティフォン",
-        "description": "ティフォンの温泉魔力。"
-      },
-      "02": {
-        "title": "ティフォン",
-        "description": "ティフォンの温泉魔力。"
-      },
-      "03": {
         "title": "ティフォン",
         "description": "ティフォンの温泉魔力。"
       }
@@ -44196,11 +47357,43 @@
       }
     }
   },
+  "sc275": {
+    "variants": {
+      "01": {
+        "title": "ハーピー",
+        "description": "ハーピーの温泉魔力。"
+      },
+      "02": {
+        "title": "ハーピー",
+        "description": "ハーピーの温泉魔力。"
+      },
+      "03": {
+        "title": "ハーピー",
+        "description": "ハーピーの温泉魔力。"
+      }
+    }
+  },
   "sc277": {
     "variants": {
       "01": {
         "title": "レウケ",
         "description": "レウケの温泉魔力。"
+      }
+    }
+  },
+  "sc278": {
+    "variants": {
+      "01": {
+        "title": "ヘル",
+        "description": "ヘルの温泉魔力。"
+      },
+      "02": {
+        "title": "ヘル",
+        "description": "ヘルの温泉魔力。"
+      },
+      "03": {
+        "title": "ヘル",
+        "description": "ヘルの温泉魔力。"
       }
     }
   },
@@ -44247,14 +47440,6 @@
   "sc287": {
     "variants": {
       "01": {
-        "title": "サロメ",
-        "description": "サロメの温泉魔力。"
-      },
-      "02": {
-        "title": "サロメ",
-        "description": "サロメの温泉魔力。"
-      },
-      "03": {
         "title": "サロメ",
         "description": "サロメの温泉魔力。"
       }
@@ -44316,6 +47501,14 @@
       }
     }
   },
+  "sc300": {
+    "variants": {
+      "01": {
+        "title": "ピエタス",
+        "description": "ピエタスの温泉魔力。"
+      }
+    }
+  },
   "sc301": {
     "variants": {
       "01": {
@@ -44364,17 +47557,17 @@
       }
     }
   },
+  "sc315": {
+    "variants": {
+      "01": {
+        "title": "メトセラ",
+        "description": "メトセラの温泉魔力。"
+      }
+    }
+  },
   "sc316": {
     "variants": {
       "01": {
-        "title": "ボタン",
-        "description": "ボタンの温泉魔力。"
-      },
-      "02": {
-        "title": "ボタン",
-        "description": "ボタンの温泉魔力。"
-      },
-      "03": {
         "title": "ボタン",
         "description": "ボタンの温泉魔力。"
       }
@@ -44428,6 +47621,14 @@
       }
     }
   },
+  "sc333": {
+    "variants": {
+      "01": {
+        "title": "デボラ",
+        "description": "デボラの温泉魔力。"
+      }
+    }
+  },
   "sc336": {
     "variants": {
       "01": {
@@ -44455,14 +47656,6 @@
   "sc343": {
     "variants": {
       "01": {
-        "title": "孤剣の ティアマト",
-        "description": "孤剣のティアマトの温泉魔力。"
-      },
-      "02": {
-        "title": "孤剣の ティアマト",
-        "description": "孤剣のティアマトの温泉魔力。"
-      },
-      "03": {
         "title": "孤剣の ティアマト",
         "description": "孤剣のティアマトの温泉魔力。"
       }
@@ -44564,6 +47757,22 @@
       }
     }
   },
+  "sc362": {
+    "variants": {
+      "01": {
+        "title": "レオ",
+        "description": "レオの温泉魔力。"
+      }
+    }
+  },
+  "sc363": {
+    "variants": {
+      "01": {
+        "title": "ルパン",
+        "description": "ルパンの温泉魔力。"
+      }
+    }
+  },
   "sc364": {
     "variants": {
       "01": {
@@ -44625,14 +47834,6 @@
       "01": {
         "title": "無頼の ミダス",
         "description": "無頼のミダスの温泉魔力。"
-      },
-      "02": {
-        "title": "無頼の ミダス",
-        "description": "無頼のミダスの温泉魔力。"
-      },
-      "03": {
-        "title": "無頼の ミダス",
-        "description": "無頼のミダスの温泉魔力。"
       }
     }
   },
@@ -44687,14 +47888,6 @@
   "sc383": {
     "variants": {
       "01": {
-        "title": "甦りし フレイ",
-        "description": "甦りしフレイの温泉魔力。"
-      },
-      "02": {
-        "title": "甦りし フレイ",
-        "description": "甦りしフレイの温泉魔力。"
-      },
-      "03": {
         "title": "甦りし フレイ",
         "description": "甦りしフレイの温泉魔力。"
       }
@@ -44868,17 +48061,17 @@
       }
     }
   },
+  "sc412": {
+    "variants": {
+      "01": {
+        "title": "カイン",
+        "description": "カインの温泉魔力。"
+      }
+    }
+  },
   "sc414": {
     "variants": {
       "01": {
-        "title": "ビリー",
-        "description": "ビリーの温泉魔力。"
-      },
-      "02": {
-        "title": "ビリー",
-        "description": "ビリーの温泉魔力。"
-      },
-      "03": {
         "title": "ビリー",
         "description": "ビリーの温泉魔力。"
       }
@@ -44889,28 +48082,12 @@
       "01": {
         "title": "アニー",
         "description": "アニーの温泉魔力。"
-      },
-      "02": {
-        "title": "アニー",
-        "description": "アニーの温泉魔力。"
-      },
-      "03": {
-        "title": "アニー",
-        "description": "アニーの温泉魔力。"
       }
     }
   },
   "sc416": {
     "variants": {
       "01": {
-        "title": "ケイノウ",
-        "description": "ケイノウの温泉魔力。"
-      },
-      "02": {
-        "title": "ケイノウ",
-        "description": "ケイノウの温泉魔力。"
-      },
-      "03": {
         "title": "ケイノウ",
         "description": "ケイノウの温泉魔力。"
       }
@@ -44921,28 +48098,12 @@
       "01": {
         "title": "タマモ",
         "description": "タマモの温泉魔力。"
-      },
-      "02": {
-        "title": "タマモ",
-        "description": "タマモの温泉魔力。"
-      },
-      "03": {
-        "title": "タマモ",
-        "description": "タマモの温泉魔力。"
       }
     }
   },
   "sc418": {
     "variants": {
       "01": {
-        "title": "正義の華 マフデト",
-        "description": "正義の華マフデトの温泉魔力。"
-      },
-      "02": {
-        "title": "正義の華 マフデト",
-        "description": "正義の華マフデトの温泉魔力。"
-      },
-      "03": {
         "title": "正義の華 マフデト",
         "description": "正義の華マフデトの温泉魔力。"
       }
@@ -44972,17 +48133,17 @@
       }
     }
   },
+  "sc422": {
+    "variants": {
+      "01": {
+        "title": "ヘケト",
+        "description": "ヘケトの温泉魔力。"
+      }
+    }
+  },
   "sc423": {
     "variants": {
       "01": {
-        "title": "ライマ",
-        "description": "ライマの温泉魔力。"
-      },
-      "02": {
-        "title": "ライマ",
-        "description": "ライマの温泉魔力。"
-      },
-      "03": {
         "title": "ライマ",
         "description": "ライマの温泉魔力。"
       }
@@ -45017,14 +48178,6 @@
       "01": {
         "title": "氷雪の エシュ",
         "description": "氷雪のエシュの温泉魔力。"
-      },
-      "02": {
-        "title": "氷雪の エシュ",
-        "description": "氷雪のエシュの温泉魔力。"
-      },
-      "03": {
-        "title": "氷雪の エシュ",
-        "description": "氷雪のエシュの温泉魔力。"
       }
     }
   },
@@ -45033,14 +48186,126 @@
       "01": {
         "title": "パケト",
         "description": "パケトの温泉魔力。"
+      }
+    }
+  },
+  "sc434": {
+    "variants": {
+      "01": {
+        "title": "スウィート レダ",
+        "description": "スウィートレダの温泉魔力。"
+      }
+    }
+  },
+  "sc435": {
+    "variants": {
+      "01": {
+        "title": "ファンシー シトリー",
+        "description": "ファンシーシトリーの温泉魔力。"
+      }
+    }
+  },
+  "sc436": {
+    "variants": {
+      "01": {
+        "title": "セルケト",
+        "description": "セルケトの温泉魔力。"
+      }
+    }
+  },
+  "sc437": {
+    "variants": {
+      "01": {
+        "title": "かわいい エウロス",
+        "description": "かわいいエウロスの温泉魔力。"
+      }
+    }
+  },
+  "sc439": {
+    "variants": {
+      "01": {
+        "title": "ドリーマー サターン",
+        "description": "ドリーマーサターンの温泉魔力。"
       },
       "02": {
-        "title": "パケト",
-        "description": "パケトの温泉魔力。"
+        "title": "ドリーマー サターン",
+        "description": "ドリーマーサターンの温泉魔力。"
       },
       "03": {
-        "title": "パケト",
-        "description": "パケトの温泉魔力。"
+        "title": "ドリーマー サターン",
+        "description": "ドリーマーサターンの温泉魔力。"
+      }
+    }
+  },
+  "sc441": {
+    "variants": {
+      "01": {
+        "title": "ロビン",
+        "description": "ロビンの温泉魔力。"
+      },
+      "02": {
+        "title": "ロビン",
+        "description": "ロビンの温泉魔力。"
+      },
+      "03": {
+        "title": "ロビン",
+        "description": "ロビンの温泉魔力。"
+      }
+    }
+  },
+  "sc443": {
+    "variants": {
+      "01": {
+        "title": "ラッフルズ",
+        "description": "ラッフルズの温泉魔力。"
+      }
+    }
+  },
+  "sc448": {
+    "variants": {
+      "01": {
+        "title": "マーカラ",
+        "description": "マーカラの温泉魔力。"
+      },
+      "02": {
+        "title": "マーカラ",
+        "description": "マーカラの温泉魔力。"
+      },
+      "03": {
+        "title": "マーカラ",
+        "description": "マーカラの温泉魔力。"
+      }
+    }
+  },
+  "sc449": {
+    "variants": {
+      "01": {
+        "title": "ローラ",
+        "description": "ローラの温泉魔力。"
+      },
+      "02": {
+        "title": "ローラ",
+        "description": "ローラの温泉魔力。"
+      },
+      "03": {
+        "title": "ローラ",
+        "description": "ローラの温泉魔力。"
+      }
+    }
+  },
+  "sc450": {
+    "variants": {
+      "01": {
+        "title": "悲劇の ルサルカ",
+        "description": "悲劇のルサルカの温泉魔力。"
+      },
+      "02": {
+        "title": "悲劇の ルサルカ",
+        "description": "悲劇のルサルカの温泉魔力。"
+      },
+      "03": {
+        "title": "悲劇の ルサルカ",
+        "description": "悲劇のルサルカの温泉魔力。"
       }
     }
   },
@@ -45153,6 +48418,30 @@
       "01": {
         "title": "バシリ",
         "description": "バシリの温泉魔力。"
+      }
+    }
+  },
+  "sm053": {
+    "variants": {
+      "01": {
+        "title": "ヒドラ",
+        "description": "ヒドラの温泉魔力。"
+      }
+    }
+  },
+  "sm054": {
+    "variants": {
+      "01": {
+        "title": "ゴモラ",
+        "description": "ゴモラの温泉魔力。"
+      },
+      "02": {
+        "title": "ゴモラ",
+        "description": "ゴモラの温泉魔力。"
+      },
+      "03": {
+        "title": "ゴモラ",
+        "description": "ゴモラの温泉魔力。"
       }
     }
   },
@@ -45305,28 +48594,12 @@
       "01": {
         "title": "リベンジガール レッド",
         "description": "レッドの温泉魔力。"
-      },
-      "02": {
-        "title": "リベンジガール レッド",
-        "description": "レッドの温泉魔力。"
-      },
-      "03": {
-        "title": "リベンジガール レッド",
-        "description": "レッドの温泉魔力。"
       }
     }
   },
   "sm143": {
     "variants": {
       "01": {
-        "title": "リベンジガール ブルー",
-        "description": "ブルーの温泉魔力。"
-      },
-      "02": {
-        "title": "リベンジガール ブルー",
-        "description": "ブルーの温泉魔力。"
-      },
-      "03": {
         "title": "リベンジガール ブルー",
         "description": "ブルーの温泉魔力。"
       }
@@ -45337,14 +48610,6 @@
       "01": {
         "title": "リベンジガール グリーン",
         "description": "グリーンの温泉魔力。"
-      },
-      "02": {
-        "title": "リベンジガール グリーン",
-        "description": "グリーンの温泉魔力。"
-      },
-      "03": {
-        "title": "リベンジガール グリーン",
-        "description": "グリーンの温泉魔力。"
       }
     }
   },
@@ -45353,28 +48618,12 @@
       "01": {
         "title": "リベンジガール ライト",
         "description": "ライトの温泉魔力。"
-      },
-      "02": {
-        "title": "リベンジガール ライト",
-        "description": "ライトの温泉魔力。"
-      },
-      "03": {
-        "title": "リベンジガール ライト",
-        "description": "ライトの温泉魔力。"
       }
     }
   },
   "sm146": {
     "variants": {
       "01": {
-        "title": "リベンジガール パープル",
-        "description": "パープルの温泉魔力。"
-      },
-      "02": {
-        "title": "リベンジガール パープル",
-        "description": "パープルの温泉魔力。"
-      },
-      "03": {
         "title": "リベンジガール パープル",
         "description": "パープルの温泉魔力。"
       }
@@ -45425,6 +48674,14 @@
       "01": {
         "title": "マンティ",
         "description": "マンティの温泉魔力。"
+      }
+    }
+  },
+  "sm154": {
+    "variants": {
+      "01": {
+        "title": "グングニル",
+        "description": "グングニルの温泉魔力。"
       }
     }
   },
@@ -45628,6 +48885,22 @@
       }
     }
   },
+  "sm211": {
+    "variants": {
+      "01": {
+        "title": "天使ロット",
+        "description": "天使ロットの温泉魔力。"
+      },
+      "02": {
+        "title": "天使ロット",
+        "description": "天使ロットの温泉魔力。"
+      },
+      "03": {
+        "title": "天使ロット",
+        "description": "天使ロットの温泉魔力。"
+      }
+    }
+  },
   "sm212": {
     "variants": {
       "01": {
@@ -45721,6 +48994,52 @@
       "01": {
         "title": "双面の モア",
         "description": "双面のモアの温泉魔力。"
+      }
+    }
+  },
+  "v005": {
+    "variants": {
+      "01": {
+        "name": ""
+      }
+    }
+  },
+  "v006": {
+    "variants": {
+      "01": {
+        "name": ""
+      }
+    }
+  },
+  "v007": {
+    "variants": {
+      "01": {
+        "name": ""
+      },
+      "02": {
+        "name": ""
+      },
+      "03": {
+        "name": ""
+      },
+      "04": {
+        "name": ""
+      },
+      "05": {
+        "name": ""
+      }
+    }
+  },
+  "v009": {
+    "variants": {
+      "01": {
+        "name": ""
+      },
+      "02": {
+        "name": ""
+      },
+      "03": {
+        "name": ""
       }
     }
   }

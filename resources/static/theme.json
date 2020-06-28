@@ -654,11 +654,23 @@
       "filePath": "asset\\bgm\\music135.ogg",
       "length": "1:48"
     },
+    "136": {
+      "title": "Beyond the Pathos",
+      "description": "ラグナブレイクSeason13《Kyrie Eleison》ホーム画面BGM",
+      "filePath": "asset\\bgm\\music136.ogg",
+      "length": "1:20"
+    },
     "137": {
       "title": "AsOMiRcaL(Remix)",
-      "description": "キャサリン・フルボディ Story as K's another World バトルBGM",
+      "description": "キャサリン・フルボディ Story as K's another World バトルBGM、シナリオダンジョン《Recurring Dream》シナリオBGM、ラグナブレイクSeason13《Kyrie Eleison》バトルBGM",
       "filePath": "asset\\bgm\\music137.ogg",
       "length": "1:29"
+    },
+    "138": {
+      "title": "Evil's Pride",
+      "description": "ラグナブレイクSeason12《Endless Valentine》シナリオBGM、ラグナブレイクSeason13《Kyrie Eleison》バトルBGM",
+      "filePath": "asset\\bgm\\music138.ogg",
+      "length": "1:07"
     },
     "139": {
       "title": "The Good, The Bad and The Pretty",
@@ -683,6 +695,72 @@
       "description": "キャサリン・フルボディ Story as K's another World バトルBGM",
       "filePath": "asset\\bgm\\music143.ogg",
       "length": "1:24"
+    },
+    "155": {
+      "title": "Twintail Cocktail",
+      "description": "NARRATIVEダンジョン《Deja vu》、シナリオダンジョン《Recurring Dream》、ラグナブレイクSeason12《Endless Valentine》シナリオBGM",
+      "filePath": "asset\\bgm\\music155.ogg",
+      "length": "1:08"
+    },
+    "156": {
+      "title": "The Distance Until The Kiss",
+      "description": "NARRATIVEダンジョン《Deja vu》、ラグナブレイクSeason12《Endless Valentine》シナリオBGM",
+      "filePath": "asset\\bgm\\music156.ogg",
+      "length": "1:13"
+    },
+    "157": {
+      "title": "MintChoco Syndrome",
+      "description": "NARRATIVEダンジョン《Deja vu》、ラグナブレイクSeason12《Endless Valentine》シナリオBGM",
+      "filePath": "asset\\bgm\\music157.ogg",
+      "length": "1:22"
+    },
+    "158": {
+      "title": "Valentine Attack!",
+      "description": "ラグナブレイクSeason12《Endless Valentine》ホーム画面BGM",
+      "filePath": "asset\\bgm\\music158.ogg",
+      "length": "1:00"
+    },
+    "159": {
+      "title": "NO SUGAR NO LIFE",
+      "description": "ラグナブレイクSeason12《Endless Valentine》バトルBGM",
+      "filePath": "asset\\bgm\\music159.ogg",
+      "length": "1:31"
+    },
+    "160": {
+      "title": "Candy Crash Landing (Seat. A)",
+      "description": "ラグナブレイクSeason12《Endless Valentine》シナリオBGM",
+      "filePath": "asset\\bgm\\music160.ogg",
+      "length": "1:00"
+    },
+    "161": {
+      "title": "Candy Crash Landing (Seat. B)",
+      "description": "ラグナブレイクSeason12《Endless Valentine》シナリオBGM",
+      "filePath": "asset\\bgm\\music161.ogg",
+      "length": "0:59"
+    },
+    "167": {
+      "title": "Romeo & Juliet (Instrumental)",
+      "description": "ラグナブレイクSeason14《Romeo & Juliet》シナリオBGM",
+      "filePath": "asset\\bgm\\music167.ogg",
+      "length": "0:53"
+    },
+    "168": {
+      "title": "Romeo & Juliet",
+      "description": "ラグナブレイクSeason14《Romeo & Juliet》ホーム画面BGM",
+      "filePath": "asset\\bgm\\music168.ogg",
+      "length": "0:53"
+    },
+    "169": {
+      "title": "Surrounded by Coloful Lights",
+      "description": "ラグナブレイクSeason14《Romeo & Juliet》シナリオBGM",
+      "filePath": "asset\\bgm\\music169.ogg",
+      "length": "1:07"
+    },
+    "170": {
+      "title": "Wild Determination",
+      "description": "ラグナブレイクSeason14《Romeo & Juliet》バトルBGM",
+      "filePath": "asset\\bgm\\music170.ogg",
+      "length": "1:15"
     }
   },
   "images": {}

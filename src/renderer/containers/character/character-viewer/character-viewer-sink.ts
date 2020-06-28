@@ -2,29 +2,25 @@ import * as _ from 'lodash';
 import { sink, effect, state } from 'redux-sink';
 
 import { CharacterMetadata } from '@models';
-import {
-  RenderModelType,
-} from '@shared';
+import { RenderModelType } from '@shared';
 import { Live2DService, Live2DRenderComponents, CharacterService } from '@services';
 import { CharacterViewerPositionSink } from './character-viewer-position-sink';
+import { getDefaultVariant } from '../character-helper';
 
 export interface CurrentCharacterView {
   characterId: string;
   variantId: string;
-  activeMotion?: string
+  activeMotion?: string;
 }
 
 @sink('character-viewer', new Live2DService(), new CharacterService(), CharacterViewerPositionSink)
 export class CharacterViewerSink {
   @state public components?: Live2DRenderComponents;
   @state public metadata?: CharacterMetadata;
-  @state public current?: { characterId: string, variantId: string };
+  @state public current?: { characterId: string; variantId: string };
   @state public loading: boolean = false;
 
-  constructor(
-    private _live2DService: Live2DService,
-    private _characterService: CharacterService
-  ) { }
+  constructor(private _live2DService: Live2DService, private _characterService: CharacterService) {}
 
   @effect
   public reset() {
@@ -32,6 +28,17 @@ export class CharacterViewerSink {
     this.components = undefined;
     this.metadata = undefined;
     this.current = undefined;
+  }
+
+  @effect
+  public async loadCharacterByIndex(index: number) {
+    const characters = await this._characterService.listAll();
+    const character = characters[index];
+
+    if (character) {
+      const defaultVariant = getDefaultVariant(character);
+      await this.loadCharacter(character.id, defaultVariant);
+    }
   }
 
   @effect
@@ -49,6 +56,7 @@ export class CharacterViewerSink {
       this.loading = false;
       return;
     }
+
     this.current = { characterId, variantId };
     const renderModel = this.metadata?.render[variantId];
     if (renderModel?.modeltype === RenderModelType.Live2D) {

@@ -21,15 +21,17 @@ export class CharacterService {
   public async listAll(): Promise<Array<CharacterMetadata>> {
     const renderModels = await this._renderRepository.invoke('getCollection');
     const characters = await this._characterRepository.invoke('getCollection');
+
     const iconModels = await this._iconService.getCollection();
     const characterIds = Object.keys(renderModels).filter(id => !id.startsWith('s')).sort();
 
-    return characterIds.map(id => ({
+    return characterIds.map((id, index) => ({
       id,
       character: characters[id],
       icon: iconModels[id],
       render: renderModels[id],
-      variants: Object.keys(renderModels[id])
+      variants: Object.keys(renderModels[id]),
+      orderIndex: index
     }));
   }
 
@@ -38,13 +40,15 @@ export class CharacterService {
     const render = await this._renderRepository.invoke('getRendersByCharacterId', characterId);
     const character = await this._characterRepository.invoke('getCharacter', characterId);
     const icon = await this._iconService.loadCharacterIcons(characterId);
+    const orderIndex = (await this.listAll()).find(x => x.id === characterId)?.orderIndex;
 
     return {
       character,
       icon,
       render,
       id: characterId,
-      variants: render && Object.keys(render)
+      variants: render && Object.keys(render),
+      orderIndex: orderIndex || 0
     };
   }
 

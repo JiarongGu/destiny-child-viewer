@@ -5,5 +5,6 @@ export interface CharacterMetadata {
   character: CharacterModel;
   icon: IconModel;
   render: BaseRenderModelCollection;
-  variants: Array<string>
+  variants: Array<string>;
+  orderIndex: number;
 }

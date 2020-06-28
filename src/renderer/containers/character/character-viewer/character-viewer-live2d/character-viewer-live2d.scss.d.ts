@@ -5,6 +5,10 @@ interface CssExports {
   'canvas--moving': string;
   'canvasMoving': string;
   'container': string;
+  'left': string;
+  'navigation-button': string;
+  'navigationButton': string;
+  'right': string;
 }
 
 declare var cssExports: CssExports;

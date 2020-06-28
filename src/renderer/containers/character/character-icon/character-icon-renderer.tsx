@@ -6,8 +6,7 @@ import { GridChildComponentProps } from 'react-window';
 import { VariantType } from '@models';
 
 import { CharacterIconSink } from './character-icon-sink';
-
-const defaultVariants = [VariantType.EClass, VariantType.SClass, VariantType.Story];
+import { getDefaultVariant } from '../character-helper';
 
 export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentProps> = ({
   columnIndex,
@@ -23,7 +22,7 @@ export const CharacterIconRenderer: React.FunctionComponent<GridChildComponentPr
 
   React.useEffect(() => {
     if (character) {
-      setVariantId(defaultVariants.find(variant => character.icon[variant]) || Object.keys(character.icon)[0]);
+      setVariantId(getDefaultVariant(character));
     }
   }, [character]);
 
