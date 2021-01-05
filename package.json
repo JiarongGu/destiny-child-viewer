@@ -143,7 +143,7 @@
     "@types/fs-extra": "^8.1.0",
     "@types/lowdb": "^1.0.9",
     "antd": "^3.26.15",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "deep-object-diff": "^1.1.0",
     "fs-extra": "^8.1.0",
